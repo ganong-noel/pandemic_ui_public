@@ -1,0 +1,9 @@
+Row,Transfer,Who_Gets_Transfer,Discount_Factor_Calibration,Economic_Environment,MPC_horizon,MPC_model,MPC_data
+1,$2400 Persistent+Regular Benefits,Unemployed w/ No Benefits,Target Waiting Design MPC,Pandemic,Month,0.424889085097642,0.42
+2,$2400 Persistent,Unemployed w/ Regular Benefits,Target Waiting Design MPC,Pandemic,Month,0.288049000778801,-
+3,$2400 Persistent,Unemployed w/ Regular Benefits,Target Waiting Design MPC,Normal Times,Month,0.447251902472385,-
+4,$2400 One Time,Unemployed w/ Regular Benefits,Target Waiting Design MPC,Normal Times,Month,0.286230062697096,-
+5,$500 One Time,Unemployed w/ Regular Benefits,Target Waiting Design MPC,Normal Times,Month,0.449777129588206,-
+6,$500 One Time,Everyone,Target Waiting Design MPC,Normal Times,Month,0.2074708034977,-
+7,$500 One Time,Everyone,Target $500 MPC,Normal Times,Month,0.0922696108678508,-
+8,$500 One Time,Everyone,Target $500 MPC,Normal Times,Quarter,0.245298792461143,0.25

@@ -1,0 +1,8 @@
+Row,supplement600,supplement300
+Best Fit Model,0.0739585483249162,0.114057390612228
+Time-Series Based Statistical Model,0.0570334773335535,0.110202611838904
+Cross-Section Based Statistical Model,0.108306912166609,0.223498413977768
+Best Fit Model: MPC from first month of supplements,0.288049000778801,0.306388250676921
+Best Fit Model: MPC from first quarter of supplements,0.377363102297558,0.341531145426874
+Best Fit Model: MPC over full supplement period,0.402085398246679,0.456734982058838
+Best Fit Model: MPC over full supplement period+3,0.526075421342589,0.603545787725591

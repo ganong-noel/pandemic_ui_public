@@ -22,16 +22,16 @@ The script `prelim.m` defines data inputs to the model (points to `analysis/inpu
     - Plots in these scripts include results from other calibrations: `prepandemic_results_target500MPC.m`, `inf_horizon_het_results_target500MPC.m`, `inf_horizon_het_results_nodiscountfactorshock.m`, `prepandemic_results_onset_target500MPC.m`, `inf_horizon_het_results_onset_target500MPC`.
 - `inf_horizon_het_results_stimulus_check_size.m`, `inf_horizon_het_results_stimulus_check_size_onetenth.m`, `inf_horizon_het_counterfactuals.m` - This code constructs the spending responses for stimulus checks vs. severance of various sizes. It is somewhat time consuming (about an hour), and results are only used for Figure 13.
 - `liquidity_effects_prepandemic.m` - Computes baseline effects of liquidity on job search to compare to Card, Chetty, Weber 2006
-- `make_table_agg_effects.m`, `make_table_mpc_for_paper.m`, `make_table_supplement_effects.m` - Format model outputs for the paper.
+- `make_table_agg_effects.m`, `make_table_mpc_for_paper.m`, `make_table_supplement_effects.m`, `make_table_alt_job_find_specs.m` - Format model outputs for the paper.
 - `plot_duration_elasticities.m` - Plot literature estimates of duration elasticities.
 - `pandemic_hazard_vs_duration_elasticity_constanteffects_v2.m` - Decomposes role of different channels in low elasticity (paper figure 11)
-- `liquidity_effects_on_mpcs.m` - TODO
+- `liquidity_effects_on_mpcs.m` - some statistics related to liquidity changes that are briefly mentioned, otherwise this file is mostly deprecated
 - `inf_horizon_het_results_by_liquidity.m` - This redoes the main results but splitting separately by high and low liquidity households constructed in various ways
 
 ### Robustness Scripts
 - `inf_horizon_het_results_timeaggregation_target500MPC.m`, `inf_horizon_het_results_timeaggregation.m` - Code for constructing Figure A-18
 - Subdirectory `/robustness/beta_delta_revision_v2/` - Running the shell file in this folder creates robustness figure A-28. Note that the shell file provides the intermediate files and comments out the running of the model for a large set of parameters, which was run on a cluster with an array job. If you want to re-run this many hour grid search, see grid_search.sh and grid_search_append.sh
-
+- `test_homogeneity.m` - Homogeneity results which are briefly mentioned in Appendix C.2 (not included in shell since there are no specific numbers reported/saved from this code)
 
 ### Functions Written for this Project and Called by Routines Above
 - `average_duration.m` - This computes the average duration of unemployment given an exit rate
