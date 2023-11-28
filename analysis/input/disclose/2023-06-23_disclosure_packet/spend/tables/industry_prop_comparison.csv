@@ -1,0 +1,61 @@
+Period,Industry,Share (JPMCI),Share (DOL),Ratio (JPMCI to DOL)
+2021,Accommodation and Food Services,6.3%,10.1%,0.63
+2021,Administrative and Support Services,16.3%,8.9%,1.84
+2021,"Agriculture, Forestry, Fishing and Hunting",0.1%,4.2%,0.03
+2021,"Arts, Entertainment, and Recreation",1.5%,1.9%,0.78
+2021,Construction,2.4%,9.3%,0.26
+2021,Educational Services,3.1%,8.9%,0.34
+2021,Finance and Insurance,7.3%,2.3%,3.21
+2021,Health Care and Social Assistance,8.5%,11.6%,0.73
+2021,Information,7.2%,4.8%,1.48
+2021,Management of Companies and Enterprises,0.6%,0.3%,1.75
+2021,Manufacturing,6.2%,7.7%,0.8
+2021,"Mining, Quarrying, and Oil and Gas Extraction",0.9%,0.5%,1.63
+2021,Other Services (except Public Administration),2.2%,4.2%,0.51
+2021,"Professional, Scientific, and Technical Services",6.5%,3.7%,1.74
+2021,Public Administration,7.4%,1.3%,5.73
+2021,Real Estate and Rental and Leasing,1.4%,1.2%,1.14
+2021,Retail Trade,13.1%,12.0%,1.09
+2021,Transportation and Warehousing,7.6%,4.0%,1.88
+2021,Utilities,0.3%,0.3%,1.03
+2021,Wholesale Trade,1.2%,2.7%,0.46
+Pandemic,Accommodation and Food Services,9.9%,15.6%,0.64
+Pandemic,Administrative and Support Services,12.0%,9.0%,1.34
+Pandemic,"Agriculture, Forestry, Fishing and Hunting",0.1%,1.1%,0.06
+Pandemic,"Arts, Entertainment, and Recreation",2.8%,3.3%,0.84
+Pandemic,Construction,2.1%,5.9%,0.36
+Pandemic,Educational Services,3.2%,9.0%,0.35
+Pandemic,Finance and Insurance,4.7%,1.3%,3.6
+Pandemic,Health Care and Social Assistance,8.0%,11.0%,0.72
+Pandemic,Information,6.4%,3.9%,1.62
+Pandemic,Management of Companies and Enterprises,0.5%,0.5%,0.9
+Pandemic,Manufacturing,6.8%,7.1%,0.96
+Pandemic,"Mining, Quarrying, and Oil and Gas Extraction",0.6%,0.7%,0.81
+Pandemic,Other Services (except Public Administration),2.2%,5.3%,0.42
+Pandemic,"Professional, Scientific, and Technical Services",5.9%,3.5%,1.69
+Pandemic,Public Administration,5.5%,0.9%,6
+Pandemic,Real Estate and Rental and Leasing,1.9%,1.4%,1.35
+Pandemic,Retail Trade,18.8%,12.9%,1.45
+Pandemic,Transportation and Warehousing,6.3%,4.4%,1.45
+Pandemic,Utilities,0.3%,0.1%,1.71
+Pandemic,Wholesale Trade,2.0%,3.0%,0.67
+Pre-COVID,Accommodation and Food Services,4.9%,5.4%,0.91
+Pre-COVID,Administrative and Support Services,24.2%,11.7%,2.06
+Pre-COVID,"Agriculture, Forestry, Fishing and Hunting",0.2%,6.9%,0.03
+Pre-COVID,"Arts, Entertainment, and Recreation",1.5%,2.0%,0.74
+Pre-COVID,Construction,3.7%,13.5%,0.28
+Pre-COVID,Educational Services,2.7%,11.7%,0.23
+Pre-COVID,Finance and Insurance,6.9%,3.0%,2.31
+Pre-COVID,Health Care and Social Assistance,5.6%,7.3%,0.77
+Pre-COVID,Information,6.2%,4.2%,1.49
+Pre-COVID,Management of Companies and Enterprises,0.3%,0.5%,0.63
+Pre-COVID,Manufacturing,5.2%,8.2%,0.63
+Pre-COVID,"Mining, Quarrying, and Oil and Gas Extraction",0.4%,0.7%,0.48
+Pre-COVID,Other Services (except Public Administration),1.7%,2.5%,0.68
+Pre-COVID,"Professional, Scientific, and Technical Services",10.3%,4.7%,2.17
+Pre-COVID,Public Administration,7.0%,1.6%,4.33
+Pre-COVID,Real Estate and Rental and Leasing,1.7%,1.5%,1.19
+Pre-COVID,Retail Trade,8.4%,7.4%,1.15
+Pre-COVID,Transportation and Warehousing,7.2%,3.7%,1.97
+Pre-COVID,Utilities,0.4%,0.3%,1.4
+Pre-COVID,Wholesale Trade,1.3%,3.0%,0.43

@@ -1,0 +1,42 @@
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Tue, Jul 11, 2023 - 06:22:47 PM
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\toprule 
+\toprule \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cmidrule{2-4} 
+ & Base & Control for liquidity & Triple difference \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\midrule \\[-1.8ex] 
+ PctChange & 0.0212$^{***}$ & 0.0216$^{***}$ & 0.0214$^{***}$ \\ 
+  & (0.0010) & (0.0010) & (0.0010) \\ 
+  & & & \\ 
+ SuppAvail & 0.0034$^{***}$ & 0.0034$^{***}$ & 0.0032$^{***}$ \\ 
+  & (0.0010) & (0.0010) & (0.0010) \\ 
+  & & & \\ 
+ Std Balance &  & 0.0006$^{***}$ & 0.0024$^{***}$ \\ 
+  &  & (0.0001) & (0.0008) \\ 
+  & & & \\ 
+ PctChange*SuppAvail & $-$0.0163$^{***}$ & $-$0.0163$^{***}$ & $-$0.0160$^{***}$ \\ 
+  & (0.0011) & (0.0011) & (0.0011) \\ 
+  & & & \\ 
+ SuppAvail*Std Balance &  &  & $-$0.0018$^{*}$ \\ 
+  &  &  & (0.0010) \\ 
+  & & & \\ 
+ PctChange*Std Balance &  &  & $-$0.0023$^{**}$ \\ 
+  &  &  & (0.0010) \\ 
+  & & & \\ 
+ PctChange*SuppAvail*Std Balance &  &  & 0.0025$^{**}$ \\ 
+  &  &  & (0.0012) \\ 
+  & & & \\ 
+ Constant & 0.0025$^{***}$ & 0.0021$^{***}$ & 0.0023$^{***}$ \\ 
+  & (0.0008) & (0.0008) & (0.0008) \\ 
+  & & & \\ 
+\midrule \\[-1.8ex] 
+PctChange*SuppAvail if balance 1 sd above mean &  &  & -0.0135 \\ 
+PctChange*SuppAvail if balance 1 sd below mean &  &  & -0.0185 \\ 
+Number of Households & 183,138 & 183,138 & 183,138 \\ 
+Observations & 2,120,802 & 2,120,802 & 2,120,802 \\ 
+\bottomrule \\[-1.8ex] 
+\end{tabular} 

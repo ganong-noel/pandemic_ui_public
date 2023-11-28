@@ -1,0 +1,15 @@
+method,design,apc_spend_exp_high_liquidity,apc_spend_exp_low_liquidity
+mean_weighted,UI onset (waiting),0.2910168939595488,0.533158417789131
+median_weighted,UI onset (waiting),0.3193034492840343,0.5923973199727971
+mean_weighted,FPUC expiration,0.1980448404224801,0.4206806564559676
+median_weighted,FPUC expiration,0.22793295892135806,0.5020531381374934
+mean_weighted,LWA (denominator = total income),0.206916075650217,0.40425677256827547
+median_weighted,LWA (denominator = total income),0.31574479048676063,0.41939717400891685
+mean_weighted,$300 onset,0.19335490376640707,0.3530413762231888
+median_weighted,$300 onset,0.21231542786859356,0.33827132091178425
+mean_weighted,$300 expiration Sept states,0.17472153006065538,0.3558128642026949
+median_weighted,$300 expiration Sept states,0.22552823238963324,0.35156215324944406
+mean_weighted,$300 expiration June states,0.2222344791764827,0.46256519011532843
+median_weighted,$300 expiration June states,0.2618698555218637,0.43727267919496016
+mean_weighted,$300 expiration June vs. Sept states,0.24096507932908603,0.507296224746508
+median_weighted,$300 expiration June vs. Sept states,0.31622710332741116,0.47343999624916855

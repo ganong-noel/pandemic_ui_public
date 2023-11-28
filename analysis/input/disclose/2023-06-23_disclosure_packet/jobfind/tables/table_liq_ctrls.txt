@@ -1,0 +1,84 @@
+Table 1: Expiration, standardized pre-period balance, winsorizing top 10%
+
+=================================================================================================
+                                                              Dependent variable:                
+                                               --------------------------------------------------
+                                                  Base    Control for liquidity Triple difference
+                                                  (1)              (2)                 (3)       
+-------------------------------------------------------------------------------------------------
+PctChange                                      0.0212***        0.0216***           0.0214***    
+                                                (0.0010)        (0.0010)            (0.0010)     
+                                                                                                 
+SuppAvail                                      0.0034***        0.0034***           0.0032***    
+                                                (0.0010)        (0.0010)            (0.0010)     
+                                                                                                 
+Std Balance                                                     0.0006***           0.0024***    
+                                                                (0.0001)            (0.0008)     
+                                                                                                 
+PctChange*SuppAvail                            -0.0163***      -0.0163***          -0.0160***    
+                                                (0.0011)        (0.0011)            (0.0011)     
+                                                                                                 
+SuppAvail*Std Balance                                                               -0.0018*     
+                                                                                    (0.0010)     
+                                                                                                 
+PctChange*Std Balance                                                               -0.0023**    
+                                                                                    (0.0010)     
+                                                                                                 
+PctChange*SuppAvail*Std Balance                                                     0.0025**     
+                                                                                    (0.0012)     
+                                                                                                 
+Constant                                       0.0025***        0.0021***           0.0023***    
+                                                (0.0008)        (0.0008)            (0.0008)     
+                                                                                                 
+-------------------------------------------------------------------------------------------------
+Mean pre-period balance                            -             4004.17                -        
+Min pre-period balance                             -            -2056.63                -        
+Winsorized Max pre-period balance                  -            17641.48                -        
+PctChange*SuppAvail if balance 1 sd above mean                                       -0.0135     
+PctChange*SuppAvail if balance 1 sd below mean                                       -0.0185     
+Number of Households                            183,138          183,138             183,138     
+Observations                                   2,120,802        2,120,802           2,120,802    
+=================================================================================================
+
+
+Table 2: Onset, standardized pre-period balance, winsorizing top 10%
+
+=================================================================================================
+                                                              Dependent variable:                
+                                               --------------------------------------------------
+                                                  Base    Control for liquidity Triple difference
+                                                  (1)              (2)                 (3)       
+-------------------------------------------------------------------------------------------------
+PctChange                                      0.0220***        0.0220***           0.0215***    
+                                                (0.0010)        (0.0010)            (0.0010)     
+                                                                                                 
+SuppAvail                                      0.0077***        0.0077***           0.0075***    
+                                                (0.0008)        (0.0008)            (0.0008)     
+                                                                                                 
+Std Balance                                                      -0.0001            0.0027***    
+                                                                (0.0001)            (0.0005)     
+                                                                                                 
+PctChange*SuppAvail                            -0.0204***      -0.0204***          -0.0200***    
+                                                (0.0013)        (0.0013)            (0.0013)     
+                                                                                                 
+SuppAvail*Std Balance                                                                -0.0003     
+                                                                                    (0.0008)     
+                                                                                                 
+PctChange*Std Balance                                                              -0.0054***    
+                                                                                    (0.0010)     
+                                                                                                 
+PctChange*SuppAvail*Std Balance                                                      0.0014      
+                                                                                    (0.0013)     
+                                                                                                 
+Constant                                       0.0091***        0.0091***           0.0093***    
+                                                (0.0006)        (0.0006)            (0.0006)     
+                                                                                                 
+-------------------------------------------------------------------------------------------------
+Mean pre-period balance                            -             5090.75                -        
+Min pre-period balance                             -            -2066.83                -        
+Winsorized Max pre-period balance                  -            17641.48                -        
+PctChange*SuppAvail if balance 1 sd above mean                                       -0.0186     
+PctChange*SuppAvail if balance 1 sd below mean                                       -0.0214     
+Number of Households                            131,444          131,444             131,444     
+Observations                                   1,789,831        1,789,831           1,789,831    
+=================================================================================================

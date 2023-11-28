@@ -1,0 +1,81 @@
+"","category","apc_category: UI onset (waiting)","apc_category/apc_total: UI onset (waiting)","spend_category_unemp/spend_total_unemp: UI onset (waiting)","empty_col","apc_category: FPUC expiration","apc_category/apc_total: FPUC expiration","spend_category_unemp/spend_total_unemp: FPUC expiration"
+"1","Auto Repair",0.006,0.0342857142857143,0.0250795747211274,"",NA,NA,NA
+"2","Auto Repair",NA,NA,NA,"",0.003,0.0283018867924528,0.0272557719273367
+"3","Auto Repair",NA,NA,NA,"",NA,NA,NA
+"4","Auto Repair",NA,NA,NA,"",NA,NA,NA
+"5","Clothing",0.007,0.04,0.0195439402739002,"",NA,NA,NA
+"6","Clothing",NA,NA,NA,"",0.008,0.0754716981132075,0.0260375520868148
+"7","Clothing",NA,NA,NA,"",NA,NA,NA
+"8","Clothing",NA,NA,NA,"",NA,NA,NA
+"9","Department Stores",0.001,0.00571428571428572,0.00532993376364139,"",NA,NA,NA
+"10","Department Stores",NA,NA,NA,"",0.002,0.0188679245283019,0.00740543155392788
+"11","Department Stores",NA,NA,NA,"",NA,NA,NA
+"12","Department Stores",NA,NA,NA,"",NA,NA,NA
+"13","Discount Stores",0.012,0.0685714285714286,0.055758240270385,"",NA,NA,NA
+"14","Discount Stores",NA,NA,NA,"",0.008,0.0754716981132075,0.0498070659995486
+"15","Discount Stores",NA,NA,NA,"",NA,NA,NA
+"16","Discount Stores",NA,NA,NA,"",NA,NA,NA
+"17","Drug Stores",0.002,0.0114285714285714,0.0168785569504868,"",NA,NA,NA
+"18","Drug Stores",NA,NA,NA,"",0.001,0.00943396226415094,0.0128675608169011
+"19","Drug Stores",NA,NA,NA,"",NA,NA,NA
+"20","Drug Stores",NA,NA,NA,"",NA,NA,NA
+"21","Entertainment",0.003,0.0171428571428571,0.0250400527076016,"",NA,NA,NA
+"22","Entertainment",NA,NA,NA,"",0.001,0.00943396226415094,0.024618885822169
+"23","Entertainment",NA,NA,NA,"",NA,NA,NA
+"24","Entertainment",NA,NA,NA,"",NA,NA,NA
+"25","Flights",0.002,0.0114285714285714,0.00309691773993045,"",NA,NA,NA
+"26","Flights",NA,NA,NA,"",0,0,0.00314626796053872
+"27","Flights",NA,NA,NA,"",NA,NA,NA
+"28","Flights",NA,NA,NA,"",NA,NA,NA
+"29","Groceries",0.04,0.228571428571429,0.216599291118276,"",NA,NA,NA
+"30","Groceries",NA,NA,NA,"",0.02,0.188679245283019,0.187264355059882
+"31","Groceries",NA,NA,NA,"",NA,NA,NA
+"32","Groceries",NA,NA,NA,"",NA,NA,NA
+"33","Healthcare",0.003,0.0171428571428571,0.0203503771850794,"",NA,NA,NA
+"34","Healthcare",NA,NA,NA,"",0.004,0.0377358490566038,0.0241443177138721
+"35","Healthcare",NA,NA,NA,"",NA,NA,NA
+"36","Healthcare",NA,NA,NA,"",NA,NA,NA
+"37","Home Improvement",0.02,0.114285714285714,0.0634397260677184,"",NA,NA,NA
+"38","Home Improvement",NA,NA,NA,"",0.008,0.0754716981132075,0.0495933247720114
+"39","Home Improvement",NA,NA,NA,"",NA,NA,NA
+"40","Home Improvement",NA,NA,NA,"",NA,NA,NA
+"41","Hotels & Rental Cars",0.003,0.0171428571428571,0.0187030591630923,"",NA,NA,NA
+"42","Hotels & Rental Cars",NA,NA,NA,"",0.001,0.00943396226415094,0.026536338323555
+"43","Hotels & Rental Cars",NA,NA,NA,"",NA,NA,NA
+"44","Hotels & Rental Cars",NA,NA,NA,"",NA,NA,NA
+"45","Insurance",0.003,0.0171428571428571,0.031883523286751,"",NA,NA,NA
+"46","Insurance",NA,NA,NA,"",0.003,0.0283018867924528,0.0265327679564277
+"47","Insurance",NA,NA,NA,"",NA,NA,NA
+"48","Insurance",NA,NA,NA,"",NA,NA,NA
+"49","Orgs & Institutions",0.003,0.0171428571428571,0.0247477250821751,"",NA,NA,NA
+"50","Orgs & Institutions",NA,NA,NA,"",0.002,0.0188679245283019,0.025392053699609
+"51","Orgs & Institutions",NA,NA,NA,"",NA,NA,NA
+"52","Orgs & Institutions",NA,NA,NA,"",NA,NA,NA
+"53","Other Retail",0.03,0.171428571428571,0.104394988486737,"",NA,NA,NA
+"54","Other Retail",NA,NA,NA,"",0.018,0.169811320754717,0.103109941278231
+"55","Other Retail",NA,NA,NA,"",NA,NA,NA
+"56","Other Retail",NA,NA,NA,"",NA,NA,NA
+"57","Prof & Personal Services",0.008,0.0457142857142857,0.0469229746607759,"",NA,NA,NA
+"58","Prof & Personal Services",NA,NA,NA,"",0.005,0.0471698113207547,0.0469977977667058
+"59","Prof & Personal Services",NA,NA,NA,"",NA,NA,NA
+"60","Prof & Personal Services",NA,NA,NA,"",NA,NA,NA
+"61","Restaurants",0.017,0.0971428571428572,0.0969951266270369,"",NA,NA,NA
+"62","Restaurants",NA,NA,NA,"",0.01,0.0943396226415094,0.124067109056509
+"63","Restaurants",NA,NA,NA,"",NA,NA,NA
+"64","Restaurants",NA,NA,NA,"",NA,NA,NA
+"65","Schools",0,0,0.00201689111691468,"",NA,NA,NA
+"66","Schools",NA,NA,NA,"",0.001,0.00943396226415094,0.00831233845157503
+"67","Schools",NA,NA,NA,"",NA,NA,NA
+"68","Schools",NA,NA,NA,"",NA,NA,NA
+"69","Telecom",0.005,0.0285714285714286,0.0743627588495935,"",NA,NA,NA
+"70","Telecom",NA,NA,NA,"",0.003,0.0283018867924528,0.0624111665407464
+"71","Telecom",NA,NA,NA,"",NA,NA,NA
+"72","Telecom",NA,NA,NA,"",NA,NA,NA
+"73","Transport",0.005,0.0285714285714286,0.0524824235342532,"",NA,NA,NA
+"74","Transport",NA,NA,NA,"",0.002,0.0188679245283019,0.0652328864930777
+"75","Transport",NA,NA,NA,"",NA,NA,NA
+"76","Transport",NA,NA,NA,"",NA,NA,NA
+"77","Utilities",0.003,0.0171428571428571,0.0963739183945238,"",NA,NA,NA
+"78","Utilities",NA,NA,NA,"",0.006,0.0566037735849057,0.0992670667205607
+"79","Utilities",NA,NA,NA,"",NA,NA,NA
+"80","Utilities",NA,NA,NA,"",NA,NA,NA

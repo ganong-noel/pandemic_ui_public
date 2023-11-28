@@ -1,0 +1,577 @@
+periodid,category,group,measure,value,ct_cust,date,value_jan2020,percent_change,name,liquidity
+201901,Checking account balance,Employed,mean,1098.1911429758325,77292,2019-01-01,1737.7150579488728,-0.36802576581681234,Checking account balance,Low Prepandemic Liquidity
+201901,Checking account balance,Employed,median,491.0435202532984,77292,2019-01-01,976.6161536215228,-0.4971990598021614,Checking account balance,Low Prepandemic Liquidity
+201901,Checking account balance,Unemployed,mean,991.9882244854454,3277,2019-01-01,1499.0406333282333,-0.33825127722989656,Checking account balance,Low Prepandemic Liquidity
+201901,Checking account balance,Unemployed,median,484.3132078411374,3277,2019-01-01,808.3527078084625,-0.4008640001291436,Checking account balance,Low Prepandemic Liquidity
+201901,Income,Employed,mean,5180.227339695933,77292,2019-01-01,5868.809668265409,-0.11732912932802508,Income,Low Prepandemic Liquidity
+201901,Income,Employed,median,4029.4162823308566,77292,2019-01-01,4754.6378974636855,-0.15252930523262165,Income,Low Prepandemic Liquidity
+201901,Income,Unemployed,mean,5150.886985571963,3277,2019-01-01,5764.902476360933,-0.10650925896955754,Income,Low Prepandemic Liquidity
+201901,Income,Unemployed,median,4020.9632177906738,3277,2019-01-01,4674.175849279811,-0.13974926330377213,Income,Low Prepandemic Liquidity
+201901,Spending (card and cash),Employed,mean,2783.3362714761774,77292,2019-01-01,2900.182905399312,-0.04028940164622008,Spending (card and cash),Low Prepandemic Liquidity
+201901,Spending (card and cash),Employed,median,2368.4647135499763,77292,2019-01-01,2514.415073857034,-0.05804545232986302,Spending (card and cash),Low Prepandemic Liquidity
+201901,Spending (card and cash),Unemployed,mean,2793.0704709398415,3277,2019-01-01,2875.499100592657,-0.028665851307630996,Spending (card and cash),Low Prepandemic Liquidity
+201901,Spending (card and cash),Unemployed,median,2366.8479681354684,3277,2019-01-01,2475.3323855685417,-0.04382620211554189,Spending (card and cash),Low Prepandemic Liquidity
+201901,Spending (total),Employed,mean,4392.692236280732,77292,2019-01-01,4653.204008974852,-0.05598546124168613,Spending (total),Low Prepandemic Liquidity
+201901,Spending (total),Employed,median,3541.933108437974,77292,2019-01-01,3825.8536603465304,-0.07421103291306752,Spending (total),Low Prepandemic Liquidity
+201901,Spending (total),Unemployed,mean,4340.374417950989,3277,2019-01-01,4591.773724812898,-0.05474993367016423,Spending (total),Low Prepandemic Liquidity
+201901,Spending (total),Unemployed,median,3542.5892574983245,3277,2019-01-01,3817.862607341564,-0.07210142903359129,Spending (total),Low Prepandemic Liquidity
+201902,Checking account balance,Employed,mean,1516.868142625386,77292,2019-02-01,1737.7150579488728,-0.1270904077819095,Checking account balance,Low Prepandemic Liquidity
+201902,Checking account balance,Employed,median,706.1324821071736,77292,2019-02-01,976.6161536215228,-0.27696006308244236,Checking account balance,Low Prepandemic Liquidity
+201902,Checking account balance,Unemployed,mean,1397.5075544478552,3277,2019-02-01,1499.0406333282333,-0.06773203916090653,Checking account balance,Low Prepandemic Liquidity
+201902,Checking account balance,Unemployed,median,669.7976048939282,3277,2019-02-01,808.3527078084625,-0.1714042664496951,Checking account balance,Low Prepandemic Liquidity
+201902,Income,Employed,mean,5973.17634887207,77292,2019-02-01,5868.809668265409,0.017783279149604425,Income,Low Prepandemic Liquidity
+201902,Income,Employed,median,4835.676390496787,77292,2019-02-01,4754.6378974636855,0.01704409353156633,Income,Low Prepandemic Liquidity
+201902,Income,Unemployed,mean,5956.716442481574,3277,2019-02-01,5764.902476360933,0.03327271656496822,Income,Low Prepandemic Liquidity
+201902,Income,Unemployed,median,4793.532470076614,3277,2019-02-01,4674.175849279811,0.02553532957370308,Income,Low Prepandemic Liquidity
+201902,Spending (card and cash),Employed,mean,2961.3369958670723,77292,2019-02-01,2900.182905399312,0.02108628747307928,Spending (card and cash),Low Prepandemic Liquidity
+201902,Spending (card and cash),Employed,median,2538.1309103102262,77292,2019-02-01,2514.415073857034,0.009431949680771323,Spending (card and cash),Low Prepandemic Liquidity
+201902,Spending (card and cash),Unemployed,mean,2944.87091786201,3277,2019-02-01,2875.499100592657,0.024125139616651303,Spending (card and cash),Low Prepandemic Liquidity
+201902,Spending (card and cash),Unemployed,median,2501.662985527331,3277,2019-02-01,2475.3323855685417,0.010637197700114731,Spending (card and cash),Low Prepandemic Liquidity
+201902,Spending (total),Employed,mean,4614.2143987721265,77292,2019-02-01,4653.204008974852,-0.008379088930449696,Spending (total),Low Prepandemic Liquidity
+201902,Spending (total),Employed,median,3804.722501006532,77292,2019-02-01,3825.8536603465304,-0.005523253426814145,Spending (total),Low Prepandemic Liquidity
+201902,Spending (total),Unemployed,mean,4566.831050044466,3277,2019-02-01,4591.773724812898,-0.005432034822109744,Spending (total),Low Prepandemic Liquidity
+201902,Spending (total),Unemployed,median,3773.7884139019434,3277,2019-02-01,3817.862607341564,-0.011544206267367518,Spending (total),Low Prepandemic Liquidity
+201903,Checking account balance,Employed,mean,1750.6602197140776,77292,2019-03-01,1737.7150579488728,0.007449530753611988,Checking account balance,Low Prepandemic Liquidity
+201903,Checking account balance,Employed,median,1012.4145692581635,77292,2019-03-01,976.6161536215228,0.03665556370728851,Checking account balance,Low Prepandemic Liquidity
+201903,Checking account balance,Unemployed,mean,1580.4905105363966,3277,2019-03-01,1499.0406333282333,0.05433466938606246,Checking account balance,Low Prepandemic Liquidity
+201903,Checking account balance,Unemployed,median,914.6841271926716,3277,2019-03-01,808.3527078084625,0.1315408711532442,Checking account balance,Low Prepandemic Liquidity
+201903,Income,Employed,mean,6191.343043972992,77292,2019-03-01,5868.809668265409,0.05495720494253331,Income,Low Prepandemic Liquidity
+201903,Income,Employed,median,4997.231526463886,77292,2019-03-01,4754.6378974636855,0.05102252458165313,Income,Low Prepandemic Liquidity
+201903,Income,Unemployed,mean,6126.585559310269,3277,2019-03-01,5764.902476360933,0.0627388033765397,Income,Low Prepandemic Liquidity
+201903,Income,Unemployed,median,4940.5425669680935,3277,2019-03-01,4674.175849279811,0.056986884164686336,Income,Low Prepandemic Liquidity
+201903,Spending (card and cash),Employed,mean,3331.0983109029785,77292,2019-03-01,2900.182905399312,0.14858214794019542,Spending (card and cash),Low Prepandemic Liquidity
+201903,Spending (card and cash),Employed,median,2979.616269217642,77292,2019-03-01,2514.415073857034,0.18501368377775607,Spending (card and cash),Low Prepandemic Liquidity
+201903,Spending (card and cash),Unemployed,mean,3309.83254404206,3277,2019-03-01,2875.499100592657,0.1510462804039423,Spending (card and cash),Low Prepandemic Liquidity
+201903,Spending (card and cash),Unemployed,median,2924.1249222266483,3277,2019-03-01,2475.3323855685417,0.18130596895779183,Spending (card and cash),Low Prepandemic Liquidity
+201903,Spending (total),Employed,mean,5104.104118065669,77292,2019-03-01,4653.204008974852,0.09690099729587298,Spending (total),Low Prepandemic Liquidity
+201903,Spending (total),Employed,median,4357.891346668925,77292,2019-03-01,3825.8536603465304,0.13906378381294493,Spending (total),Low Prepandemic Liquidity
+201903,Spending (total),Unemployed,mean,5042.218581290474,3277,2019-03-01,4591.773724812898,0.0980982259738703,Spending (total),Low Prepandemic Liquidity
+201903,Spending (total),Unemployed,median,4327.9982200945615,3277,2019-03-01,3817.862607341564,0.13361811705115612,Spending (total),Low Prepandemic Liquidity
+201904,Checking account balance,Employed,mean,1340.5570243507611,77294,2019-04-01,1737.7150579488728,-0.2285518743601731,Checking account balance,Low Prepandemic Liquidity
+201904,Checking account balance,Employed,median,591.0433263380346,77294,2019-04-01,976.6161536215228,-0.3948048840413845,Checking account balance,Low Prepandemic Liquidity
+201904,Checking account balance,Unemployed,mean,1247.634861419941,3277,2019-04-01,1499.0406333282333,-0.16771111223990676,Checking account balance,Low Prepandemic Liquidity
+201904,Checking account balance,Unemployed,median,513.607476308794,3277,2019-04-01,808.3527078084625,-0.3646245366069927,Checking account balance,Low Prepandemic Liquidity
+201904,Income,Employed,mean,5591.165886411478,77294,2019-04-01,5868.809668265409,-0.047308363628700056,Income,Low Prepandemic Liquidity
+201904,Income,Employed,median,4382.228833977417,77294,2019-04-01,4754.6378974636855,-0.07832543119317803,Income,Low Prepandemic Liquidity
+201904,Income,Unemployed,mean,5564.412247205273,3277,2019-04-01,5764.902476360933,-0.034777731276074975,Income,Low Prepandemic Liquidity
+201904,Income,Unemployed,median,4416.573965112676,3277,2019-04-01,4674.175849279811,-0.0551117228948127,Income,Low Prepandemic Liquidity
+201904,Spending (card and cash),Employed,mean,3076.281867465257,77294,2019-04-01,2900.182905399312,0.06071995036523359,Spending (card and cash),Low Prepandemic Liquidity
+201904,Spending (card and cash),Employed,median,2696.629811720081,77294,2019-04-01,2514.415073857034,0.07246804227256542,Spending (card and cash),Low Prepandemic Liquidity
+201904,Spending (card and cash),Unemployed,mean,3078.498065853469,3277,2019-04-01,2875.499100592657,0.07059608024880704,Spending (card and cash),Low Prepandemic Liquidity
+201904,Spending (card and cash),Unemployed,median,2674.3039891291983,3277,2019-04-01,2475.3323855685417,0.08038177204834507,Spending (card and cash),Low Prepandemic Liquidity
+201904,Spending (total),Employed,mean,4860.365483396569,77294,2019-04-01,4653.204008974852,0.044520178789100084,Spending (total),Low Prepandemic Liquidity
+201904,Spending (total),Employed,median,4009.9638749801634,77294,2019-04-01,3825.8536603465304,0.048122649473465895,Spending (total),Low Prepandemic Liquidity
+201904,Spending (total),Unemployed,mean,4826.8778323059305,3277,2019-04-01,4591.773724812898,0.05120115266625258,Spending (total),Low Prepandemic Liquidity
+201904,Spending (total),Unemployed,median,4069.319513266445,3277,2019-04-01,3817.862607341564,0.06586326743171478,Spending (total),Low Prepandemic Liquidity
+201905,Checking account balance,Employed,mean,1673.0674900567585,77293,2019-05-01,1737.7150579488728,-0.03720262858769352,Checking account balance,Low Prepandemic Liquidity
+201905,Checking account balance,Employed,median,986.7025623021412,77293,2019-05-01,976.6161536215228,0.010327915059786363,Checking account balance,Low Prepandemic Liquidity
+201905,Checking account balance,Unemployed,mean,1499.597639022435,3277,2019-05-01,1499.0406333282333,3.7157478044136383e-4,Checking account balance,Low Prepandemic Liquidity
+201905,Checking account balance,Unemployed,median,882.6027778563529,3277,2019-05-01,808.3527078084625,0.09185355517542693,Checking account balance,Low Prepandemic Liquidity
+201905,Income,Employed,mean,5968.255710116348,77293,2019-05-01,5868.809668265409,0.01694484017579878,Income,Low Prepandemic Liquidity
+201905,Income,Employed,median,4851.68657663676,77293,2019-05-01,4754.6378974636855,0.020411371226575215,Income,Low Prepandemic Liquidity
+201905,Income,Unemployed,mean,5956.877107483302,3277,2019-05-01,5764.902476360933,0.033300586074016536,Income,Low Prepandemic Liquidity
+201905,Income,Unemployed,median,4866.446061511382,3277,2019-05-01,4674.175849279811,0.0411345696934351,Income,Low Prepandemic Liquidity
+201905,Spending (card and cash),Employed,mean,3150.8359818646254,77293,2019-05-01,2900.182905399312,0.08642664433290359,Spending (card and cash),Low Prepandemic Liquidity
+201905,Spending (card and cash),Employed,median,2774.0414184041956,77293,2019-05-01,2514.415073857034,0.10325516548423463,Spending (card and cash),Low Prepandemic Liquidity
+201905,Spending (card and cash),Unemployed,mean,3151.8374670690328,3277,2019-05-01,2875.499100592657,0.09610100953236977,Spending (card and cash),Low Prepandemic Liquidity
+201905,Spending (card and cash),Unemployed,median,2786.008341187017,3277,2019-05-01,2475.3323855685417,0.12550878315564806,Spending (card and cash),Low Prepandemic Liquidity
+201905,Spending (total),Employed,mean,4834.846731579245,77293,2019-05-01,4653.204008974852,0.039036053921996716,Spending (total),Low Prepandemic Liquidity
+201905,Spending (total),Employed,median,4007.909575272835,77293,2019-05-01,3825.8536603465304,0.047585697491057344,Spending (total),Low Prepandemic Liquidity
+201905,Spending (total),Unemployed,mean,4811.897501860829,3277,2019-05-01,4591.773724812898,0.04793872482401129,Spending (total),Low Prepandemic Liquidity
+201905,Spending (total),Unemployed,median,4076.148648454372,3277,2019-05-01,3817.862607341564,0.0676520000002454,Spending (total),Low Prepandemic Liquidity
+201906,Checking account balance,Employed,mean,1596.374949462824,77291,2019-06-01,1737.7150579488728,-0.08133675762289871,Checking account balance,Low Prepandemic Liquidity
+201906,Checking account balance,Employed,median,926.0301868009916,77291,2019-06-01,976.6161536215228,-0.05179718421914947,Checking account balance,Low Prepandemic Liquidity
+201906,Checking account balance,Unemployed,mean,1441.849587367304,3277,2019-06-01,1499.0406333282333,-0.03815176499515649,Checking account balance,Low Prepandemic Liquidity
+201906,Checking account balance,Unemployed,median,843.0475203528105,3277,2019-06-01,808.3527078084625,0.042920388846608315,Checking account balance,Low Prepandemic Liquidity
+201906,Income,Employed,mean,5059.5056703403125,77291,2019-06-01,5868.809668265409,-0.13789917268935648,Income,Low Prepandemic Liquidity
+201906,Income,Employed,median,3958.9604172519716,77291,2019-06-01,4754.6378974636855,-0.16734765030921916,Income,Low Prepandemic Liquidity
+201906,Income,Unemployed,mean,5071.096937692369,3277,2019-06-01,5764.902476360933,-0.12034991771561176,Income,Low Prepandemic Liquidity
+201906,Income,Unemployed,median,3995.8007915508333,3277,2019-06-01,4674.175849279811,-0.14513254948110277,Income,Low Prepandemic Liquidity
+201906,Spending (card and cash),Employed,mean,2997.995172614825,77291,2019-06-01,2900.182905399312,0.033726240863434676,Spending (card and cash),Low Prepandemic Liquidity
+201906,Spending (card and cash),Employed,median,2604.5437886955187,77291,2019-06-01,2514.415073857034,0.03584480373808385,Spending (card and cash),Low Prepandemic Liquidity
+201906,Spending (card and cash),Unemployed,mean,3002.3998317970545,3277,2019-06-01,2875.499100592657,0.04413172349045147,Spending (card and cash),Low Prepandemic Liquidity
+201906,Spending (card and cash),Unemployed,median,2555.49774316172,3277,2019-06-01,2475.3323855685417,0.032385694163963974,Spending (card and cash),Low Prepandemic Liquidity
+201906,Spending (total),Employed,mean,4573.172042067962,77291,2019-06-01,4653.204008974852,-0.017199324756131062,Spending (total),Low Prepandemic Liquidity
+201906,Spending (total),Employed,median,3777.235075756618,77291,2019-06-01,3825.8536603465304,-0.012707904929512903,Spending (total),Low Prepandemic Liquidity
+201906,Spending (total),Unemployed,mean,4548.0147843083905,3277,2019-06-01,4591.773724812898,-0.009529855591107195,Spending (total),Low Prepandemic Liquidity
+201906,Spending (total),Unemployed,median,3797.3685787484446,3277,2019-06-01,3817.862607341564,-0.005367932453543611,Spending (total),Low Prepandemic Liquidity
+201907,Checking account balance,Employed,mean,1222.4752375383844,77292,2019-07-01,1737.7150579488728,-0.29650420421553825,Checking account balance,Low Prepandemic Liquidity
+201907,Checking account balance,Employed,median,482.2470040285007,77292,2019-07-01,976.6161536215228,-0.506206197552421,Checking account balance,Low Prepandemic Liquidity
+201907,Checking account balance,Unemployed,mean,1114.3259457264055,3277,2019-07-01,1499.0406333282333,-0.2566406000267438,Checking account balance,Low Prepandemic Liquidity
+201907,Checking account balance,Unemployed,median,418.99822274914294,3277,2019-07-01,808.3527078084625,-0.48166410689079586,Checking account balance,Low Prepandemic Liquidity
+201907,Income,Employed,mean,5346.757415980748,77292,2019-07-01,5868.809668265409,-0.08895368597614761,Income,Low Prepandemic Liquidity
+201907,Income,Employed,median,4180.879234798159,77292,2019-07-01,4754.6378974636855,-0.12067347188975053,Income,Low Prepandemic Liquidity
+201907,Income,Unemployed,mean,5293.443890209444,3277,2019-07-01,5764.902476360933,-0.08178084331603386,Income,Low Prepandemic Liquidity
+201907,Income,Unemployed,median,4107.205997594803,3277,2019-07-01,4674.175849279811,-0.12129835717934434,Income,Low Prepandemic Liquidity
+201907,Spending (card and cash),Employed,mean,3008.732559988344,77292,2019-07-01,2900.182905399312,0.03742855472561524,Spending (card and cash),Low Prepandemic Liquidity
+201907,Spending (card and cash),Employed,median,2602.4039320300603,77292,2019-07-01,2514.415073857034,0.034993768168138706,Spending (card and cash),Low Prepandemic Liquidity
+201907,Spending (card and cash),Unemployed,mean,2976.318047824035,3277,2019-07-01,2875.499100592657,0.035061373244943406,Spending (card and cash),Low Prepandemic Liquidity
+201907,Spending (card and cash),Unemployed,median,2565.188816282602,3277,2019-07-01,2475.3323855685417,0.0363007534818085,Spending (card and cash),Low Prepandemic Liquidity
+201907,Spending (total),Employed,mean,4720.818404178386,77292,2019-07-01,4653.204008974852,0.014530717989824637,Spending (total),Low Prepandemic Liquidity
+201907,Spending (total),Employed,median,3876.0551986828636,77292,2019-07-01,3825.8536603465304,0.013121656705443963,Spending (total),Low Prepandemic Liquidity
+201907,Spending (total),Unemployed,mean,4645.767375519683,3277,2019-07-01,4591.773724812898,0.01175877862077912,Spending (total),Low Prepandemic Liquidity
+201907,Spending (total),Unemployed,median,3797.939110243199,3277,2019-07-01,3817.862607341564,-0.005218495044859051,Spending (total),Low Prepandemic Liquidity
+201908,Checking account balance,Employed,mean,1636.2681163926584,77291,2019-08-01,1737.7150579488728,-0.05837950306764228,Checking account balance,Low Prepandemic Liquidity
+201908,Checking account balance,Employed,median,925.1424905615077,77291,2019-08-01,976.6161536215228,-0.052706135229423245,Checking account balance,Low Prepandemic Liquidity
+201908,Checking account balance,Unemployed,mean,1407.0981390656545,3277,2019-08-01,1499.0406333282333,-0.061334224182065133,Checking account balance,Low Prepandemic Liquidity
+201908,Checking account balance,Unemployed,median,766.598697787915,3277,2019-08-01,808.3527078084625,-0.05165320734032974,Checking account balance,Low Prepandemic Liquidity
+201908,Income,Employed,mean,5885.8925954965625,77291,2019-08-01,5868.809668265409,0.002910799326740321,Income,Low Prepandemic Liquidity
+201908,Income,Employed,median,4747.091164024755,77291,2019-08-01,4754.6378974636855,-0.0015872362105547877,Income,Low Prepandemic Liquidity
+201908,Income,Unemployed,mean,5823.573149418442,3277,2019-08-01,5764.902476360933,0.010177218660348375,Income,Low Prepandemic Liquidity
+201908,Income,Unemployed,median,4737.790578145258,3277,2019-08-01,4674.175849279811,0.013609827896237325,Income,Low Prepandemic Liquidity
+201908,Spending (card and cash),Employed,mean,3109.3216193587673,77291,2019-08-01,2900.182905399312,0.07211224973780062,Spending (card and cash),Low Prepandemic Liquidity
+201908,Spending (card and cash),Employed,median,2728.6101971433595,77291,2019-08-01,2514.415073857034,0.08518685936676196,Spending (card and cash),Low Prepandemic Liquidity
+201908,Spending (card and cash),Unemployed,mean,3108.7881248632248,3277,2019-08-01,2875.499100592657,0.08112992427035892,Spending (card and cash),Low Prepandemic Liquidity
+201908,Spending (card and cash),Unemployed,median,2687.6354417658604,3277,2019-08-01,2475.3323855685417,0.0857674942706963,Spending (card and cash),Low Prepandemic Liquidity
+201908,Spending (total),Employed,mean,4780.055347109741,77291,2019-08-01,4653.204008974852,0.027261073851527984,Spending (total),Low Prepandemic Liquidity
+201908,Spending (total),Employed,median,3934.362719037116,77291,2019-08-01,3825.8536603465304,0.02836205153773652,Spending (total),Low Prepandemic Liquidity
+201908,Spending (total),Unemployed,mean,4737.069578916846,3277,2019-08-01,4591.773724812898,0.0316426424322267,Spending (total),Low Prepandemic Liquidity
+201908,Spending (total),Unemployed,median,3979.8759770091096,3277,2019-08-01,3817.862607341564,0.042435620746540614,Spending (total),Low Prepandemic Liquidity
+201909,Checking account balance,Employed,mean,1285.3690121712625,77290,2019-09-01,1737.7150579488728,-0.2603108281236516,Checking account balance,Low Prepandemic Liquidity
+201909,Checking account balance,Employed,median,562.5672999787492,77290,2019-09-01,976.6161536215228,-0.4239627330629161,Checking account balance,Low Prepandemic Liquidity
+201909,Checking account balance,Unemployed,mean,1137.2525258002147,3277,2019-09-01,1499.0406333282333,-0.24134643150050006,Checking account balance,Low Prepandemic Liquidity
+201909,Checking account balance,Unemployed,median,481.4026331935479,3277,2019-09-01,808.3527078084625,-0.404464624732085,Checking account balance,Low Prepandemic Liquidity
+201909,Income,Employed,mean,5096.13161085957,77290,2019-09-01,5868.809668265409,-0.13165839430506054,Income,Low Prepandemic Liquidity
+201909,Income,Employed,median,3992.234104299196,77290,2019-09-01,4754.6378974636855,-0.16034949655602293,Income,Low Prepandemic Liquidity
+201909,Income,Unemployed,mean,5146.750815527358,3277,2019-09-01,5764.902476360933,-0.10722673338678579,Income,Low Prepandemic Liquidity
+201909,Income,Unemployed,median,4095.5946087560483,3277,2019-09-01,4674.175849279811,-0.12378251464649315,Income,Low Prepandemic Liquidity
+201909,Spending (card and cash),Employed,mean,2859.1481181695235,77290,2019-09-01,2900.182905399312,-0.014149034239665848,Spending (card and cash),Low Prepandemic Liquidity
+201909,Spending (card and cash),Employed,median,2464.955163353112,77290,2019-09-01,2514.415073857034,-0.01967054326796247,Spending (card and cash),Low Prepandemic Liquidity
+201909,Spending (card and cash),Unemployed,mean,2863.2236883820765,3277,2019-09-01,2875.499100592657,-0.00426896750134631,Spending (card and cash),Low Prepandemic Liquidity
+201909,Spending (card and cash),Unemployed,median,2446.5382543182777,3277,2019-09-01,2475.3323855685417,-0.011632430221547918,Spending (card and cash),Low Prepandemic Liquidity
+201909,Spending (total),Employed,mean,4506.426448833819,77290,2019-09-01,4653.204008974852,-0.031543332262659374,Spending (total),Low Prepandemic Liquidity
+201909,Spending (total),Employed,median,3689.582903291075,77290,2019-09-01,3825.8536603465304,-0.035618392430387,Spending (total),Low Prepandemic Liquidity
+201909,Spending (total),Unemployed,mean,4473.412105368991,3277,2019-09-01,4591.773724812898,-0.025776884170991998,Spending (total),Low Prepandemic Liquidity
+201909,Spending (total),Unemployed,median,3729.774955008771,3277,2019-09-01,3817.862607341564,-0.023072504537854366,Spending (total),Low Prepandemic Liquidity
+201910,Checking account balance,Employed,mean,1279.720750535356,77290,2019-10-01,1737.7150579488728,-0.26356122387183223,Checking account balance,Low Prepandemic Liquidity
+201910,Checking account balance,Employed,median,532.6665540729571,77290,2019-10-01,976.6161536215228,-0.4545794147498954,Checking account balance,Low Prepandemic Liquidity
+201910,Checking account balance,Unemployed,mean,1198.2111708359957,3277,2019-10-01,1499.0406333282333,-0.20068132631223168,Checking account balance,Low Prepandemic Liquidity
+201910,Checking account balance,Unemployed,median,526.7570466362366,3277,2019-10-01,808.3527078084625,-0.34835741682076404,Checking account balance,Low Prepandemic Liquidity
+201910,Income,Employed,mean,5453.731090664481,77290,2019-10-01,5868.809668265409,-0.07072619509973121,Income,Low Prepandemic Liquidity
+201910,Income,Employed,median,4316.714173890475,77290,2019-10-01,4754.6378974636855,-0.09210453729963686,Income,Low Prepandemic Liquidity
+201910,Income,Unemployed,mean,5573.9563306983055,3277,2019-10-01,5764.902476360933,-0.033122181415141894,Income,Low Prepandemic Liquidity
+201910,Income,Unemployed,median,4442.516139090765,3277,2019-10-01,4674.175849279811,-0.049561616348845594,Income,Low Prepandemic Liquidity
+201910,Spending (card and cash),Employed,mean,2931.4961393098756,77290,2019-10-01,2900.182905399312,0.010796985890878519,Spending (card and cash),Low Prepandemic Liquidity
+201910,Spending (card and cash),Employed,median,2541.8000979501926,77290,2019-10-01,2514.415073857034,0.010891210595214584,Spending (card and cash),Low Prepandemic Liquidity
+201910,Spending (card and cash),Unemployed,mean,2926.3038158169143,3277,2019-10-01,2875.499100592657,0.01766813810297685,Spending (card and cash),Low Prepandemic Liquidity
+201910,Spending (card and cash),Unemployed,median,2515.240315494834,3277,2019-10-01,2475.3323855685417,0.01612225095868336,Spending (card and cash),Low Prepandemic Liquidity
+201910,Spending (total),Employed,mean,4597.994508659944,77290,2019-10-01,4653.204008974852,-0.011864835543084484,Spending (total),Low Prepandemic Liquidity
+201910,Spending (total),Employed,median,3782.0498875018616,77290,2019-10-01,3825.8536603465304,-0.011449411486559868,Spending (total),Low Prepandemic Liquidity
+201910,Spending (total),Unemployed,mean,4583.886334139456,3277,2019-10-01,4591.773724812898,-0.001717721984169196,Spending (total),Low Prepandemic Liquidity
+201910,Spending (total),Unemployed,median,3813.4919577937767,3277,2019-10-01,3817.862607341564,-0.0011447896368461663,Spending (total),Low Prepandemic Liquidity
+201911,Checking account balance,Employed,mean,1744.0857416701301,77292,2019-11-01,1737.7150579488728,0.0036661267865039093,Checking account balance,Low Prepandemic Liquidity
+201911,Checking account balance,Employed,median,995.6664125054077,77292,2019-11-01,976.6161536215228,0.01950639339032234,Checking account balance,Low Prepandemic Liquidity
+201911,Checking account balance,Unemployed,mean,1500.0956195012777,3277,2019-11-01,1499.0406333282333,7.037742337259179e-4,Checking account balance,Low Prepandemic Liquidity
+201911,Checking account balance,Unemployed,median,863.5930139082485,3277,2019-11-01,808.3527078084625,0.06833688508268732,Checking account balance,Low Prepandemic Liquidity
+201911,Income,Employed,mean,5829.40908712948,77292,2019-11-01,5868.809668265409,-0.00671355579121613,Income,Low Prepandemic Liquidity
+201911,Income,Employed,median,4691.176213122213,77292,2019-11-01,4754.6378974636855,-0.013347322279857576,Income,Low Prepandemic Liquidity
+201911,Income,Unemployed,mean,5754.954146645766,3277,2019-11-01,5764.902476360933,-0.0017256718142172334,Income,Low Prepandemic Liquidity
+201911,Income,Unemployed,median,4592.739736129969,3277,2019-11-01,4674.175849279811,-0.0174225608483235,Income,Low Prepandemic Liquidity
+201911,Spending (card and cash),Employed,mean,3026.2814091243094,77292,2019-11-01,2900.182905399312,0.043479500375730895,Spending (card and cash),Low Prepandemic Liquidity
+201911,Spending (card and cash),Employed,median,2647.588374792396,77292,2019-11-01,2514.415073857034,0.052963928796003534,Spending (card and cash),Low Prepandemic Liquidity
+201911,Spending (card and cash),Unemployed,mean,3030.699516139717,3277,2019-11-01,2875.499100592657,0.053973383443268075,Spending (card and cash),Low Prepandemic Liquidity
+201911,Spending (card and cash),Unemployed,median,2610.9020434358345,3277,2019-11-01,2475.3323855685417,0.05476826411583291,Spending (card and cash),Low Prepandemic Liquidity
+201911,Spending (total),Employed,mean,4671.452460862762,77292,2019-11-01,4653.204008974852,0.0039216960727948,Spending (total),Low Prepandemic Liquidity
+201911,Spending (total),Employed,median,3860.493519089151,77292,2019-11-01,3825.8536603465304,0.009054151522220888,Spending (total),Low Prepandemic Liquidity
+201911,Spending (total),Unemployed,mean,4644.853265472439,3277,2019-11-01,4591.773724812898,0.011559703034300428,Spending (total),Low Prepandemic Liquidity
+201911,Spending (total),Unemployed,median,3890.7270095969657,3277,2019-11-01,3817.862607341564,0.019085129495044484,Spending (total),Low Prepandemic Liquidity
+201912,Checking account balance,Employed,mean,1420.7568570080248,77292,2019-12-01,1737.7150579488728,-0.18239940978296654,Checking account balance,Low Prepandemic Liquidity
+201912,Checking account balance,Employed,median,606.4475083854774,77292,2019-12-01,976.6161536215228,-0.3790318682149306,Checking account balance,Low Prepandemic Liquidity
+201912,Checking account balance,Unemployed,mean,1250.6768321387508,3277,2019-12-01,1499.0406333282333,-0.16568183387934898,Checking account balance,Low Prepandemic Liquidity
+201912,Checking account balance,Unemployed,median,533.3536484883443,3277,2019-12-01,808.3527078084625,-0.3401968678569437,Checking account balance,Low Prepandemic Liquidity
+201912,Income,Employed,mean,5584.523232918026,77292,2019-12-01,5868.809668265409,-0.048440220660862954,Income,Low Prepandemic Liquidity
+201912,Income,Employed,median,4387.657844464471,77292,2019-12-01,4754.6378974636855,-0.07718359650373718,Income,Low Prepandemic Liquidity
+201912,Income,Unemployed,mean,5564.811981227752,3277,2019-12-01,5764.902476360933,-0.03470839202461018,Income,Low Prepandemic Liquidity
+201912,Income,Unemployed,median,4499.800865716971,3277,2019-12-01,4674.175849279811,-0.03730603836603774,Income,Low Prepandemic Liquidity
+201912,Spending (card and cash),Employed,mean,3163.4957347393915,77292,2019-12-01,2900.182905399312,0.0907918010446398,Spending (card and cash),Low Prepandemic Liquidity
+201912,Spending (card and cash),Employed,median,2769.80435509932,77292,2019-12-01,2514.415073857034,0.10157005655018092,Spending (card and cash),Low Prepandemic Liquidity
+201912,Spending (card and cash),Unemployed,mean,3139.7622444853823,3277,2019-12-01,2875.499100592657,0.09190166111971965,Spending (card and cash),Low Prepandemic Liquidity
+201912,Spending (card and cash),Unemployed,median,2752.4636322002207,3277,2019-12-01,2475.3323855685417,0.11195718532484134,Spending (card and cash),Low Prepandemic Liquidity
+201912,Spending (total),Employed,mean,4948.854016691075,77292,2019-12-01,4653.204008974852,0.0635368677466086,Spending (total),Low Prepandemic Liquidity
+201912,Spending (total),Employed,median,4130.279445735887,77292,2019-12-01,3825.8536603465304,0.07957068210543694,Spending (total),Low Prepandemic Liquidity
+201912,Spending (total),Unemployed,mean,4859.040946650822,3277,2019-12-01,4591.773724812898,0.058205660351613675,Spending (total),Low Prepandemic Liquidity
+201912,Spending (total),Unemployed,median,4090.7897219357073,3277,2019-12-01,3817.862607341564,0.07148688747188481,Spending (total),Low Prepandemic Liquidity
+202001,Checking account balance,Employed,mean,1737.7150579488728,77286,2020-01-01,1737.7150579488728,0,Checking account balance,Low Prepandemic Liquidity
+202001,Checking account balance,Employed,median,976.6161536215228,77286,2020-01-01,976.6161536215228,0,Checking account balance,Low Prepandemic Liquidity
+202001,Checking account balance,Unemployed,mean,1499.0406333282333,3277,2020-01-01,1499.0406333282333,0,Checking account balance,Low Prepandemic Liquidity
+202001,Checking account balance,Unemployed,median,808.3527078084625,3277,2020-01-01,808.3527078084625,0,Checking account balance,Low Prepandemic Liquidity
+202001,Income,Employed,mean,5868.809668265409,77286,2020-01-01,5868.809668265409,0,Income,Low Prepandemic Liquidity
+202001,Income,Employed,median,4754.6378974636855,77286,2020-01-01,4754.6378974636855,0,Income,Low Prepandemic Liquidity
+202001,Income,Unemployed,mean,5764.902476360933,3277,2020-01-01,5764.902476360933,0,Income,Low Prepandemic Liquidity
+202001,Income,Unemployed,median,4674.175849279811,3277,2020-01-01,4674.175849279811,0,Income,Low Prepandemic Liquidity
+202001,Spending (card and cash),Employed,mean,2900.182905399312,77286,2020-01-01,2900.182905399312,0,Spending (card and cash),Low Prepandemic Liquidity
+202001,Spending (card and cash),Employed,median,2514.415073857034,77286,2020-01-01,2514.415073857034,0,Spending (card and cash),Low Prepandemic Liquidity
+202001,Spending (card and cash),Unemployed,mean,2875.499100592657,3277,2020-01-01,2875.499100592657,0,Spending (card and cash),Low Prepandemic Liquidity
+202001,Spending (card and cash),Unemployed,median,2475.3323855685417,3277,2020-01-01,2475.3323855685417,0,Spending (card and cash),Low Prepandemic Liquidity
+202001,Spending (total),Employed,mean,4653.204008974852,77286,2020-01-01,4653.204008974852,0,Spending (total),Low Prepandemic Liquidity
+202001,Spending (total),Employed,median,3825.8536603465304,77286,2020-01-01,3825.8536603465304,0,Spending (total),Low Prepandemic Liquidity
+202001,Spending (total),Unemployed,mean,4591.773724812898,3277,2020-01-01,4591.773724812898,0,Spending (total),Low Prepandemic Liquidity
+202001,Spending (total),Unemployed,median,3817.862607341564,3277,2020-01-01,3817.862607341564,0,Spending (total),Low Prepandemic Liquidity
+202002,Checking account balance,Employed,mean,2164.2998307694224,77285,2020-02-01,1737.7150579488728,0.24548603113566436,Checking account balance,Low Prepandemic Liquidity
+202002,Checking account balance,Employed,median,1214.6733286074518,77285,2020-02-01,976.6161536215228,0.24375715484856242,Checking account balance,Low Prepandemic Liquidity
+202002,Checking account balance,Unemployed,mean,1944.8798293151597,3277,2020-02-01,1499.0406333282333,0.29741635154816004,Checking account balance,Low Prepandemic Liquidity
+202002,Checking account balance,Unemployed,median,1041.1543634427778,3277,2020-02-01,808.3527078084625,0.2879951454179792,Checking account balance,Low Prepandemic Liquidity
+202002,Income,Employed,mean,6126.996002299681,77285,2020-02-01,5868.809668265409,0.04399296426843957,Income,Low Prepandemic Liquidity
+202002,Income,Employed,median,5010.51154311217,77285,2020-02-01,4754.6378974636855,0.0538155904122537,Income,Low Prepandemic Liquidity
+202002,Income,Unemployed,mean,6067.141905668383,3277,2020-02-01,5764.902476360933,0.05242750082014158,Income,Low Prepandemic Liquidity
+202002,Income,Unemployed,median,4977.819670557195,3277,2020-02-01,4674.175849279811,0.0649620020873134,Income,Low Prepandemic Liquidity
+202002,Spending (card and cash),Employed,mean,2926.3094628346103,77285,2020-02-01,2900.182905399312,0.009008589557113256,Spending (card and cash),Low Prepandemic Liquidity
+202002,Spending (card and cash),Employed,median,2530.9815976645264,77285,2020-02-01,2514.415073857034,0.006588619349183311,Spending (card and cash),Low Prepandemic Liquidity
+202002,Spending (card and cash),Unemployed,mean,2912.56317361645,3277,2020-02-01,2875.499100592657,0.01288961384691567,Spending (card and cash),Low Prepandemic Liquidity
+202002,Spending (card and cash),Unemployed,median,2490.1693604389684,3277,2020-02-01,2475.3323855685417,0.0059939323530560085,Spending (card and cash),Low Prepandemic Liquidity
+202002,Spending (total),Employed,mean,4667.314582347629,77285,2020-02-01,4653.204008974852,0.0030324424516015025,Spending (total),Low Prepandemic Liquidity
+202002,Spending (total),Employed,median,3893.661154132468,77285,2020-02-01,3825.8536603465304,0.017723493841057092,Spending (total),Low Prepandemic Liquidity
+202002,Spending (total),Unemployed,mean,4557.46520597975,3277,2020-02-01,4591.773724812898,-0.00747173551861946,Spending (total),Low Prepandemic Liquidity
+202002,Spending (total),Unemployed,median,3807.8065631344066,3277,2020-02-01,3817.862607341564,-0.002633946069148796,Spending (total),Low Prepandemic Liquidity
+202003,Checking account balance,Employed,mean,1799.4824795154461,77285,2020-03-01,1737.7150579488728,0.035545195562430854,Checking account balance,Low Prepandemic Liquidity
+202003,Checking account balance,Employed,median,849.0274572716385,77285,2020-03-01,976.6161536215228,-0.13064364732935796,Checking account balance,Low Prepandemic Liquidity
+202003,Checking account balance,Unemployed,mean,1769.8674874513915,3277,2020-03-01,1499.0406333282333,0.18066678654457613,Checking account balance,Low Prepandemic Liquidity
+202003,Checking account balance,Unemployed,median,858.2042489242103,3277,2020-03-01,808.3527078084625,0.06167053148235402,Checking account balance,Low Prepandemic Liquidity
+202003,Income,Employed,mean,5861.150372009368,77285,2020-03-01,5868.809668265409,-0.0013050851346325665,Income,Low Prepandemic Liquidity
+202003,Income,Employed,median,4636.981536061367,77285,2020-03-01,4754.6378974636855,-0.024745598705861793,Income,Low Prepandemic Liquidity
+202003,Income,Unemployed,mean,5708.389192199314,3277,2020-03-01,5764.902476360933,-0.00980299049174782,Income,Low Prepandemic Liquidity
+202003,Income,Unemployed,median,4512.408975702313,3277,2020-03-01,4674.175849279811,-0.03460864092274629,Income,Low Prepandemic Liquidity
+202003,Spending (card and cash),Employed,mean,3089.1053130471796,77285,2020-03-01,2900.182905399312,0.0651415492782017,Spending (card and cash),Low Prepandemic Liquidity
+202003,Spending (card and cash),Employed,median,2711.491043632368,77285,2020-03-01,2514.415073857034,0.07837845542065813,Spending (card and cash),Low Prepandemic Liquidity
+202003,Spending (card and cash),Unemployed,mean,2933.081639801106,3277,2020-03-01,2875.499100592657,0.020025232905334978,Spending (card and cash),Low Prepandemic Liquidity
+202003,Spending (card and cash),Unemployed,median,2531.572425700417,3277,2020-03-01,2475.3323855685417,0.022720197279266774,Spending (card and cash),Low Prepandemic Liquidity
+202003,Spending (total),Employed,mean,4975.893272198091,77285,2020-03-01,4653.204008974852,0.06934775750232602,Spending (total),Low Prepandemic Liquidity
+202003,Spending (total),Employed,median,4223.528529753302,77285,2020-03-01,3825.8536603465304,0.10394408796356092,Spending (total),Low Prepandemic Liquidity
+202003,Spending (total),Unemployed,mean,4663.140771506166,3277,2020-03-01,4591.773724812898,0.015542370110185777,Spending (total),Low Prepandemic Liquidity
+202003,Spending (total),Unemployed,median,3971.230787706826,3277,2020-03-01,3817.862607341564,0.04017121518997113,Spending (total),Low Prepandemic Liquidity
+202004,Checking account balance,Employed,mean,2258.0603043041215,77285,2020-04-01,1737.7150579488728,0.2994422152095768,Checking account balance,Low Prepandemic Liquidity
+202004,Checking account balance,Employed,median,1263.6674313730432,77285,2020-04-01,976.6161536215228,0.2939243598286456,Checking account balance,Low Prepandemic Liquidity
+202004,Checking account balance,Unemployed,mean,3021.7282829172964,3277,2020-04-01,1499.0406333282333,1.0157747666975028,Checking account balance,Low Prepandemic Liquidity
+202004,Checking account balance,Unemployed,median,2074.768912799942,3277,2020-04-01,808.3527078084625,1.5666629093442146,Checking account balance,Low Prepandemic Liquidity
+202004,Income,Employed,mean,6518.249439372713,77285,2020-04-01,5868.809668265409,0.110659538785018,Income,Low Prepandemic Liquidity
+202004,Income,Employed,median,5554.231837591184,77285,2020-04-01,4754.6378974636855,0.16817136391270382,Income,Low Prepandemic Liquidity
+202004,Income,Unemployed,mean,7761.101684768313,3277,2020-04-01,5764.902476360933,0.3462676457395115,Income,Low Prepandemic Liquidity
+202004,Income,Unemployed,median,6828.714286983666,3277,2020-04-01,4674.175849279811,0.4609450964571269,Income,Low Prepandemic Liquidity
+202004,Spending (card and cash),Employed,mean,2740.571137885177,77285,2020-04-01,2900.182905399312,-0.055035069414754334,Spending (card and cash),Low Prepandemic Liquidity
+202004,Spending (card and cash),Employed,median,2401.3512954352714,77285,2020-04-01,2514.415073857034,-0.044966234730817956,Spending (card and cash),Low Prepandemic Liquidity
+202004,Spending (card and cash),Unemployed,mean,2885.42478913831,3277,2020-04-01,2875.499100592657,0.0034518141715318418,Spending (card and cash),Low Prepandemic Liquidity
+202004,Spending (card and cash),Unemployed,median,2521.7771696670293,3277,2020-04-01,2475.3323855685417,0.018763049507720897,Spending (card and cash),Low Prepandemic Liquidity
+202004,Spending (total),Employed,mean,4530.227752254333,77285,2020-04-01,4653.204008974852,-0.02642829682157255,Spending (total),Low Prepandemic Liquidity
+202004,Spending (total),Employed,median,3843.538035550277,77285,2020-04-01,3825.8536603465304,0.004622334457545563,Spending (total),Low Prepandemic Liquidity
+202004,Spending (total),Unemployed,mean,4640.630725423898,3277,2020-04-01,4591.773724812898,0.010640115027225283,Spending (total),Low Prepandemic Liquidity
+202004,Spending (total),Unemployed,median,3979.7980422054247,3277,2020-04-01,3817.862607341564,0.042415207543735844,Spending (total),Low Prepandemic Liquidity
+202005,Checking account balance,Employed,mean,2490.9829096074254,77284,2020-05-01,1737.7150579488728,0.43348180025997984,Checking account balance,Low Prepandemic Liquidity
+202005,Checking account balance,Employed,median,1453.5703853430364,77284,2020-05-01,976.6161536215228,0.48837430135970505,Checking account balance,Low Prepandemic Liquidity
+202005,Checking account balance,Unemployed,mean,3106.362864381136,3277,2020-05-01,1499.0406333282333,1.0722339310337827,Checking account balance,Low Prepandemic Liquidity
+202005,Checking account balance,Unemployed,median,1919.2209848258972,3277,2020-05-01,808.3527078084625,1.3742370951278517,Checking account balance,Low Prepandemic Liquidity
+202005,Income,Employed,mean,5860.688734971836,77284,2020-05-01,5868.809668265409,-0.0013837445329817344,Income,Low Prepandemic Liquidity
+202005,Income,Employed,median,4805.063529887563,77284,2020-05-01,4754.6378974636855,0.010605567345260303,Income,Low Prepandemic Liquidity
+202005,Income,Unemployed,mean,6698.642703485118,3277,2020-05-01,5764.902476360933,0.1619698218578718,Income,Low Prepandemic Liquidity
+202005,Income,Unemployed,median,5585.278444250423,3277,2020-05-01,4674.175849279811,0.19492261830735202,Income,Low Prepandemic Liquidity
+202005,Spending (card and cash),Employed,mean,2985.076552200822,77284,2020-05-01,2900.182905399312,0.029271825112637595,Spending (card and cash),Low Prepandemic Liquidity
+202005,Spending (card and cash),Employed,median,2637.8780984607242,77284,2020-05-01,2514.415073857034,0.04910208576434516,Spending (card and cash),Low Prepandemic Liquidity
+202005,Spending (card and cash),Unemployed,mean,3356.222608398903,3277,2020-05-01,2875.499100592657,0.16717915429261154,Spending (card and cash),Low Prepandemic Liquidity
+202005,Spending (card and cash),Unemployed,median,3082.5063706273695,3277,2020-05-01,2475.3323855685417,0.24528988050199585,Spending (card and cash),Low Prepandemic Liquidity
+202005,Spending (total),Employed,mean,4713.358062610282,77284,2020-05-01,4653.204008974852,0.012927448166770272,Spending (total),Low Prepandemic Liquidity
+202005,Spending (total),Employed,median,3977.5194319013062,77284,2020-05-01,3825.8536603465304,0.03964233476223411,Spending (total),Low Prepandemic Liquidity
+202005,Spending (total),Unemployed,mean,5133.879432738968,3277,2020-05-01,4591.773724812898,0.11806019643273236,Spending (total),Low Prepandemic Liquidity
+202005,Spending (total),Unemployed,median,4578.162799309269,3277,2020-05-01,3817.862607341564,0.19914288966441185,Spending (total),Low Prepandemic Liquidity
+202006,Checking account balance,Employed,mean,2035.1387402630746,77285,2020-06-01,1737.7150579488728,0.1711579127738403,Checking account balance,Low Prepandemic Liquidity
+202006,Checking account balance,Employed,median,919.1322743809887,77285,2020-06-01,976.6161536215228,-0.05886025848269072,Checking account balance,Low Prepandemic Liquidity
+202006,Checking account balance,Unemployed,mean,2991.511995188188,3277,2020-06-01,1499.0406333282333,0.9956176828551384,Checking account balance,Low Prepandemic Liquidity
+202006,Checking account balance,Unemployed,median,1576.9942984135757,3277,2020-06-01,808.3527078084625,0.9508740221690968,Checking account balance,Low Prepandemic Liquidity
+202006,Income,Employed,mean,5401.629997095162,77285,2020-06-01,5868.809668265409,-0.07960382046404424,Income,Low Prepandemic Liquidity
+202006,Income,Employed,median,4278.764104368874,77285,2020-06-01,4754.6378974636855,-0.10008623229724012,Income,Low Prepandemic Liquidity
+202006,Income,Unemployed,mean,6862.557245776107,3277,2020-06-01,5764.902476360933,0.19040300749511774,Income,Low Prepandemic Liquidity
+202006,Income,Unemployed,median,5759.235317391367,3277,2020-06-01,4674.175849279811,0.2321392055197795,Income,Low Prepandemic Liquidity
+202006,Spending (card and cash),Employed,mean,2915.46179685874,77285,2020-06-01,2900.182905399312,0.005268250988923251,Spending (card and cash),Low Prepandemic Liquidity
+202006,Spending (card and cash),Employed,median,2531.845189595997,77285,2020-06-01,2514.415073857034,0.006932075742063448,Spending (card and cash),Low Prepandemic Liquidity
+202006,Spending (card and cash),Unemployed,mean,3469.5138571364455,3277,2020-06-01,2875.499100592657,0.20657796638550785,Spending (card and cash),Low Prepandemic Liquidity
+202006,Spending (card and cash),Unemployed,median,3250.4102717686146,3277,2020-06-01,2475.3323855685417,0.3131207310658002,Spending (card and cash),Low Prepandemic Liquidity
+202006,Spending (total),Employed,mean,4701.412733805275,77285,2020-06-01,4653.204008974852,0.010360329084527775,Spending (total),Low Prepandemic Liquidity
+202006,Spending (total),Employed,median,3908.9523460947453,77285,2020-06-01,3825.8536603465304,0.021720299082398364,Spending (total),Low Prepandemic Liquidity
+202006,Spending (total),Unemployed,mean,5405.400285642929,3277,2020-06-01,4591.773724812898,0.1771922158170336,Spending (total),Low Prepandemic Liquidity
+202006,Spending (total),Unemployed,median,4748.634284381497,3277,2020-06-01,3817.862607341564,0.24379391632640335,Spending (total),Low Prepandemic Liquidity
+202007,Checking account balance,Employed,mean,2385.111297408576,77284,2020-07-01,1737.7150579488728,0.37255603932204107,Checking account balance,Low Prepandemic Liquidity
+202007,Checking account balance,Employed,median,1300.0780474579233,77284,2020-07-01,976.6161536215228,0.33120678235448753,Checking account balance,Low Prepandemic Liquidity
+202007,Checking account balance,Unemployed,mean,3256.072783147718,3277,2020-07-01,1499.0406333282333,1.1721044184896092,Checking account balance,Low Prepandemic Liquidity
+202007,Checking account balance,Unemployed,median,1810.1583296373642,3277,2020-07-01,808.3527078084625,1.239317456540614,Checking account balance,Low Prepandemic Liquidity
+202007,Income,Employed,mean,6195.767596192299,77284,2020-07-01,5868.809668265409,0.05571111458851008,Income,Low Prepandemic Liquidity
+202007,Income,Employed,median,5080.836939565382,77284,2020-07-01,4754.6378974636855,0.068606495202443,Income,Low Prepandemic Liquidity
+202007,Income,Unemployed,mean,7316.253183511746,3277,2020-07-01,5764.902476360933,0.26910268014283845,Income,Low Prepandemic Liquidity
+202007,Income,Unemployed,median,6205.494421028913,3277,2020-07-01,4674.175849279811,0.32761252916598016,Income,Low Prepandemic Liquidity
+202007,Spending (card and cash),Employed,mean,3038.2910734455386,77284,2020-07-01,2900.182905399312,0.047620502758328964,Spending (card and cash),Low Prepandemic Liquidity
+202007,Spending (card and cash),Employed,median,2664.754366047543,77284,2020-07-01,2514.415073857034,0.05979096043195975,Spending (card and cash),Low Prepandemic Liquidity
+202007,Spending (card and cash),Unemployed,mean,3582.4831084292878,3277,2020-07-01,2875.499100592657,0.24586479880689827,Spending (card and cash),Low Prepandemic Liquidity
+202007,Spending (card and cash),Unemployed,median,3379.51117398573,3277,2020-07-01,2475.3323855685417,0.36527570749231475,Spending (card and cash),Low Prepandemic Liquidity
+202007,Spending (total),Employed,mean,4906.261594998796,77284,2020-07-01,4653.204008974852,0.05438351414119391,Spending (total),Low Prepandemic Liquidity
+202007,Spending (total),Employed,median,4095.909250995349,77284,2020-07-01,3825.8536603465304,0.07058701524520883,Spending (total),Low Prepandemic Liquidity
+202007,Spending (total),Unemployed,mean,5569.583501769584,3277,2020-07-01,4591.773724812898,0.21294816242203418,Spending (total),Low Prepandemic Liquidity
+202007,Spending (total),Unemployed,median,4881.499600163915,3277,2020-07-01,3817.862607341564,0.2785948846815567,Spending (total),Low Prepandemic Liquidity
+202008,Checking account balance,Employed,mean,1945.6955577328456,77283,2020-08-01,1737.7150579488728,0.11968619298808658,Checking account balance,Low Prepandemic Liquidity
+202008,Checking account balance,Employed,median,847.7492414488287,77283,2020-08-01,976.6161536215228,-0.13195246842357178,Checking account balance,Low Prepandemic Liquidity
+202008,Checking account balance,Unemployed,mean,2383.5721423982523,3277,2020-08-01,1499.0406333282333,0.5900650652185089,Checking account balance,Low Prepandemic Liquidity
+202008,Checking account balance,Unemployed,median,951.6903989178857,3277,2020-08-01,808.3527078084625,0.17732072859386871,Checking account balance,Low Prepandemic Liquidity
+202008,Income,Employed,mean,5317.986403970171,77283,2020-08-01,5868.809668265409,-0.0938560449955842,Income,Low Prepandemic Liquidity
+202008,Income,Employed,median,4189.137824711581,77283,2020-08-01,4754.6378974636855,-0.11893651734315358,Income,Low Prepandemic Liquidity
+202008,Income,Unemployed,mean,4680.395903884909,3277,2020-08-01,5764.902476360933,-0.18812227560189598,Income,Low Prepandemic Liquidity
+202008,Income,Unemployed,median,3487.2298459545104,3277,2020-08-01,4674.175849279811,-0.2539369594980435,Income,Low Prepandemic Liquidity
+202008,Spending (card and cash),Employed,mean,3021.603837509135,77283,2020-08-01,2900.182905399312,0.04186664637039672,Spending (card and cash),Low Prepandemic Liquidity
+202008,Spending (card and cash),Employed,median,2641.5105893285795,77283,2020-08-01,2514.415073857034,0.05054675212258619,Spending (card and cash),Low Prepandemic Liquidity
+202008,Spending (card and cash),Unemployed,mean,3107.538408698215,3277,2020-08-01,2875.499100592657,0.08069531583499123,Spending (card and cash),Low Prepandemic Liquidity
+202008,Spending (card and cash),Unemployed,median,2680.188737520053,3277,2020-08-01,2475.3323855685417,0.0827591288934959,Spending (card and cash),Low Prepandemic Liquidity
+202008,Spending (total),Employed,mean,4787.9942439926035,77283,2020-08-01,4653.204008974852,0.02896718793282549,Spending (total),Low Prepandemic Liquidity
+202008,Spending (total),Employed,median,4019.211487310153,77283,2020-08-01,3825.8536603465304,0.05053978644497059,Spending (total),Low Prepandemic Liquidity
+202008,Spending (total),Unemployed,mean,4780.728480870163,3277,2020-08-01,4591.773724812898,0.04115071155100636,Spending (total),Low Prepandemic Liquidity
+202008,Spending (total),Unemployed,median,4007.507757882886,3277,2020-08-01,3817.862607341564,0.04967312081284536,Spending (total),Low Prepandemic Liquidity
+202009,Checking account balance,Employed,mean,1813.4387313336638,77284,2020-09-01,1737.7150579488728,0.04357657663056225,Checking account balance,Low Prepandemic Liquidity
+202009,Checking account balance,Employed,median,699.836604616499,77284,2020-09-01,976.6161536215228,-0.28340668744691555,Checking account balance,Low Prepandemic Liquidity
+202009,Checking account balance,Unemployed,mean,2619.7960008281098,3277,2020-09-01,1499.0406333282333,0.7476484243202455,Checking account balance,Low Prepandemic Liquidity
+202009,Checking account balance,Unemployed,median,1238.9893742006477,3277,2020-09-01,808.3527078084625,0.5327336226282844,Checking account balance,Low Prepandemic Liquidity
+202009,Income,Employed,mean,5459.982751318425,77284,2020-09-01,5868.809668265409,-0.0696609602382654,Income,Low Prepandemic Liquidity
+202009,Income,Employed,median,4359.535976298041,77284,2020-09-01,4754.6378974636855,-0.08309821477181434,Income,Low Prepandemic Liquidity
+202009,Income,Unemployed,mean,6074.0149710447995,3277,2020-09-01,5764.902476360933,0.053619726604463125,Income,Low Prepandemic Liquidity
+202009,Income,Unemployed,median,4922.755021328298,3277,2020-09-01,4674.175849279811,0.053181390701590336,Income,Low Prepandemic Liquidity
+202009,Spending (card and cash),Employed,mean,2895.415165011445,77284,2020-09-01,2900.182905399312,-0.001643944724655455,Spending (card and cash),Low Prepandemic Liquidity
+202009,Spending (card and cash),Employed,median,2518.4588901404654,77284,2020-09-01,2514.415073857034,0.0016082532774623903,Spending (card and cash),Low Prepandemic Liquidity
+202009,Spending (card and cash),Unemployed,mean,3160.3647146442295,3277,2020-09-01,2875.499100592657,0.0990664938802659,Spending (card and cash),Low Prepandemic Liquidity
+202009,Spending (card and cash),Unemployed,median,2839.5737349153446,3277,2020-09-01,2475.3323855685417,0.14714846033218398,Spending (card and cash),Low Prepandemic Liquidity
+202009,Spending (total),Employed,mean,4668.205014281781,77284,2020-09-01,4653.204008974852,0.0032238013373142582,Spending (total),Low Prepandemic Liquidity
+202009,Spending (total),Employed,median,3881.3974834203864,77284,2020-09-01,3825.8536603465304,0.014518020814425325,Spending (total),Low Prepandemic Liquidity
+202009,Spending (total),Unemployed,mean,4920.020963800921,3277,2020-09-01,4591.773724812898,0.07148593520936153,Spending (total),Low Prepandemic Liquidity
+202009,Spending (total),Unemployed,median,4157.450332014885,3277,2020-09-01,3817.862607341564,0.08894707840463156,Spending (total),Low Prepandemic Liquidity
+202010,Checking account balance,Employed,mean,2304.804163690711,77283,2020-10-01,1737.7150579488728,0.32634182638159714,Checking account balance,Low Prepandemic Liquidity
+202010,Checking account balance,Employed,median,1242.4658070013786,77283,2020-10-01,976.6161536215228,0.27221508920779436,Checking account balance,Low Prepandemic Liquidity
+202010,Checking account balance,Unemployed,mean,2348.2506645815142,3277,2020-10-01,1499.0406333282333,0.5665023431471827,Checking account balance,Low Prepandemic Liquidity
+202010,Checking account balance,Unemployed,median,997.2653235003462,3277,2020-10-01,808.3527078084625,0.23370072725314128,Checking account balance,Low Prepandemic Liquidity
+202010,Income,Employed,mean,6165.53895062676,77283,2020-10-01,5868.809668265409,0.0505603860295325,Income,Low Prepandemic Liquidity
+202010,Income,Employed,median,5055.231840505079,77283,2020-10-01,4754.6378974636855,0.06322120622513494,Income,Low Prepandemic Liquidity
+202010,Income,Unemployed,mean,5020.599689530519,3277,2020-10-01,5764.902476360933,-0.12910934571442256,Income,Low Prepandemic Liquidity
+202010,Income,Unemployed,median,3836.749166271805,3277,2020-10-01,4674.175849279811,-0.17916028622180213,Income,Low Prepandemic Liquidity
+202010,Spending (card and cash),Employed,mean,3046.9195746405962,77283,2020-10-01,2900.182905399312,0.05059566035235319,Spending (card and cash),Low Prepandemic Liquidity
+202010,Spending (card and cash),Employed,median,2682.437543138153,77283,2020-10-01,2514.415073857034,0.0668236803971185,Spending (card and cash),Low Prepandemic Liquidity
+202010,Spending (card and cash),Unemployed,mean,3002.7963660692512,3277,2020-10-01,2875.499100592657,0.04426962451504757,Spending (card and cash),Low Prepandemic Liquidity
+202010,Spending (card and cash),Unemployed,median,2599.758308605473,3277,2020-10-01,2475.3323855685417,0.05026634958696774,Spending (card and cash),Low Prepandemic Liquidity
+202010,Spending (total),Employed,mean,4838.887632501851,77283,2020-10-01,4653.204008974852,0.039904466507134195,Spending (total),Low Prepandemic Liquidity
+202010,Spending (total),Employed,median,4073.9793441749443,77283,2020-10-01,3825.8536603465304,0.06485498554221736,Spending (total),Low Prepandemic Liquidity
+202010,Spending (total),Unemployed,mean,4657.631366901225,3277,2020-10-01,4591.773724812898,0.014342527754024115,Spending (total),Low Prepandemic Liquidity
+202010,Spending (total),Unemployed,median,3842.054387130844,3277,2020-10-01,3817.862607341564,0.006336472072819177,Spending (total),Low Prepandemic Liquidity
+202011,Checking account balance,Employed,mean,1958.2229716060745,77283,2020-11-01,1737.7150579488728,0.12689532305571438,Checking account balance,Low Prepandemic Liquidity
+202011,Checking account balance,Employed,median,870.9504508985113,77283,2020-11-01,976.6161536215228,-0.10819573517310577,Checking account balance,Low Prepandemic Liquidity
+202011,Checking account balance,Unemployed,mean,2005.0580055877986,3277,2020-11-01,1499.0406333282333,0.337560811234372,Checking account balance,Low Prepandemic Liquidity
+202011,Checking account balance,Unemployed,median,701.7376401526735,3277,2020-11-01,808.3527078084625,-0.13189176782104772,Checking account balance,Low Prepandemic Liquidity
+202011,Income,Employed,mean,5394.877478602395,77283,2020-11-01,5868.809668265409,-0.08075439764654857,Income,Low Prepandemic Liquidity
+202011,Income,Employed,median,4268.176646279844,77283,2020-11-01,4754.6378974636855,-0.10231299663079274,Income,Low Prepandemic Liquidity
+202011,Income,Unemployed,mean,4559.138799914568,3277,2020-11-01,5764.902476360933,-0.20915595387616992,Income,Low Prepandemic Liquidity
+202011,Income,Unemployed,median,3403.12383804756,3277,2020-11-01,4674.175849279811,-0.27193072152561226,Income,Low Prepandemic Liquidity
+202011,Spending (card and cash),Employed,mean,2943.4939383748715,77283,2020-11-01,2900.182905399312,0.01493389706384618,Spending (card and cash),Low Prepandemic Liquidity
+202011,Spending (card and cash),Employed,median,2560.969762180614,77283,2020-11-01,2514.415073857034,0.018515116620012373,Spending (card and cash),Low Prepandemic Liquidity
+202011,Spending (card and cash),Unemployed,mean,2729.2847729305167,3277,2020-11-01,2875.499100592657,-0.05084833016710211,Spending (card and cash),Low Prepandemic Liquidity
+202011,Spending (card and cash),Unemployed,median,2309.1766023110104,3277,2020-11-01,2475.3323855685417,-0.06712463515051059,Spending (card and cash),Low Prepandemic Liquidity
+202011,Spending (total),Employed,mean,4698.865107379912,77283,2020-11-01,4653.204008974852,0.00981282967971997,Spending (total),Low Prepandemic Liquidity
+202011,Spending (total),Employed,median,3921.4468284231557,77283,2020-11-01,3825.8536603465304,0.024986101550984685,Spending (total),Low Prepandemic Liquidity
+202011,Spending (total),Unemployed,mean,4274.936581407635,3277,2020-11-01,4591.773724812898,-0.06900103585094963,Spending (total),Low Prepandemic Liquidity
+202011,Spending (total),Unemployed,median,3496.3547449288562,3277,2020-11-01,3817.862607341564,-0.08421148047456284,Spending (total),Low Prepandemic Liquidity
+202012,Checking account balance,Employed,mean,2372.820745787771,77283,2020-12-01,1737.7150579488728,0.365483215981653,Checking account balance,Low Prepandemic Liquidity
+202012,Checking account balance,Employed,median,1291.3126004305946,77283,2020-12-01,976.6161536215228,0.3222314577145824,Checking account balance,Low Prepandemic Liquidity
+202012,Checking account balance,Unemployed,mean,2090.8492790659575,3277,2020-12-01,1499.0406333282333,0.3947915970921787,Checking account balance,Low Prepandemic Liquidity
+202012,Checking account balance,Unemployed,median,856.8620794332023,3277,2020-12-01,808.3527078084625,0.06001015541378507,Checking account balance,Low Prepandemic Liquidity
+202012,Income,Employed,mean,6505.915592735787,77283,2020-12-01,5868.809668265409,0.108557946241709,Income,Low Prepandemic Liquidity
+202012,Income,Employed,median,5364.910961915862,77283,2020-12-01,4754.6378974636855,0.12835321587322568,Income,Low Prepandemic Liquidity
+202012,Income,Unemployed,mean,5340.564298466663,3277,2020-12-01,5764.902476360933,-0.07360717369188385,Income,Low Prepandemic Liquidity
+202012,Income,Unemployed,median,4031.6618882542093,3277,2020-12-01,4674.175849279811,-0.13746037413731427,Income,Low Prepandemic Liquidity
+202012,Spending (card and cash),Employed,mean,3209.965325666723,77283,2020-12-01,2900.182905399312,0.10681478733313154,Spending (card and cash),Low Prepandemic Liquidity
+202012,Spending (card and cash),Employed,median,2861.623581523228,77283,2020-12-01,2514.415073857034,0.1380871882594894,Spending (card and cash),Low Prepandemic Liquidity
+202012,Spending (card and cash),Unemployed,mean,2942.4789691825617,3277,2020-12-01,2875.499100592657,0.02329330187448142,Spending (card and cash),Low Prepandemic Liquidity
+202012,Spending (card and cash),Unemployed,median,2549.4110316394713,3277,2020-12-01,2475.3323855685417,0.029926747010953436,Spending (card and cash),Low Prepandemic Liquidity
+202012,Spending (total),Employed,mean,5083.189888763434,77283,2020-12-01,4653.204008974852,0.09240641049892684,Spending (total),Low Prepandemic Liquidity
+202012,Spending (total),Employed,median,4299.239931612804,77283,2020-12-01,3825.8536603465304,0.12373350192997079,Spending (total),Low Prepandemic Liquidity
+202012,Spending (total),Unemployed,mean,4613.251562163586,3277,2020-12-01,4591.773724812898,0.004677459874520062,Spending (total),Low Prepandemic Liquidity
+202012,Spending (total),Unemployed,median,3777.98075375492,3277,2020-12-01,3817.862607341564,-0.010446120693278216,Spending (total),Low Prepandemic Liquidity
+202101,Checking account balance,Employed,mean,2339.626906985724,77283,2021-01-01,1737.7150579488728,0.346381212664016,Checking account balance,Low Prepandemic Liquidity
+202101,Checking account balance,Employed,median,1268.65560808849,77283,2021-01-01,976.6161536215228,0.29903197216635835,Checking account balance,Low Prepandemic Liquidity
+202101,Checking account balance,Unemployed,mean,2350.2332704666333,3277,2021-01-01,1499.0406333282333,0.5678249262987263,Checking account balance,Low Prepandemic Liquidity
+202101,Checking account balance,Unemployed,median,1116.3943381928434,3277,2021-01-01,808.3527078084625,0.38107329561561976,Checking account balance,Low Prepandemic Liquidity
+202101,Income,Employed,mean,6241.2527651143055,77283,2021-01-01,5868.809668265409,0.06346143731033216,Income,Low Prepandemic Liquidity
+202101,Income,Employed,median,5169.611672553765,77283,2021-01-01,4754.6378974636855,0.08727768213672871,Income,Low Prepandemic Liquidity
+202101,Income,Unemployed,mean,6187.219636067345,3277,2021-01-01,5764.902476360933,0.07325660085979413,Income,Low Prepandemic Liquidity
+202101,Income,Unemployed,median,5142.6613179223705,3277,2021-01-01,4674.175849279811,0.10022846459975243,Income,Low Prepandemic Liquidity
+202101,Spending (card and cash),Employed,mean,3117.569583415093,77283,2021-01-01,2900.182905399312,0.07495619590442693,Spending (card and cash),Low Prepandemic Liquidity
+202101,Spending (card and cash),Employed,median,2796.831303190529,77283,2021-01-01,2514.415073857034,0.11231885788064333,Spending (card and cash),Low Prepandemic Liquidity
+202101,Spending (card and cash),Unemployed,mean,3085.8850543043504,3277,2021-01-01,2875.499100592657,0.07316502156732763,Spending (card and cash),Low Prepandemic Liquidity
+202101,Spending (card and cash),Unemployed,median,2726.23249941047,3277,2021-01-01,2475.3323855685417,0.10136017098338135,Spending (card and cash),Low Prepandemic Liquidity
+202101,Spending (total),Employed,mean,5007.395009703817,77283,2021-01-01,4653.204008974852,0.07611766001357778,Spending (total),Low Prepandemic Liquidity
+202101,Spending (total),Employed,median,4271.2939997843105,77283,2021-01-01,3825.8536603465304,0.11642900617307816,Spending (total),Low Prepandemic Liquidity
+202101,Spending (total),Unemployed,mean,4891.2917368765275,3277,2021-01-01,4591.773724812898,0.06522926215747571,Spending (total),Low Prepandemic Liquidity
+202101,Spending (total),Unemployed,median,4165.942510827164,3277,2021-01-01,3817.862607341564,0.09117140643465271,Spending (total),Low Prepandemic Liquidity
+202102,Checking account balance,Employed,mean,2529.169126997622,77281,2021-02-01,1737.7150579488728,0.4554567593969916,Checking account balance,Low Prepandemic Liquidity
+202102,Checking account balance,Employed,median,1354.8100114112558,77281,2021-02-01,976.6161536215228,0.3872492343970566,Checking account balance,Low Prepandemic Liquidity
+202102,Checking account balance,Unemployed,mean,2453.567299931749,3277,2021-02-01,1499.0406333282333,0.6367583675728892,Checking account balance,Low Prepandemic Liquidity
+202102,Checking account balance,Unemployed,median,1186.49535492686,3277,2021-02-01,808.3527078084625,0.46779412435394185,Checking account balance,Low Prepandemic Liquidity
+202102,Income,Employed,mean,5862.547647485338,77281,2021-02-01,5868.809668265409,-0.001067000147224384,Income,Low Prepandemic Liquidity
+202102,Income,Employed,median,4711.515245528878,77281,2021-02-01,4754.6378974636855,-0.009069597488761572,Income,Low Prepandemic Liquidity
+202102,Income,Unemployed,mean,5641.703075225803,3277,2021-02-01,5764.902476360933,-0.021370595884372845,Income,Low Prepandemic Liquidity
+202102,Income,Unemployed,median,4534.049055883018,3277,2021-02-01,4674.175849279811,-0.029978930599794062,Income,Low Prepandemic Liquidity
+202102,Spending (card and cash),Employed,mean,2825.1045905041738,77281,2021-02-01,2900.182905399312,-0.025887441359427332,Spending (card and cash),Low Prepandemic Liquidity
+202102,Spending (card and cash),Employed,median,2441.79824827532,77281,2021-02-01,2514.415073857034,-0.02888020611104669,Spending (card and cash),Low Prepandemic Liquidity
+202102,Spending (card and cash),Unemployed,mean,2864.332529979862,3277,2021-02-01,2875.499100592657,-0.0038833504105404426,Spending (card and cash),Low Prepandemic Liquidity
+202102,Spending (card and cash),Unemployed,median,2513.0877517758895,3277,2021-02-01,2475.3323855685417,0.01525264502959911,Spending (card and cash),Low Prepandemic Liquidity
+202102,Spending (total),Employed,mean,4594.837743959582,77281,2021-02-01,4653.204008974852,-0.012543242226795814,Spending (total),Low Prepandemic Liquidity
+202102,Spending (total),Employed,median,3827.9199897483777,77281,2021-02-01,3825.8536603465304,5.400962988375557e-4,Spending (total),Low Prepandemic Liquidity
+202102,Spending (total),Unemployed,mean,4528.289995079264,3277,2021-02-01,4591.773724812898,-0.013825535302530723,Spending (total),Low Prepandemic Liquidity
+202102,Spending (total),Unemployed,median,3801.6535031398917,3277,2021-02-01,3817.862607341564,-0.004245596520551342,Spending (total),Low Prepandemic Liquidity
+202103,Checking account balance,Employed,mean,2752.1602192506743,77281,2021-03-01,1737.7150579488728,0.5837810731174826,Checking account balance,Low Prepandemic Liquidity
+202103,Checking account balance,Employed,median,1358.6368748871362,77281,2021-03-01,976.6161536215228,0.39116772730923044,Checking account balance,Low Prepandemic Liquidity
+202103,Checking account balance,Unemployed,mean,3109.4612049468087,3277,2021-03-01,1499.0406333282333,1.0743008133428988,Checking account balance,Low Prepandemic Liquidity
+202103,Checking account balance,Unemployed,median,1587.280860655389,3277,2021-03-01,808.3527078084625,0.9635993611732814,Checking account balance,Low Prepandemic Liquidity
+202103,Income,Employed,mean,7977.49379216899,77281,2021-03-01,5868.809668265409,0.3593035458801692,Income,Low Prepandemic Liquidity
+202103,Income,Employed,median,7168.65,77281,2021-03-01,4754.6378974636855,0.5077173392792005,Income,Low Prepandemic Liquidity
+202103,Income,Unemployed,mean,8395.696547346473,3277,2021-03-01,5764.902476360933,0.45634667399373186,Income,Low Prepandemic Liquidity
+202103,Income,Unemployed,median,7672.90568881,3277,2021-03-01,4674.175849279811,0.6415526364914639,Income,Low Prepandemic Liquidity
+202103,Spending (card and cash),Employed,mean,3603.1573538679786,77281,2021-03-01,2900.182905399312,0.24238969451200099,Spending (card and cash),Low Prepandemic Liquidity
+202103,Spending (card and cash),Employed,median,3339.672994892019,77281,2021-03-01,2514.415073857034,0.32821069584548157,Spending (card and cash),Low Prepandemic Liquidity
+202103,Spending (card and cash),Unemployed,mean,3727.7089535124687,3277,2021-03-01,2875.499100592657,0.2963693686234039,Spending (card and cash),Low Prepandemic Liquidity
+202103,Spending (card and cash),Unemployed,median,3478.1842493350055,3277,2021-03-01,2475.3323855685417,0.40513826329473956,Spending (card and cash),Low Prepandemic Liquidity
+202103,Spending (total),Employed,mean,5862.19429647866,77281,2021-03-01,4653.204008974852,0.2598188871951397,Spending (total),Low Prepandemic Liquidity
+202103,Spending (total),Employed,median,5222.392543471238,77281,2021-03-01,3825.8536603465304,0.3650267383719572,Spending (total),Low Prepandemic Liquidity
+202103,Spending (total),Unemployed,mean,5956.2584619721965,3277,2021-03-01,4591.773724812898,0.2971585315247427,Spending (total),Low Prepandemic Liquidity
+202103,Spending (total),Unemployed,median,5379.266190897618,3277,2021-03-01,3817.862607341564,0.40897322511123124,Spending (total),Low Prepandemic Liquidity
+202104,Checking account balance,Employed,mean,2938.1720243903856,77281,2021-04-01,1737.7150579488728,0.690824977864025,Checking account balance,Low Prepandemic Liquidity
+202104,Checking account balance,Employed,median,1627.3127393675568,77281,2021-04-01,976.6161536215228,0.6662766976903851,Checking account balance,Low Prepandemic Liquidity
+202104,Checking account balance,Unemployed,mean,2959.788550807971,3277,2021-04-01,1499.0406333282333,0.9744551848714893,Checking account balance,Low Prepandemic Liquidity
+202104,Checking account balance,Unemployed,median,1448.4678079833297,3277,2021-04-01,808.3527078084625,0.7918759892699478,Checking account balance,Low Prepandemic Liquidity
+202104,Income,Employed,mean,6750.343831842259,77281,2021-04-01,5868.809668265409,0.15020663701935955,Income,Low Prepandemic Liquidity
+202104,Income,Employed,median,5642.568328760128,77281,2021-04-01,4754.6378974636855,0.1867503794074623,Income,Low Prepandemic Liquidity
+202104,Income,Unemployed,mean,6424.986325938243,3277,2021-04-01,5764.902476360933,0.11450043643999064,Income,Low Prepandemic Liquidity
+202104,Income,Unemployed,median,5255.3037582303405,3277,2021-04-01,4674.175849279811,0.12432735260485961,Income,Low Prepandemic Liquidity
+202104,Spending (card and cash),Employed,mean,3354.5432639639857,77281,2021-04-01,2900.182905399312,0.15666610465111863,Spending (card and cash),Low Prepandemic Liquidity
+202104,Spending (card and cash),Employed,median,3019.7471034497044,77281,2021-04-01,2514.415073857034,0.20097398987411697,Spending (card and cash),Low Prepandemic Liquidity
+202104,Spending (card and cash),Unemployed,mean,3377.8662610062634,3277,2021-04-01,2875.499100592657,0.17470607461155718,Spending (card and cash),Low Prepandemic Liquidity
+202104,Spending (card and cash),Unemployed,median,3062.1206090216133,3277,2021-04-01,2475.3323855685417,0.2370543151594957,Spending (card and cash),Low Prepandemic Liquidity
+202104,Spending (total),Employed,mean,5387.9896567422675,77281,2021-04-01,4653.204008974852,0.1579096137522018,Spending (total),Low Prepandemic Liquidity
+202104,Spending (total),Employed,median,4652.563584149181,77281,2021-04-01,3825.8536603465304,0.21608508772072854,Spending (total),Low Prepandemic Liquidity
+202104,Spending (total),Unemployed,mean,5419.493291611303,3277,2021-04-01,4591.773724812898,0.18026140145486647,Spending (total),Low Prepandemic Liquidity
+202104,Spending (total),Unemployed,median,4573.166130037799,3277,2021-04-01,3817.862607341564,0.19783412877242457,Spending (total),Low Prepandemic Liquidity
+202105,Checking account balance,Employed,mean,2741.4459930942353,77281,2021-05-01,1737.7150579488728,0.5776153751755626,Checking account balance,Low Prepandemic Liquidity
+202105,Checking account balance,Employed,median,1448.649300545541,77281,2021-05-01,976.6161536215228,0.48333538737159754,Checking account balance,Low Prepandemic Liquidity
+202105,Checking account balance,Unemployed,mean,2871.2681193680855,3277,2021-05-01,1499.0406333282333,0.915403795955267,Checking account balance,Low Prepandemic Liquidity
+202105,Checking account balance,Unemployed,median,1329.9071767688065,3277,2021-05-01,808.3527078084625,0.6452065588724734,Checking account balance,Low Prepandemic Liquidity
+202105,Income,Employed,mean,6016.677984037396,77281,2021-05-01,5868.809668265409,0.025195622984940158,Income,Low Prepandemic Liquidity
+202105,Income,Employed,median,4801.136569348106,77281,2021-05-01,4754.6378974636855,0.009779645240539647,Income,Low Prepandemic Liquidity
+202105,Income,Unemployed,mean,6225.415167929724,3277,2021-05-01,5764.902476360933,0.07988213043622672,Income,Low Prepandemic Liquidity
+202105,Income,Unemployed,median,5069.501244905952,3277,2021-05-01,4674.175849279811,0.08457649185086868,Income,Low Prepandemic Liquidity
+202105,Spending (card and cash),Employed,mean,3353.8214208647496,77281,2021-05-01,2900.182905399312,0.1564172089356477,Spending (card and cash),Low Prepandemic Liquidity
+202105,Spending (card and cash),Employed,median,3034.2600000000007,77281,2021-05-01,2514.415073857034,0.20674586767631054,Spending (card and cash),Low Prepandemic Liquidity
+202105,Spending (card and cash),Unemployed,mean,3477.0885219109337,3277,2021-05-01,2875.499100592657,0.20921217509485057,Spending (card and cash),Low Prepandemic Liquidity
+202105,Spending (card and cash),Unemployed,median,3163.8786128072447,3277,2021-05-01,2475.3323855685417,0.27816313932343095,Spending (card and cash),Low Prepandemic Liquidity
+202105,Spending (total),Employed,mean,5336.776197845178,77281,2021-05-01,4653.204008974852,0.1469035502316014,Spending (total),Low Prepandemic Liquidity
+202105,Spending (total),Employed,median,4566.007144891169,77281,2021-05-01,3825.8536603465304,0.1934610024988772,Spending (total),Low Prepandemic Liquidity
+202105,Spending (total),Unemployed,mean,5453.667879480719,3277,2021-05-01,4591.773724812898,0.18770396938558664,Spending (total),Low Prepandemic Liquidity
+202105,Spending (total),Unemployed,median,4682.680520724836,3277,2021-05-01,3817.862607341564,0.22651886731603943,Spending (total),Low Prepandemic Liquidity
+202106,Checking account balance,Employed,mean,2163.590040193002,77281,2021-06-01,1737.7150579488728,0.24507756913081868,Checking account balance,Low Prepandemic Liquidity
+202106,Checking account balance,Employed,median,868.2654651806121,77281,2021-06-01,976.6161536215228,-0.11094500949950592,Checking account balance,Low Prepandemic Liquidity
+202106,Checking account balance,Unemployed,mean,2694.907838308041,3277,2021-06-01,1499.0406333282333,0.7977550297116982,Checking account balance,Low Prepandemic Liquidity
+202106,Checking account balance,Unemployed,median,1155.5073094536524,3277,2021-06-01,808.3527078084625,0.429459316820211,Checking account balance,Low Prepandemic Liquidity
+202106,Income,Employed,mean,5668.806180547192,77281,2021-06-01,5868.809668265409,-0.03407905504240527,Income,Low Prepandemic Liquidity
+202106,Income,Employed,median,4517.296430628666,77281,2021-06-01,4754.6378974636855,-0.049917884800780965,Income,Low Prepandemic Liquidity
+202106,Income,Unemployed,mean,6296.151405317974,3277,2021-06-01,5764.902476360933,0.09215228377850893,Income,Low Prepandemic Liquidity
+202106,Income,Unemployed,median,5233.273169931264,3277,2021-06-01,4674.175849279811,0.11961409640537979,Income,Low Prepandemic Liquidity
+202106,Spending (card and cash),Employed,mean,3212.650097150853,77281,2021-06-01,2900.182905399312,0.10774051221728698,Spending (card and cash),Low Prepandemic Liquidity
+202106,Spending (card and cash),Employed,median,2854.26783167516,77281,2021-06-01,2514.415073857034,0.1351617564465213,Spending (card and cash),Low Prepandemic Liquidity
+202106,Spending (card and cash),Unemployed,mean,3416.2371485540257,3277,2021-06-01,2875.499100592657,0.18805015374545553,Spending (card and cash),Low Prepandemic Liquidity
+202106,Spending (card and cash),Unemployed,median,3139.50532684896,3277,2021-06-01,2475.3323855685417,0.2683166693703922,Spending (card and cash),Low Prepandemic Liquidity
+202106,Spending (total),Employed,mean,5143.462669019904,77281,2021-06-01,4653.204008974852,0.10535937369164716,Spending (total),Low Prepandemic Liquidity
+202106,Spending (total),Employed,median,4359.419999999999,77281,2021-06-01,3825.8536603465304,0.13946334256944382,Spending (total),Low Prepandemic Liquidity
+202106,Spending (total),Unemployed,mean,5326.3241195510645,3277,2021-06-01,4591.773724812898,0.15997094777750576,Spending (total),Low Prepandemic Liquidity
+202106,Spending (total),Unemployed,median,4562.050270549542,3277,2021-06-01,3817.862607341564,0.19492258882678004,Spending (total),Low Prepandemic Liquidity
+202107,Checking account balance,Employed,mean,2573.1781552074012,77281,2021-07-01,1737.7150579488728,0.4807825618111836,Checking account balance,Low Prepandemic Liquidity
+202107,Checking account balance,Employed,median,1365.238794038215,77281,2021-07-01,976.6161536215228,0.39792772111703045,Checking account balance,Low Prepandemic Liquidity
+202107,Checking account balance,Unemployed,mean,2793.9696575451667,3277,2021-07-01,1499.0406333282333,0.8638385080609039,Checking account balance,Low Prepandemic Liquidity
+202107,Checking account balance,Unemployed,median,1324.4910940624416,3277,2021-07-01,808.3527078084625,0.6385064109617322,Checking account balance,Low Prepandemic Liquidity
+202107,Income,Employed,mean,6624.4149423942445,77281,2021-07-01,5868.809668265409,0.12874932343003787,Income,Low Prepandemic Liquidity
+202107,Income,Employed,median,5521.330559207455,77281,2021-07-01,4754.6378974636855,0.16125153550657423,Income,Low Prepandemic Liquidity
+202107,Income,Unemployed,mean,6356.591323849893,3277,2021-07-01,5764.902476360933,0.10263640190188617,Income,Low Prepandemic Liquidity
+202107,Income,Unemployed,median,5346.747024627287,3277,2021-07-01,4674.175849279811,0.1438908584175549,Income,Low Prepandemic Liquidity
+202107,Spending (card and cash),Employed,mean,3331.584572648613,77281,2021-07-01,2900.182905399312,0.14874981382938102,Spending (card and cash),Low Prepandemic Liquidity
+202107,Spending (card and cash),Employed,median,3024.504523170099,77281,2021-07-01,2514.415073857034,0.2028660480986555,Spending (card and cash),Low Prepandemic Liquidity
+202107,Spending (card and cash),Unemployed,mean,3367.5269829768054,3277,2021-07-01,2875.499100592657,0.17111042819757394,Spending (card and cash),Low Prepandemic Liquidity
+202107,Spending (card and cash),Unemployed,median,3051.70535593224,3277,2021-07-01,2475.3323855685417,0.2328466971643952,Spending (card and cash),Low Prepandemic Liquidity
+202107,Spending (total),Employed,mean,5257.410030117461,77281,2021-07-01,4653.204008974852,0.12984730950485934,Spending (total),Low Prepandemic Liquidity
+202107,Spending (total),Employed,median,4496.501869666518,77281,2021-07-01,3825.8536603465304,0.17529374326859215,Spending (total),Low Prepandemic Liquidity
+202107,Spending (total),Unemployed,mean,5206.495723269498,3277,2021-07-01,4591.773724812898,0.13387462782296589,Spending (total),Low Prepandemic Liquidity
+202107,Spending (total),Unemployed,median,4491.777619060777,3277,2021-07-01,3817.862607341564,0.17651630795286022,Spending (total),Low Prepandemic Liquidity
+202108,Checking account balance,Employed,mean,2091.745509414829,77280,2021-08-01,1737.7150579488728,0.20373331625717706,Checking account balance,Low Prepandemic Liquidity
+202108,Checking account balance,Employed,median,835.2412884217408,77280,2021-08-01,976.6161536215228,-0.14475990866578514,Checking account balance,Low Prepandemic Liquidity
+202108,Checking account balance,Unemployed,mean,2561.4006566562252,3277,2021-08-01,1499.0406333282333,0.7086932800275703,Checking account balance,Low Prepandemic Liquidity
+202108,Checking account balance,Unemployed,median,1115.1788934025506,3277,2021-08-01,808.3527078084625,0.3795696886151707,Checking account balance,Low Prepandemic Liquidity
+202108,Income,Employed,mean,5715.030224454625,77280,2021-08-01,5868.809668265409,-0.026202833709588536,Income,Low Prepandemic Liquidity
+202108,Income,Employed,median,4572.8248957973965,77280,2021-08-01,4754.6378974636855,-0.03823908478146676,Income,Low Prepandemic Liquidity
+202108,Income,Unemployed,mean,6048.73859133528,3277,2021-08-01,5764.902476360933,0.04923519801735088,Income,Low Prepandemic Liquidity
+202108,Income,Unemployed,median,4954.063219770084,3277,2021-08-01,4674.175849279811,0.05987951234941202,Income,Low Prepandemic Liquidity
+202108,Spending (card and cash),Employed,mean,3260.0534094978057,77280,2021-08-01,2900.182905399312,0.12408545110327962,Spending (card and cash),Low Prepandemic Liquidity
+202108,Spending (card and cash),Employed,median,2925.653683079188,77280,2021-08-01,2514.415073857034,0.16355239574320835,Spending (card and cash),Low Prepandemic Liquidity
+202108,Spending (card and cash),Unemployed,mean,3330.8279653252885,3277,2021-08-01,2875.499100592657,0.15834776809312356,Spending (card and cash),Low Prepandemic Liquidity
+202108,Spending (card and cash),Unemployed,median,3046.4903704022718,3277,2021-08-01,2475.3323855685417,0.2307399152387144,Spending (card and cash),Low Prepandemic Liquidity
+202108,Spending (total),Employed,mean,5172.249311560358,77280,2021-08-01,4653.204008974852,0.11154578685662608,Spending (total),Low Prepandemic Liquidity
+202108,Spending (total),Employed,median,4400.070701536249,77280,2021-08-01,3825.8536603465304,0.15008860562055792,Spending (total),Low Prepandemic Liquidity
+202108,Spending (total),Unemployed,mean,5217.764074837971,3277,2021-08-01,4591.773724812898,0.1363286580613421,Spending (total),Low Prepandemic Liquidity
+202108,Spending (total),Unemployed,median,4498.333178052335,3277,2021-08-01,3817.862607341564,0.17823338362209773,Spending (total),Low Prepandemic Liquidity
+202109,Checking account balance,Employed,mean,2112.222112310009,77281,2021-09-01,1737.7150579488728,0.21551695293656992,Checking account balance,Low Prepandemic Liquidity
+202109,Checking account balance,Employed,median,885.35469820108,77281,2021-09-01,976.6161536215228,-0.09344659627226493,Checking account balance,Low Prepandemic Liquidity
+202109,Checking account balance,Unemployed,mean,2385.403772149547,3277,2021-09-01,1499.0406333282333,0.5912869331989838,Checking account balance,Low Prepandemic Liquidity
+202109,Checking account balance,Unemployed,median,948.5684954648268,3277,2021-09-01,808.3527078084625,0.1734586725595384,Checking account balance,Low Prepandemic Liquidity
+202109,Income,Employed,mean,6079.47157451049,77281,2021-09-01,5868.809668265409,0.03589516753017241,Income,Low Prepandemic Liquidity
+202109,Income,Employed,median,4949.982594169578,77281,2021-09-01,4754.6378974636855,0.041085083852567816,Income,Low Prepandemic Liquidity
+202109,Income,Unemployed,mean,5443.720506825077,3277,2021-09-01,5764.902476360933,-0.0557133396189905,Income,Low Prepandemic Liquidity
+202109,Income,Unemployed,median,4391.195411663141,3277,2021-09-01,4674.175849279811,-0.0605412476426771,Income,Low Prepandemic Liquidity
+202109,Spending (card and cash),Employed,mean,3149.676205833621,77281,2021-09-01,2900.182905399312,0.08602674678546096,Spending (card and cash),Low Prepandemic Liquidity
+202109,Spending (card and cash),Employed,median,2779.2958159452933,77281,2021-09-01,2514.415073857034,0.10534487517287294,Spending (card and cash),Low Prepandemic Liquidity
+202109,Spending (card and cash),Unemployed,mean,3038.021247477624,3277,2021-09-01,2875.499100592657,0.05651963057525222,Spending (card and cash),Low Prepandemic Liquidity
+202109,Spending (card and cash),Unemployed,median,2642.114720332113,3277,2021-09-01,2475.3323855685417,0.06737775328110707,Spending (card and cash),Low Prepandemic Liquidity
+202109,Spending (total),Employed,mean,5028.280276179127,77281,2021-09-01,4653.204008974852,0.08060602253433302,Spending (total),Low Prepandemic Liquidity
+202109,Spending (total),Employed,median,4236.135934948599,77281,2021-09-01,3825.8536603465304,0.10723940616299132,Spending (total),Low Prepandemic Liquidity
+202109,Spending (total),Unemployed,mean,4760.421093870805,3277,2021-09-01,4591.773724812898,0.03672815325079615,Spending (total),Low Prepandemic Liquidity
+202109,Spending (total),Unemployed,median,3983.474368297546,3277,2021-09-01,3817.862607341564,0.04337813535707613,Spending (total),Low Prepandemic Liquidity
+202110,Checking account balance,Employed,mean,2508.965176207928,77279,2021-10-01,1737.7150579488728,0.443830025372173,Checking account balance,Low Prepandemic Liquidity
+202110,Checking account balance,Employed,median,1331.2268817302565,77279,2021-10-01,976.6161536215228,0.363101436315336,Checking account balance,Low Prepandemic Liquidity
+202110,Checking account balance,Unemployed,mean,2417.5873783887023,3277,2021-10-01,1499.0406333282333,0.6127564020870286,Checking account balance,Low Prepandemic Liquidity
+202110,Checking account balance,Unemployed,median,1087.2768377329558,3277,2021-10-01,808.3527078084625,0.34505250892359696,Checking account balance,Low Prepandemic Liquidity
+202110,Income,Employed,mean,6582.0140758775215,77279,2021-10-01,5868.809668265409,0.12152454210069963,Income,Low Prepandemic Liquidity
+202110,Income,Employed,median,5468.205,77279,2021-10-01,4754.6378974636855,0.15007811697226403,Income,Low Prepandemic Liquidity
+202110,Income,Unemployed,mean,5410.3216095774515,3277,2021-10-01,5764.902476360933,-0.06150682830064269,Income,Low Prepandemic Liquidity
+202110,Income,Unemployed,median,4362.099436538671,3277,2021-10-01,4674.175849279811,-0.06676608300674514,Income,Low Prepandemic Liquidity
+202110,Spending (card and cash),Employed,mean,3300.2592685762115,77279,2021-10-01,2900.182905399312,0.1379486660762228,Spending (card and cash),Low Prepandemic Liquidity
+202110,Spending (card and cash),Employed,median,2973.5738041114255,77279,2021-10-01,2514.415073857034,0.18261055425111516,Spending (card and cash),Low Prepandemic Liquidity
+202110,Spending (card and cash),Unemployed,mean,2973.2655886457087,3277,2021-10-01,2875.499100592657,0.03399983259702677,Spending (card and cash),Low Prepandemic Liquidity
+202110,Spending (card and cash),Unemployed,median,2587.383126631242,3277,2021-10-01,2475.3323855685417,0.04526694746772919,Spending (card and cash),Low Prepandemic Liquidity
+202110,Spending (total),Employed,mean,5221.208925241755,77279,2021-10-01,4653.204008974852,0.1220674862248392,Spending (total),Low Prepandemic Liquidity
+202110,Spending (total),Employed,median,4449.0196750676205,77279,2021-10-01,3825.8536603465304,0.16288286747085,Spending (total),Low Prepandemic Liquidity
+202110,Spending (total),Unemployed,mean,4696.586838294886,3277,2021-10-01,4591.773724812898,0.022826280161760026,Spending (total),Low Prepandemic Liquidity
+202110,Spending (total),Unemployed,median,3901.7121456526847,3277,2021-10-01,3817.862607341564,0.021962429488657342,Spending (total),Low Prepandemic Liquidity
+202111,Checking account balance,Employed,mean,2161.903167529779,77279,2021-11-01,1737.7150579488728,0.244106827319319,Checking account balance,Low Prepandemic Liquidity
+202111,Checking account balance,Employed,median,875.2464782805481,77279,2021-11-01,976.6161536215228,-0.10379684481469209,Checking account balance,Low Prepandemic Liquidity
+202111,Checking account balance,Unemployed,mean,2074.0600788426195,3277,2021-11-01,1499.0406333282333,0.3835916336955483,Checking account balance,Low Prepandemic Liquidity
+202111,Checking account balance,Unemployed,median,754.2233398050806,3277,2021-11-01,808.3527078084625,-0.06696256161513059,Checking account balance,Low Prepandemic Liquidity
+202111,Income,Employed,mean,5845.4476208685965,77279,2021-11-01,5868.809668265409,-0.003980713077668674,Income,Low Prepandemic Liquidity
+202111,Income,Employed,median,4681.38725228593,77279,2021-11-01,4754.6378974636855,-0.015406145905838664,Income,Low Prepandemic Liquidity
+202111,Income,Unemployed,mean,5090.6968089410175,3277,2021-11-01,5764.902476360933,-0.11695005599565744,Income,Low Prepandemic Liquidity
+202111,Income,Unemployed,median,4043.9441307283714,3277,2021-11-01,4674.175849279811,-0.13483269326474834,Income,Low Prepandemic Liquidity
+202111,Spending (card and cash),Employed,mean,3228.895120718699,77279,2021-11-01,2900.182905399312,0.11334189119845473,Spending (card and cash),Low Prepandemic Liquidity
+202111,Spending (card and cash),Employed,median,2881.7026625780823,77279,2021-11-01,2514.415073857034,0.14607277554920195,Spending (card and cash),Low Prepandemic Liquidity
+202111,Spending (card and cash),Unemployed,mean,2945.5956658122614,3277,2021-11-01,2875.499100592657,0.024377182105588924,Spending (card and cash),Low Prepandemic Liquidity
+202111,Spending (card and cash),Unemployed,median,2561.3867740300557,3277,2021-11-01,2475.3323855685417,0.03476478107070413,Spending (card and cash),Low Prepandemic Liquidity
+202111,Spending (total),Employed,mean,5140.3364114993565,77279,2021-11-01,4653.204008974852,0.10468752317434382,Spending (total),Low Prepandemic Liquidity
+202111,Spending (total),Employed,median,4363.121391331907,77279,2021-11-01,3825.8536603465304,0.14043081065905505,Spending (total),Low Prepandemic Liquidity
+202111,Spending (total),Unemployed,mean,4706.17477225196,3277,2021-11-01,4591.773724812898,0.024914347765192746,Spending (total),Low Prepandemic Liquidity
+202111,Spending (total),Unemployed,median,3914.8732102001572,3277,2021-11-01,3817.862607341564,0.0254096631638987,Spending (total),Low Prepandemic Liquidity
+202112,Checking account balance,Employed,mean,2619.860146055092,77279,2021-12-01,1737.7150579488728,0.5076465695978183,Checking account balance,Low Prepandemic Liquidity
+202112,Checking account balance,Employed,median,1335.1560522094019,77279,2021-12-01,976.6161536215228,0.36712468584338764,Checking account balance,Low Prepandemic Liquidity
+202112,Checking account balance,Unemployed,mean,2308.93815083736,3277,2021-12-01,1499.0406333282333,0.540277227649899,Checking account balance,Low Prepandemic Liquidity
+202112,Checking account balance,Unemployed,median,1038.4451352536564,3277,2021-12-01,808.3527078084625,0.2846436032471531,Checking account balance,Low Prepandemic Liquidity
+202112,Income,Employed,mean,6998.394791602138,77279,2021-12-01,5868.809668265409,0.19247261151520534,Income,Low Prepandemic Liquidity
+202112,Income,Employed,median,5878.090684091741,77279,2021-12-01,4754.6378974636855,0.23628566693319608,Income,Low Prepandemic Liquidity
+202112,Income,Unemployed,mean,5935.0197005933005,3277,2021-12-01,5764.902476360933,0.029509124383271912,Income,Low Prepandemic Liquidity
+202112,Income,Unemployed,median,4952.896905630638,3277,2021-12-01,4674.175849279811,0.05962998940097042,Income,Low Prepandemic Liquidity
+202112,Spending (card and cash),Employed,mean,3482.5277664018417,77279,2021-12-01,2900.182905399312,0.20079590839542227,Spending (card and cash),Low Prepandemic Liquidity
+202112,Spending (card and cash),Employed,median,3193.6261324892844,77279,2021-12-01,2514.415073857034,0.27012686397491326,Spending (card and cash),Low Prepandemic Liquidity
+202112,Spending (card and cash),Unemployed,mean,3083.262911131535,3277,2021-12-01,2875.499100592657,0.072253130072639,Spending (card and cash),Low Prepandemic Liquidity
+202112,Spending (card and cash),Unemployed,median,2704.1206824589317,3277,2021-12-01,2475.3323855685417,0.09242730318734194,Spending (card and cash),Low Prepandemic Liquidity
+202112,Spending (total),Employed,mean,5489.251648350693,77279,2021-12-01,4653.204008974852,0.17967139153222544,Spending (total),Low Prepandemic Liquidity
+202112,Spending (total),Employed,median,4741.755461344194,77279,2021-12-01,3825.8536603465304,0.23939802258790666,Spending (total),Low Prepandemic Liquidity
+202112,Spending (total),Unemployed,mean,4883.9739267490095,3277,2021-12-01,4591.773724812898,0.06363558386100965,Spending (total),Low Prepandemic Liquidity
+202112,Spending (total),Unemployed,median,4071.662498777901,3277,2021-12-01,3817.862607341564,0.066476957800496,Spending (total),Low Prepandemic Liquidity

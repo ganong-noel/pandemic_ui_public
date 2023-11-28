@@ -1,0 +1,745 @@
+numerator,denominator,apc,se,n_obs,design,spending_category,spend_category_unemp,spend_category_emp
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),total_spend_expanded,3551.0445502664265,4590.331293204797
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),total_spend_expanded,3551.0445502664265,4590.331293204797
+Spend (cardcash),income,0.324,0.012,52094,UI onset (waiting),total_spend_cardcash,2051.0869021608423,2836.6127886197974
+Spend (cardcash),ui,0.235,0.008,52094,UI onset (waiting),total_spend_cardcash,2051.0869021608423,2836.6127886197974
+Spend (total),income,0.319,0.009,309077,FPUC expiration,total_spend_expanded,4478.512862598695,4513.680252550921
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,total_spend_expanded,4478.512862598695,4513.680252550921
+Spend (cardcash),income,0.222,0.005,309077,FPUC expiration,total_spend_cardcash,2540.6560364216857,2756.572595227856
+Spend (cardcash),ui,0.157,0.004,309077,FPUC expiration,total_spend_cardcash,2540.6560364216857,2756.572595227856
+Spend (total),income,0.305,0.017,249652,$300 onset,total_spend_expanded,4764.298200893296,4216.224015779508
+Spend (total),ui,0.457,0.026,249652,$300 onset,total_spend_expanded,4764.298200893296,4216.224015779508
+Spend (cardcash),income,0.207,0.01,249652,$300 onset,total_spend_cardcash,2641.4438946304886,2455.5324990532295
+Spend (cardcash),ui,0.31,0.015,249652,$300 onset,total_spend_cardcash,2641.4438946304886,2455.5324990532295
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,total_spend_expanded,5264.908413283016,4620.736636078946
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,total_spend_expanded,5264.908413283016,4620.736636078946
+Spend (cardcash),income,0.213,0.01,129293,$300 expiration Sept states,total_spend_cardcash,2978.4406121786037,2618.203229189425
+Spend (cardcash),ui,0.281,0.013,129293,$300 expiration Sept states,total_spend_cardcash,2978.4406121786037,2618.203229189425
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,total_spend_expanded,5062.58777682479,4575.9751919071705
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,total_spend_expanded,5062.58777682479,4575.9751919071705
+Spend (cardcash),income,0.225,0.018,121994,$300 expiration June states,total_spend_cardcash,2910.98512579965,2898.721189130219
+Spend (cardcash),ui,0.205,0.016,121994,$300 expiration June states,total_spend_cardcash,2910.98512579965,2898.721189130219
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,total_spend_expanded,5401.592693402849,4575.9751919071705
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,total_spend_expanded,5401.592693402849,4575.9751919071705
+Spend (cardcash),income,0.292,0.027,47623,$300 expiration June vs. Sept states,total_spend_cardcash,3216.263293114828,2898.721189130219
+Spend (cardcash),ui,0.163,0.014,47623,$300 expiration June vs. Sept states,total_spend_cardcash,3216.263293114828,2898.721189130219
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Entertainment,34.534797912624676,57.784766517752175
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Entertainment,34.534797912624676,57.784766517752175
+Spend (cardcash),income,0.003,0,52094,UI onset (waiting),Entertainment,34.534797912624676,57.784766517752175
+Spend (cardcash),ui,0.002,0,52094,UI onset (waiting),Entertainment,34.534797912624676,57.784766517752175
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Entertainment,42.9865847173791,58.28970822419432
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Entertainment,42.9865847173791,58.28970822419432
+Spend (cardcash),income,0.001,0,309077,FPUC expiration,Entertainment,42.9865847173791,58.28970822419432
+Spend (cardcash),ui,0.001,0,309077,FPUC expiration,Entertainment,42.9865847173791,58.28970822419432
+Spend (total),income,0.305,0.017,249652,$300 onset,Entertainment,46.13558319567056,45.23067620450242
+Spend (total),ui,0.457,0.026,249652,$300 onset,Entertainment,46.13558319567056,45.23067620450242
+Spend (cardcash),income,0.002,0,249652,$300 onset,Entertainment,46.13558319567056,45.23067620450242
+Spend (cardcash),ui,0.003,0.001,249652,$300 onset,Entertainment,46.13558319567056,45.23067620450242
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Entertainment,60.77581381534127,55.17123443303473
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Entertainment,60.77581381534127,55.17123443303473
+Spend (cardcash),income,0.004,0.001,129293,$300 expiration Sept states,Entertainment,60.77581381534127,55.17123443303473
+Spend (cardcash),ui,0.006,0.001,129293,$300 expiration Sept states,Entertainment,60.77581381534127,55.17123443303473
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Entertainment,60.18420793699632,49.608205891103836
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Entertainment,60.18420793699632,49.608205891103836
+Spend (cardcash),income,0.005,0.001,121994,$300 expiration June states,Entertainment,60.18420793699632,49.608205891103836
+Spend (cardcash),ui,0.005,0.001,121994,$300 expiration June states,Entertainment,60.18420793699632,49.608205891103836
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Entertainment,69.56322791653344,49.608205891103836
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Entertainment,69.56322791653344,49.608205891103836
+Spend (cardcash),income,0.012,0.001,47623,$300 expiration June vs. Sept states,Entertainment,69.56322791653344,49.608205891103836
+Spend (cardcash),ui,0.007,0.001,47623,$300 expiration June vs. Sept states,Entertainment,69.56322791653344,49.608205891103836
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Home_Improvement,87.49494839185445,71.93705525511403
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Home_Improvement,87.49494839185445,71.93705525511403
+Spend (cardcash),income,0.02,0.001,52094,UI onset (waiting),Home_Improvement,87.49494839185445,71.93705525511403
+Spend (cardcash),ui,0.015,0.001,52094,UI onset (waiting),Home_Improvement,87.49494839185445,71.93705525511403
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Home_Improvement,86.59399422571998,53.53660737323586
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Home_Improvement,86.59399422571998,53.53660737323586
+Spend (cardcash),income,0.008,0.001,309077,FPUC expiration,Home_Improvement,86.59399422571998,53.53660737323586
+Spend (cardcash),ui,0.006,0.001,309077,FPUC expiration,Home_Improvement,86.59399422571998,53.53660737323586
+Spend (total),income,0.305,0.017,249652,$300 onset,Home_Improvement,79.13557893370422,39.87994656006733
+Spend (total),ui,0.457,0.026,249652,$300 onset,Home_Improvement,79.13557893370422,39.87994656006733
+Spend (cardcash),income,0.003,0.001,249652,$300 onset,Home_Improvement,79.13557893370422,39.87994656006733
+Spend (cardcash),ui,0.005,0.002,249652,$300 onset,Home_Improvement,79.13557893370422,39.87994656006733
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Home_Improvement,81.94643447474974,47.44941446362246
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Home_Improvement,81.94643447474974,47.44941446362246
+Spend (cardcash),income,0.006,0.001,129293,$300 expiration Sept states,Home_Improvement,81.94643447474974,47.44941446362246
+Spend (cardcash),ui,0.008,0.002,129293,$300 expiration Sept states,Home_Improvement,81.94643447474974,47.44941446362246
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Home_Improvement,78.80316806005727,64.57635029257165
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Home_Improvement,78.80316806005727,64.57635029257165
+Spend (cardcash),income,0.003,0.002,121994,$300 expiration June states,Home_Improvement,78.80316806005727,64.57635029257165
+Spend (cardcash),ui,0.003,0.002,121994,$300 expiration June states,Home_Improvement,78.80316806005727,64.57635029257165
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Home_Improvement,77.59200542074804,64.57635029257165
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Home_Improvement,77.59200542074804,64.57635029257165
+Spend (cardcash),income,0.007,0.003,47623,$300 expiration June vs. Sept states,Home_Improvement,77.59200542074804,64.57635029257165
+Spend (cardcash),ui,0.004,0.002,47623,$300 expiration June vs. Sept states,Home_Improvement,77.59200542074804,64.57635029257165
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Insurance,43.973191522721535,50.15143804373384
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Insurance,43.973191522721535,50.15143804373384
+Spend (cardcash),income,0.003,0.001,52094,UI onset (waiting),Insurance,43.973191522721535,50.15143804373384
+Spend (cardcash),ui,0.003,0.001,52094,UI onset (waiting),Insurance,43.973191522721535,50.15143804373384
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Insurance,46.32837918759449,50.65022609692847
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Insurance,46.32837918759449,50.65022609692847
+Spend (cardcash),income,0.003,0,309077,FPUC expiration,Insurance,46.32837918759449,50.65022609692847
+Spend (cardcash),ui,0.002,0,309077,FPUC expiration,Insurance,46.32837918759449,50.65022609692847
+Spend (total),income,0.305,0.017,249652,$300 onset,Insurance,48.41214210507367,46.523784136334946
+Spend (total),ui,0.457,0.026,249652,$300 onset,Insurance,48.41214210507367,46.523784136334946
+Spend (cardcash),income,0.001,0.001,249652,$300 onset,Insurance,48.41214210507367,46.523784136334946
+Spend (cardcash),ui,0.002,0.001,249652,$300 onset,Insurance,48.41214210507367,46.523784136334946
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Insurance,50.2686558014887,47.83628577670964
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Insurance,50.2686558014887,47.83628577670964
+Spend (cardcash),income,0.001,0.001,129293,$300 expiration Sept states,Insurance,50.2686558014887,47.83628577670964
+Spend (cardcash),ui,0.002,0.001,129293,$300 expiration Sept states,Insurance,50.2686558014887,47.83628577670964
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Insurance,51.63996970750671,62.38929584449073
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Insurance,51.63996970750671,62.38929584449073
+Spend (cardcash),income,0.003,0.001,121994,$300 expiration June states,Insurance,51.63996970750671,62.38929584449073
+Spend (cardcash),ui,0.003,0.001,121994,$300 expiration June states,Insurance,51.63996970750671,62.38929584449073
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Insurance,54.56833553766712,62.38929584449073
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Insurance,54.56833553766712,62.38929584449073
+Spend (cardcash),income,0.004,0.002,47623,$300 expiration June vs. Sept states,Insurance,54.56833553766712,62.38929584449073
+Spend (cardcash),ui,0.002,0.001,47623,$300 expiration June vs. Sept states,Insurance,54.56833553766712,62.38929584449073
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Auto_Repair,34.589305974814124,40.33388572772161
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Auto_Repair,34.589305974814124,40.33388572772161
+Spend (cardcash),income,0.006,0.001,52094,UI onset (waiting),Auto_Repair,34.589305974814124,40.33388572772161
+Spend (cardcash),ui,0.005,0.001,52094,UI onset (waiting),Auto_Repair,34.589305974814124,40.33388572772161
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Auto_Repair,47.5908031523092,38.68048920338298
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Auto_Repair,47.5908031523092,38.68048920338298
+Spend (cardcash),income,0.003,0.001,309077,FPUC expiration,Auto_Repair,47.5908031523092,38.68048920338298
+Spend (cardcash),ui,0.002,0,309077,FPUC expiration,Auto_Repair,47.5908031523092,38.68048920338298
+Spend (total),income,0.305,0.017,249652,$300 onset,Auto_Repair,47.708846560427,31.3682026088786
+Spend (total),ui,0.457,0.026,249652,$300 onset,Auto_Repair,47.708846560427,31.3682026088786
+Spend (cardcash),income,0.001,0.001,249652,$300 onset,Auto_Repair,47.708846560427,31.3682026088786
+Spend (cardcash),ui,0.001,0.002,249652,$300 onset,Auto_Repair,47.708846560427,31.3682026088786
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Auto_Repair,50.13878539383095,38.315971160148564
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Auto_Repair,50.13878539383095,38.315971160148564
+Spend (cardcash),income,0.002,0.001,129293,$300 expiration Sept states,Auto_Repair,50.13878539383095,38.315971160148564
+Spend (cardcash),ui,0.003,0.001,129293,$300 expiration Sept states,Auto_Repair,50.13878539383095,38.315971160148564
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Auto_Repair,50.11663086730665,55.479275017355945
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Auto_Repair,50.11663086730665,55.479275017355945
+Spend (cardcash),income,0,0.002,121994,$300 expiration June states,Auto_Repair,50.11663086730665,55.479275017355945
+Spend (cardcash),ui,0,0.002,121994,$300 expiration June states,Auto_Repair,50.11663086730665,55.479275017355945
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Auto_Repair,45.53592208639207,55.479275017355945
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Auto_Repair,45.53592208639207,55.479275017355945
+Spend (cardcash),income,0,0.003,47623,$300 expiration June vs. Sept states,Auto_Repair,45.53592208639207,55.479275017355945
+Spend (cardcash),ui,0,0.001,47623,$300 expiration June vs. Sept states,Auto_Repair,45.53592208639207,55.479275017355945
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Hotels_&_Rental_cars,25.794928472701304,61.71454596755232
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Hotels_&_Rental_cars,25.794928472701304,61.71454596755232
+Spend (cardcash),income,0.003,0.002,52094,UI onset (waiting),Hotels_&_Rental_cars,25.794928472701304,61.71454596755232
+Spend (cardcash),ui,0.002,0.001,52094,UI onset (waiting),Hotels_&_Rental_cars,25.794928472701304,61.71454596755232
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Hotels_&_Rental_cars,46.33461334011057,62.87094113660946
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Hotels_&_Rental_cars,46.33461334011057,62.87094113660946
+Spend (cardcash),income,0.001,0.001,309077,FPUC expiration,Hotels_&_Rental_cars,46.33461334011057,62.87094113660946
+Spend (cardcash),ui,0.001,0.001,309077,FPUC expiration,Hotels_&_Rental_cars,46.33461334011057,62.87094113660946
+Spend (total),income,0.305,0.017,249652,$300 onset,Hotels_&_Rental_cars,46.457907472776235,52.53747380601725
+Spend (total),ui,0.457,0.026,249652,$300 onset,Hotels_&_Rental_cars,46.457907472776235,52.53747380601725
+Spend (cardcash),income,0,0.002,249652,$300 onset,Hotels_&_Rental_cars,46.457907472776235,52.53747380601725
+Spend (cardcash),ui,0.001,0.003,249652,$300 onset,Hotels_&_Rental_cars,46.457907472776235,52.53747380601725
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Hotels_&_Rental_cars,77.14563139929544,54.75640448619911
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Hotels_&_Rental_cars,77.14563139929544,54.75640448619911
+Spend (cardcash),income,0.005,0.002,129293,$300 expiration Sept states,Hotels_&_Rental_cars,77.14563139929544,54.75640448619911
+Spend (cardcash),ui,0.007,0.003,129293,$300 expiration Sept states,Hotels_&_Rental_cars,77.14563139929544,54.75640448619911
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Hotels_&_Rental_cars,75.05712151379612,61.32856292770009
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Hotels_&_Rental_cars,75.05712151379612,61.32856292770009
+Spend (cardcash),income,0.011,0.004,121994,$300 expiration June states,Hotels_&_Rental_cars,75.05712151379612,61.32856292770009
+Spend (cardcash),ui,0.01,0.004,121994,$300 expiration June states,Hotels_&_Rental_cars,75.05712151379612,61.32856292770009
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Hotels_&_Rental_cars,70.98512620641624,61.32856292770009
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Hotels_&_Rental_cars,70.98512620641624,61.32856292770009
+Spend (cardcash),income,0.018,0.005,47623,$300 expiration June vs. Sept states,Hotels_&_Rental_cars,70.98512620641624,61.32856292770009
+Spend (cardcash),ui,0.01,0.003,47623,$300 expiration June vs. Sept states,Hotels_&_Rental_cars,70.98512620641624,61.32856292770009
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Organizations_&_Institutions,34.13162482084764,41.31137455913473
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Organizations_&_Institutions,34.13162482084764,41.31137455913473
+Spend (cardcash),income,0.003,0.001,52094,UI onset (waiting),Organizations_&_Institutions,34.13162482084764,41.31137455913473
+Spend (cardcash),ui,0.003,0.001,52094,UI onset (waiting),Organizations_&_Institutions,34.13162482084764,41.31137455913473
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Organizations_&_Institutions,44.33659895865739,44.16005316861488
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Organizations_&_Institutions,44.33659895865739,44.16005316861488
+Spend (cardcash),income,0.002,0,309077,FPUC expiration,Organizations_&_Institutions,44.33659895865739,44.16005316861488
+Spend (cardcash),ui,0.001,0,309077,FPUC expiration,Organizations_&_Institutions,44.33659895865739,44.16005316861488
+Spend (total),income,0.305,0.017,249652,$300 onset,Organizations_&_Institutions,45.34289180648077,39.66742078687145
+Spend (total),ui,0.457,0.026,249652,$300 onset,Organizations_&_Institutions,45.34289180648077,39.66742078687145
+Spend (cardcash),income,0.003,0.001,249652,$300 onset,Organizations_&_Institutions,45.34289180648077,39.66742078687145
+Spend (cardcash),ui,0.005,0.001,249652,$300 onset,Organizations_&_Institutions,45.34289180648077,39.66742078687145
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Organizations_&_Institutions,47.81780394962124,41.98346515184618
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Organizations_&_Institutions,47.81780394962124,41.98346515184618
+Spend (cardcash),income,0.003,0.001,129293,$300 expiration Sept states,Organizations_&_Institutions,47.81780394962124,41.98346515184618
+Spend (cardcash),ui,0.004,0.001,129293,$300 expiration Sept states,Organizations_&_Institutions,47.81780394962124,41.98346515184618
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Organizations_&_Institutions,50.424109703777845,44.76195874243777
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Organizations_&_Institutions,50.424109703777845,44.76195874243777
+Spend (cardcash),income,0.002,0.001,121994,$300 expiration June states,Organizations_&_Institutions,50.424109703777845,44.76195874243777
+Spend (cardcash),ui,0.001,0.001,121994,$300 expiration June states,Organizations_&_Institutions,50.424109703777845,44.76195874243777
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Organizations_&_Institutions,51.75811446368645,44.76195874243777
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Organizations_&_Institutions,51.75811446368645,44.76195874243777
+Spend (cardcash),income,0.001,0.002,47623,$300 expiration June vs. Sept states,Organizations_&_Institutions,51.75811446368645,44.76195874243777
+Spend (cardcash),ui,0,0.001,47623,$300 expiration June vs. Sept states,Organizations_&_Institutions,51.75811446368645,44.76195874243777
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),schools,2.781660563888156,5.758515400893487
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),schools,2.781660563888156,5.758515400893487
+Spend (cardcash),income,0,0.001,52094,UI onset (waiting),schools,2.781660563888156,5.758515400893487
+Spend (cardcash),ui,0,0.001,52094,UI onset (waiting),schools,2.781660563888156,5.758515400893487
+Spend (total),income,0.319,0.009,309077,FPUC expiration,schools,14.514021618573683,11.655580293730532
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,schools,14.514021618573683,11.655580293730532
+Spend (cardcash),income,0.001,0.001,309077,FPUC expiration,schools,14.514021618573683,11.655580293730532
+Spend (cardcash),ui,0,0,309077,FPUC expiration,schools,14.514021618573683,11.655580293730532
+Spend (total),income,0.305,0.017,249652,$300 onset,schools,13.554323052586193,12.603132021880917
+Spend (total),ui,0.457,0.026,249652,$300 onset,schools,13.554323052586193,12.603132021880917
+Spend (cardcash),income,-0.001,0.001,249652,$300 onset,schools,13.554323052586193,12.603132021880917
+Spend (cardcash),ui,-0.001,0.002,249652,$300 onset,schools,13.554323052586193,12.603132021880917
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,schools,9.659598061214796,9.848727696453281
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,schools,9.659598061214796,9.848727696453281
+Spend (cardcash),income,0.001,0.001,129293,$300 expiration Sept states,schools,9.659598061214796,9.848727696453281
+Spend (cardcash),ui,0.001,0.001,129293,$300 expiration Sept states,schools,9.659598061214796,9.848727696453281
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,schools,12.505531973541093,7.210357532480412
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,schools,12.505531973541093,7.210357532480412
+Spend (cardcash),income,0.003,0.001,121994,$300 expiration June states,schools,12.505531973541093,7.210357532480412
+Spend (cardcash),ui,0.003,0.001,121994,$300 expiration June states,schools,12.505531973541093,7.210357532480412
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,schools,11.78802175438906,7.210357532480412
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,schools,11.78802175438906,7.210357532480412
+Spend (cardcash),income,0.004,0.002,47623,$300 expiration June vs. Sept states,schools,11.78802175438906,7.210357532480412
+Spend (cardcash),ui,0.002,0.001,47623,$300 expiration June vs. Sept states,schools,11.78802175438906,7.210357532480412
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Drug_Stores,23.278607283635356,31.224676698800845
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Drug_Stores,23.278607283635356,31.224676698800845
+Spend (cardcash),income,0.002,0,52094,UI onset (waiting),Drug_Stores,23.278607283635356,31.224676698800845
+Spend (cardcash),ui,0.001,0,52094,UI onset (waiting),Drug_Stores,23.278607283635356,31.224676698800845
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Drug_Stores,22.467811791208653,27.947470581336255
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Drug_Stores,22.467811791208653,27.947470581336255
+Spend (cardcash),income,0.001,0,309077,FPUC expiration,Drug_Stores,22.467811791208653,27.947470581336255
+Spend (cardcash),ui,0.001,0,309077,FPUC expiration,Drug_Stores,22.467811791208653,27.947470581336255
+Spend (total),income,0.305,0.017,249652,$300 onset,Drug_Stores,22.66349799754361,29.157965916263414
+Spend (total),ui,0.457,0.026,249652,$300 onset,Drug_Stores,22.66349799754361,29.157965916263414
+Spend (cardcash),income,0.002,0,249652,$300 onset,Drug_Stores,22.66349799754361,29.157965916263414
+Spend (cardcash),ui,0.003,0,249652,$300 onset,Drug_Stores,22.66349799754361,29.157965916263414
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Drug_Stores,25.124724064215773,29.05366251547593
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Drug_Stores,25.124724064215773,29.05366251547593
+Spend (cardcash),income,0.001,0,129293,$300 expiration Sept states,Drug_Stores,25.124724064215773,29.05366251547593
+Spend (cardcash),ui,0.001,0,129293,$300 expiration Sept states,Drug_Stores,25.124724064215773,29.05366251547593
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Drug_Stores,25.386214874624063,26.463373004066252
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Drug_Stores,25.386214874624063,26.463373004066252
+Spend (cardcash),income,0.001,0,121994,$300 expiration June states,Drug_Stores,25.386214874624063,26.463373004066252
+Spend (cardcash),ui,0.001,0,121994,$300 expiration June states,Drug_Stores,25.386214874624063,26.463373004066252
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Drug_Stores,31.221530976175615,26.463373004066252
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Drug_Stores,31.221530976175615,26.463373004066252
+Spend (cardcash),income,0.001,0.001,47623,$300 expiration June vs. Sept states,Drug_Stores,31.221530976175615,26.463373004066252
+Spend (cardcash),ui,0.001,0,47623,$300 expiration June vs. Sept states,Drug_Stores,31.221530976175615,26.463373004066252
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Groceries,298.7299121984905,295.82516858687984
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Groceries,298.7299121984905,295.82516858687984
+Spend (cardcash),income,0.04,0.002,52094,UI onset (waiting),Groceries,298.7299121984905,295.82516858687984
+Spend (cardcash),ui,0.029,0.001,52094,UI onset (waiting),Groceries,298.7299121984905,295.82516858687984
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Groceries,326.9788536115718,282.0734756375673
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Groceries,326.9788536115718,282.0734756375673
+Spend (cardcash),income,0.02,0.001,309077,FPUC expiration,Groceries,326.9788536115718,282.0734756375673
+Spend (cardcash),ui,0.014,0,309077,FPUC expiration,Groceries,326.9788536115718,282.0734756375673
+Spend (total),income,0.305,0.017,249652,$300 onset,Groceries,328.43275830508173,249.21949526614767
+Spend (total),ui,0.457,0.026,249652,$300 onset,Groceries,328.43275830508173,249.21949526614767
+Spend (cardcash),income,0.023,0.002,249652,$300 onset,Groceries,328.43275830508173,249.21949526614767
+Spend (cardcash),ui,0.035,0.002,249652,$300 onset,Groceries,328.43275830508173,249.21949526614767
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Groceries,326.6780401542988,257.6513327507101
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Groceries,326.6780401542988,257.6513327507101
+Spend (cardcash),income,0.015,0.001,129293,$300 expiration Sept states,Groceries,326.6780401542988,257.6513327507101
+Spend (cardcash),ui,0.02,0.002,129293,$300 expiration Sept states,Groceries,326.6780401542988,257.6513327507101
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Groceries,324.45185161234014,334.9115531091937
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Groceries,324.45185161234014,334.9115531091937
+Spend (cardcash),income,0.013,0.002,121994,$300 expiration June states,Groceries,324.45185161234014,334.9115531091937
+Spend (cardcash),ui,0.012,0.002,121994,$300 expiration June states,Groceries,324.45185161234014,334.9115531091937
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Groceries,307.4033385790228,334.9115531091937
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Groceries,307.4033385790228,334.9115531091937
+Spend (cardcash),income,0.009,0.003,47623,$300 expiration June vs. Sept states,Groceries,307.4033385790228,334.9115531091937
+Spend (cardcash),ui,0.005,0.002,47623,$300 expiration June vs. Sept states,Groceries,307.4033385790228,334.9115531091937
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Department_Stores,7.35095039792592,22.312469386315488
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Department_Stores,7.35095039792592,22.312469386315488
+Spend (cardcash),income,0.001,0,52094,UI onset (waiting),Department_Stores,7.35095039792592,22.312469386315488
+Spend (cardcash),ui,0.001,0,52094,UI onset (waiting),Department_Stores,7.35095039792592,22.312469386315488
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Department_Stores,12.930488128549559,17.08895773225429
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Department_Stores,12.930488128549559,17.08895773225429
+Spend (cardcash),income,0.002,0,309077,FPUC expiration,Department_Stores,12.930488128549559,17.08895773225429
+Spend (cardcash),ui,0.001,0,309077,FPUC expiration,Department_Stores,12.930488128549559,17.08895773225429
+Spend (total),income,0.305,0.017,249652,$300 onset,Department_Stores,15.196795390490601,15.887321165579598
+Spend (total),ui,0.457,0.026,249652,$300 onset,Department_Stores,15.196795390490601,15.887321165579598
+Spend (cardcash),income,0.002,0.001,249652,$300 onset,Department_Stores,15.196795390490601,15.887321165579598
+Spend (cardcash),ui,0.003,0.001,249652,$300 onset,Department_Stores,15.196795390490601,15.887321165579598
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Department_Stores,19.65709364599887,17.681861481319608
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Department_Stores,19.65709364599887,17.681861481319608
+Spend (cardcash),income,0.001,0,129293,$300 expiration Sept states,Department_Stores,19.65709364599887,17.681861481319608
+Spend (cardcash),ui,0.002,0.001,129293,$300 expiration Sept states,Department_Stores,19.65709364599887,17.681861481319608
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Department_Stores,18.955908569034033,17.879956808489506
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Department_Stores,18.955908569034033,17.879956808489506
+Spend (cardcash),income,0.002,0.001,121994,$300 expiration June states,Department_Stores,18.955908569034033,17.879956808489506
+Spend (cardcash),ui,0.002,0.001,121994,$300 expiration June states,Department_Stores,18.955908569034033,17.879956808489506
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Department_Stores,23.71454276770664,17.879956808489506
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Department_Stores,23.71454276770664,17.879956808489506
+Spend (cardcash),income,0.001,0.001,47623,$300 expiration June vs. Sept states,Department_Stores,23.71454276770664,17.879956808489506
+Spend (cardcash),ui,0.001,0.001,47623,$300 expiration June vs. Sept states,Department_Stores,23.71454276770664,17.879956808489506
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Discount_Stores,76.90077901140943,67.83093110745357
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Discount_Stores,76.90077901140943,67.83093110745357
+Spend (cardcash),income,0.012,0.001,52094,UI onset (waiting),Discount_Stores,76.90077901140943,67.83093110745357
+Spend (cardcash),ui,0.009,0.001,52094,UI onset (waiting),Discount_Stores,76.90077901140943,67.83093110745357
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Discount_Stores,86.96720386044889,68.72054888775949
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Discount_Stores,86.96720386044889,68.72054888775949
+Spend (cardcash),income,0.008,0,309077,FPUC expiration,Discount_Stores,86.96720386044889,68.72054888775949
+Spend (cardcash),ui,0.005,0,309077,FPUC expiration,Discount_Stores,86.96720386044889,68.72054888775949
+Spend (total),income,0.305,0.017,249652,$300 onset,Discount_Stores,91.20322188365564,59.25024742268042
+Spend (total),ui,0.457,0.026,249652,$300 onset,Discount_Stores,91.20322188365564,59.25024742268042
+Spend (cardcash),income,0.009,0.001,249652,$300 onset,Discount_Stores,91.20322188365564,59.25024742268042
+Spend (cardcash),ui,0.014,0.001,249652,$300 onset,Discount_Stores,91.20322188365564,59.25024742268042
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Discount_Stores,100.12532853440966,73.69636734396622
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Discount_Stores,100.12532853440966,73.69636734396622
+Spend (cardcash),income,0.007,0.001,129293,$300 expiration Sept states,Discount_Stores,100.12532853440966,73.69636734396622
+Spend (cardcash),ui,0.009,0.001,129293,$300 expiration Sept states,Discount_Stores,100.12532853440966,73.69636734396622
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Discount_Stores,91.61884597469636,73.36744024595855
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Discount_Stores,91.61884597469636,73.36744024595855
+Spend (cardcash),income,0.007,0.001,121994,$300 expiration June states,Discount_Stores,91.61884597469636,73.36744024595855
+Spend (cardcash),ui,0.007,0.001,121994,$300 expiration June states,Discount_Stores,91.61884597469636,73.36744024595855
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Discount_Stores,103.97553178178102,73.36744024595855
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Discount_Stores,103.97553178178102,73.36744024595855
+Spend (cardcash),income,0.006,0.002,47623,$300 expiration June vs. Sept states,Discount_Stores,103.97553178178102,73.36744024595855
+Spend (cardcash),ui,0.003,0.001,47623,$300 expiration June vs. Sept states,Discount_Stores,103.97553178178102,73.36744024595855
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Telecom,102.55980205330518,114.3533576299083
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Telecom,102.55980205330518,114.3533576299083
+Spend (cardcash),income,0.005,0.001,52094,UI onset (waiting),Telecom,102.55980205330518,114.3533576299083
+Spend (cardcash),ui,0.004,0,52094,UI onset (waiting),Telecom,102.55980205330518,114.3533576299083
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Telecom,108.97499249939179,110.84910382214576
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Telecom,108.97499249939179,110.84910382214576
+Spend (cardcash),income,0.003,0,309077,FPUC expiration,Telecom,108.97499249939179,110.84910382214576
+Spend (cardcash),ui,0.002,0,309077,FPUC expiration,Telecom,108.97499249939179,110.84910382214576
+Spend (total),income,0.305,0.017,249652,$300 onset,Telecom,117.12538175767617,107.29584557121818
+Spend (total),ui,0.457,0.026,249652,$300 onset,Telecom,117.12538175767617,107.29584557121818
+Spend (cardcash),income,0.003,0.001,249652,$300 onset,Telecom,117.12538175767617,107.29584557121818
+Spend (cardcash),ui,0.004,0.001,249652,$300 onset,Telecom,117.12538175767617,107.29584557121818
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Telecom,117.58974120034598,109.81717646202026
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Telecom,117.58974120034598,109.81717646202026
+Spend (cardcash),income,0.002,0.001,129293,$300 expiration Sept states,Telecom,117.58974120034598,109.81717646202026
+Spend (cardcash),ui,0.003,0.001,129293,$300 expiration Sept states,Telecom,117.58974120034598,109.81717646202026
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Telecom,117.64385942495316,126.45429534860656
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Telecom,117.64385942495316,126.45429534860656
+Spend (cardcash),income,0.001,0.001,121994,$300 expiration June states,Telecom,117.64385942495316,126.45429534860656
+Spend (cardcash),ui,0.001,0.001,121994,$300 expiration June states,Telecom,117.64385942495316,126.45429534860656
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Telecom,118.90047546396957,126.45429534860656
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Telecom,118.90047546396957,126.45429534860656
+Spend (cardcash),income,0.002,0.001,47623,$300 expiration June vs. Sept states,Telecom,118.90047546396957,126.45429534860656
+Spend (cardcash),ui,0.001,0.001,47623,$300 expiration June vs. Sept states,Telecom,118.90047546396957,126.45429534860656
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Healthcare,28.066880359203537,44.6831662355984
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Healthcare,28.066880359203537,44.6831662355984
+Spend (cardcash),income,0.003,0.001,52094,UI onset (waiting),Healthcare,28.066880359203537,44.6831662355984
+Spend (cardcash),ui,0.002,0.001,52094,UI onset (waiting),Healthcare,28.066880359203537,44.6831662355984
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Healthcare,42.15795005296629,43.74041766032032
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Healthcare,42.15795005296629,43.74041766032032
+Spend (cardcash),income,0.004,0,309077,FPUC expiration,Healthcare,42.15795005296629,43.74041766032032
+Spend (cardcash),ui,0.003,0,309077,FPUC expiration,Healthcare,42.15795005296629,43.74041766032032
+Spend (total),income,0.305,0.017,249652,$300 onset,Healthcare,49.19945747014784,40.98944456132969
+Spend (total),ui,0.457,0.026,249652,$300 onset,Healthcare,49.19945747014784,40.98944456132969
+Spend (cardcash),income,0.002,0.001,249652,$300 onset,Healthcare,49.19945747014784,40.98944456132969
+Spend (cardcash),ui,0.003,0.001,249652,$300 onset,Healthcare,49.19945747014784,40.98944456132969
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Healthcare,54.22106811066778,42.347954992353074
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Healthcare,54.22106811066778,42.347954992353074
+Spend (cardcash),income,0.003,0.001,129293,$300 expiration Sept states,Healthcare,54.22106811066778,42.347954992353074
+Spend (cardcash),ui,0.004,0.001,129293,$300 expiration Sept states,Healthcare,54.22106811066778,42.347954992353074
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Healthcare,55.74990772109794,52.450797381731626
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Healthcare,55.74990772109794,52.450797381731626
+Spend (cardcash),income,0.006,0.002,121994,$300 expiration June states,Healthcare,55.74990772109794,52.450797381731626
+Spend (cardcash),ui,0.005,0.001,121994,$300 expiration June states,Healthcare,55.74990772109794,52.450797381731626
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Healthcare,59.15156706999666,52.450797381731626
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Healthcare,59.15156706999666,52.450797381731626
+Spend (cardcash),income,0.007,0.002,47623,$300 expiration June vs. Sept states,Healthcare,59.15156706999666,52.450797381731626
+Spend (cardcash),ui,0.004,0.001,47623,$300 expiration June vs. Sept states,Healthcare,59.15156706999666,52.450797381731626
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Utilities,132.91720407570355,152.1719722313659
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Utilities,132.91720407570355,152.1719722313659
+Spend (cardcash),income,0.003,0.001,52094,UI onset (waiting),Utilities,132.91720407570355,152.1719722313659
+Spend (cardcash),ui,0.002,0.001,52094,UI onset (waiting),Utilities,132.91720407570355,152.1719722313659
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Utilities,173.32840340754126,162.52616067868155
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Utilities,173.32840340754126,162.52616067868155
+Spend (cardcash),income,0.006,0,309077,FPUC expiration,Utilities,173.32840340754126,162.52616067868155
+Spend (cardcash),ui,0.005,0,309077,FPUC expiration,Utilities,173.32840340754126,162.52616067868155
+Spend (total),income,0.305,0.017,249652,$300 onset,Utilities,175.82890432230096,159.21039719124744
+Spend (total),ui,0.457,0.026,249652,$300 onset,Utilities,175.82890432230096,159.21039719124744
+Spend (cardcash),income,0.002,0.001,249652,$300 onset,Utilities,175.82890432230096,159.21039719124744
+Spend (cardcash),ui,0.004,0.001,249652,$300 onset,Utilities,175.82890432230096,159.21039719124744
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Utilities,183.87375473530827,166.69171975821112
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Utilities,183.87375473530827,166.69171975821112
+Spend (cardcash),income,0.005,0.001,129293,$300 expiration Sept states,Utilities,183.87375473530827,166.69171975821112
+Spend (cardcash),ui,0.006,0.001,129293,$300 expiration Sept states,Utilities,183.87375473530827,166.69171975821112
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Utilities,182.46740139953545,195.50953133987878
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Utilities,182.46740139953545,195.50953133987878
+Spend (cardcash),income,0.005,0.001,121994,$300 expiration June states,Utilities,182.46740139953545,195.50953133987878
+Spend (cardcash),ui,0.005,0.001,121994,$300 expiration June states,Utilities,182.46740139953545,195.50953133987878
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Utilities,171.6988124786978,195.50953133987878
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Utilities,171.6988124786978,195.50953133987878
+Spend (cardcash),income,0.001,0.002,47623,$300 expiration June vs. Sept states,Utilities,171.6988124786978,195.50953133987878
+Spend (cardcash),ui,0.001,0.001,47623,$300 expiration June vs. Sept states,Utilities,171.6988124786978,195.50953133987878
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Transit_&_Ground_Transportation,72.38283049500068,172.30164354573245
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Transit_&_Ground_Transportation,72.38283049500068,172.30164354573245
+Spend (cardcash),income,0.005,0.001,52094,UI onset (waiting),Transit_&_Ground_Transportation,72.38283049500068,172.30164354573245
+Spend (cardcash),ui,0.004,0,52094,UI onset (waiting),Transit_&_Ground_Transportation,72.38283049500068,172.30164354573245
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Transit_&_Ground_Transportation,113.90194592270171,161.8186779519658
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Transit_&_Ground_Transportation,113.90194592270171,161.8186779519658
+Spend (cardcash),income,0.002,0,309077,FPUC expiration,Transit_&_Ground_Transportation,113.90194592270171,161.8186779519658
+Spend (cardcash),ui,0.002,0,309077,FPUC expiration,Transit_&_Ground_Transportation,113.90194592270171,161.8186779519658
+Spend (total),income,0.305,0.017,249652,$300 onset,Transit_&_Ground_Transportation,110.97297685116474,128.09473974332002
+Spend (total),ui,0.457,0.026,249652,$300 onset,Transit_&_Ground_Transportation,110.97297685116474,128.09473974332002
+Spend (cardcash),income,-0,0.001,249652,$300 onset,Transit_&_Ground_Transportation,110.97297685116474,128.09473974332002
+Spend (cardcash),ui,-0,0.001,249652,$300 onset,Transit_&_Ground_Transportation,110.97297685116474,128.09473974332002
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Transit_&_Ground_Transportation,166.67242856955988,150.88689461801764
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Transit_&_Ground_Transportation,166.67242856955988,150.88689461801764
+Spend (cardcash),income,0.005,0.001,129293,$300 expiration Sept states,Transit_&_Ground_Transportation,166.67242856955988,150.88689461801764
+Spend (cardcash),ui,0.007,0.001,129293,$300 expiration Sept states,Transit_&_Ground_Transportation,166.67242856955988,150.88689461801764
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Transit_&_Ground_Transportation,168.7397384463203,170.18184964792226
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Transit_&_Ground_Transportation,168.7397384463203,170.18184964792226
+Spend (cardcash),income,0.004,0.001,121994,$300 expiration June states,Transit_&_Ground_Transportation,168.7397384463203,170.18184964792226
+Spend (cardcash),ui,0.004,0.001,121994,$300 expiration June states,Transit_&_Ground_Transportation,168.7397384463203,170.18184964792226
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Transit_&_Ground_Transportation,156.5876975391857,170.18184964792226
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Transit_&_Ground_Transportation,156.5876975391857,170.18184964792226
+Spend (cardcash),income,0.005,0.002,47623,$300 expiration June vs. Sept states,Transit_&_Ground_Transportation,156.5876975391857,170.18184964792226
+Spend (cardcash),ui,0.003,0.001,47623,$300 expiration June vs. Sept states,Transit_&_Ground_Transportation,156.5876975391857,170.18184964792226
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Professional_&_Personal_Services,64.7153369160905,95.71688925464377
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Professional_&_Personal_Services,64.7153369160905,95.71688925464377
+Spend (cardcash),income,0.008,0.001,52094,UI onset (waiting),Professional_&_Personal_Services,64.7153369160905,95.71688925464377
+Spend (cardcash),ui,0.006,0.001,52094,UI onset (waiting),Professional_&_Personal_Services,64.7153369160905,95.71688925464377
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Professional_&_Personal_Services,82.06199215601849,93.31182271915765
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Professional_&_Personal_Services,82.06199215601849,93.31182271915765
+Spend (cardcash),income,0.005,0.001,309077,FPUC expiration,Professional_&_Personal_Services,82.06199215601849,93.31182271915765
+Spend (cardcash),ui,0.004,0,309077,FPUC expiration,Professional_&_Personal_Services,82.06199215601849,93.31182271915765
+Spend (total),income,0.305,0.017,249652,$300 onset,Professional_&_Personal_Services,84.26971695358728,82.92461119293078
+Spend (total),ui,0.457,0.026,249652,$300 onset,Professional_&_Personal_Services,84.26971695358728,82.92461119293078
+Spend (cardcash),income,0.006,0.001,249652,$300 onset,Professional_&_Personal_Services,84.26971695358728,82.92461119293078
+Spend (cardcash),ui,0.009,0.002,249652,$300 onset,Professional_&_Personal_Services,84.26971695358728,82.92461119293078
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Professional_&_Personal_Services,99.04838335786023,89.68806132109825
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Professional_&_Personal_Services,99.04838335786023,89.68806132109825
+Spend (cardcash),income,0.006,0.001,129293,$300 expiration Sept states,Professional_&_Personal_Services,99.04838335786023,89.68806132109825
+Spend (cardcash),ui,0.008,0.001,129293,$300 expiration Sept states,Professional_&_Personal_Services,99.04838335786023,89.68806132109825
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Professional_&_Personal_Services,98.118702446605,104.87545869284935
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Professional_&_Personal_Services,98.118702446605,104.87545869284935
+Spend (cardcash),income,0.009,0.002,121994,$300 expiration June states,Professional_&_Personal_Services,98.118702446605,104.87545869284935
+Spend (cardcash),ui,0.009,0.002,121994,$300 expiration June states,Professional_&_Personal_Services,98.118702446605,104.87545869284935
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Professional_&_Personal_Services,110.70275561396582,104.87545869284935
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Professional_&_Personal_Services,110.70275561396582,104.87545869284935
+Spend (cardcash),income,0.011,0.003,47623,$300 expiration June vs. Sept states,Professional_&_Personal_Services,110.70275561396582,104.87545869284935
+Spend (cardcash),ui,0.006,0.001,47623,$300 expiration June vs. Sept states,Professional_&_Personal_Services,110.70275561396582,104.87545869284935
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Other_Retail,143.97972211079886,150.34197084411002
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Other_Retail,143.97972211079886,150.34197084411002
+Spend (cardcash),income,0.03,0.001,52094,UI onset (waiting),Other_Retail,143.97972211079886,150.34197084411002
+Spend (cardcash),ui,0.022,0.001,52094,UI onset (waiting),Other_Retail,143.97972211079886,150.34197084411002
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Other_Retail,180.03837614655134,141.52060726898367
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Other_Retail,180.03837614655134,141.52060726898367
+Spend (cardcash),income,0.018,0.001,309077,FPUC expiration,Other_Retail,180.03837614655134,141.52060726898367
+Spend (cardcash),ui,0.013,0.001,309077,FPUC expiration,Other_Retail,180.03837614655134,141.52060726898367
+Spend (total),income,0.305,0.017,249652,$300 onset,Other_Retail,192.24329092344206,122.15316158215863
+Spend (total),ui,0.457,0.026,249652,$300 onset,Other_Retail,192.24329092344206,122.15316158215863
+Spend (cardcash),income,0.032,0.002,249652,$300 onset,Other_Retail,192.24329092344206,122.15316158215863
+Spend (cardcash),ui,0.048,0.003,249652,$300 onset,Other_Retail,192.24329092344206,122.15316158215863
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Other_Retail,204.28789305900446,141.12016022139684
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Other_Retail,204.28789305900446,141.12016022139684
+Spend (cardcash),income,0.015,0.001,129293,$300 expiration Sept states,Other_Retail,204.28789305900446,141.12016022139684
+Spend (cardcash),ui,0.02,0.002,129293,$300 expiration Sept states,Other_Retail,204.28789305900446,141.12016022139684
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Other_Retail,197.195165728458,135.45604581969653
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Other_Retail,197.195165728458,135.45604581969653
+Spend (cardcash),income,0.014,0.003,121994,$300 expiration June states,Other_Retail,197.195165728458,135.45604581969653
+Spend (cardcash),ui,0.013,0.002,121994,$300 expiration June states,Other_Retail,197.195165728458,135.45604581969653
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Other_Retail,238.5991247310972,135.45604581969653
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Other_Retail,238.5991247310972,135.45604581969653
+Spend (cardcash),income,0.015,0.004,47623,$300 expiration June vs. Sept states,Other_Retail,238.5991247310972,135.45604581969653
+Spend (cardcash),ui,0.008,0.002,47623,$300 expiration June vs. Sept states,Other_Retail,238.5991247310972,135.45604581969653
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Flights,4.271214184307699,21.998814013637425
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Flights,4.271214184307699,21.998814013637425
+Spend (cardcash),income,0.002,0.001,52094,UI onset (waiting),Flights,4.271214184307699,21.998814013637425
+Spend (cardcash),ui,0.001,0,52094,UI onset (waiting),Flights,4.271214184307699,21.998814013637425
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Flights,5.493640744191794,19.541207787638296
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Flights,5.493640744191794,19.541207787638296
+Spend (cardcash),income,0,0,309077,FPUC expiration,Flights,5.493640744191794,19.541207787638296
+Spend (cardcash),ui,0,0,309077,FPUC expiration,Flights,5.493640744191794,19.541207787638296
+Spend (total),income,0.305,0.017,249652,$300 onset,Flights,7.039679215964418,23.99421182411108
+Spend (total),ui,0.457,0.026,249652,$300 onset,Flights,7.039679215964418,23.99421182411108
+Spend (cardcash),income,0,0.001,249652,$300 onset,Flights,7.039679215964418,23.99421182411108
+Spend (cardcash),ui,0,0.001,249652,$300 onset,Flights,7.039679215964418,23.99421182411108
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Flights,19.644639564532913,19.1198658509941
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Flights,19.644639564532913,19.1198658509941
+Spend (cardcash),income,0.002,0.001,129293,$300 expiration Sept states,Flights,19.644639564532913,19.1198658509941
+Spend (cardcash),ui,0.003,0.001,129293,$300 expiration Sept states,Flights,19.644639564532913,19.1198658509941
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Flights,14.753556766053054,19.396937816126147
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Flights,14.753556766053054,19.396937816126147
+Spend (cardcash),income,0.004,0.001,121994,$300 expiration June states,Flights,14.753556766053054,19.396937816126147
+Spend (cardcash),ui,0.003,0.001,121994,$300 expiration June states,Flights,14.753556766053054,19.396937816126147
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Flights,17.69228381447697,19.396937816126147
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Flights,17.69228381447697,19.396937816126147
+Spend (cardcash),income,0.006,0.002,47623,$300 expiration June vs. Sept states,Flights,17.69228381447697,19.396937816126147
+Spend (cardcash),ui,0.004,0.001,47623,$300 expiration June vs. Sept states,Flights,17.69228381447697,19.396937816126147
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Restaurant,133.7739634851989,256.06001269691984
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Restaurant,133.7739634851989,256.06001269691984
+Spend (cardcash),income,0.017,0.001,52094,UI onset (waiting),Restaurant,133.7739634851989,256.06001269691984
+Spend (cardcash),ui,0.012,0.001,52094,UI onset (waiting),Restaurant,133.7739634851989,256.06001269691984
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Restaurant,216.63130218896578,245.85438471662954
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Restaurant,216.63130218896578,245.85438471662954
+Spend (cardcash),income,0.01,0,309077,FPUC expiration,Restaurant,216.63130218896578,245.85438471662954
+Spend (cardcash),ui,0.007,0,309077,FPUC expiration,Restaurant,216.63130218896578,245.85438471662954
+Spend (total),income,0.305,0.017,249652,$300 onset,Restaurant,213.15521744060592,200.62187944456133
+Spend (total),ui,0.457,0.026,249652,$300 onset,Restaurant,213.15521744060592,200.62187944456133
+Spend (cardcash),income,0.013,0.001,249652,$300 onset,Restaurant,213.15521744060592,200.62187944456133
+Spend (cardcash),ui,0.019,0.001,249652,$300 onset,Restaurant,213.15521744060592,200.62187944456133
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Restaurant,283.33341607939,229.09004151190734
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Restaurant,283.33341607939,229.09004151190734
+Spend (cardcash),income,0.019,0.001,129293,$300 expiration Sept states,Restaurant,283.33341607939,229.09004151190734
+Spend (cardcash),ui,0.026,0.001,129293,$300 expiration Sept states,Restaurant,283.33341607939,229.09004151190734
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Restaurant,278.9078548123656,246.05450461172273
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Restaurant,278.9078548123656,246.05450461172273
+Spend (cardcash),income,0.02,0.002,121994,$300 expiration June states,Restaurant,278.9078548123656,246.05450461172273
+Spend (cardcash),ui,0.018,0.002,121994,$300 expiration June states,Restaurant,278.9078548123656,246.05450461172273
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Restaurant,294.7748403860309,246.05450461172273
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Restaurant,294.7748403860309,246.05450461172273
+Spend (cardcash),income,0.032,0.003,47623,$300 expiration June vs. Sept states,Restaurant,294.7748403860309,246.05450461172273
+Spend (cardcash),ui,0.018,0.001,47623,$300 expiration June vs. Sept states,Restaurant,294.7748403860309,246.05450461172273
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),Clothing,26.954656831479003,75.40457747472372
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),Clothing,26.954656831479003,75.40457747472372
+Spend (cardcash),income,0.007,0.001,52094,UI onset (waiting),Clothing,26.954656831479003,75.40457747472372
+Spend (cardcash),ui,0.005,0,52094,UI onset (waiting),Clothing,26.954656831479003,75.40457747472372
+Spend (total),income,0.319,0.009,309077,FPUC expiration,Clothing,45.463691846084686,68.45180460534031
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,Clothing,45.463691846084686,68.45180460534031
+Spend (cardcash),income,0.008,0,309077,FPUC expiration,Clothing,45.463691846084686,68.45180460534031
+Spend (cardcash),ui,0.006,0,309077,FPUC expiration,Clothing,45.463691846084686,68.45180460534031
+Spend (total),income,0.305,0.017,249652,$300 onset,Clothing,45.34252143306439,53.699910162002944
+Spend (total),ui,0.457,0.026,249652,$300 onset,Clothing,45.34252143306439,53.699910162002944
+Spend (cardcash),income,0.006,0.001,249652,$300 onset,Clothing,45.34252143306439,53.699910162002944
+Spend (cardcash),ui,0.009,0.001,249652,$300 onset,Clothing,45.34252143306439,53.699910162002944
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,Clothing,61.8117121021357,65.53362901463841
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,Clothing,61.8117121021357,65.53362901463841
+Spend (cardcash),income,0.005,0.001,129293,$300 expiration Sept states,Clothing,61.8117121021357,65.53362901463841
+Spend (cardcash),ui,0.007,0.001,129293,$300 expiration Sept states,Clothing,61.8117121021357,65.53362901463841
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,Clothing,61.80802226643602,60.524397500743824
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,Clothing,61.80802226643602,60.524397500743824
+Spend (cardcash),income,0.006,0.001,121994,$300 expiration June states,Clothing,61.80802226643602,60.524397500743824
+Spend (cardcash),ui,0.005,0.001,121994,$300 expiration June states,Clothing,61.80802226643602,60.524397500743824
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,Clothing,88.36022582464439,60.524397500743824
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,Clothing,88.36022582464439,60.524397500743824
+Spend (cardcash),income,0.004,0.002,47623,$300 expiration June vs. Sept states,Clothing,88.36022582464439,60.524397500743824
+Spend (cardcash),ui,0.002,0.001,47623,$300 expiration June vs. Sept states,Clothing,88.36022582464439,60.524397500743824
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),on_us_creditcard_pmts,348.6984147504964,454.8316261462497
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),on_us_creditcard_pmts,348.6984147504964,454.8316261462497
+Spend (cardcash),income,0.041,0.005,52094,UI onset (waiting),on_us_creditcard_pmts,348.6984147504964,454.8316261462497
+Spend (cardcash),ui,0.03,0.004,52094,UI onset (waiting),on_us_creditcard_pmts,348.6984147504964,454.8316261462497
+Spend (total),income,0.319,0.009,309077,FPUC expiration,on_us_creditcard_pmts,512.9539025829333,453.6246033855897
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,on_us_creditcard_pmts,512.9539025829333,453.6246033855897
+Spend (cardcash),income,0.038,0.003,309077,FPUC expiration,on_us_creditcard_pmts,512.9539025829333,453.6246033855897
+Spend (cardcash),ui,0.027,0.002,309077,FPUC expiration,on_us_creditcard_pmts,512.9539025829333,453.6246033855897
+Spend (total),income,0.305,0.017,249652,$300 onset,on_us_creditcard_pmts,569.5456388381623,418.73877719335155
+Spend (total),ui,0.457,0.026,249652,$300 onset,on_us_creditcard_pmts,569.5456388381623,418.73877719335155
+Spend (cardcash),income,0.02,0.005,249652,$300 onset,on_us_creditcard_pmts,569.5456388381623,418.73877719335155
+Spend (cardcash),ui,0.029,0.008,249652,$300 onset,on_us_creditcard_pmts,569.5456388381623,418.73877719335155
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,on_us_creditcard_pmts,672.5430324621738,462.9603109751657
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,on_us_creditcard_pmts,672.5430324621738,462.9603109751657
+Spend (cardcash),income,0.031,0.005,129293,$300 expiration Sept states,on_us_creditcard_pmts,672.5430324621738,462.9603109751657
+Spend (cardcash),ui,0.04,0.007,129293,$300 expiration Sept states,on_us_creditcard_pmts,672.5430324621738,462.9603109751657
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,on_us_creditcard_pmts,560.70445087089,395.8055350590102
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,on_us_creditcard_pmts,560.70445087089,395.8055350590102
+Spend (cardcash),income,0.001,0.008,121994,$300 expiration June states,on_us_creditcard_pmts,560.70445087089,395.8055350590102
+Spend (cardcash),ui,0.001,0.007,121994,$300 expiration June states,on_us_creditcard_pmts,560.70445087089,395.8055350590102
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,on_us_creditcard_pmts,494.51023357106067,395.8055350590102
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,on_us_creditcard_pmts,494.51023357106067,395.8055350590102
+Spend (cardcash),income,0.006,0.011,47623,$300 expiration June vs. Sept states,on_us_creditcard_pmts,494.51023357106067,395.8055350590102
+Spend (cardcash),ui,0.003,0.006,47623,$300 expiration June vs. Sept states,on_us_creditcard_pmts,494.51023357106067,395.8055350590102
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),off_us_creditcard_pmts,325.6417079391797,405.25853609217023
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),off_us_creditcard_pmts,325.6417079391797,405.25853609217023
+Spend (cardcash),income,0.036,0.004,52094,UI onset (waiting),off_us_creditcard_pmts,325.6417079391797,405.25853609217023
+Spend (cardcash),ui,0.026,0.003,52094,UI onset (waiting),off_us_creditcard_pmts,325.6417079391797,405.25853609217023
+Spend (total),income,0.319,0.009,309077,FPUC expiration,off_us_creditcard_pmts,413.60599620049345,419.7589745494351
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,off_us_creditcard_pmts,413.60599620049345,419.7589745494351
+Spend (cardcash),income,0.037,0.002,309077,FPUC expiration,off_us_creditcard_pmts,413.60599620049345,419.7589745494351
+Spend (cardcash),ui,0.026,0.001,309077,FPUC expiration,off_us_creditcard_pmts,413.60599620049345,419.7589745494351
+Spend (total),income,0.305,0.017,249652,$300 onset,off_us_creditcard_pmts,461.16498210572706,430.3674904270987
+Spend (total),ui,0.457,0.026,249652,$300 onset,off_us_creditcard_pmts,461.16498210572706,430.3674904270987
+Spend (cardcash),income,0.02,0.004,249652,$300 onset,off_us_creditcard_pmts,461.16498210572706,430.3674904270987
+Spend (cardcash),ui,0.03,0.006,249652,$300 onset,off_us_creditcard_pmts,461.16498210572706,430.3674904270987
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,off_us_creditcard_pmts,512.6833477816256,502.47351248998615
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,off_us_creditcard_pmts,512.6833477816256,502.47351248998615
+Spend (cardcash),income,0.018,0.004,129293,$300 expiration Sept states,off_us_creditcard_pmts,512.6833477816256,502.47351248998615
+Spend (cardcash),ui,0.023,0.005,129293,$300 expiration Sept states,off_us_creditcard_pmts,512.6833477816256,502.47351248998615
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,off_us_creditcard_pmts,491.3206663271673,419.4759466428642
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,off_us_creditcard_pmts,491.3206663271673,419.4759466428642
+Spend (cardcash),income,0.029,0.007,121994,$300 expiration June states,off_us_creditcard_pmts,491.3206663271673,419.4759466428642
+Spend (cardcash),ui,0.027,0.006,121994,$300 expiration June states,off_us_creditcard_pmts,491.3206663271673,419.4759466428642
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,off_us_creditcard_pmts,523.5934584837445,419.4759466428642
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,off_us_creditcard_pmts,523.5934584837445,419.4759466428642
+Spend (cardcash),income,0.018,0.01,47623,$300 expiration June vs. Sept states,off_us_creditcard_pmts,523.5934584837445,419.4759466428642
+Spend (cardcash),ui,0.01,0.005,47623,$300 expiration June vs. Sept states,off_us_creditcard_pmts,523.5934584837445,419.4759466428642
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),mortgage_pmts,205.55028611458457,265.5616553021396
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),mortgage_pmts,205.55028611458457,265.5616553021396
+Spend (cardcash),income,-0,0.003,52094,UI onset (waiting),mortgage_pmts,205.55028611458457,265.5616553021396
+Spend (cardcash),ui,-0,0.002,52094,UI onset (waiting),mortgage_pmts,205.55028611458457,265.5616553021396
+Spend (total),income,0.319,0.009,309077,FPUC expiration,mortgage_pmts,273.8235915885154,264.1115880214238
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,mortgage_pmts,273.8235915885154,264.1115880214238
+Spend (cardcash),income,0.005,0.001,309077,FPUC expiration,mortgage_pmts,273.8235915885154,264.1115880214238
+Spend (cardcash),ui,0.003,0.001,309077,FPUC expiration,mortgage_pmts,273.8235915885154,264.1115880214238
+Spend (total),income,0.305,0.017,249652,$300 onset,mortgage_pmts,304.28473378566014,257.4360399747528
+Spend (total),ui,0.457,0.026,249652,$300 onset,mortgage_pmts,304.28473378566014,257.4360399747528
+Spend (cardcash),income,-0.003,0.003,249652,$300 onset,mortgage_pmts,304.28473378566014,257.4360399747528
+Spend (cardcash),ui,-0.005,0.004,249652,$300 onset,mortgage_pmts,304.28473378566014,257.4360399747528
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,mortgage_pmts,352.4375140333633,322.8418796882965
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,mortgage_pmts,352.4375140333633,322.8418796882965
+Spend (cardcash),income,0.01,0.003,129293,$300 expiration Sept states,mortgage_pmts,352.4375140333633,322.8418796882965
+Spend (cardcash),ui,0.013,0.004,129293,$300 expiration Sept states,mortgage_pmts,352.4375140333633,322.8418796882965
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,mortgage_pmts,284.9741960635741,303.67551819894874
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,mortgage_pmts,284.9741960635741,303.67551819894874
+Spend (cardcash),income,0.005,0.004,121994,$300 expiration June states,mortgage_pmts,284.9741960635741,303.67551819894874
+Spend (cardcash),ui,0.004,0.004,121994,$300 expiration June states,mortgage_pmts,284.9741960635741,303.67551819894874
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,mortgage_pmts,218.6887815981103,303.67551819894874
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,mortgage_pmts,218.6887815981103,303.67551819894874
+Spend (cardcash),income,0.009,0.005,47623,$300 expiration June vs. Sept states,mortgage_pmts,218.6887815981103,303.67551819894874
+Spend (cardcash),ui,0.005,0.003,47623,$300 expiration June vs. Sept states,mortgage_pmts,218.6887815981103,303.67551819894874
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),student_loan_pmts,9.495406181331889,34.77069456853985
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),student_loan_pmts,9.495406181331889,34.77069456853985
+Spend (cardcash),income,0,0.001,52094,UI onset (waiting),student_loan_pmts,9.495406181331889,34.77069456853985
+Spend (cardcash),ui,0,0,52094,UI onset (waiting),student_loan_pmts,9.495406181331889,34.77069456853985
+Spend (total),income,0.319,0.009,309077,FPUC expiration,student_loan_pmts,17.885640843344238,27.93569321187954
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,student_loan_pmts,17.885640843344238,27.93569321187954
+Spend (cardcash),income,0,0,309077,FPUC expiration,student_loan_pmts,17.885640843344238,27.93569321187954
+Spend (cardcash),ui,0,0,309077,FPUC expiration,student_loan_pmts,17.885640843344238,27.93569321187954
+Spend (total),income,0.305,0.017,249652,$300 onset,student_loan_pmts,17.643736075140946,25.578300021039347
+Spend (total),ui,0.457,0.026,249652,$300 onset,student_loan_pmts,17.643736075140946,25.578300021039347
+Spend (cardcash),income,-0.001,0,249652,$300 onset,student_loan_pmts,17.643736075140946,25.578300021039347
+Spend (cardcash),ui,-0.001,0.001,249652,$300 onset,student_loan_pmts,17.643736075140946,25.578300021039347
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,student_loan_pmts,14.674884750999263,28.761193649406454
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,student_loan_pmts,14.674884750999263,28.761193649406454
+Spend (cardcash),income,-0,0,129293,$300 expiration Sept states,student_loan_pmts,14.674884750999263,28.761193649406454
+Spend (cardcash),ui,-0,0.001,129293,$300 expiration Sept states,student_loan_pmts,14.674884750999263,28.761193649406454
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,student_loan_pmts,14.293235556669785,22.21991173261926
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,student_loan_pmts,14.293235556669785,22.21991173261926
+Spend (cardcash),income,-0,0.001,121994,$300 expiration June states,student_loan_pmts,14.293235556669785,22.21991173261926
+Spend (cardcash),ui,-0,0.001,121994,$300 expiration June states,student_loan_pmts,14.293235556669785,22.21991173261926
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,student_loan_pmts,8.002127524771254,22.21991173261926
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,student_loan_pmts,8.002127524771254,22.21991173261926
+Spend (cardcash),income,-0,0.001,47623,$300 expiration June vs. Sept states,student_loan_pmts,8.002127524771254,22.21991173261926
+Spend (cardcash),ui,-0,0,47623,$300 expiration June vs. Sept states,student_loan_pmts,8.002127524771254,22.21991173261926
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),other_loan_pmts,0.05659044911773539,0.13390971079238184
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),other_loan_pmts,0.05659044911773539,0.13390971079238184
+Spend (cardcash),income,0,0,52094,UI onset (waiting),other_loan_pmts,0.05659044911773539,0.13390971079238184
+Spend (cardcash),ui,0,0,52094,UI onset (waiting),other_loan_pmts,0.05659044911773539,0.13390971079238184
+Spend (total),income,0.319,0.009,309077,FPUC expiration,other_loan_pmts,0.6765626346744638,0.30778696717359255
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,other_loan_pmts,0.6765626346744638,0.30778696717359255
+Spend (cardcash),income,-0,0,309077,FPUC expiration,other_loan_pmts,0.6765626346744638,0.30778696717359255
+Spend (cardcash),ui,-0,0,309077,FPUC expiration,other_loan_pmts,0.6765626346744638,0.30778696717359255
+Spend (total),income,0.305,0.017,249652,$300 onset,other_loan_pmts,1.049867632922982,0.1452341678939617
+Spend (total),ui,0.457,0.026,249652,$300 onset,other_loan_pmts,1.049867632922982,0.1452341678939617
+Spend (cardcash),income,-0,0,249652,$300 onset,other_loan_pmts,1.049867632922982,0.1452341678939617
+Spend (cardcash),ui,-0,0,249652,$300 onset,other_loan_pmts,1.049867632922982,0.1452341678939617
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,other_loan_pmts,1.2097670256341804,1.2107005680576788
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,other_loan_pmts,1.2097670256341804,1.2107005680576788
+Spend (cardcash),income,-0,0,129293,$300 expiration Sept states,other_loan_pmts,1.2097670256341804,1.2107005680576788
+Spend (cardcash),ui,-0,0,129293,$300 expiration Sept states,other_loan_pmts,1.2097670256341804,1.2107005680576788
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,other_loan_pmts,0.38801336996822516,0.5204630566299692
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,other_loan_pmts,0.38801336996822516,0.5204630566299692
+Spend (cardcash),income,0,0,121994,$300 expiration June states,other_loan_pmts,0.38801336996822516,0.5204630566299692
+Spend (cardcash),ui,0,0,121994,$300 expiration June states,other_loan_pmts,0.38801336996822516,0.5204630566299692
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,other_loan_pmts,0.06537392759977327,0.5204630566299692
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,other_loan_pmts,0.06537392759977327,0.5204630566299692
+Spend (cardcash),income,0,0,47623,$300 expiration June vs. Sept states,other_loan_pmts,0.06537392759977327,0.5204630566299692
+Spend (cardcash),ui,0,0,47623,$300 expiration June vs. Sept states,other_loan_pmts,0.06537392759977327,0.5204630566299692
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),auto_loan_pmts,59.28446172768552,84.08874817775688
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),auto_loan_pmts,59.28446172768552,84.08874817775688
+Spend (cardcash),income,0.003,0.001,52094,UI onset (waiting),auto_loan_pmts,59.28446172768552,84.08874817775688
+Spend (cardcash),ui,0.002,0.001,52094,UI onset (waiting),auto_loan_pmts,59.28446172768552,84.08874817775688
+Spend (total),income,0.319,0.009,309077,FPUC expiration,auto_loan_pmts,73.30046372240848,82.6503871665559
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,auto_loan_pmts,73.30046372240848,82.6503871665559
+Spend (cardcash),income,0.001,0,309077,FPUC expiration,auto_loan_pmts,73.30046372240848,82.6503871665559
+Spend (cardcash),ui,0.001,0,309077,FPUC expiration,auto_loan_pmts,73.30046372240848,82.6503871665559
+Spend (total),income,0.305,0.017,249652,$300 onset,auto_loan_pmts,79.36014637848393,81.41485714285714
+Spend (total),ui,0.457,0.026,249652,$300 onset,auto_loan_pmts,79.36014637848393,81.41485714285714
+Spend (cardcash),income,0.002,0.001,249652,$300 onset,auto_loan_pmts,79.36014637848393,81.41485714285714
+Spend (cardcash),ui,0.003,0.001,249652,$300 onset,auto_loan_pmts,79.36014637848393,81.41485714285714
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,auto_loan_pmts,80.037741110347,94.67901172529314
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,auto_loan_pmts,80.037741110347,94.67901172529314
+Spend (cardcash),income,0.003,0.001,129293,$300 expiration Sept states,auto_loan_pmts,80.037741110347,94.67901172529314
+Spend (cardcash),ui,0.004,0.001,129293,$300 expiration Sept states,auto_loan_pmts,80.037741110347,94.67901172529314
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,auto_loan_pmts,76.84760273213917,107.71956758901119
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,auto_loan_pmts,76.84760273213917,107.71956758901119
+Spend (cardcash),income,0.005,0.001,121994,$300 expiration June states,auto_loan_pmts,76.84760273213917,107.71956758901119
+Spend (cardcash),ui,0.005,0.001,121994,$300 expiration June states,auto_loan_pmts,76.84760273213917,107.71956758901119
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,auto_loan_pmts,80.08052112117048,107.71956758901119
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,auto_loan_pmts,80.08052112117048,107.71956758901119
+Spend (cardcash),income,0.005,0.002,47623,$300 expiration June vs. Sept states,auto_loan_pmts,80.08052112117048,107.71956758901119
+Spend (cardcash),ui,0.003,0.001,47623,$300 expiration June vs. Sept states,auto_loan_pmts,80.08052112117048,107.71956758901119
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),debt_payments,604.7168265013642,792.2278363508112
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),debt_payments,604.7168265013642,792.2278363508112
+Spend (cardcash),income,0.043,0.005,52094,UI onset (waiting),debt_payments,604.7168265013642,792.2278363508112
+Spend (cardcash),ui,0.031,0.004,52094,UI onset (waiting),debt_payments,604.7168265013642,792.2278363508112
+Spend (total),income,0.319,0.009,309077,FPUC expiration,debt_payments,788.2542910678909,797.2457424710374
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,debt_payments,788.2542910678909,797.2457424710374
+Spend (cardcash),income,0.044,0.003,309077,FPUC expiration,debt_payments,788.2542910678909,797.2457424710374
+Spend (cardcash),ui,0.031,0.002,309077,FPUC expiration,debt_payments,788.2542910678909,797.2457424710374
+Spend (total),income,0.305,0.017,249652,$300 onset,debt_payments,873.1336533234175,798.4940965705871
+Spend (total),ui,0.457,0.026,249652,$300 onset,debt_payments,873.1336533234175,798.4940965705871
+Spend (cardcash),income,0.019,0.005,249652,$300 onset,debt_payments,873.1336533234175,798.4940965705871
+Spend (cardcash),ui,0.028,0.008,249652,$300 onset,debt_payments,873.1336533234175,798.4940965705871
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,debt_payments,966.4249659969038,943.7498528876266
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,debt_payments,966.4249659969038,943.7498528876266
+Spend (cardcash),income,0.032,0.005,129293,$300 expiration Sept states,debt_payments,966.4249659969038,943.7498528876266
+Spend (cardcash),ui,0.042,0.007,129293,$300 expiration Sept states,debt_payments,966.4249659969038,943.7498528876266
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,debt_payments,879.571671286769,855.7189199642962
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,debt_payments,879.571671286769,855.7189199642962
+Spend (cardcash),income,0.044,0.008,121994,$300 expiration June states,debt_payments,879.571671286769,855.7189199642962
+Spend (cardcash),ui,0.04,0.008,121994,$300 expiration June states,debt_payments,879.571671286769,855.7189199642962
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,debt_payments,839.5056312736823,855.7189199642962
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,debt_payments,839.5056312736823,855.7189199642962
+Spend (cardcash),income,0.036,0.012,47623,$300 expiration June vs. Sept states,debt_payments,839.5056312736823,855.7189199642962
+Spend (cardcash),ui,0.02,0.007,47623,$300 expiration June vs. Sept states,debt_payments,839.5056312736823,855.7189199642962
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),total_categorized_spending_post_winsor,1379.1823170620012,1829.2172311779918
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),total_categorized_spending_post_winsor,1379.1823170620012,1829.2172311779918
+Spend (cardcash),income,0.175,0.006,52094,UI onset (waiting),total_categorized_spending_post_winsor,1379.1823170620012,1829.2172311779918
+Spend (cardcash),ui,0.128,0.004,52094,UI onset (waiting),total_categorized_spending_post_winsor,1379.1823170620012,1829.2172311779918
+Spend (total),income,0.319,0.009,309077,FPUC expiration,total_categorized_spending_post_winsor,1746.0816475565364,1763.2882455464767
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,total_categorized_spending_post_winsor,1746.0816475565364,1763.2882455464767
+Spend (cardcash),income,0.106,0.003,309077,FPUC expiration,total_categorized_spending_post_winsor,1746.0816475565364,1763.2882455464767
+Spend (cardcash),ui,0.075,0.002,309077,FPUC expiration,total_categorized_spending_post_winsor,1746.0816475565364,1763.2882455464767
+Spend (total),income,0.305,0.017,249652,$300 onset,total_categorized_spending_post_winsor,1779.420693071444,1540.3098671681043
+Spend (total),ui,0.457,0.026,249652,$300 onset,total_categorized_spending_post_winsor,1779.420693071444,1540.3098671681043
+Spend (cardcash),income,0.11,0.005,249652,$300 onset,total_categorized_spending_post_winsor,1779.420693071444,1540.3098671681043
+Spend (cardcash),ui,0.165,0.008,249652,$300 onset,total_categorized_spending_post_winsor,1779.420693071444,1540.3098671681043
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,total_categorized_spending_post_winsor,2039.8209460732705,1687.740231010123
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,total_categorized_spending_post_winsor,2039.8209460732705,1687.740231010123
+Spend (cardcash),income,0.111,0.006,129293,$300 expiration Sept states,total_categorized_spending_post_winsor,2039.8209460732705,1687.740231010123
+Spend (cardcash),ui,0.147,0.007,129293,$300 expiration Sept states,total_categorized_spending_post_winsor,2039.8209460732705,1687.740231010123
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,total_categorized_spending_post_winsor,2014.527769805501,1908.880147575126
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,total_categorized_spending_post_winsor,2014.527769805501,1908.880147575126
+Spend (cardcash),income,0.121,0.01,121994,$300 expiration June states,total_categorized_spending_post_winsor,2014.527769805501,1908.880147575126
+Spend (cardcash),ui,0.11,0.009,121994,$300 expiration June states,total_categorized_spending_post_winsor,2014.527769805501,1908.880147575126
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,total_categorized_spending_post_winsor,2104.5734804125836,1908.880147575126
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,total_categorized_spending_post_winsor,2104.5734804125836,1908.880147575126
+Spend (cardcash),income,0.146,0.015,47623,$300 expiration June vs. Sept states,total_categorized_spending_post_winsor,2104.5734804125836,1908.880147575126
+Spend (cardcash),ui,0.082,0.008,47623,$300 expiration June vs. Sept states,total_categorized_spending_post_winsor,2104.5734804125836,1908.880147575126
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),uncatergorized_spend_cardcash,172.6916724453,279.91608088408185
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),uncatergorized_spend_cardcash,172.6916724453,279.91608088408185
+Spend (cardcash),income,0.024,0.002,52094,UI onset (waiting),uncatergorized_spend_cardcash,172.6916724453,279.91608088408185
+Spend (cardcash),ui,0.017,0.001,52094,UI onset (waiting),uncatergorized_spend_cardcash,172.6916724453,279.91608088408185
+Spend (total),income,0.319,0.009,309077,FPUC expiration,uncatergorized_spend_cardcash,215.73295518492114,272.1683485150579
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,uncatergorized_spend_cardcash,215.73295518492114,272.1683485150579
+Spend (cardcash),income,0.01,0.001,309077,FPUC expiration,uncatergorized_spend_cardcash,215.73295518492114,272.1683485150579
+Spend (cardcash),ui,0.007,0.001,309077,FPUC expiration,uncatergorized_spend_cardcash,215.73295518492114,272.1683485150579
+Spend (total),income,0.305,0.017,249652,$300 onset,uncatergorized_spend_cardcash,223.89678976668804,219.06343277929727
+Spend (total),ui,0.457,0.026,249652,$300 onset,uncatergorized_spend_cardcash,223.89678976668804,219.06343277929727
+Spend (cardcash),income,0.011,0.002,249652,$300 onset,uncatergorized_spend_cardcash,223.89678976668804,219.06343277929727
+Spend (cardcash),ui,0.016,0.002,249652,$300 onset,uncatergorized_spend_cardcash,223.89678976668804,219.06343277929727
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,uncatergorized_spend_cardcash,292.8899693919215,245.19697181559974
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,uncatergorized_spend_cardcash,292.8899693919215,245.19697181559974
+Spend (cardcash),income,0.018,0.002,129293,$300 expiration Sept states,uncatergorized_spend_cardcash,292.8899693919215,245.19697181559974
+Spend (cardcash),ui,0.024,0.002,129293,$300 expiration Sept states,uncatergorized_spend_cardcash,292.8899693919215,245.19697181559974
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,uncatergorized_spend_cardcash,294.3183529900157,306.64057919270056
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,uncatergorized_spend_cardcash,294.3183529900157,306.64057919270056
+Spend (cardcash),income,0.02,0.003,121994,$300 expiration June states,uncatergorized_spend_cardcash,294.3183529900157,306.64057919270056
+Spend (cardcash),ui,0.018,0.003,121994,$300 expiration June states,uncatergorized_spend_cardcash,294.3183529900157,306.64057919270056
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,uncatergorized_spend_cardcash,297.25924855503484,306.64057919270056
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,uncatergorized_spend_cardcash,297.25924855503484,306.64057919270056
+Spend (cardcash),income,0.034,0.005,47623,$300 expiration June vs. Sept states,uncatergorized_spend_cardcash,297.25924855503484,306.64057919270056
+Spend (cardcash),ui,0.019,0.002,47623,$300 expiration June vs. Sept states,uncatergorized_spend_cardcash,297.25924855503484,306.64057919270056
+Spend (total),income,0.43,0.016,52094,UI onset (waiting),uncatergorized_spend,1614.4072984601382,1973.1202539383967
+Spend (total),ui,0.312,0.012,52094,UI onset (waiting),uncatergorized_spend,1614.4072984601382,1973.1202539383967
+Spend (cardcash),income,0.123,0.01,52094,UI onset (waiting),uncatergorized_spend,1614.4072984601382,1973.1202539383967
+Spend (cardcash),ui,0.089,0.007,52094,UI onset (waiting),uncatergorized_spend,1614.4072984601382,1973.1202539383967
+Spend (total),income,0.319,0.009,309077,FPUC expiration,uncatergorized_spend,2053.322457076493,1962.1292487326843
+Spend (total),ui,0.225,0.006,309077,FPUC expiration,uncatergorized_spend,2053.322457076493,1962.1292487326843
+Spend (cardcash),income,0.097,0.006,309077,FPUC expiration,uncatergorized_spend,2053.322457076493,1962.1292487326843
+Spend (cardcash),ui,0.068,0.004,309077,FPUC expiration,uncatergorized_spend,2053.322457076493,1962.1292487326843
+Spend (total),income,0.305,0.017,249652,$300 onset,uncatergorized_spend,2236.2353530232726,1913.0675102040818
+Spend (total),ui,0.457,0.026,249652,$300 onset,uncatergorized_spend,2236.2353530232726,1913.0675102040818
+Spend (cardcash),income,0.093,0.011,249652,$300 onset,uncatergorized_spend,2236.2353530232726,1913.0675102040818
+Spend (cardcash),ui,0.139,0.017,249652,$300 onset,uncatergorized_spend,2236.2353530232726,1913.0675102040818
+Spend (total),income,0.269,0.016,129293,$300 expiration Sept states,uncatergorized_spend,2457.3082661716176,2172.7897909839053
+Spend (total),ui,0.357,0.022,129293,$300 expiration Sept states,uncatergorized_spend,2457.3082661716176,2172.7897909839053
+Spend (cardcash),income,0.068,0.01,129293,$300 expiration Sept states,uncatergorized_spend,2457.3082661716176,2172.7897909839053
+Spend (cardcash),ui,0.09,0.014,129293,$300 expiration Sept states,uncatergorized_spend,2457.3082661716176,2172.7897909839053
+Spend (total),income,0.348,0.028,121994,$300 expiration June states,uncatergorized_spend,2335.7919830876144,1908.7252742239414
+Spend (total),ui,0.317,0.027,121994,$300 expiration June states,uncatergorized_spend,2335.7919830876144,1908.7252742239414
+Spend (cardcash),income,0.139,0.018,121994,$300 expiration June states,uncatergorized_spend,2335.7919830876144,1908.7252742239414
+Spend (cardcash),ui,0.126,0.017,121994,$300 expiration June states,uncatergorized_spend,2335.7919830876144,1908.7252742239414
+Spend (total),income,0.402,0.04,47623,$300 expiration June vs. Sept states,uncatergorized_spend,2362.6732569813644,1908.7252742239414
+Spend (total),ui,0.224,0.023,47623,$300 expiration June vs. Sept states,uncatergorized_spend,2362.6732569813644,1908.7252742239414
+Spend (cardcash),income,0.157,0.025,47623,$300 expiration June vs. Sept states,uncatergorized_spend,2362.6732569813644,1908.7252742239414
+Spend (cardcash),ui,0.088,0.014,47623,$300 expiration June vs. Sept states,uncatergorized_spend,2362.6732569813644,1908.7252742239414

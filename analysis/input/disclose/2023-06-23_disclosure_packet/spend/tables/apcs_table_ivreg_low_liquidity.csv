@@ -1,0 +1,29 @@
+numerator,denominator,apc,se,n_obs,design
+Spend (total),income,0.534,0.021,27454,UI onset (waiting)
+Spend (total),ui,0.379,0.015,27454,UI onset (waiting)
+Spend (cardcash),income,0.396,0.016,27454,UI onset (waiting)
+Spend (cardcash),ui,0.281,0.01,27454,UI onset (waiting)
+Spend (total),income,0.42,0.011,140192,FPUC expiration
+Spend (total),ui,0.281,0.007,140192,FPUC expiration
+Spend (cardcash),income,0.282,0.007,140192,FPUC expiration
+Spend (cardcash),ui,0.189,0.005,140192,FPUC expiration
+Spend (total),income,0.405,0.024,201400,LWA
+Spend (total),lwa,0.475,0.031,201400,LWA
+Spend (cardcash),income,0.292,0.016,201400,LWA
+Spend (cardcash),lwa,0.343,0.018,201400,LWA
+Spend (total),income,0.354,0.016,108036,$300 onset
+Spend (total),ui,0.548,0.027,108036,$300 onset
+Spend (cardcash),income,0.246,0.011,108036,$300 onset
+Spend (cardcash),ui,0.381,0.017,108036,$300 onset
+Spend (total),income,0.355,0.017,62997,$300 expiration Sept states
+Spend (total),ui,0.434,0.023,62997,$300 expiration Sept states
+Spend (cardcash),income,0.266,0.012,62997,$300 expiration Sept states
+Spend (cardcash),ui,0.324,0.015,62997,$300 expiration Sept states
+Spend (total),income,0.462,0.029,60314,$300 expiration June states
+Spend (total),ui,0.394,0.028,60314,$300 expiration June states
+Spend (cardcash),income,0.295,0.021,60314,$300 expiration June states
+Spend (cardcash),ui,0.252,0.018,60314,$300 expiration June states
+Spend (total),income,0.507,0.041,24827,$300 expiration June vs. Sept states
+Spend (total),ui,0.295,0.026,24827,$300 expiration June vs. Sept states
+Spend (cardcash),income,0.343,0.03,24827,$300 expiration June vs. Sept states
+Spend (cardcash),ui,0.199,0.016,24827,$300 expiration June vs. Sept states
