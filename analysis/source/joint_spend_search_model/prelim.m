@@ -50,7 +50,7 @@ save('elasticity_uieip_input_directory.mat', 'elasticity_uieip_input_directory')
 % Input: duration elasticities from literature ----------------------------
 % This csv has been created for this project (typed up numbers from a review
 % paper), i.e., it is public information (but not a public dataset).
-literature_elasticities_input_path = '..\..\input\csvs_key_plots\literature_elasticities.csv';
+literature_elasticities_input_path = '..\..\input\public_data\literature_elasticities.csv';
 eval(['literature_elasticities_input_directory' '=literature_elasticities_input_path;']);
 save('literature_elasticities_input_directory.mat', 'literature_elasticities_input_directory');
 
