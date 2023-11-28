@@ -29,8 +29,6 @@ load graph_axis_labels_timeseries.mat
 
 exit_rates_data = readtable(jobfind_input_directory, 'Sheet', fig1_df);
 exit_rates_data.week_start_date = datetime(exit_rates_data.week_start_date);
-%idx = datenum(exit_rates_data.week_start_date) >= datenum('2020-01-01') & datenum(exit_rates_data.week_start_date) < datenum('2020-11-20');
-%exit_rates_data = exit_rates_data(idx, :);
 exit_rates_data.month = dateshift(exit_rates_data.week_start_date, 'start', 'month');
 
 % For the exit variables we want the average exit probability at a monthly level
@@ -75,10 +73,7 @@ perc_spend_w = data_update_w.percent_change;
 perc_spend_u_vs_e=total_spend_u_yoy-total_spend_e_yoy;
 perc_spend_w_vs_e=total_spend_w_yoy-total_spend_e_yoy;
 
-%perc_spend_u_vs_e = perc_spend_u - perc_spend_e;
-%perc_spend_u_vs_e = perc_spend_u_vs_e(13:end);
-%perc_spend_w_vs_e = perc_spend_w - perc_spend_e;
-%perc_spend_w_vs_e=perc_spend_w_vs_e(13:end);
+
 perc_spend_u_vs_e=perc_spend_u_vs_e-mean(perc_spend_u_vs_e(1:2));
 perc_spend_w_vs_e=perc_spend_w_vs_e-mean(perc_spend_w_vs_e(1:2));
 spend_dollars_u_vs_e = perc_spend_u_vs_e * mean(total_spend_u(1:2));
@@ -106,11 +101,7 @@ perc_income_w_vs_e=income_w_yoy-income_e_yoy;
 perc_income_e = data_update_e.percent_change;
 perc_income_u = data_update_u.percent_change;
 perc_income_w = data_update_w.percent_change;
-%perc_income_u_vs_e = perc_income_u - perc_income_e;
-%perc_income_u_vs_e = perc_income_u_vs_e(13:end);
 perc_income_u_vs_e=perc_income_u_vs_e-mean(perc_income_u_vs_e(1:3));
-%perc_income_w_vs_e = perc_income_w - perc_income_e;
-%perc_income_w_vs_e = perc_income_w_vs_e(13:end);
 perc_income_w_vs_e=perc_income_w_vs_e-mean(perc_income_w_vs_e(1:3));
 income_dollars_u_vs_e = perc_income_u_vs_e * mean(income_u(1:3));
 income_dollars_w_vs_e = perc_income_w_vs_e * mean(income_w(1:3));
@@ -165,7 +156,7 @@ mpc_waiting_data=((total_spend_u(5)-total_spend_u(3))-(total_spend_w(5)-total_sp
 
 
 shock_500 = 500 / income_e(1);
-shock_500=.35*1/12
+shock_500=.35*1/12;
 
 k_prepandemic = pre_pandemic_fit_match500MPC(1);
 gamma_prepandemic = pre_pandemic_fit_match500MPC(2);
@@ -250,10 +241,6 @@ for iy = 1:5
 
         %expect $600 for 12 months
         benefit_profile_pandemic(1:12, 2) = b + h + FPUC_expiration;
-        %benefit_profile_pandemic(1)=b+h+1.5*FPUC_expiration;
-        %benefit_profile_pandemic(3)=b+h+1.05*FPUC_expiration;
-        %benefit_profile_pandemic(4)=b+h+1.25*FPUC_expiration;
-        %benefit_profile_pandemic(5:12,2)=b+h+1*FPUC_expiration;
         if infinite_dur == 1
             benefit_profile_pandemic(13, 2) = b + h + FPUC_expiration;
         else
@@ -334,12 +321,6 @@ for iy = 1:5
         recall_probs_pandemic(1:13, 1) = 0.00;
         recall_probs_regular = recall_probs_pandemic;
 
-        %recall_probs_pandemic_actual(1)=.0078;
-        %recall_probs_pandemic_actual(2)=.113;
-        %recall_probs_pandemic_actual(3)=.18;
-        %recall_probs_pandemic_actual(4)=.117;
-        %recall_probs_pandemic_actual(5)=.112;
-        %recall_probs_pandemic_actual(6:13)=.107;
 
         recall_probs_pandemic(1:13) = .08;
         recall_probs_regular = recall_probs_pandemic;
@@ -468,7 +449,6 @@ for iy = 1:5
                         c_tilde_e_with_transfer(:, ib, i_transfer_profile) = (rhs_e_with_transfer(:, ib, i_transfer_profile)).^(-1 / mu); %unconstrained
                         a_star_e_with_transfer(:, ib, i_transfer_profile) = (Aprime(:) + c_tilde_e_with_transfer(:, ib, i_transfer_profile) - y(1) - transfer_profile(ib, i_transfer_profile)) / (1 + r); %a implied by a' and optimal c (so mapping from c_tilde to a_star gives us c_pol)
                         a_star1_e_with_transfer(ib, i_transfer_profile) = (c_tilde_e_with_transfer(1, ib, i_transfer_profile) - y(1) - transfer_profile(ib, i_transfer_profile)) / (1 + r);
-                        %a_star1_e_with_transfer(:, ib) = (c_tilde_e(1) - y(1)) / (1 + r);
                     end 
         
                     for ib = 1:n_b
@@ -625,12 +605,7 @@ for iy = 1:5
 
                 ave_change_in_S = mean([mean(mean(mean(abs(optimal_search(:, :) - optimal_search_guess(:, :))))), mean(mean(mean(mean(abs(optimal_search_pandemic(:, :, :) - optimal_search_pandemic_guess(:, :, :))))))]);
 
-                if mod(iter, 20) == 0
-                    %[iter diffC ave_change_in_C ave_change_in_C_percent ave_change_in_S diffV ave_change_in_V]
-
-                    %[iter ave_change_in_C ave_change_in_C_percent ave_change_in_S]
-                    %     stop
-                end
+               
 
                 % Update guesses, fully for now.
                 c_pol_e_guess = c_pol_e;
@@ -676,31 +651,7 @@ for iy = 1:5
         % Begin simulations using policy functions
 
         A = Aprime;
-    %{
-    figure
-    plot(A,c_pol_e(:,1),A,c_pol_u(:,:,1))
-    title('Consumption functions E vs regular U t=1')
-
-    figure
-    plot(A,c_pol_e(:,1),A,c_pol_u_pandemic(:,:,1,1))
-    title('Consumption functions E vs pandemic U  t=1')
-
-    figure
-    plot(A,v_e(:,1),A,v_u(:,:,1))
-    title('Value functions E vs. regular U  t=1')
-
-    figure
-    plot(A,v_e(:,1),A,v_u_pandemic(:,:,1))
-    title('Value functions E vs. pandemic U  t=1')
-
-    figure
-    plot(A,optimal_search(:,:,1))
-    title('Optimal search regular u, t=1')
-
-    figure
-    plot(A,optimal_search_pandemic(:,:,1))
-    title('Optimal search pandemic, t=1')
-    %}
+   
 
         numt_sim = 36;
         a_u_sim = zeros(numt_sim, 1);
@@ -723,12 +674,7 @@ for iy = 1:5
         c_u_with500_sim3 = c_u_sim;
         a_u_with500_sim3 = a_u_sim;
 
-        %Note that we don't necessarily need all parts of this simulation step to
-        %be internal to the parameter search, keeping only the absolute necessary
-        %parts internal to that loop should speed things up some
-
-        %note also i might be able to speed up by feeding only the adjacent points
-        %into the interp step
+      
 
         numhh = 1000;
         numsim = 18;

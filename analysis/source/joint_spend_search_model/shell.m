@@ -8,6 +8,7 @@ clear
 prelim;
 
 %solve for the search parameters that best fit different targets
+
 solve_best_fit_params;
 
 clc
@@ -19,10 +20,11 @@ prepandemic_results_onset_target500MPC;
 inf_horizon_het_results_onset_target500MPC;
 inf_horizon_het_results_onset; %paper figures 10a 10b A19
 
-inf_horizon_het_results_stimulus_check_size; %note this is not very efficient, is re-using inf_horizon_het_results and is calculating the uncond transfer thing so that I could compute employment effects of stim checks
+inf_horizon_het_results_stimulus_check_size; %note these next two subroutines are not very efficient. They re-rerun inf_horizon_het_results for various size transfers but much of this code isn't actually needed
 inf_horizon_het_results_stimulus_check_size_onetenth;
 inf_horizon_het_counterfactuals; %paper figure 13
 liquidity_effects_prepandemic; %table_stats_for_text_liquidity
+
 
 % Create tex tables for paper
 make_table_agg_effects; %table_agg_effects
@@ -37,7 +39,7 @@ pandemic_hazard_vs_duration_elasticity_constanteffects_v2; %paper figure 11
 liquidity_effects_on_mpcs;
 
 %% Results by liquidity ==================================================
-inf_horizon_het_results_by_liquidity; % paper figure 12
+inf_horizon_het_results_by_liquidity; % paper figure 12 (takes a little longer than most of the other subroutines, 10-15 min)
 
 
 %% Collect stats for text =================================================

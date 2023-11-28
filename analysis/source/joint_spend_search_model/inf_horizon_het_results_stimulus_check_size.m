@@ -246,10 +246,6 @@ for FPUC_mult_index=1:length(FPUC_mult)
     
             %expect $600 for 12 months
             benefit_profile_pandemic(1:12, 2) = b + h + FPUC_expiration;
-            %benefit_profile_pandemic(1)=b+h+1.5*FPUC_expiration;
-            %benefit_profile_pandemic(3)=b+h+1.05*FPUC_expiration;
-            %benefit_profile_pandemic(4)=b+h+1.25*FPUC_expiration;
-            %benefit_profile_pandemic(5:12,2)=b+h+1*FPUC_expiration;
             if infinite_dur == 1
                 benefit_profile_pandemic(13, 2) = b + h + FPUC_expiration;
             else
@@ -633,12 +629,7 @@ for FPUC_mult_index=1:length(FPUC_mult)
     
             A = Aprime;
     
-            %Note that we don't necessarily need all parts of this simulation step to
-            %be internal to the parameter search, keeping only the absolute necessary
-            %parts internal to that loop should speed things up some
-    
-            %note also i might be able to speed up by feeding only the adjacent points
-            %into the interp step
+        
     
             numhh = 1000;
             numsim = 18;

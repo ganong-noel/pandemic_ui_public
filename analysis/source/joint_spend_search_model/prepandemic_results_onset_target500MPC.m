@@ -348,12 +348,7 @@ for iy=1:5
 
         ave_change_in_S = mean([mean(mean(mean(abs(optimal_search(:,:) - optimal_search_guess(:,:))))), mean(mean(mean(mean(abs(optimal_search_pandemic(:,:,:) - optimal_search_pandemic_guess(:,:,:))))))]);
 
-        % if iter == 100
-             %[iter diffC ave_change_in_C ave_change_in_C_percent ave_change_in_S diffV ave_change_in_V]
 
-             %[iter ave_change_in_C ave_change_in_C_percent ave_change_in_S]
-        %     stop
-        % end
 
 
         % Update guesses, fully for now.
@@ -422,12 +417,7 @@ for iy=1:5
 
 
 
-    %Note that we don't necessarily need all parts of this simulation step to
-    %be internal to the parameter search, keeping only the absolute necessary
-    %parts internal to that loop should speed things up some
 
-    %note also i might be able to speed up by feeding only the adjacent points
-    %into the interp step
 
     numhh=500;
     numsim=15;
@@ -669,8 +659,6 @@ for iy=1:5
 
 
 
-            %note for surprise case won't want to use i_b+1 in actuality will
-            %want to use the expected one in the last period before surprise
 
         end
     end
@@ -685,10 +673,7 @@ for iy=1:5
                 a_sim_e(i,t)=a_sim_e(i,t)+EIP3*FPUC_onset/(4.5*600);
              end
 
-             %adjust initial assets isomorphic to allowing for borrowing
-             %if t==1
-             %    a_sim_e(i,t)=a_sim_e(i,t)+5*1320*FPUC_onset/(4.5*600);
-             %end
+
 
              c_sim_e(i,t)=interp1(A,c_pol_e(:),a_sim_e(i,t),'linear');
              a_sim_e(i,t+1)=y+(1+r)*a_sim_e(i,t)-c_sim_e(i,t);   
@@ -727,14 +712,7 @@ for iy=1:5
     end
    
     end
-   % mean_a_sim_pandemic_surprise=mean(a_sim_pandemic_surprise,1);
-   % mean_c_sim_pandemic_surprise=mean(c_sim_pandemic_surprise,1);
 
-   % mean_a_sim_pandemic_expect=mean(a_sim_pandemic_expect,1);
-   % mean_c_sim_pandemic_expect=mean(c_sim_pandemic_expect,1);
-
-   % mean_a_sim_regular=mean(a_sim_regular,1);
-   % mean_c_sim_regular=mean(c_sim_regular,1);
 
     mean_c_sim_e_bywage(iy,:)=mean_c_sim_e;
     mean_a_sim_e_bywage(iy,:)=mean_a_sim_e;

@@ -320,11 +320,7 @@ for FPUC_mult_index=1:length(FPUC_mult)
                 benefit_profile_pandemic(13, 8) = h;
             end
     
-    
-            %benefit_profile_pandemic(1, :) = benefit_profile_pandemic(1, :) + 350 * FPUC_expiration / (4.5 * 600);
-    
-%             recall_probs_pandemic(1:13, 1) = 0.00;
-%             recall_probs_regular = recall_probs_pandemic;
+ 
 
             recall_probs_pandemic(1:13) = .08;
             recall_probs_regular = recall_probs_pandemic;

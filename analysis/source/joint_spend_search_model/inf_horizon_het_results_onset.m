@@ -437,12 +437,6 @@ for iy = 1:5
         c_u_with500_sim3 = c_u_sim;
         a_u_with500_sim3 = a_u_sim;
 
-        %Note that we don't necessarily need all parts of this simulation step to
-        %be internal to the parameter search, keeping only the absolute necessary
-        %parts internal to that loop should speed things up some
-
-        %note also i might be able to speed up by feeding only the adjacent points
-        %into the interp step
 
         numhh = 1000;
         numsim = 15;
@@ -910,31 +904,7 @@ s3 = (mean_c_sim_pandemic_expect_dollars(1:4) / total_spend_u_feb21 - mean_c_sim
 
 s4 = (mean_c_sim_prepandemic_expect_dollars(1:4) / total_spend_u_feb21 - mean_c_sim_prepandemic_expect_dollars(4) / total_spend_u_feb21) * 100;
 
-%figure
-%p = patch([3 3 4 4], [-20 10 10 -20], [0.9 0.9 0.9], 'EdgeColor', 'none');
-%set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-%hold on
-%plot(1:4, s4, '-+', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-%plot(1:4, s1, '-d', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-%plot(1:4, s2, '-v', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-%plot(1:4, s3, '-s', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
-%plot(1:4, spend_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%legend('Pre-pandemic model', 'Pandemic Search Costs', 'Pandemic Search Costs + Myopic Expectations', 'Pandemic Search Costs + Myopic Expectations + High Impatience','Data', 'Location', 'Northwest', 'FontSize', 12)
-%title('Monthly spending')
-%ylim([-10 10])
-%yticks([-10 -5 0 5 10])
-%yticklabels({'-10%', '-5%', '0%', '5%', '10%'})
-%xticks([1 2 3 4])
-%xticklabels(label_months_nov20_feb21)
-%set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-%set(gca, 'fontsize', 11);
-%set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [2.5 2]); %Keep the same paper size
-%pbaspect([2.5 2 1])
-%fig = gcf;
-%saveas(fig, fullfile(release_path_paper, 'spend_onset_paper_combined.png'))
-%saveas(fig, fullfile(release_path_slides, 'spend_onset_paper_combined.png'))
+
 
 
 
@@ -1004,21 +974,14 @@ newjob_exit_rate_cross_section_based_no_FPUC_alt1=newjob_exit_rate_data;
 newjob_exit_rate_cross_section_based_no_FPUC_alt1(3:10)=newjob_exit_rate_cross_section_based_no_FPUC_alt1(3:10)+cross_section_onset-.0023;
 [elasticity_alt_1 tmp tmp tmp tmp tmp tmp tmp total_hazard_elasticity_cross_section_based_onset_alt_1] = elasticity_distortions_and_aggregates(newjob_exit_rate_data, newjob_exit_rate_cross_section_based_no_FPUC_alt1, recall_probs, mean_c_sim_pandemic_surprise_overall_FPUC, mean_c_sim_pandemic_surprise_overall_noFPUC, mean_c_sim_e_overall, perc_change_benefits_data, date_sim_start, t_start, t_end, include_self_employed);
 total_hazard_elasticity_cross_section_based_onset/total_hazard_elasticity_cross_section_based_onset_alt_1
-%target 1.0527=.2737/.26
 newjob_exit_rate_cross_section_based_no_FPUC_alt2=newjob_exit_rate_data;
 newjob_exit_rate_cross_section_based_no_FPUC_alt2(3:10)=newjob_exit_rate_cross_section_based_no_FPUC_alt2(3:10)+cross_section_onset+.0095;
 [elasticity_alt_2 tmp tmp tmp tmp tmp tmp tmp total_hazard_elasticity_cross_section_based_onset_alt_2] = elasticity_distortions_and_aggregates(newjob_exit_rate_data, newjob_exit_rate_cross_section_based_no_FPUC_alt2, recall_probs, mean_c_sim_pandemic_surprise_overall_FPUC, mean_c_sim_pandemic_surprise_overall_noFPUC, mean_c_sim_e_overall, perc_change_benefits_data, date_sim_start, t_start, t_end, include_self_employed);
 total_hazard_elasticity_cross_section_based_onset/total_hazard_elasticity_cross_section_based_onset_alt_2
-%target 0.8294=.2737/.33
 
-%total_hazard_elasticity_cross_section_based_onset
-%elasticity_cross_section_based_onset
-%elasticity_alt_1
-%elasticity_alt_2
 
 [elasticity_cross_section_based_logit_onset tmp tmp tmp tmp tmp tmp tmp total_hazard_elasticity_cross_section_based_logit_onset] = elasticity_distortions_and_aggregates(newjob_exit_rate_data, newjob_exit_rate_cross_section_based_logit_no_FPUC, recall_probs, mean_c_sim_pandemic_surprise_overall_FPUC, mean_c_sim_pandemic_surprise_overall_noFPUC, mean_c_sim_e_overall, perc_change_benefits_data, date_sim_start, t_start, t_end, include_self_employed);
-%total_hazard_elasticity_cross_section_based_logit_onset
-%elasticity_cross_section_based_logit_onset
+
 
 
 
@@ -1112,20 +1075,16 @@ newjob_exit_rate_cross_section_based_no_FPUC_2020_alt1=newjob_exit_rate_cross_se
 newjob_exit_rate_cross_section_based_no_FPUC_2020_alt1(1:4)=newjob_exit_rate_cross_section_based_no_FPUC_2020_alt1(1:4)+.00585;
 [elasticity_expiration_alt_1 tmp tmp tmp tmp tmp tmp tmp total_hazard_elasticity_cross_section_based_expiration_alt_1] = elasticity_distortions_and_aggregates(newjob_exit_rate_data_2020, newjob_exit_rate_cross_section_based_no_FPUC_2020_alt1, recall_probs_overall, mean_c_sim_pandemic_surprise_overall_FPUC, mean_c_sim_pandemic_surprise_overall_noFPUC, mean_c_sim_e_overall, perc_change_benefits_data, date_sim_start, t_distortion_start, t_distortion_end, include_self_employed);
 total_hazard_elasticity_cross_section_based_expiration/total_hazard_elasticity_cross_section_based_expiration_alt_1
-%target: .9048=.19/.21
 newjob_exit_rate_cross_section_based_no_FPUC_2020_alt2=newjob_exit_rate_cross_section_based_no_FPUC_2020;
 newjob_exit_rate_cross_section_based_no_FPUC_2020_alt2(1:4)=newjob_exit_rate_cross_section_based_no_FPUC_2020_alt2(1:4)-.0088;
 [elasticity_expiration_alt_2 tmp tmp tmp tmp tmp tmp tmp total_hazard_elasticity_cross_section_based_expiration_alt_2] = elasticity_distortions_and_aggregates(newjob_exit_rate_data_2020, newjob_exit_rate_cross_section_based_no_FPUC_2020_alt2, recall_probs_overall, mean_c_sim_pandemic_surprise_overall_FPUC, mean_c_sim_pandemic_surprise_overall_noFPUC, mean_c_sim_e_overall, perc_change_benefits_data, date_sim_start, t_distortion_start, t_distortion_end, include_self_employed);
 total_hazard_elasticity_cross_section_based_expiration/total_hazard_elasticity_cross_section_based_expiration_alt_2
-%target: 1.1875=.19./16
 
-%total_hazard_elasticity_cross_section_based_expiration
-%elasticity_expiration_alt_1
-%elasticity_expiration_alt_2
+
+
 
 [elasticity_cross_section_based_logit_expiration tmp tmp tmp tmp tmp tmp tmp total_hazard_elasticity_cross_section_based_logit_expiration] = elasticity_distortions_and_aggregates(newjob_exit_rate_data_2020, newjob_exit_rate_cross_section_based_logit_no_FPUC_2020, recall_probs_overall, mean_c_sim_pandemic_surprise_overall_FPUC, mean_c_sim_pandemic_surprise_overall_noFPUC, mean_c_sim_e_overall, perc_change_benefits_data, date_sim_start, t_distortion_start, t_distortion_end, include_self_employed);
-%total_hazard_elasticity_cross_section_based_logit_expiration
-%elasticity_cross_section_based_logit_expiration
+
 
 table_alt_job_find_specs=table();
 table_alt_job_find_specs.Hazard_600('Baseline: Absolute pp')=total_hazard_elasticity_cross_section_based_expiration;
@@ -1211,64 +1170,6 @@ table_employment.Prepandemic_Model('Cumulative Reduction in Jobs at Supplement E
 
 
 
-%table_employment=table();
-%table_employment.Best_Fit_Model('Flow % Decline in Employment: 600')=employment_distortion_expiration;
-%table_employment.TimeSeries_Statistical_Model('Flow % Decline in Employment: 600')=employment_distortion_inter_time_series_based_expiration;
-%table_employment.CrossSection_Statistical_Model('Flow % Decline in Employment: 600')=employment_distortion_cross_section_based_expiration;
-%table_employment.Prepandemic_Model('Flow % Decline in Employment: 600')=elasticity_and_distortions_values_prepandemic(2);
-%table_employment.Best_Fit_Model('Flow % Decline in Employment: 300')=employment_distortion_onset;
-%table_employment.TimeSeries_Statistical_Model('Flow % Decline in Employment: 300')=employment_distortion_inter_time_series_based_onset;
-%table_employment.CrossSection_Statistical_Model('Flow % Decline in Employment: 300')=employment_distortion_cross_section_based_onset;
-%table_employment.Prepandemic_Model('Flow % Decline in Employment: 300')=elasticity_and_distortions_values_prepandemic_onset(2)
-
-
-
-%table_employment.Best_Fit_Model('Annual % Decline in Employment: 600')=
-%table_employment.Prepandemic_Model('Annual % Decline in Employment: 600')=
-%table_employment.TimeSeries_Statistical_Model('Annual % Decline in Employment: 600')=
-%table_employment.CrossSection_Statistical_Model('Annual % Decline in Employment: 600')=
-
-
-
-
-
-
-%table_employment=table();
-%table_employment.supplement600('Flow % Decline in Employment: Best Fit Model')=employment_distortion_expiration;
-%table_employment.supplement300('Flow % Decline in Employment: Best Fit Model')=employment_distortion_onset;
-%table_employment.total_effect_of_both('Flow % Decline in Employment: Best Fit Model')=employment_distortion_expiration*4/(4+9)+employment_distortion_onset*9/(4+9);
-
-%table_employment.supplement600('Flow % Decline in Employment: Time-Series Based Estimates')=employment_distortion_inter_time_series_based_expiration;
-%table_employment.supplement300('Flow % Decline in Employment: Time-Series Based Estimates')=employment_distortion_inter_time_series_based_onset;
-%table_employment.total_effect_of_both('Flow % Decline in Employment: Time-Series Based Estimates')=employment_distortion_inter_time_series_based_expiration*4/(4+9)+employment_distortion_inter_time_series_based_onset*9/(4+9);
-
-
-
-
-%table_distortions_aggregate=table();
-%table_distortions_aggregate.Elasticity('600')=elasticity_expiration;
-%table_distortions_aggregate.Elasticity('300')=elasticity_onset;
-%table_distortions_aggregate.Elasticity('Both')=NaN;
-%table_distortions_aggregate.Employment_Reduction_Percent_of_Flow('600')=employment_distortion_expiration;
-%table_distortions_aggregate.Employment_Reduction_Percent_of_Flow('300')=employment_distortion_onset;
-%table_distortions_aggregate.Employment_Reduction_Percent_of_Flow('Both')=employment_distortion_expiration*4/(4+9)+employment_distortion_onset*9/(4+9);
-%table_distortions_aggregate.Employment_Reduction_Percent_of_Annual('600')=employment_distortion_expiration*4/12;
-%table_distortions_aggregate.Employment_Reduction_Percent_of_Annual('300')=employment_distortion_onset*9/12;
-%table_distortions_aggregate.Employment_Reduction_Percent_of_Annual('Both')=(employment_distortion_expiration*4/(4+9)+employment_distortion_onset*9/(4+9))*(4+9)/12;
-%table_distortions_aggregate.Average_Employment_Reduction_Millions('600')=total_diff_employment_expiration;
-%table_distortions_aggregate.Average_Employment_Reduction_Millions('300')=total_diff_employment_onset;
-%table_distortions_aggregate.Average_Employment_Reduction_Millions('Both')=(total_diff_employment_expiration*4/(4+9)+total_diff_employment_onset*9/(4+9))
-
-%table_distortions_aggregate_reduced_form=table();
-%table_distortions_aggregate_reduced_form.Elasticity_CS('600')=elasticity_cross_section_based_expiration;
-%table_distortions_aggregate_reduced_form.Elasticity_CS('300')=elasticity_cross_section_based_onset;
-%table_distortions_aggregate_reduced_form.Elasticity_TS('600')=elasticity_inter_time_series_based_expiration;
-%table_distortions_aggregate_reduced_form.Elasticity_TS('300')=elasticity_inter_time_series_based_onset;
-%table_distortions_aggregate_reduced_form.Employment_Reduction_Percent_of_Flow_CS('600')=employment_distortion_cross_section_based_expiration;
-%table_distortions_aggregate_reduced_form.Employment_Reduction_Percent_of_Flow_CS('300')=employment_distortion_cross_section_based_onset;
-%table_distortions_aggregate_reduced_form.Employment_Reduction_Percent_of_Flow_TS('600')=employment_distortion_inter_time_series_based_expiration;
-%table_distortions_aggregate_reduced_form.Employment_Reduction_Percent_of_Flow_TS('300')=employment_distortion_inter_time_series_based_onset
-
 
 
 %full run:
@@ -1322,27 +1223,6 @@ share_gap_300_prepandemic=employment_distortion_prepandemic_onset/mean(gap_emplo
 
 % Making figures
 
-figure
-p = patch([45 45 48 48], [1.291 * 10^2 1.65 * 10^2 1.65 * 10^2 1.291 * 10^2], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-p = patch([54 54 61 61], [1.292 * 10^2 1.65 * 10^2 1.65 * 10^2 1.292 * 10^2], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-plot(35:61, employment_FPUC_full(35:61) / 1000000, '--', 'Color', qual_blue, 'LineWidth', 2)
-plot(45:61, employment_noFPUC_full(45:61) / 1000000, 'Color', qual_yellow, 'LineWidth', 2)
-xticks([36 42 48 54 60])
-xticklabels({'July 19', 'Jan 20', 'July 20', 'Jan 21', 'July 21'})
-ylim([1.29 * 10^2 1.65 * 10^2])
-str = {'0.46% lower', 'through Jul 20', 'and 0.51%', 'through Aug 21'};
-dim = [.16 .6 .3 .3];
-annotation('textbox', dim, 'String', str, 'FitBoxToText', 'on');
-set(gca, 'TickDir', 'out')
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-legend('Actual', 'Without Supplement', 'Location', 'SouthEast')
-fig = gcf;
-saveas(fig, fullfile(release_path_slides, 'employment_stock_full.png'))
-
 % ALSO make a version with percentage difference from Feb 2020
 % Feb 2020 will be period 43
 % Using same Employment in pd 43 as the base in FPUC and not calculations because indices are confusing...
@@ -1371,7 +1251,7 @@ set(gca, 'Layer', 'top');
 set(gca, 'fontsize', 11);
 fig_paper_10a = gcf;
 saveas(fig_paper_10a, fullfile(release_path_paper, 'employment_stock_full_perc_diff_feb_2020.png'))
-saveas(fig_paper_10a, fullfile(release_path_slides, 'employment_stock_full_perc_diff_feb_2020.png'))
+%saveas(fig_paper_10a, fullfile(release_path_slides, 'employment_stock_full_perc_diff_feb_2020.png'))
 
 include_self_employed = 1;
 [var_1 var_2 var_3 var_4 var_5 var_6 monthly_spend_pce monthly_spend_no_FPUC] = elasticity_distortions_and_aggregates(newjob_exit_rate_FPUC, newjob_exit_rate_no_FPUC, recall_probs, mean_c_sim_pandemic_surprise_overall_FPUC, mean_c_sim_pandemic_surprise_overall_noFPUC, mean_c_sim_e_overall, perc_change_benefits_data, date_sim_start, t_distortion_start, t_distortion_end, include_self_employed);
@@ -1388,15 +1268,11 @@ monthly_spend_pce_no_pandemic(1:43)=monthly_spend_pce(1:43);
 t=44:61;
 monthly_spend_pce_no_pandemic(44:61)=t*reg_spend(2)+reg_spend(1);
 monthly_spend_pce_no_pandemic=monthly_spend_pce_no_pandemic';
-%share_spendgap_filled_total=sum(monthly_spend_pce(45:60)-monthly_spend_no_FPUC(45:60))/sum(max(monthly_spend_pce_no_pandemic(45:60)-monthly_spend_no_FPUC(45:60),0))
-%share_spendgap_filled_apr_july=sum(monthly_spend_pce(45:48)-monthly_spend_no_FPUC(45:48))/sum(max(monthly_spend_pce_no_pandemic(45:48)-monthly_spend_no_FPUC(45:48),0))
 
 gap_spend_percent=monthly_spend_no_FPUC(44:61)./monthly_spend_pce_no_pandemic(44:61)-1;
 share_gap_spend_600=-mean_spend_increase_throughJuly_FPUC/mean(gap_spend_percent(1:4))
 share_gap_spend_300=-mean_spend_increase_JantoAug_FPUC/mean(gap_spend_percent(10:17))
 
-%share_gap_600_prepandemic=employment_distortion_prepandemic_expiration/mean(gap_employment_percent(1:4))
-%share_gap_300_prepandemic=employment_distortion_prepandemic_onset/mean(gap_employment_percent(10:17))
 
 % ALSO make a version with percentage difference from Feb 2020
 % Feb 2020 will be period 43
@@ -1426,7 +1302,7 @@ set(gca, 'Layer', 'top');
 set(gca, 'TickDir', 'out')
 fig_paper_10b = gcf;
 saveas(fig_paper_10b, fullfile(release_path_paper, 'aggspend_full_perc_diff_feb_2020.png'))
-saveas(fig_paper_10b, fullfile(release_path_slides, 'aggspend_full_perc_diff_feb_2020.png'))
+%saveas(fig_paper_10b, fullfile(release_path_slides, 'aggspend_full_perc_diff_feb_2020.png'))
 
 save('spend_and_search_overall.mat', 'mean_c_sim_pandemic_surprise_overall_FPUC', 'mean_c_sim_pandemic_surprise_overall_noFPUC', 'newjob_exit_rate_overall_FPUC', 'newjob_exit_rate_overall_no_FPUC', 'recall_probs');
 
@@ -1543,31 +1419,6 @@ weekly_index_full = [[1:.2:2],[2.25:.25:2.75],weekly_index_2021, [5 5.25]];
 % Save the job search series
 writetable(table(newjob_exit_rate_FPUC, newjob_exit_rate_no_FPUC), 'inf_horizon_het_results_onset_newjob_exit_rate.xlsx', 'Sheet', 'New Job Exit Rate', 'WriteVariableNames', true);
 
-
-
-%figure
-%p = patch([3 3 4 4], [0.001 .5 .5 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-%set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-%hold on
-%plot(1:4, monthly_search_data(1:4), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%plot(1:4, mean_search_sim_prepandemic_expect(1:4), '-+', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-%plot(1:4, mean_search_sim_pandemic_expect_jan_start_match500MPC(1:4), '-d', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-%slightly shifting line just to make it visible:
-%plot(1:4, mean_search_sim_pandemic_expect_match500MPC(1:4)+.0004, '-v', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-%plot(1:4, mean_search_sim_pandemic_expect(1:4), '-s', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
-%legend('Data', 'Pre-pandemic model', 'Perfect foresight + $500 MPC', 'Surprise start + $500 MPC', 'Surprise start + waiting MPC', 'Location', 'NorthEast', 'FontSize', 14)
-% title('Monthly Search')
-%ylim([0 0.5])
-%xticks([1 2 3 4])
-%xticklabels(label_months_nov20_feb21)
-%set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-%set(gca, 'fontsize', 11);
-%set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [2.5 2]); %Keep the same paper size
-%pbaspect([2.5 2 1])
-%fig = gcf;
-%saveas(fig, fullfile(release_path_paper, 'search_onset_paper_combined.png'))
 
 
 
@@ -1741,13 +1592,9 @@ load prepandemic_andpandemic_results_target500MPC;
 table_mpc_supplements_for_paper=table();
 table_mpc_supplements_for_paper.Supp600('best fit model: one month MPC')=mpc_supplements_expiration.surprise('one_month');
 table_mpc_supplements_for_paper.Supp300('best fit model: one month MPC')=mpc_supplements_onset.expect('one_month');
-%table_mpc_supplements_for_paper.Supp600('best fit model: 4 month MPC')=mpc_supplements_expiration.surprise('4_month');
-%table_mpc_supplements_for_paper.Supp300('best fit model: 4 month MPC')=mpc_supplements_onset.expect('4_month');
 
 table_mpc_supplements_for_paper.Supp600('prepandemic model: one month MPC')=mpc_supplements_pandemic_match500mpc.expect('one_month');
 table_mpc_supplements_for_paper.Supp300('prepandemic model: one month MPC')=mpc_supplements_onset_target500MPC.expect('one_month')
-%table_mpc_supplements_for_paper.Supp600('prepandemic model: 4 month MPC')=mpc_supplements_pandemic_match500mpc.surprise('4_month');
-%table_mpc_supplements_for_paper.Supp300('prepandemic model: 4 month MPC')=mpc_supplements_onset_target500MPC.expect('4_month')
 
 table_supplement_effects=table_elasticities;
 table_supplement_effects.supplement600('Best Fit Model: MPC from first month of supplements')=mpc_supplements_expiration.surprise('one_month');

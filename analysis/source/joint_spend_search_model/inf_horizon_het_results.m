@@ -14,6 +14,9 @@ load release_paths.mat
 load bestfit_prepandemic.mat
 load bestfit_target_waiting_MPC.mat
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%loading various empirical results from jpmci for later comparisons:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 table_effects_summary = readtable(inter_time_series_input_directory);
 inter_time_series_expiration=1-(1+table_effects_summary.ts_exit(1))^4;
 cross_section_expiration=1-(1+table_effects_summary.cs_exit(1))^4;
@@ -30,12 +33,9 @@ load graph_axis_labels_timeseries.mat
 
 exit_rates_data = readtable(jobfind_input_directory, 'Sheet', fig1_df);
 exit_rates_data.week_start_date = datetime(exit_rates_data.week_start_date);
-%idx = datenum(exit_rates_data.week_start_date) >= datenum('2020-01-01') & datenum(exit_rates_data.week_start_date) < datenum('2020-11-20');
-%exit_rates_data = exit_rates_data(idx, :);
 exit_rates_data.month = dateshift(exit_rates_data.week_start_date, 'start', 'month');
 
 % For the exit variables we want the average exit probability at a monthly level
-
 exit_rates_data_week_to_month = varfun(@week_to_month_exit, exit_rates_data, 'InputVariables', {'ExitRateToRecall', 'ExitRateNotToRecall'}, 'GroupingVariables', {'month'});
 exit_rates_data_week_to_month = renamevars(exit_rates_data_week_to_month, ["week_to_month_exit_ExitRateToRecall", "week_to_month_exit_ExitRateNotToRecall"], ["exit_to_recall", "exit_not_to_recall"]);
 new = exit_rates_data_week_to_month.exit_not_to_recall';
@@ -44,7 +44,7 @@ recall = exit_rates_data_week_to_month.exit_to_recall';
 recall_pre = recall(13:14);
 mean(recall_pre)
 mean(new_pre)
-%}
+
 
 
 data_update = readtable(spending_input_directory, 'Sheet', model_data);
@@ -70,10 +70,6 @@ perc_spend_w = data_update_w.percent_change;
 perc_spend_u_vs_e=total_spend_u_yoy-total_spend_e_yoy;
 perc_spend_w_vs_e=total_spend_w_yoy-total_spend_e_yoy;
 
-%perc_spend_u_vs_e = perc_spend_u - perc_spend_e;
-%perc_spend_u_vs_e = perc_spend_u_vs_e(13:end);
-%perc_spend_w_vs_e = perc_spend_w - perc_spend_e;
-%perc_spend_w_vs_e=perc_spend_w_vs_e(13:end);
 perc_spend_u_vs_e=perc_spend_u_vs_e-mean(perc_spend_u_vs_e(1:2));
 perc_spend_w_vs_e=perc_spend_w_vs_e-mean(perc_spend_w_vs_e(1:2));
 spend_dollars_u_vs_e = perc_spend_u_vs_e * mean(total_spend_u(1:2));
@@ -101,11 +97,7 @@ perc_income_w_vs_e=income_w_yoy-income_e_yoy;
 perc_income_e = data_update_e.percent_change;
 perc_income_u = data_update_u.percent_change;
 perc_income_w = data_update_w.percent_change;
-%perc_income_u_vs_e = perc_income_u - perc_income_e;
-%perc_income_u_vs_e = perc_income_u_vs_e(13:end);
 perc_income_u_vs_e=perc_income_u_vs_e-mean(perc_income_u_vs_e(1:3));
-%perc_income_w_vs_e = perc_income_w - perc_income_e;
-%perc_income_w_vs_e = perc_income_w_vs_e(13:end);
 perc_income_w_vs_e=perc_income_w_vs_e-mean(perc_income_w_vs_e(1:3));
 income_dollars_u_vs_e = perc_income_u_vs_e * mean(income_u(1:3));
 income_dollars_w_vs_e = perc_income_w_vs_e * mean(income_w(1:3));
@@ -126,24 +118,14 @@ checking_w = checking_w(13:end);
 stat_for_text_change_checking_u_vs_e=(checking_u(7)-checking_u(3))-(checking_e(7)-checking_e(3))
 save('stats_for_text_model_miscellaneous.mat', 'stat_for_text_change_checking_u_vs_e', '-append')
 
-
-
-
 u_v1=income_u./income_e-1;
 u_v1=u_v1-u_v1(1);
-
-
 
 w_v1=income_w./income_e-1;
 w_v1=w_v1-w_v1(1);
 
-
-
-
 us_v1=total_spend_u./total_spend_e-1;
 us_v1=us_v1-us_v1(1);
-
-
 
 ws_v1=total_spend_w./total_spend_e-1;
 ws_v1=ws_v1-ws_v1(1);
@@ -157,6 +139,11 @@ spend_dollars_w_vs_e = ws_v1 * mean(total_spend_w(1:2));
 
 mpc_waiting_data=((total_spend_u(5)-total_spend_u(3))-(total_spend_w(5)-total_spend_w(3)))/((income_u(5)-income_u(3))-(income_w(5)-income_w(3)))
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Solve model
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 shock_500 = 500 / income_e(1);
 
@@ -242,10 +229,6 @@ for iy = 1:5
 
         %expect $600 for 12 months
         benefit_profile_pandemic(1:12, 2) = b + h + FPUC_expiration;
-        %benefit_profile_pandemic(1)=b+h+1.5*FPUC_expiration;
-        %benefit_profile_pandemic(3)=b+h+1.05*FPUC_expiration;
-        %benefit_profile_pandemic(4)=b+h+1.25*FPUC_expiration;
-        %benefit_profile_pandemic(5:12,2)=b+h+1*FPUC_expiration;
         if infinite_dur == 1
             benefit_profile_pandemic(13, 2) = b + h + FPUC_expiration;
         else
@@ -254,7 +237,7 @@ for iy = 1:5
 
         %Matching actual income profile for waiting group
         %expect $600 for 4 months, but w/ 2 month wait
-        benefit_profile_pandemic(1, 3) = 1.19*h; %note the +b here is to match the actual income decline for waiting group in the data which is a little more gradual, not because they actually receive benefits for one month
+        benefit_profile_pandemic(1, 3) = 1.19*h; %note this is chosen to match the actual income decline for waiting group in the data which is a little more gradual
         benefit_profile_pandemic(2, 3) = h;
         benefit_profile_pandemic(3, 3) = h + 2.35 * (b + FPUC_expiration);
         benefit_profile_pandemic(4, 3) = h + b + FPUC_expiration;
@@ -320,18 +303,9 @@ for iy = 1:5
             benefit_profile_pandemic(13, 8) = h;
         end
 
-
-        %benefit_profile_pandemic(1, :) = benefit_profile_pandemic(1, :) + 350 * FPUC_expiration / (4.5 * 600);
-
         recall_probs_pandemic(1:13, 1) = 0.00;
         recall_probs_regular = recall_probs_pandemic;
 
-        %recall_probs_pandemic_actual(1)=.0078;
-        %recall_probs_pandemic_actual(2)=.113;
-        %recall_probs_pandemic_actual(3)=.18;
-        %recall_probs_pandemic_actual(4)=.117;
-        %recall_probs_pandemic_actual(5)=.112;
-        %recall_probs_pandemic_actual(6:13)=.107;
 
         recall_probs_pandemic(1:13) = .08;
         recall_probs_regular = recall_probs_pandemic;
@@ -406,7 +380,6 @@ for iy = 1:5
 
             %c_pol is c(a,y)
             %c_tilde is c(a',y)
-            %while (iter <= 5000) & (diffC > tol) %& (diffC_percent > tol_percent) %| diffV > tol)
 
             if beta_loop == 2
                 maxiter = 1; %this effectively governs how many periods households will think the high discount factor will last, setting maxiter=1 essentially runs one backward induction step from the beta_normal solutions
@@ -429,7 +402,7 @@ for iy = 1:5
             % Iterate to convergence
             while ((ave_change_in_C_percent > tol_c_percent) || (ave_change_in_S > tol_s)) && iter < maxiter
 
-                %while iter<199
+
                 %employed
 
                 rhs_e(:) = beta * (1 + r) * ((1 - sep_rate) * c_pol_e_guess(:).^(-mu) + sep_rate * c_pol_u_guess(:, 1).^(-mu));
@@ -617,13 +590,6 @@ for iy = 1:5
 
                 ave_change_in_S = mean([mean(mean(mean(abs(optimal_search(:, :) - optimal_search_guess(:, :))))), mean(mean(mean(mean(abs(optimal_search_pandemic(:, :, :) - optimal_search_pandemic_guess(:, :, :))))))]);
 
-                if mod(iter, 20) == 0
-                    %[iter diffC ave_change_in_C ave_change_in_C_percent ave_change_in_S diffV ave_change_in_V]
-
-                    %[iter ave_change_in_C ave_change_in_C_percent ave_change_in_S]
-                    %     stop
-                end
-
                 % Update guesses, fully for now.
                 c_pol_e_guess = c_pol_e;
                 c_pol_e_with_transfer_guess = c_pol_e_with_transfer;
@@ -641,6 +607,7 @@ for iy = 1:5
 
             end
 
+            %Solution with and without the temporary high discount rate
             if beta_loop == 1
                 c_pol_e_betanormal = c_pol_e;
                 c_pol_e_with_transfer_betanormal = c_pol_e_with_transfer;
@@ -715,12 +682,6 @@ for iy = 1:5
         c_u_with500_sim3 = c_u_sim;
         a_u_with500_sim3 = a_u_sim;
 
-        %Note that we don't necessarily need all parts of this simulation step to
-        %be internal to the parameter search, keeping only the absolute necessary
-        %parts internal to that loop should speed things up some
-
-        %note also i might be able to speed up by feeding only the adjacent points
-        %into the interp step
 
         numhh = 1000;
         numsim = 18;
@@ -1124,10 +1085,6 @@ for iy = 1:5
             c_pol_u = c_pol_u_betanormal;
             if t == 1
                 c_pol_u_pandemic = c_pol_u_pandemic_betahigh;
-                %v_e=v_e_betahigh;
-                %v_u=v_u_betahigh;
-                %v_u_pandemic=v_u_pandemic_betahigh;
-                %beta=beta_high;
             else
                 c_pol_u_pandemic = c_pol_u_pandemic_betanormal;
             end
@@ -1709,39 +1666,9 @@ saveas(fig_paper_A26, fullfile(release_path_paper, 'income_expiration.png'))
 
 
 
-%spend_data=scale_factor*us_v1*100;
+
 spend_data=us_v1*100;
 
-figure
-p = patch([4 4 7 7], [-21 30 30 -21], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-%plot(1:11,-10*ones(1:11,1),'w')
-plot(1:11, mean_c_sim_pandemic_expect_dollars_match500MPC(1:11)/total_spend_u(1)*100, '-d', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_dollars_match500MPC(1:11)/total_spend_u(1)*100, '-v', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_dollars(1:11)/total_spend_u(1)*100, '-s', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
-plot(1:11, spend_data(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_noFPUC_dollars(1:11)/total_spend_u(1)*100, '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-lgd=legend('Search Costs', 'Search Costs + Myopic Expectations', 'Search Costs + Myopic Expectations + High Impatience','Data', 'Location', 'southoutside', 'FontSize', 12);
-title(lgd,'Changes From Standard Model:','FontSize',12,'FontWeight','normal')
-ylabel('\Delta $')
-yticks([-20 -10 0 10 20])
-yticklabels({'-20%','-10%', '0%','10%', '20%'})
-xlim([1 11])
-xticks([1 2 3 4 5 6 7 8 9 10 11])
-ylim([-21 20])
-xticklabels(label_months_jan20_nov20)
-set(gca, 'fontsize', 11);
-set(gca, 'Layer', 'top');
- set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [2.5 2]); %Keep the same paper size
-pbaspect([2.5 2 1])
-dim = [0.625 0.125 .3 .3];
-str = {'MPC Waiting for UI', 'Micro Data: 0.43', 'Model: 0.44'};
-annotation('textbox', dim, 'String', str, 'FitBoxToText', 'on');
-fig_paper_2 = gcf;
-%exportgraphics(fig_paper_2, fullfile(release_path_paper, 'spend_expiration.png'))
-exportgraphics(fig_paper_2, fullfile(release_path_slides, 'spend_expiration.png'))
 
 
 
@@ -1751,10 +1678,11 @@ exportgraphics(fig_paper_2, fullfile(release_path_slides, 'spend_expiration.png'
 
 
 
-mean_c_sim_pandemic_surprise_baseline=mean_c_sim_pandemic_surprise;
-mean_c_sim_pandemic_surprise_wait_baseline=mean_c_sim_pandemic_surprise_wait;
-spend_series_baseline_calibration = mean_c_sim_pandemic_surprise_dollars(1:11)/total_spend_u(1)*100;
-save('robustness/waiting_expectations_v2/spend_series_baseline_calibration', 'spend_series_baseline_calibration','mean_c_sim_pandemic_surprise_baseline','mean_c_sim_pandemic_surprise_wait_baseline');
+
+%mean_c_sim_pandemic_surprise_baseline=mean_c_sim_pandemic_surprise;
+%mean_c_sim_pandemic_surprise_wait_baseline=mean_c_sim_pandemic_surprise_wait;
+%spend_series_baseline_calibration = mean_c_sim_pandemic_surprise_dollars(1:11)/total_spend_u(1)*100;
+%save('robustness/waiting_expectations_v2/spend_series_baseline_calibration', 'spend_series_baseline_calibration','mean_c_sim_pandemic_surprise_baseline','mean_c_sim_pandemic_surprise_wait_baseline');
 
 ratio1 = mean_c_sim_pandemic_surprise_dollars(1:11)/total_spend_u(1)*100;
 ratio2 = mean_c_sim_pandemic_surprise_dollars_match500MPC(1:11)/total_spend_u(1)*100;
@@ -1949,14 +1877,6 @@ table_mpc_for_paper.MPC_horizon('8')="Quarter";
 table_mpc_for_paper.MPC_model('8')= mpc_pandemic_match500mpc.surprise('500 quarterly');
 table_mpc_for_paper.MPC_data('8')="0.25"
 
-%table_mpc_for_paper.three_month_mpc('$2400 for 4 months: Unemployed Households') = mpc_supplements.surprise('4_month');
-%table_mpc_for_paper.three_month_mpc('$2400 one time: Unemployed Households') = mpc.surprise('2400 quarterly-unemployed');
-%table_mpc_for_paper.three_month_mpc('$500 one time: Unemployed Households') = mpc.surprise('500 quarterly-unemployed');
-%table_mpc_for_paper.three_month_mpc('$500 one time: All Households') = mpc.surprise('500 quarterly');
-%table_mpc_for_paper.three_month_mpc('$2400 for 4 months: Unemployed Households, prepandemic beta') = mpc_supplements_prepandemic.surprise('4_month');
-%table_mpc_for_paper.three_month_mpc('$2400 one time: Unemployed Households, prepandemic beta') = mpc_prepandemic.surprise('2400 quarterly-unemployed');
-%table_mpc_for_paper.three_month_mpc('$500 one time: Unemployed Households, prepandemic beta') = mpc_prepandemic.surprise('500 quarterly-unemployed');
-%table_mpc_for_paper.three_month_mpc('$500 one time: All Households, prepandemic beta') = mpc_prepandemic.surprise('500 quarterly')
 writetable(table_mpc_for_paper,fullfile(release_path_paper,'table_mpc_for_paper.csv'),'WriteRowNames',true);
 
 
@@ -1987,24 +1907,19 @@ recall_probs_pandemic_actual = recall_probs_pandemic_actual(4:end);
 
 
 % Plot and table for search_asset_effects 
-% Note: the correct "Supplement Unconditional" model is from the "FPUC_uncond" series;
-% the "onlyasseteffects" series was just an approximation
 figure
 hold on
 plot(1:11, mean_search_sim_pandemic_surprise(1:11), '-s', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
 plot(1:11, mean_search_sim_pandemic_surprise_noFPUC(1:11), '-+', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-%plot(1:11, mean_search_sim_pandemic_surprise_FPUC_uncond(1:11), '-o', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-%legend('With Supplement','No supplement', 'Supplement unconditional', 'Location','SouthEast')
 legend('With supplement','Without supplement', 'Location','SouthEast')
 xticks([4 5 6 7 8 9 10 11])
 xticklabels(label_months_apr20_nov20)
 set(gca, 'Layer', 'top');
 fig_paper_A27 = gcf;
 saveas(fig_paper_A27, fullfile(release_path_paper, 'search_asset_effects.png'))
-saveas(fig_paper_A27, fullfile(release_path_slides, 'search_asset_effects.png'))
+%saveas(fig_paper_A27, fullfile(release_path_slides, 'search_asset_effects.png'))
 
 
-%stat_for_text_liquidity_share=(mean_search_sim_pandemic_surprise_noFPUC(1:11)-mean_search_sim_pandemic_surprise_FPUC_uncond(1:11))./(mean_search_sim_pandemic_surprise_noFPUC(1:11)-mean_search_sim_pandemic_surprise(1:11))
 stat_for_text_liquidity_share=(mean_search_sim_pandemic_surprise_noFPUC(1:11)-mean_search_sim_pandemic_surprise(1:11))
 table_stat_for_text_liquidity_share = table(stat_for_text_liquidity_share);
 writetable(table_stat_for_text_liquidity_share, fullfile(release_path_paper,'table_stat_for_text_liquidity_share.csv'),'WriteRowNames',true);
@@ -2036,10 +1951,6 @@ newjob_exit_rate_cross_section_based_no_FPUC=newjob_exit_rate_data;
 newjob_exit_rate_cross_section_based_no_FPUC(1:4)=newjob_exit_rate_cross_section_based_no_FPUC(1:4)+cross_section_expiration;
 newjob_exit_rate_cross_section_based_logit_no_FPUC=newjob_exit_rate_data;
 newjob_exit_rate_cross_section_based_logit_no_FPUC(1:4)=newjob_exit_rate_cross_section_based_logit_no_FPUC(1:4)+cross_section_expiration_logit;
-
-
-%newjob_exit_rate_inter_time_series_based_no_FPUC=newjob_exit_rate_FPUC;
-%newjob_exit_rate_inter_time_series_based_no_FPUC(1:4)=newjob_exit_rate_inter_time_series_based_no_FPUC(1:4)+(newjob_exit_rate_inter_time_series_based_no_FPUC(5)-newjob_exit_rate_inter_time_series_based_no_FPUC(4));
 
 newjob_exit_rate_FPUC_bywage = mean_search_sim_pandemic_surprise_bywage(:,4:18)';
 newjob_exit_rate_no_FPUC_bywage = mean_search_sim_pandemic_surprise_noFPUC_bywage(:,4:18)';
@@ -2129,247 +2040,6 @@ weekly_index_preperiod = 5:.25:6.75;
 weekly_index_full = [weekly_index_preperiod, [7:.2:7.8], [8:.25:8.75]];
 
 
-
-%figure
-%hold on
-%plot(5:7, distortion_surprise(5:7), 'LineWidth', 2, 'Color', qual_green)
-%plot(5:7, distortion_expect(5:7), 'LineWidth', 2, 'Color', matlab_red_orange)
-%ylim([0 7])
-%xticks([5 6 7])
-%xticklabels({'Jun 20', 'Jul 20', 'Aug 20'})
-%ylabel('Search effect relative to effect in last period')
-%legend('Expiration Surprise (Best Fit Model)','Expiration Expected')
-%set(gca, 'fontsize', 12);
-%set(gca, 'Layer', 'top');
-%set(gcf, 'PaperPosition', [0 0 5.5 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [5.5 4.5]); %Keep the same paper size
-%fig = gcf;
-%scatter(weekly_index_preperiod, data_DiD(1:8), 'MarkerEdgeColor', qual_blue, 'MarkerFaceColor', qual_blue)
-
-%for i = 1:7
-%plot([weekly_index_preperiod(i) weekly_index_preperiod(i)], [data_DiD(i, 2) data_DiD(i, 3)], 'Color', qual_blue,'LineWidth',1.5)
-%end
-%legend('Surprise expiration model','Perfect foresight model','Data (DiD)')
-%set(gca, 'fontsize', 12);
-%set(gcf, 'PaperPosition', [0 0 5.5 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [5.5 4.5]); %Keep the same paper size
-%set(gca, 'Layer', 'top');
-%fig_paper_4 = gcf;
-%saveas(fig_paper_4, fullfile(release_path_paper, 'dynamic_disincentives_expiration.png'))
-
-
-
-% Animation 1
-% Data only
-figure
-%p=patch([4 4 7 7],[0.04 .115 .115 0.04],[0.9 0.9 0.9],'EdgeColor','none');
-p = patch([4 4 7 7], [0.001 .28 .28 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-legend('Data', 'Location', 'SouthEast')
-% legend boxoff
-%title('Monthly Search')
-xlim([4 11])
-ylim([0.00 0.28])
-xticks([4 5 6 7 8 9 10 11])
-xticklabels(label_months_apr20_nov20)
-%yticks([-2500 0 2500 5000 7500])
-%yticklabels({'-$2,500','$0','$2,500', '$5,000','$7,500'})
-set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'search_expiration_prepandemic_vs_pandemic_models_1_of_6.png'))
-
-% Animation 2
-% Data and pre-pandemic model
-figure
-%p=patch([4 4 7 7],[0.04 .115 .115 0.04],[0.9 0.9 0.9],'EdgeColor','none');
-p = patch([4 4 7 7], [0.001 .28 .28 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_search_sim_prepandemic_expect(1:11), '-o', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-legend('Data', 'Pre-pandemic model', 'Location', 'SouthEast')
-% legend boxoff
-%title('Monthly Search')
-xlim([4 11])
-ylim([0.00 0.28])
-xticks([4 5 6 7 8 9 10 11])
-xticklabels(label_months_apr20_nov20)
-%yticks([-2500 0 2500 5000 7500])
-%yticklabels({'-$2,500','$0','$2,500', '$5,000','$7,500'})
-set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'search_expiration_prepandemic_vs_pandemic_models_2_of_6.png'))
-
-% Animation 3
-% Data, pre-pandemic, pandemic target
-figure
-%p=patch([4 4 7 7],[0.04 .115 .115 0.04],[0.9 0.9 0.9],'EdgeColor','none');
-p = patch([4 4 7 7], [0.001 .28 .28 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_search_sim_prepandemic_expect(1:11), '-o', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-plot(1:11, mean_search_sim_pandemic_expect_match500MPC(1:11), '-o', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-legend('Data', 'Pre-pandemic model', 'Target pandemic job-find', 'Location', 'SouthEast')
-% legend boxoff
-%title('Monthly Search')
-xlim([4 11])
-ylim([0.00 0.28])
-xticks([4 5 6 7 8 9 10 11])
-xticklabels(label_months_apr20_nov20)
-%yticks([-2500 0 2500 5000 7500])
-%yticklabels({'-$2,500','$0','$2,500', '$5,000','$7,500'})
-set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'search_expiration_prepandemic_vs_pandemic_models_3_of_6.png'))
-
-% Animation 4
-% Data, pandemic target
-figure
-%p=patch([4 4 7 7],[0.04 .115 .115 0.04],[0.9 0.9 0.9],'EdgeColor','none');
-p = patch([4 4 7 7], [0.001 .26 .26 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_search_sim_pandemic_expect_match500MPC(1:11), '-o', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-legend('Data', 'Target pandemic job-find', 'Location', 'SouthEast')
-% legend boxoff
-%title('Monthly Search')
-xlim([4 11])
-ylim([0.04 0.115])
-xticks([4 5 6 7 8 9 10 11])
-xticklabels(label_months_apr20_nov20)
-%yticks([-2500 0 2500 5000 7500])
-%yticklabels({'-$2,500','$0','$2,500', '$5,000','$7,500'})
-set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-dim = [0.175 0.475 .3 .3];
-% str = {'dExit/dBenefit', 'Micro Data: -0.014', 'Model: -0.015'};
-% annotation('textbox', dim, 'String', str, 'FitBoxToText', 'on');
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'search_expiration_prepandemic_vs_pandemic_models_4_of_6.png'))
-
-% Animation 5
-% Data, pandemic target, surprise expiration
-figure
-%p=patch([4 4 7 7],[0.04 .115 .115 0.04],[0.9 0.9 0.9],'EdgeColor','none');
-p = patch([4 4 7 7], [0.001 .26 .26 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_search_sim_pandemic_expect_match500MPC(1:11), '-o', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-plot(1:11, mean_search_sim_pandemic_surprise_match500MPC(1:11), '-o', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-legend('Data', 'Target pandemic job-find', 'Expect $600 continue', 'Location', 'SouthEast')
-% legend boxoff
-%title('Monthly Search')
-xlim([4 11])
-ylim([0.04 0.115])
-xticks([4 5 6 7 8 9 10 11])
-xticklabels(label_months_apr20_nov20)
-%yticks([-2500 0 2500 5000 7500])
-%yticklabels({'-$2,500','$0','$2,500', '$5,000','$7,500'})
-set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-% str = {'dExit/dBenefit', 'Micro Data: -0.014', 'Model: -0.015'};
-% annotation('textbox', dim, 'String', str, 'FitBoxToText', 'on');
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'search_expiration_prepandemic_vs_pandemic_models_5_of_6.png'))
-
-% Animation 6
-% Data, pandemic target, surprise expiration, Best fit model
-figure
-%p=patch([4 4 7 7],[0.04 .115 .115 0.04],[0.9 0.9 0.9],'EdgeColor','none');
-p = patch([4 4 7 7], [0.001 .26 .26 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_search_sim_pandemic_expect_match500MPC(1:11), '-o', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-plot(1:11, mean_search_sim_pandemic_surprise_match500MPC(1:11), '-o', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-plot(1:11, mean_search_sim_pandemic_surprise(1:11), '-o', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
-legend('Data', 'Target pandemic job-find', 'Expect $600 continue', 'Best fit model', 'Location', 'SouthEast')
-% legend boxoff
-%title('Monthly Search')
-xlim([4 11])
-ylim([0.04 0.115])
-xticks([4 5 6 7 8 9 10 11])
-xticklabels(label_months_apr20_nov20)
-%yticks([-2500 0 2500 5000 7500])
-%yticklabels({'-$2,500','$0','$2,500', '$5,000','$7,500'})
-set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% str = {'dExit/dBenefit', 'Micro Data: -0.014', 'Model: -0.015'};
-% annotation('textbox', dim, 'String', str, 'FitBoxToText', 'on');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'search_expiration_prepandemic_vs_pandemic_models_6_of_6.png'))
-
-
-
-
-%figure
-%p=patch([4 4 7 7],[0.04 .115 .115 0.04],[0.9 0.9 0.9],'EdgeColor','none');
-%p = patch([4 4 7 7], [0.001 .26 .26 0.001], [0.92 0.92 0.92], 'EdgeColor', 'none');
-%set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-%hold on
-%plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%plot(1:11, mean_search_sim_pandemic_expect_match500MPC(1:11), '-d', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-%plot(1:11, mean_search_sim_pandemic_surprise_match500MPC(1:11), '-v', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 3)
-%plot(1:11, mean_search_sim_pandemic_surprise(1:11), '-s', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
-%plot(1:11, mean_search_sim_pandemic_surprise_noFPUC(1:11), '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-%legend('Data', 'Perfect foresight + $500 MPC', 'Surprise expiration + $500 MPC', 'Surprise expiration + waiting MPC', 'Location', 'SouthEast', 'FontSize', 14)
-% legend boxoff
-%title('Monthly Search')
-%xlim([4 11])
-%ylim([0.02 0.115])
-%xticks([4 5 6 7 8 9 10 11])
-%xticklabels(label_months_apr20_nov20)
-%yticks([-2500 0 2500 5000 7500])
-%yticklabels({'-$2,500','$0','$2,500', '$5,000','$7,500'})
-%ylabel('New Job Finding Rate')
-%set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-%set(gca, 'fontsize', 11);
-%set(gca, 'Layer', 'top');
-%str = {'dExit/dBenefit', 'Micro Data: -0.014', 'Model: -0.015'};
-%annotation('textbox', dim, 'String', str, 'FitBoxToText', 'on');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [2.5 2]); %Keep the same paper size
-%pbaspect([2.5 2 1])
-%fig_paper_5 = gcf;
-%exportgraphics(fig_paper_5, fullfile(release_path_paper, 'search_expiration_paper.png'))
-
-
-
-
-
-
 figure
 tiledlayout(1,2)
 nexttile
@@ -2382,31 +2052,22 @@ plot(1:11, mean_search_sim_pandemic_expect_match500MPC(1:11), '-d', 'Color', mat
 plot(1:11, mean_search_sim_pandemic_surprise_match500MPC(1:11), '-v', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 3)
 plot(1:11, mean_search_sim_pandemic_surprise(1:11), '-s', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
 plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%plot(1:11, mean_search_sim_pandemic_surprise_noFPUC(1:11), '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-%legend('Data', 'Perfect foresight + $500 MPC', 'Surprise expiration + $500 MPC', 'Surprise expiration + waiting MPC', 'Location', 'SouthEast', 'FontSize', 14)
-% legend boxoff
-%title('Monthly Search')
 xlim([4 11])
 ylim([0.045 0.115])
 xticks([4 5 6 7 8 9 10 11])
 xticklabels(label_months_apr20_nov20)
-%yticks([-2500 0 2500 5000 7500])
-%yticklabels({'-$2,500','$0','$2,500', '$5,000','$7,500'})
-%ylabel('New Job Finding Rate')
 set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
 set(gca,'fontsize', 12);
 nexttile
 p = patch([4 4 7 7], [-21 30 30 -21], [0.9 0.9 0.9], 'EdgeColor', 'none');
 set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
 hold on
-%plot(1:11,-10*ones(1:11,1),'w')
 title('Spending (U vs. E % Change from Jan 20)','FontWeight','normal')
 plot(1:11, mean_c_sim_pandemic_expect_dollars_match500MPC(1:11)/total_spend_u(1)*100, '-d', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
 plot(1:11, mean_c_sim_pandemic_surprise_dollars_match500MPC(1:11)/total_spend_u(1)*100, '-v', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
 plot(1:11, mean_c_sim_pandemic_surprise_dollars(1:11)/total_spend_u(1)*100, '-s', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
 plot(1:11, spend_data(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%plot(1:11, mean_c_sim_pandemic_surprise_noFPUC_dollars(1:11)/total_spend_u(1)*100, '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-%ylabel('\Delta $')
+
 yticks([-15 -10 -5 0 5 10 15])
 yticklabels({'-15%','-10%','-5%', '0%','5%','15%', '20%'})
 xlim([1 11])
@@ -2422,41 +2083,6 @@ set(gcf, 'PaperPosition', [0 0 13 5]); %Position the plot further to the left an
 set(gcf, 'PaperSize', [13 5]); %Keep the same paper size
 fig_paper_9b = gcf;
 saveas(fig_paper_9b, fullfile(release_path_paper, 'spend_and_search_expiration.png'))
-%saveas(fig_paper_9b, fullfile(release_path_slides, 'spend_and_search_expiration.png'))
-
-
-
-
-
-
-% Animation 2
-% Data and pre-pandemic model
-%figure
-%p=patch([4 4 7 7],[0.04 .115 .115 0.04],[0.9 0.9 0.9],'EdgeColor','none');
-%p = patch([4 4 7 7], [0.001 .3 .3 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-%set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-%hold on
-%plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%plot(1:11, mean_search_sim_prepandemic_expect(1:11), '-+', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-%plot(1:11, mean_search_sim_prepandemic_expect_noFPUC(1:11), '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-%legend('Data', 'Pre-pandemic model', 'Location', 'SouthEast', 'FontSize', 14)
-% legend boxoff
-%title('Monthly Search')
-%lim([4 11])
-%ylim([0.00 0.3])
-%xticks([4 5 6 7 8 9 10 11])
-%xticklabels(label_months_apr20_nov20)
-%ylabel('New Job Finding Rate')
-%set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-%set(gca, 'fontsize', 12);
-%set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [2.5 2]); %Keep the same paper size
-%pbaspect([2.5 2 1])
-%fig_paper_6 = gcf;
-%exportgraphics(fig_paper_6, fullfile(release_path_paper, 'search_expiration_prepandemic_paper.png'))
-
-
 
 
 
@@ -2470,21 +2096,13 @@ hold on
 title('Job-Finding Rate','FontWeight','normal')
 plot(1:11, mean_search_sim_prepandemic_expect(1:11), '-+', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
 plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%plot(1:11, mean_search_sim_prepandemic_expect_noFPUC(1:11), '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-%legend('Data', 'Pre-pandemic model', 'Location', 'SouthEast', 'FontSize', 14)
-% legend boxoff
-%title('Monthly Search')
 xlim([4 11])
 ylim([0.00 0.3])
 xticks([4 5 6 7 8 9 10 11])
 xticklabels(label_months_apr20_nov20)
-%ylabel('New Job Finding Rate')
 set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
 set(gca, 'fontsize', 12);
 set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [2.5 2]); %Keep the same paper size
-%pbaspect([2.5 2 1])
 nexttile
 p = patch([4 4 7 7], [-30 30 30 -30], [0.9 0.9 0.9], 'EdgeColor', 'none');
 set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
@@ -2492,9 +2110,6 @@ hold on
 title('Spending (U vs. E % Change from Jan 20)','FontWeight','normal')
 plot(1:11, mean_c_sim_prepandemic_expect_dollars(1:11)/total_spend_u(1)*100, '-+', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
 plot(1:11, spend_data(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%plot(1:11, mean_c_sim_prepandemic_expect_noFPUC_dollars(1:11)/total_spend_u(1)*100, '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-%legend({['Pre-pandemic Search Costs' newline '+ Correct Expectations' newline '+ Normal Patience'],'Data'}, 'Location', 'SouthWest', 'FontSize', 12)
-%ylabel('\Delta $')
 yticks([-15 -10 -5 0 5 10 15])
 yticklabels({'-15%','-10%','-5%', '0%','5%','15%', '20%'})
 ylim([-10 15])
@@ -2509,7 +2124,6 @@ set(gcf, 'PaperPosition', [0 0 13 5]); %Position the plot further to the left an
 set(gcf, 'PaperSize', [13 5]); %Keep the same paper size
 fig_paper_9a = gcf;
 saveas(fig_paper_9a, fullfile(release_path_paper, 'spend_and_search_prepandemic_expiration.png'))
-%saveas(fig_paper_9a, fullfile(release_path_slides, 'spend_and_search_prepandemic_expiration.png'))
 
 
 
@@ -2518,232 +2132,7 @@ saveas(fig_paper_9a, fullfile(release_path_paper, 'spend_and_search_prepandemic_
 
 
 
-%{
 
-% Version to go with the dynamic disincentives plot
-figure
-%p=patch([4 4 7 7],[0.04 .115 .115 0.04],[0.9 0.9 0.9],'EdgeColor','none');
-p = patch([4 4 7 7], [0.001 .26 .26 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%plot(1:11,mean_search_sim_pandemic_expect_match500MPC(1:11),'-o','Color',matlab_red_orange,'MarkerFaceColor',matlab_red_orange,'LineWidth',2)
-%plot(1:11,mean_search_sim_pandemic_surprise(1:11),'-o','Color',qual_green,'MarkerFaceColor',qual_green,'LineWidth',2)
-legend('Data', 'Location', 'Southeast')
-% legend boxoff
-%title('Monthly Search')
-xlim([4 11])
-ylim([0.04 0.115])
-xticks([4 5 6 7 8 9 10 11])
-xticklabels(label_months_apr20_nov20)
-%yticks([-2500 0 2500 5000 7500])
-%yticklabels({'-$2,500','$0','$2,500', '$5,000','$7,500'})
-set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-% set(gca,'fontsize', 12);
-% set(gca, 'Layer', 'top');
-% set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-% pbaspect([3.5 2 1])
-fig = gcf;
-saveas(fig, fullfile(release_path, 'search_expiration_prepandemic_vs_pandemic_models_dyn_disincentives_data_only.png'))
-
-
-% Plot search_expiration_prepandemic_vs_pandemic_models_dyn_disincentives
-figure
-p = patch([4 4 7 7], [0.001 .26 .26 0.001], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(4:11, monthly_search_data, '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_search_sim_pandemic_expect_match500MPC(1:11), '-o', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-plot(1:11, mean_search_sim_pandemic_surprise(1:11), '-o', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
-legend('Data', 'Expect $600 ends', 'Expect $600 continues', 'Location', 'Southeast','FontSize',18)
-xlim([4 11])
-ylim([0.04 0.115])
-xticks([4 5 6 7 8 9 10 11])
-xticklabels(label_months_apr20_nov20)
-set(gca, 'Layer', 'top');
-set(get(get(p, 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-fig = gcf;
-saveas(fig, fullfile(release_path, 'search_expiration_prepandemic_vs_pandemic_models_dyn_disincentives.png'))
-
-
-%}
-
-% Animation 1
-% Data only
-figure
-p = patch([4 4 7 7], [-1000 1000 1000 -1000], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(1:11, spend_dollars_u_vs_e(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-% legend('Data','Pre-pandemic model','Location','Southwest')
-%ylabel('\Delta $')
-yticks([-500 0 500 1000])
-yticklabels({'-$500', '$0', '$500', '$1,000'})
-xlim([1 11])
-xticks([1 2 3 4 5 6 7 8 9 10 11])
-xticklabels(label_months_jan20_nov20)
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'spend_expiration_prepandemic_vs_pandemic_models_1_of_6.png'))
-
-% Animation 2
-% Data and pre-pandemic model
-figure
-p = patch([4 4 7 7], [-1000 1000 1000 -1000], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(1:11, spend_dollars_u_vs_e(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_c_sim_prepandemic_expect_dollars(1:11), '-o', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-% legend('Data','Pre-pandemic model','Location','Southwest')
-%ylabel('\Delta $')
-yticks([-500 0 500 1000])
-yticklabels({'-$500', '$0', '$500', '$1,000'})
-xlim([1 11])
-xticks([1 2 3 4 5 6 7 8 9 10 11])
-xticklabels(label_months_jan20_nov20)
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'spend_expiration_prepandemic_vs_pandemic_models_2_of_6.png'))
-
-% Animation 3
-% Data, pre-pandemic, pandemic target
-figure
-p = patch([4 4 7 7], [-1000 1000 1000 -1000], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(1:11, spend_dollars_u_vs_e(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_c_sim_prepandemic_expect_dollars(1:11), '-o', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_expect_dollars_match500MPC(1:11), '-o', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-% legend('Data','Pre-pandemic model','Target pandemic job-find','Location','Southwest')
-%ylabel('\Delta $')
-yticks([-500 0 500 1000])
-yticklabels({'-$500', '$0', '$500', '$1,000'})
-xlim([1 11])
-xticks([1 2 3 4 5 6 7 8 9 10 11])
-xticklabels(label_months_jan20_nov20)
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'spend_expiration_prepandemic_vs_pandemic_models_3_of_6.png'))
-
-% Animation 4
-% Data, pandemic target
-figure
-p = patch([4 4 7 7], [-1000 1000 1000 -1000], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(1:11, spend_dollars_u_vs_e(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_expect_dollars_match500MPC(1:11), '-o', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-% legend('Data','Target pandemic job-find','Location','Southwest')
-%ylabel('\Delta $')
-yticks([-500 0 500 1000])
-yticklabels({'-$500', '$0', '$500', '$1,000'})
-xlim([1 11])
-xticks([1 2 3 4 5 6 7 8 9 10 11])
-xticklabels(label_months_jan20_nov20)
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'spend_expiration_prepandemic_vs_pandemic_models_4_of_6.png'))
-
-% Animation 5
-% Data, pandemic target, surprise expiration
-figure
-p = patch([4 4 7 7], [-1000 1000 1000 -1000], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(1:11, spend_dollars_u_vs_e(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_expect_dollars_match500MPC(1:11), '-o', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_dollars_match500MPC(1:11), '-o', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-% legend('Data','Target pandemic job-find','Expect $600 continue','Location','Southwest')
-%ylabel('\Delta $')
-yticks([-500 0 500 1000])
-yticklabels({'-$500', '$0', '$500', '$1,000'})
-xlim([1 11])
-xticks([1 2 3 4 5 6 7 8 9 10 11])
-xticklabels(label_months_jan20_nov20)
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'spend_expiration_prepandemic_vs_pandemic_models_5_of_6.png'))
-
-% Animation 6
-% Data, pandemic target, surprise expiration, Best fit model
-figure
-p = patch([4 4 7 7], [-1000 1000 1000 -1000], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(1:11, spend_dollars_u_vs_e(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_expect_dollars_match500MPC(1:11), '-o', 'Color', matlab_red_orange, 'MarkerFaceColor', matlab_red_orange, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_dollars_match500MPC(1:11), '-o', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_dollars(1:11), '-o', 'Color', qual_green, 'MarkerFaceColor', qual_green, 'LineWidth', 2)
-% legend('Data','Target pandemic job-find','Expect $600 continue','Best fit model','Location','Southwest')
-%ylabel('\Delta $')
-yticks([-500 0 500 1000])
-yticklabels({'-$500', '$0', '$500', '$1,000'})
-xlim([1 11])
-xticks([1 2 3 4 5 6 7 8 9 10 11])
-xticklabels(label_months_jan20_nov20)
-set(gca, 'fontsize', 12);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [3.5 2]); %Keep the same paper size
-pbaspect([3.5 2 1])
-dim = [0.625 0.125 .3 .3];
-% str = {'MPC Waiting for UI', 'Micro Data: 0.43', 'Model: 0.43'};
-% annotation('textbox', dim, 'String', str, 'FitBoxToText', 'on');
-fig = gcf;
-exportgraphics(fig, fullfile(release_path_slides, 'spend_expiration_prepandemic_vs_pandemic_models_6_of_6.png'))
-
-
-
-
-
-
-
-
-%figure
-%p = patch([4 4 7 7], [-30 30 30 -30], [0.9 0.9 0.9], 'EdgeColor', 'none');
-%set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-%hold on
-%plot(1:11, mean_c_sim_prepandemic_expect_dollars(1:11)/total_spend_u(1)*100, '-+', 'Color', qual_purple, 'MarkerFaceColor', qual_purple, 'LineWidth', 2)
-%plot(1:11, spend_data(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-%plot(1:11, mean_c_sim_prepandemic_expect_noFPUC_dollars(1:11)/total_spend_u(1)*100, '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-%legend({['Pre-Pandemic Search Costs' newline '+ Correct Expectations' newline '+ Normal Patience'],'Data'}, 'Location', 'SouthWest', 'FontSize', 12)
-%ylabel('\Delta $')
-%yticks([-20 -10 0 10 20])
-%yticklabels({'-20%', '-10%', '0%', '10%', '20%'})
-%ylim([-20 20])
-%xlim([1 11])
-%xticks([1 2 3 4 5 6 7 8 9 10 11])
-%xticklabels(label_months_jan20_nov20)
-%set(gca, 'fontsize', 11);
-%set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [2.5 2]); %Keep the same paper size
-%pbaspect([2.5 2 1])
-%dim = [0.625 0.125 .3 .3];
-%str = {'MPC Waiting for UI', 'Micro Data: 0.43', 'Model: 0.44'};
-%annotation('textbox', dim, 'String', str, 'FitBoxToText', 'on');
-%fig_paper_7 = gcf;
-%exportgraphics(fig_paper_7, fullfile(release_path_paper, 'spend_prepandemic_expiration.png'))
 
 
 expiry = readtable(jobfind_input_directory, 'Sheet', expiry_sample);
@@ -2794,7 +2183,6 @@ binscatter = readtable(jobfind_input_directory, 'Sheet', 'binscatter_expiry_new_
 
 data_change_weekly = binscatter.estimate;
 data_change_monthly = 1 - (1 - data_change_weekly).^4;
-%data_change_monthly=4.1*data_change_weekly;
 
 data_per_change = binscatter.per_change;
 
@@ -2874,7 +2262,7 @@ str = strcat('Slope:', num2str(-reg_newjob_exit.Coefficients.Estimate(2)));
 legend('Data', 'Best fit model')
 fig_paper_A20 = gcf
 saveas(fig_paper_A20, fullfile(release_path_paper, 'expiration_scatter_model.png'));
-saveas(fig_paper_A20, fullfile(release_path_slides, 'expiration_scatter_model.png'));
+%saveas(fig_paper_A20, fullfile(release_path_slides, 'expiration_scatter_model.png'));
 
 
 

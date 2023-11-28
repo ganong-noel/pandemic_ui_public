@@ -12,7 +12,7 @@ function [elasticity, employment_distortion, ave_diff_employment, share_unemploy
     reference_months = readtable(ui_benchmark_input_directory);
     reference_months = unique(reference_months(:, {'month'}));
     % Collapse to the monthly level
-    % Special version of reference month for counting initial losses that includes the last two weeks in March and hence March
+    % Special version of reference month for counting initial losses that includes the last two weeks in March
     reference_months_with_march = reference_months(datenum(reference_months.month) >= datenum('2020-03-01'), :);
     % Standard version starts at date_sim_start
     reference_months = reference_months(datenum(reference_months.month) >= datenum(date_sim_start), :);
@@ -27,23 +27,6 @@ function [elasticity, employment_distortion, ave_diff_employment, share_unemploy
     total_exit_rate_FPUC = newjob_exit_rate_FPUC + recall_probs;
     total_exit_rate_no_FPUC = newjob_exit_rate_no_FPUC + recall_probs;
 
-%{
-    exit_rates_data = readtable(jobfind_input_directory, 'Sheet', fig1_df);
-    exit_rates_data.week_start_date = datetime(exit_rates_data.week_start_date);
-    %idx = datenum(exit_rates_data.week_start_date) >= datenum('2019-01-01') & datenum(exit_rates_data.week_start_date) < datenum('2020-01-01');
-    %exit_rates_data = exit_rates_data(idx, :);
-    exit_rates_data.month = dateshift(exit_rates_data.week_start_date, 'start', 'month');
-    % For the exit variables we want the average exit probability at a monthly level
-    exit_rates_data_week_to_month = varfun(@week_to_month_exit, exit_rates_data, 'InputVariables', {'ExitRateToRecall', 'ExitRateNotToRecall'}, 'GroupingVariables', {'month'});
-    exit_rates_data_week_to_month = renamevars(exit_rates_data_week_to_month, ["week_to_month_exit_ExitRateToRecall", "week_to_month_exit_ExitRateNotToRecall"], ["exit_to_recall", "exit_not_to_recall"]);
-
-    recall_2019=exit_rates_data_week_to_month.exit_to_recall;
-    newjob_2019=exit_rates_data_week_to_month.exit_not_to_recall;
-
-    recall_2019_aprstart=[recall_2019(4:end); recall_2019(1:3)];
-    recall_2019_aprstart(end:1000)=mean(recall_2019);
-%}
-
     load jobfind_input_directory.mat 
     load jobfind_input_sheets.mat
     % Preperiod target, need to convert old weekly to a monthly value
@@ -53,7 +36,6 @@ function [elasticity, employment_distortion, ave_diff_employment, share_unemploy
     % Make the targets of Jan/Feb 2020 ui exit rates
     % Restrict to only data past january 2020
     data_series_jan_feb = data_series_jan_feb(datenum(data_series_jan_feb.week_start_date) >= datenum('2020-01-01') & datenum(data_series_jan_feb.week_start_date) < datenum('2020-03-01'), :);
-    %data_series_jan_feb = data_series_jan_feb(datenum(data_series_jan_feb.week_start_date) < datenum('2020-03-01'), :);
     preperiod_target_weekly = mean(data_series_jan_feb.exit_ui_rate);
     preperiod_target = week_to_month_exit(preperiod_target_weekly);
     preperiod_target_weekly2 = mean(data_series_jan_feb.ExitRateToRecall);
@@ -70,14 +52,8 @@ function [elasticity, employment_distortion, ave_diff_employment, share_unemploy
     total_exit_rate_FPUC_prepanlevel_both=newjob_exit_rate_FPUC*(preperiod_target/mean(newjob_exit_rate_no_FPUC(1))) +recall_probs*preperiod_target2/mean(recall_probs(3:5));
     total_exit_rate_no_FPUC_prepanlevel_both = newjob_exit_rate_no_FPUC*(preperiod_target/mean(newjob_exit_rate_no_FPUC(1))) + recall_probs*preperiod_target2/mean(recall_probs(3:5));
 
-    %total_exit_rate_FPUC_prepanlevel_both=newjob_exit_rate_FPUC*(preperiod_target/mean(newjob_exit_rate_no_FPUC(1))) +.08;
-    %total_exit_rate_no_FPUC_prepanlevel_both = newjob_exit_rate_no_FPUC*(preperiod_target/mean(newjob_exit_rate_no_FPUC(1))) + .08;
-
     total_exit_rate_FPUC_prepanlevel_recall=newjob_exit_rate_FPUC +recall_probs*preperiod_target2/mean(recall_probs(3:5));
     total_exit_rate_no_FPUC_prepanlevel_recall = newjob_exit_rate_no_FPUC + recall_probs*preperiod_target2/mean(recall_probs(3:5));
-
-    %total_exit_rate_FPUC_prepanlevel_recall=newjob_exit_rate_FPUC +.08;
-    %total_exit_rate_no_FPUC_prepanlevel_recall = newjob_exit_rate_no_FPUC + .08;
 
     % Produce elasticity calculated over the period of interest
     elasticity = (average_duration(total_exit_rate_FPUC(t_distortion_start-1:end)) / average_duration(total_exit_rate_no_FPUC(t_distortion_start-1:end)) - 1) / perc_change_benefits_data;
@@ -85,32 +61,22 @@ function [elasticity, employment_distortion, ave_diff_employment, share_unemploy
     elasticity_prepanlevel_both=(average_duration(total_exit_rate_FPUC_prepanlevel_both(t_distortion_start-1:end)) / average_duration(total_exit_rate_no_FPUC_prepanlevel_both(t_distortion_start-1:end)) - 1) / perc_change_benefits_data;
     elasticity_prepanlevel_recall=(average_duration(total_exit_rate_FPUC_prepanlevel_recall(t_distortion_start-1:end)) / average_duration(total_exit_rate_no_FPUC_prepanlevel_recall(t_distortion_start-1:end)) - 1) / perc_change_benefits_data;
 
-
-
     newjob_duration_elasticity = (average_duration(newjob_exit_rate_FPUC(t_distortion_start-1:end)) / average_duration(newjob_exit_rate_no_FPUC(t_distortion_start-1:end)) - 1) / perc_change_benefits_data;
     newjob_duration_elasticity_prepanlevel = (average_duration(newjob_exit_rate_FPUC_prepanlevel(t_distortion_start-1:end)) / average_duration(newjob_exit_rate_no_FPUC_prepanlevel(t_distortion_start-1:end)) - 1) / perc_change_benefits_data;
-
-    %total_hazard_elasticity=mean((total_exit_rate_no_FPUC(t_distortion_start-1:t_distortion_end-1)./total_exit_rate_FPUC(t_distortion_start-1:t_distortion_end-1)-1)/ perc_change_benefits_data);
-    %newjob_hazard_elasticity=mean((newjob_exit_rate_no_FPUC(t_distortion_start-1:t_distortion_end-1)./newjob_exit_rate_FPUC(t_distortion_start-1:t_distortion_end-1)-1)/ perc_change_benefits_data);
    
     total_hazard_elasticity=(mean(total_exit_rate_no_FPUC(t_distortion_start-1:t_distortion_end-1))./mean(total_exit_rate_FPUC(t_distortion_start-1:t_distortion_end-1))-1)/ perc_change_benefits_data;
     total_hazard_elasticity_prepanlevel_newjob=(mean(total_exit_rate_no_FPUC_prepanlevel(t_distortion_start-1:t_distortion_end-1))./mean(total_exit_rate_FPUC_prepanlevel(t_distortion_start-1:t_distortion_end-1))-1)/ perc_change_benefits_data;
     total_hazard_elasticity_prepanlevel_recall=(mean(total_exit_rate_no_FPUC_prepanlevel_recall(t_distortion_start-1:t_distortion_end-1))./mean(total_exit_rate_FPUC_prepanlevel_recall(t_distortion_start-1:t_distortion_end-1))-1)/ perc_change_benefits_data;
     total_hazard_elasticity_prepanlevel_both=(mean(total_exit_rate_no_FPUC_prepanlevel_both(t_distortion_start-1:t_distortion_end-1))./mean(total_exit_rate_FPUC_prepanlevel_both(t_distortion_start-1:t_distortion_end-1))-1)/ perc_change_benefits_data;
-    
-    
 
     newjob_hazard_elasticity=(mean(newjob_exit_rate_no_FPUC(t_distortion_start-1:t_distortion_end-1))./mean(newjob_exit_rate_FPUC(t_distortion_start-1:t_distortion_end-1))-1)/ perc_change_benefits_data;
     newjob_hazard_elasticity_prepanlevel_newjob=(mean(newjob_exit_rate_no_FPUC(t_distortion_start-1:t_distortion_end-1))./mean(newjob_exit_rate_FPUC(t_distortion_start-1:t_distortion_end-1))-1)/ perc_change_benefits_data;
    
-
-
     elasticity_arc=(average_duration(total_exit_rate_FPUC(t_distortion_start-1:end)) - average_duration(total_exit_rate_no_FPUC(t_distortion_start-1:end))) /(.5*((average_duration(total_exit_rate_FPUC(t_distortion_start-1:end)) + average_duration(total_exit_rate_no_FPUC(t_distortion_start-1:end)))))/perc_change_benefits_data;
     newjob_duration_elasticity_arc=(average_duration(newjob_exit_rate_FPUC(t_distortion_start-1:end)) - average_duration(newjob_exit_rate_no_FPUC(t_distortion_start-1:end))) /(.5*((average_duration(newjob_exit_rate_FPUC(t_distortion_start-1:end)) + average_duration(newjob_exit_rate_no_FPUC(t_distortion_start-1:end)))))/perc_change_benefits_data;
     
     total_hazard_elasticity_arc=(mean(total_exit_rate_no_FPUC(t_distortion_start-1:t_distortion_end-1))-mean(total_exit_rate_FPUC(t_distortion_start-1:t_distortion_end-1)))/(.5*(mean(total_exit_rate_no_FPUC(t_distortion_start-1:t_distortion_end-1))+mean(total_exit_rate_FPUC(t_distortion_start-1:t_distortion_end-1))))/ perc_change_benefits_data;
     newjob_hazard_elasticity_arc=(mean(newjob_exit_rate_no_FPUC(t_distortion_start-1:t_distortion_end-1))-mean(newjob_exit_rate_FPUC(t_distortion_start-1:t_distortion_end-1)))/(.5*(mean(newjob_exit_rate_no_FPUC(t_distortion_start-1:t_distortion_end-1))+mean(newjob_exit_rate_FPUC(t_distortion_start-1:t_distortion_end-1))))/perc_change_benefits_data;
-
 
     table_elasticity_comparisons=table();
     table_elasticity_comparisons.Duration_Elasticity('Baseline')=elasticity;
@@ -188,7 +154,6 @@ function [elasticity, employment_distortion, ave_diff_employment, share_unemploy
     % For the other periods we remove entry into self employment from the month before
     else
         initial_loss.all_first_payments(1) = initial_loss.all_first_payments(1) - pua_claims.continuing_claims_self_employed(pua_claims.year_month == (date_sim_start - calmonths(1)));
-        % There's a weird date-shift for the following line, where PUA entry subtracted is from the previous month
         initial_loss.all_first_payments(2:end) = initial_loss.all_first_payments(2:end) - initial_loss.entry_self_employed(1:end - 1);
     end 
 
@@ -227,16 +192,9 @@ function [elasticity, employment_distortion, ave_diff_employment, share_unemploy
     % Distortion is difference in person-weeks due to the supplement divided by calculated total employment without the supplement
 
     d_total_person_weeks_or_months = sum(sum(changes_in_unemploy(t_distortion_start:t_distortion_end, :)));
-    %d_monthly_person_weeks_or_months = sum(changes_in_unemploy(t_distortion_start:t_distortion_end, :),2);
-    %monthly_change=zeros(length(d_monthly_person_weeks_or_months),1);
-    %monthly_change(1)=d_monthly_person_weeks_or_months(1);
-    %monthly_change(2:end)=d_monthly_person_weeks_or_months(2:end)-d_monthly_person_weeks_or_months(1:end-1);
-    %mean_monthly_change=(d_total_person_weeks_or_months/1000000)/(t_distortion_end - t_distortion_start+1);
     employment_distortion = 100 * (d_total_person_weeks_or_months) ./ (sum(bls_employment(t_distortion_start-1:t_distortion_end-1)) + d_total_person_weeks_or_months);
     ave_diff_employment = (d_total_person_weeks_or_months) / (1000000*(t_distortion_end - t_distortion_start+1));
     total_diff_employment = sum(changes_in_unemploy(t_distortion_end, :)) / 1000000;
-    %ave_diff_employment=total_diff_employment/(t_distortion_end - t_distortion_start+1);
-    %ave_diff_employment=sum(changes_in_unemploy(t_distortion_end, :))/(bls_employment(t_distortion_end)-bls_employment(t_distortion_start));
     share_unemployment_reduced = sum(changes_in_unemploy(t_distortion_end, :)) / sum(number_remaining_FPUC(t_distortion_end, :));
     total_percent_change=total_diff_employment/(bls_employment(t_distortion_end-1)/1000000);
     

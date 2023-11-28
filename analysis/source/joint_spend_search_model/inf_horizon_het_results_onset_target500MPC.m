@@ -410,12 +410,6 @@ for iy=1:5
 
 
 
-    %Note that we don't necessarily need all parts of this simulation step to
-    %be internal to the parameter search, keeping only the absolute necessary
-    %parts internal to that loop should speed things up some
-
-    %note also i might be able to speed up by feeding only the adjacent points
-    %into the interp step
 
     numhh=500;
     numsim=15;

@@ -119,9 +119,9 @@ for iter = 1:4
     end
 
     if iter == 1
-        saveas(fig, fullfile(release_path_slides, 'elasticity_comparison.png'))
+        %saveas(fig, fullfile(release_path_slides, 'elasticity_comparison.png'))
    elseif iter == 2
-        saveas(fig, fullfile(release_path_slides, 'elasticity_comparison_onlyliterature.png'))
+       % saveas(fig, fullfile(release_path_slides, 'elasticity_comparison_onlyliterature.png'))
     %elseif iter == 3
         %saveas(fig, fullfile(release_path_slides, 'elasticity_comparison_wide.png'))
     %elseif iter == 4

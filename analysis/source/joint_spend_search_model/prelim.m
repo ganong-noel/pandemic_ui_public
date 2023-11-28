@@ -22,7 +22,7 @@ save('jobfind_input_sheets.mat',sheet_names{:});
 marginal_effects_hazard_calc_inputs=readtable('../../input/disclose/2023-06-23_disclosure_packet/jobfind/tables/marginal_effects_hazard_calc_inputs.csv');
 save('marginal_effects_hazard_calc_inputs.mat','marginal_effects_hazard_calc_inputs')
 % Input: spend ------------------------------------------------------------
-spending_input_path = '../../input/disclose/2023-06-18_disclosure_packet/spend/ui_spend_for_export.xls';
+spending_input_path = '../../input/disclose/2023-06-23_disclosure_packet/spend/ui_spend_for_export.xls';
 eval(['spending_input_directory' '=spending_input_path;']);
 save('spending_input_directory.mat','spending_input_directory');
 model_data = 'matched_model_data_table';

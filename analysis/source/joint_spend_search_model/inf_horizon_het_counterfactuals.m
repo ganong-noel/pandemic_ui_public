@@ -76,9 +76,10 @@ c_param_prepandemic=0;
 
 FPUCsize=.35;
 
+%just doing these counterfactuals in "normal" times
 for pre_pandemic=0:0
     
-
+%Looping over length and size of supplements
 FPUC_length=[2 3 4];
 FPUC_mult=0/6:1/12:1;
 
@@ -184,13 +185,6 @@ for FPUC_mult_index=1:length(FPUC_mult)
         recall_probs_regular=recall_probs_pandemic;
 
 
-        %recall_probs_pandemic_actual(1)=.0078;
-        %recall_probs_pandemic_actual(2)=.113;
-        %recall_probs_pandemic_actual(3)=.18;
-        %recall_probs_pandemic_actual(4)=.117;
-        %recall_probs_pandemic_actual(5)=.112;
-        %recall_probs_pandemic_actual(6:13)=.107;
-
         recall_probs_pandemic(1:13)=.08;
         recall_probs_regular=recall_probs_pandemic;
 
@@ -249,9 +243,7 @@ for FPUC_mult_index=1:length(FPUC_mult)
         end
 
 
-        %c_pol is c(a,y)
-        %c_tilde is c(a',y)
-        %while (iter <= 5000) & (diffC > tol) %& (diffC_percent > tol_percent) %| diffV > tol)
+
 
         if beta_loop==2
             maxiter=1; %this effectively governs how many periods households will think the high discount factor will last, setting maxiter=1 essentially runs one backward induction step from the beta_normal solutions
@@ -272,7 +264,7 @@ for FPUC_mult_index=1:length(FPUC_mult)
 
         while ((ave_change_in_C_percent>tol_c_percent) || (ave_change_in_S>tol_s) ) && iter<maxiter
 
-        %while iter<199
+
             %employed
 
             rhs_e(:)=beta*(1+r)*((1-sep_rate)*c_pol_e_guess(:).^(-mu)+sep_rate*c_pol_u_guess(:,1).^(-mu));
@@ -456,12 +448,8 @@ for FPUC_mult_index=1:length(FPUC_mult)
 
 
 
-        %Note that we don't necessarily need all parts of this simulation step to
-        %be internal to the parameter search, keeping only the absolute necessary
-        %parts internal to that loop should speed things up some
 
-        %note also i might be able to speed up by feeding only the adjacent points
-        %into the interp step
+
 
         numhh=1000;
         numsim=18;
@@ -566,10 +554,6 @@ for FPUC_mult_index=1:length(FPUC_mult)
             c_pol_u = c_pol_u_betanormal;
             if t == 1
                 c_pol_u_pandemic = c_pol_u_pandemic_betahigh;
-                %v_e=v_e_betahigh;
-                %v_u=v_u_betahigh;
-                %v_u_pandemic=v_u_pandemic_betahigh;
-                %beta=beta_high;
             else
                 c_pol_u_pandemic = c_pol_u_pandemic_betanormal;
             end
@@ -638,10 +622,6 @@ for FPUC_mult_index=1:length(FPUC_mult)
                     a_sim_e(i,t)=a_sim_e(i,t)+1500*FPUC/(4.5*600);
                  end
 
-                 %adjust initial assets isomorphic to allowing for borrowing
-                 %if t==1
-                 %    a_sim_e(i,t)=a_sim_e(i,t)+5*1320*FPUC/(4.5*600);
-                 %end
 
                  c_sim_e(i,t)=interp1(A,c_pol_e(:),a_sim_e(i,t),'linear');
                  a_sim_e(i,t+1)=y+(1+r)*a_sim_e(i,t)-c_sim_e(i,t);   
@@ -795,12 +775,7 @@ for FPUC_mult_index=1:length(FPUC_mult)
     newjob_exit_rate_overall_FPUC=mean_search_sim_pandemic_expect(4:end)';
     newjob_exit_rate_overall_no_FPUC=newjob_exit_rate_no_FPUC;
 
-    if pre_pandemic==1
-        %use pre pan search costs but adjust to depressed no supp job find
-        %rate in fall
-        %newjob_exit_rate_FPUC=newjob_exit_rate_FPUC*(mean(monthly_search_data(5:8))/mean(newjob_exit_rate_overall_no_FPUC(5:8)));
-        %newjob_exit_rate_no_FPUC=newjob_exit_rate_FPUC*(mean(monthly_search_data(5:8))/mean(newjob_exit_rate_overall_no_FPUC(5:8)));
-    end
+
 
     newjob_exit_rate_overall_FPUC_surprise=mean_search_sim_pandemic_surprise(4:end)';
     newjob_exit_rate_overall_FPUC(end:1000)=newjob_exit_rate_overall_FPUC(end);
@@ -814,17 +789,10 @@ for FPUC_mult_index=1:length(FPUC_mult)
     recall_probs(end:1000) = recall_probs(end);
     recall_probs=.08*ones(1000,1);
 
-    %weekly_or_monthly='monthly';
-    %onset_or_expiry='expiry';
-    %include_self_employed=0;
-    %global nofigs
-    %nofigs=0;
-    %elasticity_and_distortions_values_by_size(:,FPUC_mult_index)=(elasticity_and_distortions(newjob_exit_rate_overall_FPUC, newjob_exit_rate_overall_no_FPUC, recall_probs, weekly_or_monthly, onset_or_expiry,include_self_employed))
-
+   
 
     benefit_change_data = readtable(jobfind_input_directory, 'Sheet', per_change_overall);
     perc_change_benefits_data = benefit_change_data.non_sym_per_change(1) * FPUC_mult(FPUC_mult_index);
-    %perc_change_benefits_data=FPUC_mult(FPUC_mult_index)*.51/.21;
     date_sim_start = datetime(2020, 4, 1);
     t_start = 2;
     % Surprise period minus one should be period 4 (April is 1, May is 2, June is 3, July is 4, August is 5)
@@ -866,91 +834,6 @@ duration_increase_total_surprise=squeeze(elasticity_and_distortions_values_by_si
 duration_increase_marginal_surprise=squeeze(elasticity_and_distortions_values_by_size_surprise(8,2:end,:))-squeeze(elasticity_and_distortions_values_by_size_surprise(8,1:end-1,:));
 duration_growth_total_surprise=(squeeze(elasticity_and_distortions_values_by_size_surprise(8,2:end,:))-squeeze(elasticity_and_distortions_values_by_size_surprise(8,1,:))')./squeeze(elasticity_and_distortions_values_by_size_surprise(8,1,:))';
 duration_growth_marginal_surprise=(squeeze(elasticity_and_distortions_values_by_size_surprise(8,2:end,:))-squeeze(elasticity_and_distortions_values_by_size_surprise(8,1:end-1,:)))./squeeze(elasticity_and_distortions_values_by_size_surprise(8,1:end-1,:));
-
- 
-
-%figure
-%tiledlayout(1,2)
-%nexttile
-%hold on
-%plot(600*FPUC_mult,squeeze(mpc_supplements_by_size(1,2,:,3)),'LineWidth',2,'Color',qual_blue)
-%plot(600*FPUC_mult,squeeze(mpc_supplements_by_size(1,4,:,3)),'--','LineWidth',2,'Color',qual_blue)
-%title('One month MPCs')
-%ylabel('MPC')
-%xlabel('UI supplement size (per week)')
-%xticks([0 300 600])
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%grid on
-%nexttile
-%hold on
-%plot(600*FPUC_mult(2:end),4.2*duration_increase_total_surprise(:,3),'LineWidth',2,'Color',qual_blue)
-%plot(600*FPUC_mult(2:end),4.2*duration_increase_marginal_surprise(:,3),'--','LineWidth',2,'Color',qual_blue)
-%title('Change in unemp. duration')
-%ylabel('Change (in weeks)')
-%xlabel('UI supplement size (per week)')
-%ylim([0 4])
-%xticks([0 300 600])
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%set(gca, 'Layer', 'top');
-%lg  = legend('Total effect of supplement','Effect from last $50 of supplement', 'FontSize', 14);
-%lg.Layout.Tile = 'South';
-%grid on
-%fig=gcf;
-%set(gcf, 'PaperPosition', [0 0 10 5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [10 5]); %Keep the same paper size
-%fig_paper_12 = gcf
-%saveas(fig_paper_12, fullfile(release_path_paper, 'U_and_C_total_and_marginal_4month_surprise.png'))
-%saveas(fig_paper_12, fullfile(release_path_slides, 'U_and_C_total_and_marginal_4month_surprise.png'))
-
-
-
-%figure
-%tiledlayout(1,3)
-%nexttile
-%hold on
-%plot(600*FPUC_mult,squeeze(mpc_supplements_by_size(1,2,:,3)),'LineWidth',2,'Color',qual_blue)
-%plot(600*FPUC_mult,squeeze(mpc_supplements_by_size(1,4,:,3)),'--','LineWidth',2,'Color',qual_blue)
-%ylim([0.1,0.75])
-%title('One month MPCs')
-%ylabel('MPC')
-%xlabel('UI supplement size (per week)')
-%xticks([0 300 600])
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%grid on
-%nexttile
-%hold on
-%plot(600*FPUC_mult,squeeze(mpc_supplements_by_size(2,2,:,3)),'LineWidth',2,'Color',qual_blue)
-%plot(600*FPUC_mult,squeeze(mpc_supplements_by_size(2,4,:,3)),'--','LineWidth',2,'Color',qual_blue)
-%ylim([0.1,0.75])
-%title('Three month MPCs')
-%ylabel('MPC')
-%xlabel('UI supplement size (per week)')
-%xticks([0 300 600])
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%grid on
-%nexttile
-%hold on
-%plot(600*FPUC_mult,squeeze(mpc_supplements_by_size(3,2,:,3)),'LineWidth',2,'Color',qual_blue)
-%plot(600*FPUC_mult,squeeze(mpc_supplements_by_size(3,4,:,3)),'--','LineWidth',2,'Color',qual_blue)
-%ylim([0.1,0.75])
-%title('Six month MPCs')
-%ylabel('MPC')
-%xlabel('UI supplement size (per week)')
-%xticks([0 300 600])
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%set(gca, 'Layer', 'top');
-%lg  = legend('Total effect of supplement','Effect from last $50 of supplement', 'FontSize', 14);
-%lg.Layout.Tile = 'South';
-%grid on
-%set(gcf, 'PaperPosition', [0 0 10 5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [10 5]); %Keep the same paper size
-%fig_paper_13 = gcf;
-%saveas(fig_paper_13, fullfile(release_path_paper, 'U_and_C_total_and_marginal_diff_mpc_horizons_surprise.png'))
 
 load stimulus_check_size_results
 load stimulus_check_size_results_onetenth
@@ -994,28 +877,6 @@ t.Color = "#228B22"
 t.FontSize = 8;
 t.EdgeColor = 'none'
 saveas(fig_paper_13, fullfile(release_path_paper, 'UI_vs_stimulus_check_w_arrows.png'))
-%saveas(fig_paper_13, fullfile(release_path_slides, 'UI_vs_stimulus_check_w_arrows.png'))
-
-%figure
-%hold on
-%s2=2400*FPUC_mult(2:end)'.*squeeze(mpc_supplements_by_size(2,3,2:end,1))./(2400*FPUC_mult(2:end).*mpc_marginal_by_size_stimcheck_quarterly_onetenth)';
-%s2(1:end)=smooth(s2(1:end));
-%plot(2400*FPUC_mult(2:end),smooth(2400*FPUC_mult(2:end)'.*squeeze(mpc_supplements_by_size(2,1,2:end,1))./(2400*FPUC_mult(2:end).*mpc_by_size_stimcheck_quarterly_onetenth)'),'LineWidth',2,'Color',qual_purple)
-%plot(2400*FPUC_mult(2:end),s2,'--','LineWidth',2,'Color',qual_purple)
-%title( {'Quarterly Agg Spending Effect','1 Month UI vs. Equal Cost Stimulus Check'})
-%title( {'Aggregate Effect:' 'UI Supplement vs. Equal Cost Stimulus Check'})
-%ylabel('UI effect relative to equal cost stimulus check')
-%xlabel('UI supplement size (per month)')
-%ylim([0.8 2.9])
-%legend('Total relative spending effect','Relative spending effect from last $50', 'FontSize', 13)
-%legend('BoxOff')
-%set(gca,'fontsize', 12);
-%set(gca, 'Layer', 'top');
-%grid on
-%fig_paper_15 = gcf;
-%saveas(fig_paper_15, fullfile(release_path_paper, 'UI_vs_equalcost_stimulus_check.png'))
-
-
 
 total_cost=FPUC_length'*FPUC_mult*2400;
 total_spend=FPUC_length'*FPUC_mult*2400.*squeeze(mpc_supplements_by_size(3,1,:,:))';
@@ -1104,84 +965,6 @@ duration_increase_marginal_surprise=squeeze(elasticity_and_distortions_values_by
 duration_growth_total_surprise=(squeeze(elasticity_and_distortions_values_by_size_surprise(8,2:end,:))-squeeze(elasticity_and_distortions_values_by_size_surprise(8,1,:))')./squeeze(elasticity_and_distortions_values_by_size_surprise(8,1,:))';
 duration_growth_marginal_surprise=(squeeze(elasticity_and_distortions_values_by_size_surprise(8,2:end,:))-squeeze(elasticity_and_distortions_values_by_size_surprise(8,1:end-1,:)))./squeeze(elasticity_and_distortions_values_by_size_surprise(8,1:end-1,:));
 
- 
-
-%figure
-%tiledlayout(1,2)
-%nexttile
-%hold on
-%plot(2400*FPUC_mult,squeeze(mpc_supplements_by_size(1,2,:,3)),'LineWidth',2,'Color',qual_blue)
-%plot(2400*FPUC_mult,squeeze(mpc_supplements_by_size(1,4,:,3)),'--','LineWidth',2,'Color',qual_blue)
-%title('One month MPCs')
-%ylabel('MPC')
-%xlabel('UI Supplement Size (per month)')
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%grid on
-%nexttile
-%hold on
-%plot(2400*FPUC_mult(2:end),duration_increase_total_surprise(:,3),'LineWidth',2,'Color',qual_blue)
-%plot(2400*FPUC_mult(2:end),duration_increase_marginal_surprise(:,3),'--','LineWidth',2,'Color',qual_blue)
-%title('Change in U Duration')
-%ylabel('Change (in Months)')
-%xlabel('UI Supplement Size (per month)')
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%set(gca, 'Layer', 'top');
-%lg  = legend('Total Effect of Supplement','Effect from last $ of Supplement');
-%lg.Layout.Tile = 'South';
-%grid on
-%fig=gcf;
-%set(gcf, 'PaperPosition', [0 0 10 5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [10 5]); %Keep the same paper size
-%saveas(fig, fullfile(release_path_paper, 'U_and_C_total_and_marginal_4month_surprise.png'))
-
-
-
-%figure
-%tiledlayout(1,3)
-%nexttile
-%hold on
-%plot(2400*FPUC_mult,squeeze(mpc_supplements_by_size(1,2,:,3)),'LineWidth',2,'Color',qual_blue)
-%plot(2400*FPUC_mult,squeeze(mpc_supplements_by_size(1,4,:,3)),'--','LineWidth',2,'Color',qual_blue)
-%ylim([0.1,0.75])
-%title('One month MPCs')
-%ylabel('MPC')
-%xlabel('UI Supplement Size (per month)')
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%grid on
-%nexttile
-%hold on
-%plot(2400*FPUC_mult,squeeze(mpc_supplements_by_size(2,2,:,3)),'LineWidth',2,'Color',qual_blue)
-%plot(2400*FPUC_mult,squeeze(mpc_supplements_by_size(2,4,:,3)),'--','LineWidth',2,'Color',qual_blue)
-%ylim([0.1,0.75])
-%title('Three month MPCs')
-%ylabel('MPC')
-%xlabel('UI Supplement Size (per month)')
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%grid on
-%nexttile
-%hold on
-%plot(2400*FPUC_mult,squeeze(mpc_supplements_by_size(3,2,:,3)),'LineWidth',2,'Color',qual_blue)
-%plot(2400*FPUC_mult,squeeze(mpc_supplements_by_size(3,4,:,3)),'--','LineWidth',2,'Color',qual_blue)
-%ylim([0.1,0.75])
-%title('Six month MPCs')
-%ylabel('MPC')
-%xlabel('UI Supplement Size (per month)')
-%legend('From Full Supplement','From last $100 of supplement')
-%set(gca,'fontsize', 12);
-%set(gca, 'Layer', 'top');
-%lg  = legend('Total Effect of Supplement','Effect from last $100 of Supplement');
-%lg.Layout.Tile = 'South';
-%grid on
-%set(gcf, 'PaperPosition', [0 0 10 5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [10 5]); %Keep the same paper size
-%fig=gcf;
-%saveas(fig, fullfile(release_path_paper, 'U_and_C_total_and_marginal_diff_mpc_horizons_surprise.png'))
-
-
 
 load stimulus_check_size_results
 load stimulus_check_size_results_onetenth
@@ -1205,30 +988,6 @@ set(gca, 'Layer', 'top');
 grid on
 fig=gcf;
 %saveas(fig, fullfile(release_path_paper, 'UI_vs_stimulus_check.png'))
-
-%figure
-%hold on
-%s2=2400*FPUC_mult(2:end)'.*squeeze(mpc_supplements_by_size(2,3,2:end,1))./(2400*FPUC_mult(2:end).*mpc_marginal_by_size_stimcheck_quarterly_onetenth)';
-%s2(6:end)=smooth(s2(6:end));
-%plot(2400*FPUC_mult(2:end),2400*FPUC_mult(2:end)'.*squeeze(mpc_supplements_by_size(2,1,2:end,1))./(2400*FPUC_mult(2:end).*mpc_by_size_stimcheck_quarterly_onetenth)','LineWidth',2,'Color',qual_purple)
-%plot(2400*FPUC_mult(2:end),s2,'--','LineWidth',2,'Color',qual_purple)
-%title( {'Quarterly Agg Spending Effect','1 Month UI vs. Equal Cost Stimulus Check'})
-%title( {'Aggregate Effect:' 'UI Supplement vs. Equal Cost Stimulus Check'})
-%ylabel('UI Effect relative to Stimulus Check')
-%xlabel('UI Supplement Size (per month)')
-%ylim([1 2])
-%legend('Total Relative Spending Effect','Relative Spending Effect from last $')
-%legend('BoxOff')
-%set(gca,'fontsize', 12);
-%grid on
-%fig=gcf;
-%saveas(fig, fullfile(release_path_paper, 'UI_vs_equalcost_stimulus_check.png'))
-
-
-
-
-
-
 
 total_cost=FPUC_length'*FPUC_mult*2400;
 total_spend=FPUC_length'*FPUC_mult*2400.*squeeze(mpc_supplements_by_size(3,1,:,:))';

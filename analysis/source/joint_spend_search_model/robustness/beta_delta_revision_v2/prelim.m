@@ -9,7 +9,7 @@ addpath(oldpath, extractBefore(string(pwd), '\robustness\'));
 % 1. Chase data inputs ====================================================
 % Input: job find ---------------------------------------------------------
 % Input workbook
-jobfind_input_path = '../../../../input/disclose/2023-06-18_disclosure_packet/jobfind/2023-06-18_ui_jobfind_for_export.xls';
+jobfind_input_path = '../../../../input/disclose/2023-06-23_disclosure_packet/jobfind/2023-06-18_ui_jobfind_for_export.xls';
 eval(['jobfind_input_directory' '=jobfind_input_path;']);
 save('jobfind_input_directory.mat','jobfind_input_directory');
 
@@ -17,14 +17,14 @@ save('jobfind_input_directory.mat','jobfind_input_directory');
 % Defined in main model folder.
 
 % Input: spend ------------------------------------------------------------
-spending_input_path = '../../../../input/disclose/2023-06-18_disclosure_packet/spend/ui_spend_for_export.xls';
+spending_input_path = '../../../../input/disclose/2023-06-23_disclosure_packet/spend/ui_spend_for_export.xls';
 eval(['spending_input_directory' '=spending_input_path;']);
 save('spending_input_directory.mat','spending_input_directory');
 model_data = 'matched_model_data_table';
 save('spending_input_sheets.mat', 'model_data');
 
 % Input: interupted time series shift 'inter_time_series_...' -------------
-inter_time_series_input_path = '../../../../input/disclose/2023-06-18_disclosure_packet/jobfind/tables/table_effects_summary.csv';
+inter_time_series_input_path = '../../../../input/disclose/2023-06-23_disclosure_packet/jobfind/tables/table_effects_summary.csv';
 eval(['inter_time_series_input_directory' '=inter_time_series_input_path;']);
 save('inter_time_series_input_directory.mat', 'inter_time_series_input_directory');
 
@@ -40,7 +40,7 @@ save('elasticity_uieip_input_directory.mat', 'elasticity_uieip_input_directory')
 % Input: duration elasticities from literature ----------------------------
 % This csv has been created for this project (typed up numbers from a review
 % paper), i.e., it is public information (but not a public dataset).
-literature_elasticities_input_path = '..\..\..\..\input\csvs_key_plots\literature_elasticities.csv';
+literature_elasticities_input_path = '..\..\..\..\input\public_data\literature_elasticities.csv';
 eval(['literature_elasticities_input_directory' '=literature_elasticities_input_path;']);
 save('literature_elasticities_input_directory.mat', 'literature_elasticities_input_directory');
 

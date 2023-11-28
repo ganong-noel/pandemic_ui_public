@@ -2,9 +2,6 @@ display('Simulating Full Model w/ heterogeneity in liquidity')
 close all
 tic
 
-%from medians_by_buffer_quantiles.csv:
-%high liq: .383
-%low liq: -.34
 
 load('liquidity.mat');
 
@@ -188,11 +185,7 @@ perc_income_w_vs_e=income_w_yoy-income_e_yoy;
 perc_income_e = data_update_e.percent_change;
 perc_income_u = data_update_u.percent_change;
 perc_income_w = data_update_w.percent_change;
-%perc_income_u_vs_e = perc_income_u - perc_income_e;
-%perc_income_u_vs_e = perc_income_u_vs_e(13:end);
 perc_income_u_vs_e=perc_income_u_vs_e-mean(perc_income_u_vs_e(1:3));
-%perc_income_w_vs_e = perc_income_w - perc_income_e;
-%perc_income_w_vs_e = perc_income_w_vs_e(13:end);
 perc_income_w_vs_e=perc_income_w_vs_e-mean(perc_income_w_vs_e(1:3));
 income_dollars_u_vs_e = perc_income_u_vs_e * mean(income_u(1:3));
 income_dollars_w_vs_e = perc_income_w_vs_e * mean(income_w(1:3));
@@ -209,10 +202,6 @@ checking_w = data_update_w.value;
 checking_e = checking_e(13:end);
 checking_u = checking_u(13:end);
 checking_w = checking_w(13:end);
-
-%stat_for_text_change_checking_u_vs_e=(checking_u(7)-checking_u(3))-(checking_e(7)-checking_e(3))
-%save('stats_for_text_model_miscellaneous.mat', 'stat_for_text_change_checking_u_vs_e', '-append')
-
 
 
 
@@ -337,10 +326,6 @@ for iy = 1:5
 
         %expect $600 for 12 months
         benefit_profile_pandemic(1:12, 2) = b + h + FPUC_expiration;
-        %benefit_profile_pandemic(1)=b+h+1.5*FPUC_expiration;
-        %benefit_profile_pandemic(3)=b+h+1.05*FPUC_expiration;
-        %benefit_profile_pandemic(4)=b+h+1.25*FPUC_expiration;
-        %benefit_profile_pandemic(5:12,2)=b+h+1*FPUC_expiration;
         if infinite_dur == 1
             benefit_profile_pandemic(13, 2) = b + h + FPUC_expiration;
         else
@@ -421,12 +406,6 @@ for iy = 1:5
         recall_probs_pandemic(1:13, 1) = 0.00;
         recall_probs_regular = recall_probs_pandemic;
 
-        %recall_probs_pandemic_actual(1)=.0078;
-        %recall_probs_pandemic_actual(2)=.113;
-        %recall_probs_pandemic_actual(3)=.18;
-        %recall_probs_pandemic_actual(4)=.117;
-        %recall_probs_pandemic_actual(5)=.112;
-        %recall_probs_pandemic_actual(6:13)=.107;
 
         recall_probs_pandemic(1:13) = .08;
         recall_probs_regular = recall_probs_pandemic;
@@ -763,31 +742,7 @@ for iy = 1:5
         % Begin simulations using policy functions
 
         A = Aprime;
-    %{
-    figure
-    plot(A,c_pol_e(:,1),A,c_pol_u(:,:,1))
-    title('Consumption functions E vs regular U t=1')
-
-    figure
-    plot(A,c_pol_e(:,1),A,c_pol_u_pandemic(:,:,1,1))
-    title('Consumption functions E vs pandemic U  t=1')
-
-    figure
-    plot(A,v_e(:,1),A,v_u(:,:,1))
-    title('Value functions E vs. regular U  t=1')
-
-    figure
-    plot(A,v_e(:,1),A,v_u_pandemic(:,:,1))
-    title('Value functions E vs. pandemic U  t=1')
-
-    figure
-    plot(A,optimal_search(:,:,1))
-    title('Optimal search regular u, t=1')
-
-    figure
-    plot(A,optimal_search_pandemic(:,:,1))
-    title('Optimal search pandemic, t=1')
-    %}
+   
 
         numt_sim = 36;
         a_u_sim = zeros(numt_sim, 1);
@@ -810,12 +765,6 @@ for iy = 1:5
         c_u_with500_sim3 = c_u_sim;
         a_u_with500_sim3 = a_u_sim;
 
-        %Note that we don't necessarily need all parts of this simulation step to
-        %be internal to the parameter search, keeping only the absolute necessary
-        %parts internal to that loop should speed things up some
-
-        %note also i might be able to speed up by feeding only the adjacent points
-        %into the interp step
 
         numhh = 1000;
         numsim = 18;
@@ -1227,10 +1176,6 @@ for iy = 1:5
             c_pol_u = c_pol_u_betanormal;
             if t == 1
                 c_pol_u_pandemic = c_pol_u_pandemic_betahigh;
-                %v_e=v_e_betahigh;
-                %v_u=v_u_betahigh;
-                %v_u_pandemic=v_u_pandemic_betahigh;
-                %beta=beta_high;
             else
                 c_pol_u_pandemic = c_pol_u_pandemic_betanormal;
             end
@@ -1870,68 +1815,6 @@ mean_c_sim_impatient=mean_c_sim_pandemic_surprise_impatient./mean_c_sim_e_averag
 
 
 
-%{
-figure
-tiledlayout(1,2)
-nexttile
-%subplot(1,2,1)
-p = patch([4 4 7 7], [-20 30 30 -20], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(1:11, spend_data_high_liq(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_dollars_high_a(1:11)/total_spend_u(1)*100, '-s', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, spend_data_low_liq(1:11), '--o', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_dollars_low_a(1:11)/total_spend_u(1)*100, '-s', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-%plot(1:11, mean_c_sim_pandemic_surprise_noFPUC_dollars(1:11)/total_spend_u(1)*100, '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-%legend('Low 2019 assets - data', 'High 2019 assets - data','Low 2019 assets - model', 'High 2019 assets - model', 'Location', 'SouthWest', 'FontSize', 14)
-set(gca, 'fontsize', 12);
-title({'Spending (% vs E) by 2019 Liquidity Groups:','2019 Liquidity Driven by Luck'},'fontsize', 16)
-%ylabel('\Delta $')
-yticks([-20 -10 0 10 20])
-yticklabels({'-20%','-10%', '0%','10%', '20%'})
-xlim([1 11])
-xticks([1 2 3 4 5 6 7 8 9 10 11])
-ylim([-10 25])
-xticklabels(label_months_jan20_nov20)
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperPosition', [0 0 10 5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [10 5]); %Keep the same paper size
-
-nexttile
-p = patch([4 4 7 7], [-20 30 30 -20], [0.9 0.9 0.9], 'EdgeColor', 'none');
-set(get(get(p(1), 'Annotation'), 'LegendInformation'), 'IconDisplayStyle', 'off');
-hold on
-plot(1:11, spend_data_high_liq(1:11), '--o', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_dollars_patient(1:11)/total_spend_u(1)*100, '-s', 'Color', qual_blue, 'MarkerFaceColor', qual_blue, 'LineWidth', 2)
-plot(1:11, spend_data_low_liq(1:11), '--o', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-plot(1:11, mean_c_sim_pandemic_surprise_dollars_impatient(1:11)/total_spend_u(1)*100, '-s', 'Color', qual_orange, 'MarkerFaceColor', qual_orange, 'LineWidth', 2)
-%plot(1:11, mean_c_sim_pandemic_surprise_noFPUC_dollars(1:11)/total_spend_u(1)*100, '-o', 'Color', [0.6 0.6 0.6], 'MarkerFaceColor', [0.6 0.6 0.6], 'LineWidth', 2)
-set(gca,'fontsize', 12);
-title({'Spending (% vs E) by 2019 Liquidity Groups:','2019 Liquidity Driven by Luck + Perm Heterogeneity'},'fontsize', 16)
-%legend('Low 2019 assets - data', 'High 2019 assets - data','Low 2019 assets - model', 'High 2019 assets - model', 'Location', 'SouthWest', 'FontSize', 14)
-%ylabel('\Delta $')
-yticks([-20 -10 0 10 20])
-yticklabels({'-20%','-10%', '0%','10%', '20%'})
-xlim([1 11])
-xticks([1 2 3 4 5 6 7 8 9 10 11])
-ylim([-10 25])
-xticklabels(label_months_jan20_nov20)
-%set(gca, 'fontsize', 11);
-set(gca, 'Layer', 'top');
-% set(gcf, 'PaperPosition', [0 0 10.4 4.5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-%set(gcf, 'PaperSize', [4.5 2]); %Keep the same paper size
-%pbaspect([4.5 2 1])
-set(gcf, 'Position',  [500,500,1100,600])
-set(gcf, 'PaperPosition', [0 0 10 5]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
-set(gcf, 'PaperSize', [10 5]); %Keep the same paper size
-lg  = legend('High 2019 Liquidity: Data', 'High 2019 Liquidity: Model', 'Low 2019 Liquidity: Data','Low 2019 Liquidity: Model', 'Location', 'SouthWest', 'FontSize', 14);
-lg.Layout.Tile = 'South';
-%lg.FontSize = 14
-set(gca, 'Layer', 'top');
-fig_asset_heterogeneity = gcf;
-exportgraphics(fig_asset_heterogeneity, fullfile(release_path_paper, 'fig_asset_heterogeneity.png'))
-%}
 
 
 
@@ -2018,7 +1901,7 @@ set(gcf, 'PaperSize', [13 2]); %Keep the same paper size
 set(gca, 'Layer', 'top');
 fig_paper_12 = gcf;
 exportgraphics(fig_paper_12, fullfile(release_path_paper, 'fig_asset_heterogeneity.png'))
-exportgraphics(fig_paper_12, fullfile(release_path_slides, 'fig_asset_heterogeneity.png'))
+%exportgraphics(fig_paper_12, fullfile(release_path_slides, 'fig_asset_heterogeneity.png'))
 
 
 

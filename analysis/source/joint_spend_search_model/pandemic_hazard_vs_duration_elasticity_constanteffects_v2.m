@@ -172,7 +172,6 @@ scatter(4,elasticity_lowjf_prepanhazard(4),150,'filled','^')
 nexttile
 h=plot(1:18,total_hazard_elasticity_prepanhazard_panrecallshare*ones(18,1),1:18,elasticity_normaljf_prepanhazard_panrecallshare,1:18,elasticity_lowjf_prepanhazard_panrecallshare,'LineWidth',2);
 xlabel('Supplement length (months)')
-%legend('Total Hazard Elasticity','Duration Elasticity (Normal Labor Market)','Duration Elasticity (Depressed Labor Market)','Location','SouthEast')
 title({'Recall share: pandemic','New job hazard elasticity: normal'})
 ylim([0,0.55])
 xlim([0 12])
@@ -182,7 +181,6 @@ scatter(4,elasticity_lowjf_prepanhazard_panrecallshare(4),150,'filled','+','Mark
 nexttile
 plot(1:18,total_hazard_elasticity_pan*ones(18,1),1:18,elasticity_normaljf_panhazard_panrecallshare,1:18,elasticity_lowjf_panhazard_panrecallshare,'LineWidth',2)
 xlabel('Supplement length (months)')
-%legend('Total Hazard Elasticity','Duration Elasticity (Normal Labor Market)','Duration Elasticity (Depressed Labor Market)','Location','SouthEast')
 title({'Recall share: pandemic','New job hazard elasticity: pandemic'})
 ylim([0,0.55])
 xlim([0 12])
@@ -197,5 +195,5 @@ set(gcf, 'PaperPosition', [0 0 11 5]); %Position the plot further to the left an
 set(gcf, 'PaperSize', [11 5]); %Keep the same paper size
 fig_paper_11 = gcf;
 saveas(fig_paper_11, fullfile(release_path_paper, 'hazard_vs_duration_elasticities.png'))
-saveas(fig_paper_11, fullfile(release_path_slides, 'hazard_vs_duration_elasticities.png'))
+%saveas(fig_paper_11, fullfile(release_path_slides, 'hazard_vs_duration_elasticities.png'))
 
