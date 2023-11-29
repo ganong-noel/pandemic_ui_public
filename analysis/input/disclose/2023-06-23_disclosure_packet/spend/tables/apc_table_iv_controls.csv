@@ -1,8 +1,0 @@
-apc_none,apc_state,apc_state_age,apc_state_age_kids,apc_state_age_kids_industry,apc_age_kids,design,se_none,se_state,se_state_age,se_state_age_kids,se_state_age_kids_industry,se_age_kids,n_obs_none,n_obs_state,n_obs_state_age,n_obs_state_age_kids,n_obs_state_age_kids_industry,n_obs_age_kids,numerator,denominator
-0.42,0.402,0.401,0.406,0.408,0.433,UI onset (waiting),0.014,0.017,0.017,0.018,0.039,0.016,52094,51624,51612,38930,8300,38930,Spend (total),income
-0.311,0.295,0.298,0.305,0.37,0.318,FPUC expiration,0.007,0.008,0.008,0.01,0.192,0.009,308059,293239,293155,193464,26212,193464,Spend (total),income
-0.311,0.252,0.253,0.272,0.287,0.305,LWA,0.017,0.044,0.044,0.052,0.101,0.02,396740,393168,393050,292158,80584,292158,Spend (total),income
-0.281,0.28,0.275,0.268,1.124,0.266,$300 onset,0.012,0.013,0.013,0.016,1.725,0.015,247770,238698,238624,151254,16676,151254,Spend (total),income
-0.266,0.265,0.266,0.299,0.252,0.304,$300 expiration Sept states,0.013,0.015,0.015,0.019,0.13,0.016,153277,148725,148675,74327,4774,74327,Spend (total),income
-0.347,0.348,0.348,0.346,0.152,0.359,$300 expiration June states,0.022,0.032,0.032,0.035,0.505,0.027,145978,142678,142634,71561,3896,71561,Spend (total),income
-0.393,0.522,0.545,0.864,-0.07,0.424,$300 expiration June vs. Sept states,0.031,1.196,1.269,0.885,1.217,0.038,47623,42251,42245,27845,8258,27845,Spend (total),income
