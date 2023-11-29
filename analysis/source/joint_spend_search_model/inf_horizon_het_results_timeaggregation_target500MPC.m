@@ -1,4 +1,4 @@
-display('Simulating Full Model Effects of $600')
+display('Simulating Full Model Effects of $600 in time aggregation model w/ .25 mpc')
 clearvars -except -regexp fig_paper_*;
 tic
 
@@ -22,8 +22,6 @@ load graph_axis_labels_timeseries.mat
 
 exit_rates_data = readtable(jobfind_input_directory, 'Sheet', fig1_df);
 exit_rates_data.week_start_date = datetime(exit_rates_data.week_start_date);
-%idx = datenum(exit_rates_data.week_start_date) >= datenum('2020-01-01') & datenum(exit_rates_data.week_start_date) < datenum('2020-11-20');
-%exit_rates_data = exit_rates_data(idx, :);
 exit_rates_data.month = dateshift(exit_rates_data.week_start_date, 'start', 'month');
 
 % For the exit variables we want the average exit probability at a monthly level
@@ -61,10 +59,7 @@ perc_spend_w = data_update_w.percent_change;
 perc_spend_u_vs_e=total_spend_u_yoy-total_spend_e_yoy;
 perc_spend_w_vs_e=total_spend_w_yoy-total_spend_e_yoy;
 
-%perc_spend_u_vs_e = perc_spend_u - perc_spend_e;
-%perc_spend_u_vs_e = perc_spend_u_vs_e(13:end);
-%perc_spend_w_vs_e = perc_spend_w - perc_spend_e;
-%perc_spend_w_vs_e=perc_spend_w_vs_e(13:end);
+
 perc_spend_u_vs_e=perc_spend_u_vs_e-mean(perc_spend_u_vs_e(1:2));
 perc_spend_w_vs_e=perc_spend_w_vs_e-mean(perc_spend_w_vs_e(1:2));
 spend_dollars_u_vs_e = perc_spend_u_vs_e * mean(total_spend_u(1:2));
@@ -92,11 +87,7 @@ perc_income_w_vs_e=income_w_yoy-income_e_yoy;
 perc_income_e = data_update_e.percent_change;
 perc_income_u = data_update_u.percent_change;
 perc_income_w = data_update_w.percent_change;
-%perc_income_u_vs_e = perc_income_u - perc_income_e;
-%perc_income_u_vs_e = perc_income_u_vs_e(13:end);
 perc_income_u_vs_e=perc_income_u_vs_e-mean(perc_income_u_vs_e(1:3));
-%perc_income_w_vs_e = perc_income_w - perc_income_e;
-%perc_income_w_vs_e = perc_income_w_vs_e(13:end);
 perc_income_w_vs_e=perc_income_w_vs_e-mean(perc_income_w_vs_e(1:3));
 income_dollars_u_vs_e = perc_income_u_vs_e * mean(income_u(1:3));
 income_dollars_w_vs_e = perc_income_w_vs_e * mean(income_w(1:3));
@@ -220,11 +211,6 @@ for iy = 1:5
         %expect $600 for 12 months
         benefit_profile_pandemic(1,2)=.98*w(iy);
         benefit_profile_pandemic(2:13, 2) = b + h + FPUC_expiration;
-        %benefit_profile_pandemic(2,2) = b+h+.91*FPUC_expiration;
-        %benefit_profile_pandemic(3,2) = b+h+.8*FPUC_expiration;
-        %benefit_profile_pandemic(4,2) = b+h+1.1*FPUC_expiration;
-        %benefit_profile_pandemic(5,2) = b+h+.94*FPUC_expiration;
-        %benefit_profile_pandemic(6:13,2)=b+h+1*FPUC_expiration;
         if infinite_dur == 1
             benefit_profile_pandemic(14, 2) = b + h + FPUC_expiration;
         else
@@ -311,12 +297,7 @@ for iy = 1:5
         recall_probs_pandemic(1:14, 1) = 0.00;
         recall_probs_regular = recall_probs_pandemic;
 
-        %recall_probs_pandemic_actual(1)=.0078;
-        %recall_probs_pandemic_actual(2)=.113;
-        %recall_probs_pandemic_actual(3)=.18;
-        %recall_probs_pandemic_actual(4)=.117;
-        %recall_probs_pandemic_actual(5)=.112;
-        %recall_probs_pandemic_actual(6:13)=.107;
+
 
         recall_probs_pandemic(1:14) = .08;
         recall_probs_regular = recall_probs_pandemic;
@@ -653,31 +634,7 @@ for iy = 1:5
         % Begin simulations using policy functions
 
         A = Aprime;
-    %{
-    figure
-    plot(A,c_pol_e(:,1),A,c_pol_u(:,:,1))
-    title('Consumption functions E vs regular U t=1')
 
-    figure
-    plot(A,c_pol_e(:,1),A,c_pol_u_pandemic(:,:,1,1))
-    title('Consumption functions E vs pandemic U  t=1')
-
-    figure
-    plot(A,v_e(:,1),A,v_u(:,:,1))
-    title('Value functions E vs. regular U  t=1')
-
-    figure
-    plot(A,v_e(:,1),A,v_u_pandemic(:,:,1))
-    title('Value functions E vs. pandemic U  t=1')
-
-    figure
-    plot(A,optimal_search(:,:,1))
-    title('Optimal search regular u, t=1')
-
-    figure
-    plot(A,optimal_search_pandemic(:,:,1))
-    title('Optimal search pandemic, t=1')
-    %}
 
         numt_sim = 36;
         a_u_sim = zeros(numt_sim, 1);
@@ -700,12 +657,7 @@ for iy = 1:5
         c_u_with500_sim3 = c_u_sim;
         a_u_with500_sim3 = a_u_sim;
 
-        %Note that we don't necessarily need all parts of this simulation step to
-        %be internal to the parameter search, keeping only the absolute necessary
-        %parts internal to that loop should speed things up some
 
-        %note also i might be able to speed up by feeding only the adjacent points
-        %into the interp step
 
         numhh = 1000;
         numsim = 18;

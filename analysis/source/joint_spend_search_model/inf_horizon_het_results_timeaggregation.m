@@ -1,4 +1,4 @@
-display('Simulating Full Model Effects of $600')
+display('Simulating Full Model Effects of $600 in time aggregation model')
 clearvars -except -regexp fig_paper_*;
 tic
 
@@ -204,10 +204,6 @@ for iy = 1:5
         %expect $600 for 4 months
         benefit_profile_pandemic(1,1)=.98*w(iy);
         benefit_profile_pandemic(2:5, 1) = b + h + FPUC_expiration;
-        %benefit_profile_pandemic(2,1) = b+h+.91*FPUC_expiration;
-        %benefit_profile_pandemic(3,1) = b+h+.8*FPUC_expiration;
-        %benefit_profile_pandemic(4,1) = b+h+1.1*FPUC_expiration;
-        %benefit_profile_pandemic(5,1) = b+h+.94*FPUC_expiration;
         benefit_profile_pandemic(6:13, 1) = b + h;
 
         if infinite_dur == 1
@@ -219,11 +215,6 @@ for iy = 1:5
         %expect $600 for 12 months
         benefit_profile_pandemic(1,2)=.98*w(iy);
         benefit_profile_pandemic(2:13, 2) = b + h + FPUC_expiration;
-        %benefit_profile_pandemic(2,2) = b+h+.91*FPUC_expiration;
-        %benefit_profile_pandemic(3,2) = b+h+.8*FPUC_expiration;
-        %benefit_profile_pandemic(4,2) = b+h+1.1*FPUC_expiration;
-        %benefit_profile_pandemic(5,2) = b+h+.94*FPUC_expiration;
-        %benefit_profile_pandemic(6:13,2)=b+h+1*FPUC_expiration;
         if infinite_dur == 1
             benefit_profile_pandemic(14, 2) = b + h + FPUC_expiration;
         else
@@ -309,13 +300,6 @@ for iy = 1:5
 
         recall_probs_pandemic(1:14, 1) = 0.00;
         recall_probs_regular = recall_probs_pandemic;
-
-        %recall_probs_pandemic_actual(1)=.0078;
-        %recall_probs_pandemic_actual(2)=.113;
-        %recall_probs_pandemic_actual(3)=.18;
-        %recall_probs_pandemic_actual(4)=.117;
-        %recall_probs_pandemic_actual(5)=.112;
-        %recall_probs_pandemic_actual(6:13)=.107;
 
         recall_probs_pandemic(1:14) = .08;
         recall_probs_regular = recall_probs_pandemic;
@@ -652,31 +636,7 @@ for iy = 1:5
         % Begin simulations using policy functions
 
         A = Aprime;
-    %{
-    figure
-    plot(A,c_pol_e(:,1),A,c_pol_u(:,:,1))
-    title('Consumption functions E vs regular U t=1')
-
-    figure
-    plot(A,c_pol_e(:,1),A,c_pol_u_pandemic(:,:,1,1))
-    title('Consumption functions E vs pandemic U  t=1')
-
-    figure
-    plot(A,v_e(:,1),A,v_u(:,:,1))
-    title('Value functions E vs. regular U  t=1')
-
-    figure
-    plot(A,v_e(:,1),A,v_u_pandemic(:,:,1))
-    title('Value functions E vs. pandemic U  t=1')
-
-    figure
-    plot(A,optimal_search(:,:,1))
-    title('Optimal search regular u, t=1')
-
-    figure
-    plot(A,optimal_search_pandemic(:,:,1))
-    title('Optimal search pandemic, t=1')
-    %}
+    
 
         numt_sim = 36;
         a_u_sim = zeros(numt_sim, 1);
@@ -699,12 +659,6 @@ for iy = 1:5
         c_u_with500_sim3 = c_u_sim;
         a_u_with500_sim3 = a_u_sim;
 
-        %Note that we don't necessarily need all parts of this simulation step to
-        %be internal to the parameter search, keeping only the absolute necessary
-        %parts internal to that loop should speed things up some
-
-        %note also i might be able to speed up by feeding only the adjacent points
-        %into the interp step
 
         numhh = 1000;
         numsim = 18;

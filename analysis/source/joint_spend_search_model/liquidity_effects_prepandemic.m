@@ -687,8 +687,8 @@ ratio_total=mean(mean_total_exit_rate_by_severance(2,1:5)./mean_total_exit_rate_
 
 log(ratio_newjob)
 
-%note: can compare this to chetty 08 if want to
-share_newrate=((mean_search_sim_by_severance(3,1)-newjob_find_holder_month1(1))/newjob_find_holder_month1(1))/((newjob_find_augmented_holder_month1(3)-newjob_find_holder_month1(1))/newjob_find_holder_month1(1))
+
+share_newrate=((mean_search_sim_by_severance(3,1)-newjob_find_holder_month1(1))/newjob_find_holder_month1(1))/((newjob_find_augmented_holder_month1(3)-newjob_find_holder_month1(1))/newjob_find_holder_month1(1));
 
 
 table_stats_for_text_liquidity=table();

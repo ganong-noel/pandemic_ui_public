@@ -63,9 +63,11 @@ run("robustness\beta_delta_revision_v2\shell.m"); %paper figures A28a A28b A28c 
 
 
 
-%% Keep figures open that are in the paper
+%% Keep figures open that are in the paper (note, all figures are also saved in release/joint_spend_search_model/paper_figures if any figures are closed unintentionally)
 cab fig_paper_A26 fig_paper_A27 fig_paper_9b fig_paper_9a fig_paper_A20 ...
     fig_paper_10a fig_paper_10b fig_paper_A19 fig_paper_13 fig_paper_8 ...
     fig_paper_11 fig_paper_12 fig_paper_A18 fig_paper_A28a fig_paper_A28b ...
     fig_paper_A28c fig_paper_A28d fig_paper_A28e
 
+clc
+display('Simulations complete, results saved in release/joint_spend_search_model/paper_figures')

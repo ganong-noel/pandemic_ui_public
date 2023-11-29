@@ -9,6 +9,9 @@ unique(full_delta)
 unique(full_c_param)
 unique(full_k)
 
+%restricting to subsets of the full grid search to pare down the search and
+%limit maximum extent of heterogeneity, but different choices didn't make
+%much difference
 full_c_param=full_c_param(full_beta==beta_to_use_low | full_beta==beta_to_use_high);
 full_delta=full_delta(full_beta==beta_to_use_low | full_beta==beta_to_use_high);
 full_gamma=full_gamma(full_beta==beta_to_use_low | full_beta==beta_to_use_high);
@@ -137,6 +140,9 @@ for i=1:10
     pars_init = ones(length(indices),1);
     pars_init=pars_init/sum(pars_init);
     no_max = optimset('MaxIter', 500, 'MaxFunEvals', Inf, 'Display', 'iter', 'TolFun', .00006, 'TolX', .00006);
+    %see below for model_data_diff function. Need to compute these for each
+    %parameter since the mapping from individual type survivor functions to
+    %aggregate shares is non-linear
     fun = @(pars)model_data_diff(pars,search_model_shift_subset,monthly_search_data,expected_recall,spend_model,spend_data);
     
     [params, fit] = fmincon(fun, pars_init, A2,b2,Aeq2,beq2,lb2,ub2,[],no_max);
@@ -195,8 +201,8 @@ xticklabels(label_months_jan20_nov20)
 yticks([-20 -10 0 10 20])
 yticklabels({'-20%','-10%', '0%','10%', '20%'})
 %title('Spending by Type vs. Data')
-fig_A28d = gcf;
-saveas(fig_A28d, [char(release_path_paper), '/spend_many_types_by_type.png'])
+fig_paper_A28d = gcf;
+saveas(fig_paper_A28d, [char(release_path_paper), '/spend_many_types_by_type.png'])
 
 % Plot search (by type)
 figure
@@ -249,7 +255,9 @@ fig_paper_A28a = gcf;
 saveas(fig_paper_A28a, [char(release_path_paper), '/jobfind_many_types_averaged.png'])
 
 
-
+%computes differences between the model and data aggregates, accounting for
+%dynamic composition effects when there are different types with different
+%exit rates and thus different shares over time.
 function diff=model_data_diff(pars,search_model_shift_subset,monthly_search_data,expected_recall,spend_model,spend_data)
     share_dynamic=pars/sum(pars);
     for t=2:8
