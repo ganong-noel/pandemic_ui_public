@@ -1,5 +1,0 @@
-design,apc,apc_total,apc share of total apc,spending_category,denominator,se,n_obs,spend_category_unemp,spend_category_emp
-UI onset (waiting),0.036,0.175,0.2057142857142857,off_us_creditcard_pmts,income,0.004,52094,325.6417079391797,405.25853609217023
-FPUC expiration,0.037,0.106,0.3490566037735849,off_us_creditcard_pmts,income,0.002,309077,413.60599620049345,419.7589745494351
-$300 onset,0.02,0.11,0.18181818181818182,off_us_creditcard_pmts,income,0.004,249652,461.16498210572706,430.3674904270987
-$300 expiration Sept states,0.018,0.111,0.16216216216216214,off_us_creditcard_pmts,income,0.004,129293,512.6833477816256,502.47351248998615
