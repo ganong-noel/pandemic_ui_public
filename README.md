@@ -1,17 +1,27 @@
 # Model
 
+_Requirements: MATLAB R2021b_
+
 ## Directory Structure
-1. `analysis/source/joint_spend_search_model/` - All model codes (including subdirectory `robustness/`).
-2. `analysis/input/disclose/` - Model inputs and targets from JP Morgan Chase Institute (JPMCI) data.
-3. `analysis/input/public_data/` - Model inputs and targets from publicly available data. See below for description of the datasets and their sources.
-4. `analysis/input/csvs_key_plots/literature_elasticities.csv` - Input for a plot overviewing literature estimates of duration elasticities.
-5. `analysis/release/joint_spend_search_model/paper_figures` - Figures and tables in the paper.
-6. `analysis/release/joint_spend_search_model/slides_figures` - Figures and tables in presentation slides.
+### Inputs
+1. `analysis/input/disclose/` - Model inputs and targets from JPMorgan Chase Institute (JPMCI) data.
+2. `analysis/input/public_data/` - Model inputs and targets from publicly available data. See below for description of the datasets and their sources.
+3. `analysis/input/csvs_key_plots/literature_elasticities.csv` - Input for a plot overviewing literature estimates of duration elasticities.
 
-## Model Scripts in `analysis/source/joint_spend_search_model/`
+### Model codes
+`analysis/source/joint_spend_search_model/` (including subdirectory `robustness/`)
 
-### Master Script
-The master script `shell.m` runs the code. The shell file comments also describes exactly which subroutines produce each model figure and table from the paper. The analysis was run using MATLAB R2021b. Note that `solve_best_fit_params.m` is much more time consuming than the rest of the script but we provide intermediate files so this step can be skipped if so desired. Similarly, the stimulus_check_size related code and robustness are also more time consuming and can be skipped if not specifically interested in those results. The other code producing most main text results is in lines 14-50 and only takes a few minutes to run
+### Output (exhibits)
+`analysis/release/joint_spend_search_model/paper_figures` 
+
+## Model codes details 
+All in `analysis/source/joint_spend_search_model/`
+
+### Driver Script
+The driver script `shell.m` runs the code. The shell file comments also describes exactly which subroutines produce each model figure and table from the paper.
+* The code producing most main text results is in lines 14-50 and only takes a few minutes to run. 
+* `solve_best_fit_params.m` is much more time consuming than the rest of the script but we provide intermediate files so this step can be skipped if so desired.
+* Similarly, the `stimulus_check_size` related code and robustness are also more time consuming and can be skipped if not specifically interested in those results. 
 
 ### Setup Script
 The script `prelim.m` defines data inputs to the model (points to `analysis/input/disclose/` and `analysis/input/public_data/`), sets parameters, and specifies plotting options.
@@ -30,7 +40,7 @@ The script `prelim.m` defines data inputs to the model (points to `analysis/inpu
 
 ### Robustness Scripts
 - `inf_horizon_het_results_timeaggregation_target500MPC.m`, `inf_horizon_het_results_timeaggregation.m` - Code for constructing Figure A-18
-- Subdirectory `/robustness/beta_delta_revision_v2/` - Running the shell file in this folder creates robustness figure A-28. Note that the shell file provides the intermediate files and comments out the running of the model for a large set of parameters, which was run on a cluster with an array job. If you want to re-run this many hour grid search, see grid_search.sh and grid_search_append.sh
+- Subdirectory `/robustness/beta_delta_revision_v2/` - Running the shell file in this folder creates robustness figure A-28. Note that the shell file provides the intermediate files and comments out the running of the model for a large set of parameters, which was run on a cluster with an array job. If you want to re-run this many hour grid search, see `grid_search.sh` and `grid_search_append.sh`
 - `test_homogeneity.m` - Homogeneity results which are briefly mentioned in Appendix C.2 (not included in shell since there are no specific numbers reported/saved from this code)
 
 ### Functions Written for this Project and Called by Routines Above
@@ -46,11 +56,9 @@ The script `prelim.m` defines data inputs to the model (points to `analysis/inpu
 - `hex2rgb.m` - Convert hexadecimal color code to RGB values.
 - `table2latex_numbers_only.m` - Convert MATLAB table to tex Table.
 
+# Sources and code for the public datasets in `analysis/input/public_data/`
 
-
-
-
-# Sources and code for the public datasets in analysis/input/public_data/
+_Requirements: Stata_
 
 ## Code in this directory
 Stata code `decompose_pua.do` converts the data in `ap902.csv` to model input `ui_receipt_benchmarks.xlsx`. `monthly_exit_rates.dta` is an intermediate dataset saved by `decompose_pua.do`.
@@ -70,4 +78,3 @@ ETA datasets can be found under the following link: [https://oui.doleta.gov/unem
 
 ## Data from other papers
 - `literature_elasticities.csv` is a set of elasticities from Schmieder and Von Wachter 2016 
-
