@@ -14,7 +14,6 @@ _Requirements: MATLAB R2021b_
 ### Inputs
 1. `analysis/input/disclose/` - Model inputs and targets from JPMorgan Chase Institute (JPMCI) data.
 2. `analysis/input/public_data/` - Model inputs and targets from publicly available data. See below for description of the datasets and their sources.
-3. `analysis/input/csvs_key_plots/literature_elasticities.csv` - Input for a plot overviewing literature estimates of duration elasticities.
 
 ### Model codes
 `analysis/source/joint_spend_search_model/` (including subdirectory `robustness/`)
