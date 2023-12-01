@@ -1,3 +1,8 @@
+
+Please send feedback and questions to ganong@uchicago.edu.
+
+[DOI will go here]
+
 # Model
 
 _Requirements: MATLAB R2021b_
@@ -56,7 +61,19 @@ The script `prelim.m` defines data inputs to the model (points to `analysis/inpu
 - `hex2rgb.m` - Convert hexadecimal color code to RGB values.
 - `table2latex_numbers_only.m` - Convert MATLAB table to tex Table.
 
-# Sources and code for the public datasets in `analysis/input/public_data/`
+# JPMCI data
+
+Some of the data used for this paper were prepared in JPMorganChase Insitute's (JPMCI) secure computing facilities. Due to JPMCI's rules on access and confidentiality, the programming code and analysis files cannot be made available publicly. The analysis files and programming code created by the authors will be available within JPMCI's secure computing facilities until 2028, and can be requested by researchers with approved projects (email `institute@jpmchase.com`). We grant any researchers with appropriate approval to conduct research on JPMCI's secure computing facilities access to these files. Below, we describe the three key tables needed to replicate the analysis
+
+## tables
+* weekly file with receipt of UI benefits and labor income including surrogate id for employer
+* monthly file with UI benefits, other income, several measures of spending, and checking account assets
+* file with demographics such as age, gender, states of residence, and Economic Impact Payment amount
+
+# Public data
+`analysis/input/public_data/` captures both inputs to the model and inputs to benchmarking
+
+[Rupsha will add additional information here]
 
 _Requirements: Stata_
 
@@ -77,4 +94,8 @@ ETA datasets can be found under the following link: [https://oui.doleta.gov/unem
 - `bls_payroll_emp_nonfarm_no_adj.xlsx`: select "Multi Screen" under "Employment, Hours, and Earnings - National" in section "Employment" of the following link [https://www.bls.gov/data/home.htm](https://www.bls.gov/data/home.htm) (alternatively, the series can be accessed here: [https://beta.bls.gov/dataViewer/view/timeseries/CEU0000000001](https://beta.bls.gov/dataViewer/view/timeseries/CEU0000000001))
 
 ## Data from other papers
-- `literature_elasticities.csv` is a set of elasticities from Schmieder and Von Wachter 2016 
+- `literature_elasticities.csv` is a set of elasticities from Schmieder and Von Wachter 2016
+
+# Plots benchmarking JPMCI series to public data
+
+[details to be filled in by Rupsha]
