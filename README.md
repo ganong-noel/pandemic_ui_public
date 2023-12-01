@@ -1,3 +1,6 @@
+# Partial Replication Kit for "Spending and Job Finding Impacts of Expanded Unemployment Benefits: Evidence from Administrative Micro Data"
+
+By Peter Ganong, Fiona Greig, Pascal Noel, Daniel Sullivan, and Joseph Vavra
 
 Please send feedback and questions to ganong@uchicago.edu.
 
