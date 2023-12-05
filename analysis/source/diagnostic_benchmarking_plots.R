@@ -94,7 +94,7 @@ chase_counts <-
 
 #### Read in DOL weekly claims data ####
 ## Weekly state UI program claims
-state_ui <- read_csv("analysis/input/ar539.csv") %>%
+state_ui <- read_csv("analysis/input/public_data/ar539.csv") %>%
   transmute(state_abb = st,
             week = mdy(c2),
             state_ic = c3 + c4 + c5 + c6 + c7,
@@ -108,7 +108,7 @@ state_ui <- read_csv("analysis/input/ar539.csv") %>%
   filter(year(week) >= 2015)
 
 ## Pandemic claims
-pandemic_ui <- read_xlsx("analysis/input/weekly_pandemic_claims.xlsx") %>%
+pandemic_ui <- read_xlsx("analysis/input/public_data/weekly_pandemic_claims.xlsx") %>%
   transmute(state_abb = State,
             week      = ymd(`Reflect Date`),
             pua_ic    = `PUA IC`,
@@ -131,7 +131,7 @@ all_ui <- state_ui %>%
 
 #### Read in monthly data ####
 # Regular Program
-regular_ui <- read_csv("analysis/input/ar5159.csv") %>%
+regular_ui <- read_csv("analysis/input/public_data/ar5159.csv") %>%
   transmute(
     state_abb = st,
     month     = floor_date(mdy(rptdate), "month"),
@@ -146,7 +146,7 @@ regular_ui <- read_csv("analysis/input/ar5159.csv") %>%
   filter(!(state_abb %in% c("PR", "VI")))
 
 # Extended Benefits
-extended_ui <- read_csv("analysis/input/ae5159.csv") %>%
+extended_ui <- read_csv("analysis/input/public_data/ae5159.csv") %>%
   transmute(
     state_abb = st,
     month   = floor_date(mdy(rptdate), "month"),
@@ -161,7 +161,7 @@ extended_ui <- read_csv("analysis/input/ae5159.csv") %>%
   filter(!(state_abb %in% c("PR", "VI")))
 
 # PEUC
-peuc_ui <- read_csv("analysis/input/ap5159.csv") %>%
+peuc_ui <- read_csv("analysis/input/public_data/ap5159.csv") %>%
   transmute(
     state_abb = st,
     month   = floor_date(mdy(rptdate), "month"),
@@ -311,7 +311,7 @@ ggsave(str_c(out_path_benchmarking, "diagnostic_levels_norm.png"),
        width = 8, height = 4.5)
 
 #### Hexmap - in sample ####
-spdf <- geojson_read("analysis/input/us_states_hexgrid.geojson",
+spdf <- geojson_read("analysis/input/public_data/us_states_hexgrid.geojson",
                      what = "sp")
 
 spending_jobfinding_expiry_onset <- 
