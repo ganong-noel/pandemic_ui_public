@@ -165,8 +165,6 @@ the three key tables needed to replicate the analysis
 `analysis/input/public_data/` captures both inputs to the model and
 inputs to benchmarking
 
-[Rupsha will add additional information here]
-
 *Requirements: Stata*
 
 ## Code in this directory
