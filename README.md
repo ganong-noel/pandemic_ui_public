@@ -8,13 +8,9 @@ Please send feedback and questions to
 
 [DOI will go here]
 
-# Model
+# Directory Structure
 
-*Requirements: MATLAB R2021b*
-
-## Directory Structure
-
-### Inputs
+## Inputs
 
 1.  `analysis/input/disclose/` - Model inputs and targets from JPMorgan
     Chase Institute (JPMCI) data.
@@ -22,18 +18,23 @@ Please send feedback and questions to
     publicly available data. See below for description of the datasets
     and their sources.
 
-### Model codes
+## Code
 
-`analysis/source/joint_spend_search_model/` (including subdirectory
-`robustness/`)
+1.  `analysis/source/joint_spend_search_model/` - Model code (including subdirectory `robustness/`)
+2.  `analysis/source/` - Benchmarking code
 
-### Output (exhibits)
+## Outputs (Exhibits)
 
-`analysis/release/joint_spend_search_model/paper_figures`
+1.  `analysis/release/joint_spend_search_model/paper_figures` - Model outputs
+2.  `analysis/release/ui_benchmarking` - Benchmarking outputs
 
-## Model codes details
+# Model
 
-All in `analysis/source/joint_spend_search_model/`
+*Requirements: MATLAB R2021b*
+
+## Model code details
+
+All in `analysis/source/joint_spend_search_model/`.
 
 ### Driver Script
 
@@ -138,7 +139,20 @@ parameters, and specifies plotting options.
 -   `hex2rgb.m` - Convert hexadecimal color code to RGB values.
 -   `table2latex_numbers_only.m` - Convert MATLAB table to tex Table.
 
-# JPMCI data
+# Plots benchmarking JPMCI series to public data
+
+The R script `driver.R` in `analysis/source/` runs the script
+`diagnostic_benchmarking_plots.R`, also in `analysis/source/`, to
+produce plots benchmarking JPMCI numbers to public data. It produces
+four figures which are in `analysis/release/ui_benchmarking`:
+-   Figure A-1: `hexmap_jpmci_sample.png`
+-   Figure A-2: `diagnostic_levels_norm.png`;
+    `state_hetero_inc_scatter.png`;
+    `weekly_benefits_median_2019_mthly.png`
+
+# Data
+
+## JPMCI data
 
 Some of the data used for this paper were prepared in JPMorganChase
 Insitute's (JPMCI) secure computing facilities. Due to JPMCI's rules on
@@ -151,7 +165,7 @@ researchers with appropriate approval to conduct research on JPMCI's
 secure computing facilities access to these files. Below, we describe
 the three key tables needed to replicate the analysis
 
-## tables
+### Tables
 
 -   weekly file with receipt of UI benefits and labor income including
     surrogate id for employer
@@ -160,20 +174,20 @@ the three key tables needed to replicate the analysis
 -   file with demographics such as age, gender, states of residence, and
     Economic Impact Payment amount
 
-# Public data
+## Public data
 
 `analysis/input/public_data/` captures both inputs to the model and
 inputs to benchmarking
 
 *Requirements: Stata*
 
-## Code in this directory
+### Code in this directory
 
 Stata code `decompose_pua.do` converts the data in `ap902.csv` to model
 input `ui_receipt_benchmarks.xlsx`. `monthly_exit_rates.dta` is an
 intermediate dataset saved by `decompose_pua.do`.
 
-## Data from the Department of Labor (DOL)
+### Data from the Department of Labor (DOL)
 
 ETA datasets can be found under the following link:
 <https://oui.doleta.gov/unemploy/DataDownloads.asp> 
@@ -194,12 +208,12 @@ These are the inputs for the R code:
 - `ae5159.csv`: ETA 5159 (Extended benefits)
 - `ap5159.csv`: ETA 5159 (PEUC)
 
-## Data from FRED
+### Data from FRED
 
 -   `PAYEMS.xls`: <https://fred.stlouisfed.org/series/payems>
 -   `PCE.xls`: <https://fred.stlouisfed.org/series/PCE>
 
-## Data from the Bureau of Labor Statistics (BLS)
+### Data from the Bureau of Labor Statistics (BLS)
 
 -   `bls_payroll_emp_nonfarm_no_adj.xlsx`: select "Multi Screen" under
     "Employment, Hours, and Earnings - National" in section "Employment"
@@ -207,18 +221,7 @@ These are the inputs for the R code:
     (alternatively, the series can be accessed here:
     <https://beta.bls.gov/dataViewer/view/timeseries/CEU0000000001>)
 
-## Data from other papers
+### Data from other papers
 
 -   `literature_elasticities.csv` is a set of elasticities from
     Schmieder and Von Wachter 2016
-
-# Plots benchmarking JPMCI series to public data
-
-The R script `driver.R` in `analysis/source/` runs the script
-`diagnostic_benchmarking_plots.R`, also in `analysis/source/`, to
-produce plots benchmarking JPMCI numbers to public data. It produces
-four figures which are in `analysis/release/ui_benchmarking`:
--   Figure A-1: `hexmap_jpmci_sample.png`
--   Figure A-2: `diagnostic_levels_norm.png`;
-    `state_hetero_inc_scatter.png`;
-    `weekly_benefits_median_2019_mthly.png`
