@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Partial Replication Kit for "Spending and Job Finding Impacts of Expanded Unemployment Benefits: Evidence from Administrative Micro Data"
 
 By Peter Ganong, Fiona Greig, Pascal Noel, Daniel Sullivan, and Joseph
@@ -171,8 +165,6 @@ the three key tables needed to replicate the analysis
 `analysis/input/public_data/` captures both inputs to the model and
 inputs to benchmarking
 
-[Rupsha will add additional information here]
-
 *Requirements: Stata*
 
 ## Code in this directory
@@ -185,13 +177,22 @@ intermediate dataset saved by `decompose_pua.do`.
 
 ETA datasets can be found under the following link:
 <https://oui.doleta.gov/unemploy/DataDownloads.asp> 
-- `ap902.csv`: ETA902P 
+
+These are the input files for the Stata code:
+- `ap902.csv`: ETA 902P 
 - `elig_ui_reg_pua.csv`: this adds up the number of 'regular' UI
 payments (ETA 5159) and PUA payments (ETA 902P) 
 - `ui_receipt_benchmarks.xlsx`: sheets `month_final_payments` and
 `month_initial_claims` are from ETA 5159, and sheet
 `week_continued_claims` is from
 <https://oui.doleta.gov/unemploy/claims.asp>
+
+These are the inputs for the R code:
+- `weekly_pandemic_claims.xlsx` is from <https://oui.doleta.gov/unemploy/claims.asp>
+- `ar539.csv`: ETA 539
+- `ar5159.csv`: ETA 5159 (Regular program)
+- `ae5159.csv`: ETA 5159 (Extended benefits)
+- `ap5159.csv`: ETA 5159 (PEUC)
 
 ## Data from FRED
 
@@ -217,9 +218,7 @@ The R script `driver.R` in `analysis/source/` runs the script
 `diagnostic_benchmarking_plots.R`, also in `analysis/source/`, to
 produce plots benchmarking JPMCI numbers to public data. It produces
 four figures which are in `analysis/release/ui_benchmarking`:
-
 -   Figure A-1: `hexmap_jpmci_sample.png`
-
 -   Figure A-2: `diagnostic_levels_norm.png`;
     `state_hetero_inc_scatter.png`;
     `weekly_benefits_median_2019_mthly.png`
