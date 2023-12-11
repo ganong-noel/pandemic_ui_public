@@ -27,6 +27,7 @@ liquidity_effects_prepandemic; %table_stats_for_text_liquidity
 
 
 % Create tex tables for paper
+
 make_table_agg_effects; %table_agg_effects
 make_table_mpc_for_paper; %table_mpc_for_paper
 make_table_supplement_effects; %mpc_supplement_effects
