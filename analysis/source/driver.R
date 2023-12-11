@@ -52,8 +52,6 @@ uieip_palette <- c(
   "#a2dadb"
 )
 
-# current disclosures
-# ui_benchmarking_new.R uses the disclosure from 2022-06-29
 job_find_file <- str_c(
   chase_path,
   "/2023-06-23_disclosure_packet/",
