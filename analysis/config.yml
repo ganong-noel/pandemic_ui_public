@@ -1,0 +1,4 @@
+
+template_repo: "../template_repo/"
+census_pulse: "../data_census_pulse/"
+data_ipums: "../data_ipums/uieip/"
