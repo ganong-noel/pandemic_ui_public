@@ -8,6 +8,12 @@ Please send feedback and questions to
 
 [DOI will go here]
 
+**Table of Contents**
+1. Directory Structure
+2. Model scripts
+3. Benchmarking scripts
+4. Data
+
 # Directory Structure
 
 ## Inputs
@@ -28,7 +34,7 @@ Please send feedback and questions to
 1.  `analysis/release/joint_spend_search_model/paper_figures` - Model outputs
 2.  `analysis/release/ui_benchmarking` - Benchmarking outputs
 
-# Model
+# Model scripts
 
 *Requirements: MATLAB R2021b*
 
@@ -139,8 +145,9 @@ parameters, and specifies plotting options.
 -   `hex2rgb.m` - Convert hexadecimal color code to RGB values.
 -   `table2latex_numbers_only.m` - Convert MATLAB table to tex Table.
 
-# Plots benchmarking JPMCI series to public data
+# Benchmarking scripts
 
+The paper has a few plots which compare JPMCI data to public data. 
 The R script `driver.R` in `analysis/source/` runs the script
 `diagnostic_benchmarking_plots.R`, also in `analysis/source/`, to
 produce plots benchmarking JPMCI numbers to public data. It produces
