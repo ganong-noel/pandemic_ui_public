@@ -60,9 +60,11 @@ interested in those results.
 
 ### Setup Script
 
-The script `prelim.m` defines data inputs to the model (points to
+The script `prelim.m` defines data inputs to the model (paths point to
 `analysis/input/disclose/` and `analysis/input/public_data/`), sets
 parameters, and specifies plotting options.
+
+_Note about input paths_: The Matlab code's relative paths are defined assuming that the current working directory when executing the code is `analysis/source/joint_spend_search_model`. For users executing the code locally in the Matlab GUI, this should be the default behavior. If the code is run from a different working directory, which may be the default when not using the Matlab GUI, users will likely need to instead define a root path and then pre-pend this to the relative file path references using the `fullfile` function. The code was written so that it should require no manual directory changes for the typical user executing locally.
 
 ### Model Scripts
 
