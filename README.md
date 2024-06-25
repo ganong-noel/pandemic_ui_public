@@ -31,6 +31,8 @@ Please send feedback and questions to
 2.  `analysis/source/` - Benchmarking code
 3.  `pgm/` - JPMC code (does not run)
 
+The suggested order in which to run the code to replicate the paper is: JPMC code, Benchmarking code, and Model Code. Both the benchmarking and the model code have dependencies on outputs from the JPMC code.
+
 ## Outputs (Exhibits)
 
 1.  `analysis/release/joint_spend_search_model/paper_figures` - Model outputs
