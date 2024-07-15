@@ -8,27 +8,7 @@
 # Chase weeks paid, hexbin map of ratio of weeks paid, state heterogeneity in
 # increase from 2019 to 2020, comparison of weekly benefits level.
 
-
-######## ~ SECTION: SETUP #####################################################
-
-#load libraries
-library(tidyverse)
-library(readxl)
-
-# relative paths to analysis, input, and source
-input_path <- "~/repo/pandemic_ui_public/analysis/input"
-source_path <- "~/repo/pandemic_ui_public/analysis/source"
-release_path <- "~/repo/pandemic_ui_public/analysis/release"
-
-#shortening long file paths
-job_find_file <- paste0(input_path, "/disclose/2023-06-23_disclosure_packet/jobfind/2023-06-18_ui_jobfind_for_export.xls")
-
-#setting theme for figures produced later
-source("~/repo/pandemic_ui_public/prelim.R")
-theme_set(fte_theme())
-
-#creating relative paths to release
-out_path_benchmarking <- paste0(release_path, "/ui_benchmarking/")
+out_path_benchmarking <- str_c(out_path, "/ui_benchmarking/")
 
 ######## ~ SECTION: READ IN DATA ##############################################
 # Set up fips
@@ -114,7 +94,7 @@ chase_counts <-
 
 #### Read in DOL weekly claims data ####
 ## Weekly state UI program claims
-state_ui <- read_csv(paste0(input_path, "/public_data/ar539.csv")) %>%
+state_ui <- read_csv("analysis/input/public_data/ar539.csv") %>%
   transmute(state_abb = st,
             week = mdy(c2),
             state_ic = c3 + c4 + c5 + c6 + c7,
@@ -128,7 +108,7 @@ state_ui <- read_csv(paste0(input_path, "/public_data/ar539.csv")) %>%
   filter(year(week) >= 2015)
 
 ## Pandemic claims
-pandemic_ui <- read_xlsx(paste0(input_path, "/public_data/weekly_pandemic_claims.xlsx")) %>%
+pandemic_ui <- read_xlsx("analysis/input/public_data/weekly_pandemic_claims.xlsx") %>%
   transmute(state_abb = State,
             week      = ymd(`Reflect Date`),
             pua_ic    = `PUA IC`,
@@ -151,7 +131,7 @@ all_ui <- state_ui %>%
 
 #### Read in monthly data ####
 # Regular Program
-regular_ui <- read_csv(paste0(input_path, "/public_data/ar5159.csv")) %>%
+regular_ui <- read_csv("analysis/input/public_data/ar5159.csv") %>%
   transmute(
     state_abb = st,
     month     = floor_date(mdy(rptdate), "month"),
@@ -166,7 +146,7 @@ regular_ui <- read_csv(paste0(input_path, "/public_data/ar5159.csv")) %>%
   filter(!(state_abb %in% c("PR", "VI")))
 
 # Extended Benefits
-extended_ui <- read_csv(paste0(input_path, "/public_data/ae5159.csv")) %>%
+extended_ui <- read_csv("analysis/input/public_data/ae5159.csv") %>%
   transmute(
     state_abb = st,
     month   = floor_date(mdy(rptdate), "month"),
@@ -181,7 +161,7 @@ extended_ui <- read_csv(paste0(input_path, "/public_data/ae5159.csv")) %>%
   filter(!(state_abb %in% c("PR", "VI")))
 
 # PEUC
-peuc_ui <- read_csv(paste0(input_path, "/public_data/ap5159.csv")) %>%
+peuc_ui <- read_csv("analysis/input/public_data/ap5159.csv") %>%
   transmute(
     state_abb = st,
     month   = floor_date(mdy(rptdate), "month"),
@@ -330,83 +310,6 @@ benchmark_counts %>%
 ggsave(str_c(out_path_benchmarking, "diagnostic_levels_norm.png"),
        width = 8, height = 4.5)
 
-#### Hexmap - in sample ####
-spdf <- geojson_read(paste0(input_path, "/public_data/us_states_hexgrid.geojson"),
-                     what = "sp")
-
-spending_jobfinding_expiry_onset <- 
-  c("NY", "IN", "WA", "GA", "NJ", "OH", "IL", "CA")
-spending_jobfinding_expiry <- c("MI", "OR")
-spending_jobfinding_onset <- c("TX", "WI", "LA", "CT")
-not_in_sample <- c("MD", "HI", "KY", "MT", "NV", "OK")
-
-spending_jobfinding_any <- c(spending_jobfinding_expiry_onset,
-                             spending_jobfinding_expiry,
-                             spending_jobfinding_onset)
-spending_only_complement <- c(spending_jobfinding_any,
-                              not_in_sample)
-spending_only <- setdiff(fips_codes$state_abb, spending_only_complement)
-
-spdf_data <- spdf@data %>%
-  mutate(google_name = gsub(" \\(United States\\)", "", google_name)) %>%
-  rename(state_abb = iso3166_2)
-
-region_id <- data.frame(state_name = spdf_data$google_name) %>%
-  mutate(id = 1:n())
-
-spdf_fortified <- tidy(spdf) %>%
-  mutate(id = gsub(" \\(United States\\)", "", id))
-
-geo_centres <- cbind.data.frame(
-  data.frame(gCentroid(spdf, byid = TRUE),
-             id = spdf_data$state_abb))
-
-spdf_in_sample <- spdf_fortified %>%
-  mutate(id = as.numeric(id)) %>%
-  right_join(region_id, by="id") %>%
-  left_join(fips_codes, by="state_name") %>%
-  select(-id) %>%
-  rename(id=state_name)%>%
-  mutate(sample_status = 
-           case_when(state_abb %in% spending_jobfinding_expiry_onset 
-                     ~ "spending_expiry_onset",
-                     state_abb %in% spending_jobfinding_expiry 
-                     ~ "spending_expiry",
-                     state_abb %in% spending_jobfinding_onset 
-                     ~ "spending_onset",
-                     state_abb %in% spending_only ~"spending",
-                     TRUE ~ "not_in_sample"))
-
-ggplot() +
-  geom_polygon(data = spdf_in_sample,
-               aes(fill = sample_status,
-                   x = long,
-                   y = lat,
-                   group = group),
-               color = "white") +
-  geom_text(data = geo_centres,
-            aes(x = x, y = y, label = id),
-            color = "white") +
-  scale_fill_manual(
-    values = 
-      c("spending_expiry_onset" = "#004577",
-        "spending_expiry" = "#2575ae",
-        "spending_onset" = "#00a1df",
-        "spending" = "#91c4c5",
-        "not_in_sample" = "grey80"),
-    labels = 
-      c("spending_expiry_onset" = "Spending + job finding (expiration & onset)",
-        "spending_expiry" = "Spending + job finding (expiration)",
-        "spending_onset" = "Spending + job finding (onset)",
-        "spending" = "Spending",
-        "not_in_sample" = "Not in sample")) +
-  theme_void() +
-  theme(plot.background = element_rect(fill = "white", color = "white")) +
-  coord_map() +
-  theme(legend.title = element_blank())
-
-ggsave(filename = str_c(out_path_benchmarking, "hexmap_jpmci_sample.png"),
-       width = 8, height = 4.5, units = "in")
 
 #### Capturing state heterogeneity in increases ####
 ## Ratio of pre-covid 2020 to May average
@@ -536,5 +439,100 @@ compare_wkly_benefit %>%
   guides(fill = guide_legend(nrow = 2, byrow = TRUE))
 
 ggsave(str_c(out_path_benchmarking, "weekly_benefits_median_2019_mthly.png"),
+       width = 8, height = 4.5, units = "in")
+
+
+# ============================================================================ #
+# 
+# -- need R 3.6.3 to run this last bit
+#
+# ============================================================================ #
+
+# CHAGE file path to the location of R 3.6.3
+if (file.exists("/usr/local/lib/R-3.6.3/bin/R")) {
+  Sys.setenv(RSTUDIO_WHICH_R="/usr/local/lib/R-3.6.3/bin/R")
+}
+
+# Check R version
+if (getRversion() != "3.6.3") {
+  stop("This script requires R 3.6.3. Please switch to R 3.6.3 and try again.")
+}
+
+#### Hexmap - in sample ####
+spdf <- geojson_read("analysis/input/public_data/us_states_hexgrid.geojson",
+                     what = "sp")
+
+spending_jobfinding_expiry_onset <- 
+  c("NY", "IN", "WA", "GA", "NJ", "OH", "IL", "CA")
+spending_jobfinding_expiry <- c("MI", "OR")
+spending_jobfinding_onset <- c("TX", "WI", "LA", "CT")
+not_in_sample <- c("MD", "HI", "KY", "MT", "NV", "OK")
+
+spending_jobfinding_any <- c(spending_jobfinding_expiry_onset,
+                             spending_jobfinding_expiry,
+                             spending_jobfinding_onset)
+spending_only_complement <- c(spending_jobfinding_any,
+                              not_in_sample)
+spending_only <- setdiff(fips_codes$state_abb, spending_only_complement)
+
+spdf_data <- spdf@data %>%
+  mutate(google_name = gsub(" \\(United States\\)", "", google_name)) %>%
+  rename(state_abb = iso3166_2)
+
+region_id <- data.frame(state_name = spdf_data$google_name) %>%
+  mutate(id = 1:n())
+
+spdf_fortified <- tidy(spdf) %>%
+  mutate(id = gsub(" \\(United States\\)", "", id))
+
+geo_centres <- cbind.data.frame(
+  data.frame(gCentroid(spdf, byid = TRUE),
+             id = spdf_data$state_abb))
+
+spdf_in_sample <- spdf_fortified %>%
+  mutate(id = as.numeric(id)) %>%
+  right_join(region_id, by="id") %>%
+  left_join(fips_codes, by="state_name") %>%
+  select(-id) %>%
+  rename(id=state_name)%>%
+  mutate(sample_status = 
+           case_when(state_abb %in% spending_jobfinding_expiry_onset 
+                     ~ "spending_expiry_onset",
+                     state_abb %in% spending_jobfinding_expiry 
+                     ~ "spending_expiry",
+                     state_abb %in% spending_jobfinding_onset 
+                     ~ "spending_onset",
+                     state_abb %in% spending_only ~"spending",
+                     TRUE ~ "not_in_sample"))
+
+ggplot() +
+  geom_polygon(data = spdf_in_sample,
+               aes(fill = sample_status,
+                   x = long,
+                   y = lat,
+                   group = group),
+               color = "white") +
+  geom_text(data = geo_centres,
+            aes(x = x, y = y, label = id),
+            color = "white") +
+  scale_fill_manual(
+    values = 
+      c("spending_expiry_onset" = "#004577",
+        "spending_expiry" = "#2575ae",
+        "spending_onset" = "#00a1df",
+        "spending" = "#91c4c5",
+        "not_in_sample" = "grey80"),
+    labels = 
+      c("spending_expiry_onset" = "Spending + job finding (expiration & onset)",
+        "spending_expiry" = "Spending + job finding (expiration)",
+        "spending_onset" = "Spending + job finding (onset)",
+        "spending" = "Spending",
+        "not_in_sample" = "Not in sample")) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = "white")) +
+  coord_map() +
+  theme(legend.title = element_blank())
+
+ggsave(filename = str_c(out_path_benchmarking, "hexmap_jpmci_sample.png"),
        width = 8, height = 4.5, units = "in")
 

@@ -1,7 +1,47 @@
+# =========================================== #
 # driver.R
+# =========================================== #
 
+# setting wd
 rm(list = ls())
-setwd("~/repo/pandemic_ui_public/issue_506_data_editor")
+setwd("~/repo/pandemic_ui_public/")
+
+#PACKAGES TO INSTALL EARLIER RELEASES OF PACKAGES
+library(devtools)
+library(packrat)
+library(testthat)
+
+#initialize packrat
+packrat::clean()
+packrat::init("~/repo/pandemic_ui_public/issue_506_data_editor")
+packrat::on()
+.libPaths("~/repo/pandemic_ui_public/issue_506_data_editor/packrat/lib")
+
+library(testthat)
+library(devtools)
+
+test_that("the correct library is being used", {
+  expect_equal(.libPaths(), "~/repo/pandemic_ui_public/issue_506_data_editor/packrat/lib")
+  }
+)
+
+
+# libraries to install earlier versions of packages
+# note: you will be prompted after installaiotion to see if you want to 
+#       update your pacakges. Select '3' to say 'no.'
+install_version("RColorBrewer", version = "1.1-3")
+install_version("yaml", version = "2.3.7")
+install_version("testthat", version = "3.1.9")
+install_version("scales", version = "1.2.1")
+install_version("readxl", version = "1.4.2")
+install_version("ggrepel", version = "0.9.3")
+install_version("geojsonio", version = "0.11.1")
+install_version("broom", version = "1.0.0")
+install_version("lubridate", version = "1.9.2")
+install_version("tidyverse", version = "2.0.0")
+
+# Snapshot the project's dependencies
+packrat::snapshot()
 
 # load packages
 library(tidyverse)
@@ -26,7 +66,6 @@ test_that(
     expect_equal(versions["testthat"] %>% unname(), "3.1.9")
     expect_equal(versions["scales"] %>% unname(), "1.2.1")
     expect_equal(versions["rprojroot"] %>% unname(), "2.0.3")
-    expect_equal(versions["rgeos"] %>% unname(), "0.6-3")
     expect_equal(versions["readxl"] %>% unname(), "1.4.2")
     expect_equal(versions["ggrepel"] %>% unname(), "0.9.3")
     expect_equal(versions["geojsonio"] %>% unname(), "0.11.1")
@@ -37,11 +76,16 @@ test_that(
 )
 
 # setup paths
-make_path <- rprojroot::is_git_root$make_fix_file()
-config <- yaml::yaml.load_file(make_path("analysis/config.yml"))
-source(paste0(config$template_repo, "prelim.R"))
-out_path <- make_path("analysis/release")
-chase_path <- make_path("analysis/input/disclose")
+config <- yaml::yaml.load_file("~/repo/pandemic_ui_public/analysis/config.yml")
+source("~/repo/pandemic_ui_public/prelim.R")
+
+input_path <- "~/repo/pandemic_ui_public/analysis/input"
+chase_path <- paste0(input_path, "/disclose")
+
+source_path <- "~/repo/pandemic_ui_public/issue_506_data_editor/analysis/source"
+
+release_path <- "~/repo/pandemic_ui_public/issue_506_data_editor/analysis/release"
+out_path <- release_path
 
 # color palettes
 uieip_palette <- c(
@@ -60,6 +104,65 @@ job_find_file <- str_c(
 )
 
 # benchmarks and plots
-code_path <- "analysis/source"
+code_path <- source_path
 source(file.path(code_path, "diagnostic_benchmarking_plots.R"))
+
+
+
+# ============================================================================ #
+#                   -- RUN ONLY IF NEED TO RECREATE MAP --
+# ============================================================================ #
+3
+# Please use R 3.6.3 to run this script
+# =========================================== #
+# -- STEP 1 -- 
+# macOS: 
+#    You can download R 3.6.3 from the CRAN archive and install it.
+# Windows: 
+#    Download R 3.6.3 from the CRAN archive.
+# Linux: 
+#   Use the following commands to install R 3.6.3:
+#      sudo apt-get update
+#      sudo apt-get install r-base=3.6.3-1bionic
+#      sudo apt-mark hold r-base
+#
+# -- STEP 2 --
+# Configure RStudio to use R 3.6.3:
+# 1. Go to Tools > Global Options.
+# 2. Under General, you will find the R version. Click Change and select R 3.6.3.
+# =========================================== #
+# =========================================== #
+
+# CHAGE file path to the location of R 3.6.3
+if (file.exists("/usr/local/lib/R-3.6.3/bin/R")) {
+  Sys.setenv(RSTUDIO_WHICH_R="/usr/local/lib/R-3.6.3/bin/R")
+}
+
+# Check R version
+if (getRversion() != "3.6.3") {
+  stop("This script requires R 3.6.3. Please switch to R 3.6.3 and try again.")
+}
+
+# these packages must be installed, but are not available in the most recent 
+# version of R as of 2023-07-15
+install.packages("colortools")
+install.packages("rgdal")
+
+# need to install GEOS (Geometry Engine - Open Source) library
+# macOS
+# > brew install geos
+# linux 
+# > sudo apt-get install libgeos-dev
+# windows
+# > download and install the binary from https://libgeos.org/
+remotes::install_version("rgeos", version = "0.6-3")
+
+test_that(
+  "record package versions",
+  {
+    expect_equal(versions["rgeos"] %>% unname(), "0.6-3")
+  }
+)
+
+# =========================================== #
 
