@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Partial Replication Kit for "Spending and Job Finding Impacts of Expanded Unemployment Benefits: Evidence from Administrative Micro Data"
 
 By Peter Ganong, Fiona Greig, Pascal Noel, Daniel M. Sullivan, and Joseph
@@ -355,6 +360,8 @@ payments (ETA 5159) and PUA payments (ETA 902P)
 `month_initial_claims` are from ETA 5159, and sheet
 `week_continued_claims` is from
 <https://oui.doleta.gov/unemploy/claims.asp>
+
+*Requirements: R 3.6.3*
 
 These are the inputs for the R code:
 - `weekly_pandemic_claims.xlsx` is from <https://oui.doleta.gov/unemploy/claims.asp>

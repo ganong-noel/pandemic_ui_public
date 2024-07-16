@@ -7,24 +7,28 @@ rm(list = ls())
 setwd("~/repo/pandemic_ui_public/")
 
 #PACKAGES TO INSTALL EARLIER RELEASES OF PACKAGES
-library(devtools)
-library(packrat)
-library(testthat)
+library(renv)
 
-#initialize packrat
-packrat::clean()
-packrat::init("~/repo/pandemic_ui_public/issue_506_data_editor")
-packrat::on()
-.libPaths("~/repo/pandemic_ui_public/issue_506_data_editor/packrat/lib")
+# Initialize renv
+renv::init(project = "~/repo/pandemic_ui_public/issue_506_data_editor", bare = TRUE)
+renv::activate(project = "~/repo/pandemic_ui_public/issue_506_data_editor")
 
-library(testthat)
-library(devtools)
+renv::install("devtools")
+renv::install("testthat")
+
+# set library paths to use renv library
+.libPaths("~/repo/pandemic_ui_public/issue_506_data_editor/renv/library")
 
 test_that("the correct library is being used", {
-  expect_equal(.libPaths(), "~/repo/pandemic_ui_public/issue_506_data_editor/packrat/lib")
-  }
-)
+  library_paths <- .libPaths()
+  expect_true(
+    any(grepl("~/repo/pandemic_ui_public/issue_506_data_editor/renv/library", library_paths)),
+    info = paste("Library paths are:", paste(library_paths, collapse = ", "))
+  )
+})
 
+install.packages(testthat)
+install.packages(devtools)
 
 # libraries to install earlier versions of packages
 # note: you will be prompted after installaiotion to see if you want to 
@@ -41,7 +45,7 @@ install_version("lubridate", version = "1.9.2")
 install_version("tidyverse", version = "2.0.0")
 
 # Snapshot the project's dependencies
-packrat::snapshot()
+renv::snapshot()
 
 # load packages
 library(tidyverse)
@@ -110,9 +114,9 @@ source(file.path(code_path, "diagnostic_benchmarking_plots.R"))
 
 
 # ============================================================================ #
-#                   -- RUN ONLY IF NEED TO RECREATE MAP --
+#                -- RUN ONLY IF NEED TO RECREATE HEXAMAP --
 # ============================================================================ #
-3
+
 # Please use R 3.6.3 to run this script
 # =========================================== #
 # -- STEP 1 -- 
@@ -131,12 +135,6 @@ source(file.path(code_path, "diagnostic_benchmarking_plots.R"))
 # 1. Go to Tools > Global Options.
 # 2. Under General, you will find the R version. Click Change and select R 3.6.3.
 # =========================================== #
-# =========================================== #
-
-# CHAGE file path to the location of R 3.6.3
-if (file.exists("/usr/local/lib/R-3.6.3/bin/R")) {
-  Sys.setenv(RSTUDIO_WHICH_R="/usr/local/lib/R-3.6.3/bin/R")
-}
 
 # Check R version
 if (getRversion() != "3.6.3") {
