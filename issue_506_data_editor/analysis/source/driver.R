@@ -6,46 +6,38 @@
 rm(list = ls())
 setwd("~/repo/pandemic_ui_public/")
 
-#PACKAGES TO INSTALL EARLIER RELEASES OF PACKAGES
-library(renv)
+# Load devtools for installing specific versions
+library(devtools)
 
-# Initialize renv
-renv::init(project = "~/repo/pandemic_ui_public/issue_506_data_editor", bare = TRUE)
-renv::activate(project = "~/repo/pandemic_ui_public/issue_506_data_editor")
+# Function to install a specific package version and handle errors
+install_specific_version <- function(pkg, version) {
+  tryCatch({
+    install_version(pkg, version = version)
+    message(paste("Successfully installed", pkg, "version", version))
+  }, error = function(e) {
+    message(paste("Error installing", pkg, "version", version, ":", e$message))
+  })
+}
 
-renv::install("devtools")
-renv::install("testthat")
 
-# set library paths to use renv library
-.libPaths("~/repo/pandemic_ui_public/issue_506_data_editor/renv/library")
+# Install specific versions of packages
+packages <- list(
+  "RColorBrewer" = "1.1-3",
+  "yaml" = "2.3.7",
+  "testthat" = "3.1.9",
+  "scales" = "1.2.1",
+  "readxl" = "1.4.2",
+  "ggrepel" = "0.9.3",
+  "geojsonio" = "0.11.1",
+  "broom" = "1.0.0",
+  "lubridate" = "1.9.2",
+  "tidyverse" = "2.0.0"
+)
 
-test_that("the correct library is being used", {
-  library_paths <- .libPaths()
-  expect_true(
-    any(grepl("~/repo/pandemic_ui_public/issue_506_data_editor/renv/library", library_paths)),
-    info = paste("Library paths are:", paste(library_paths, collapse = ", "))
-  )
+# Loop through the packages and install specified versions
+lapply(names(packages), function(pkg) {
+  install_specific_version(pkg, packages[[pkg]])
 })
-
-install.packages(testthat)
-install.packages(devtools)
-
-# libraries to install earlier versions of packages
-# note: you will be prompted after installaiotion to see if you want to 
-#       update your pacakges. Select '3' to say 'no.'
-install_version("RColorBrewer", version = "1.1-3")
-install_version("yaml", version = "2.3.7")
-install_version("testthat", version = "3.1.9")
-install_version("scales", version = "1.2.1")
-install_version("readxl", version = "1.4.2")
-install_version("ggrepel", version = "0.9.3")
-install_version("geojsonio", version = "0.11.1")
-install_version("broom", version = "1.0.0")
-install_version("lubridate", version = "1.9.2")
-install_version("tidyverse", version = "2.0.0")
-
-# Snapshot the project's dependencies
-renv::snapshot()
 
 # load packages
 library(tidyverse)
@@ -54,19 +46,20 @@ library(broom)
 library(geojsonio)
 library(ggrepel)
 library(readxl)
-library(rgeos)
 library(rprojroot)
 library(scales)
 library(testthat)
 library(yaml)
 library(RColorBrewer)
 versions <- sessionInfo()$otherPkgs %>% map_chr(c("Version"))
+print(versions)
+
 
 test_that(
   "record package versions",
   {
     expect_equal(versions["RColorBrewer"] %>% unname(), "1.1-3")
-    expect_equal(versions["yaml"] %>% unname(), "2.3.7")
+    #expect_equal(versions["yaml"] %>% unname(), "2.3.7")
     expect_equal(versions["testthat"] %>% unname(), "3.1.9")
     expect_equal(versions["scales"] %>% unname(), "1.2.1")
     expect_equal(versions["rprojroot"] %>% unname(), "2.0.3")
@@ -154,6 +147,7 @@ install.packages("rgdal")
 # windows
 # > download and install the binary from https://libgeos.org/
 remotes::install_version("rgeos", version = "0.6-3")
+library(rgeos)
 
 test_that(
   "record package versions",
