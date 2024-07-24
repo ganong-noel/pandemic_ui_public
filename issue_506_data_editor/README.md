@@ -693,7 +693,7 @@ JPMorgan Chase Institute. 2018 - 2021. “JPMorgan Chase Institute
 De-Identified Data Assets.” <https://www.jpmorganchase.com/institute>
 (accessed July 16, 2024).
 
-Schmieder, Johannes F., and Till von Wachter. 2016. “Table 2 From: The
+Schmieder, Johannes F., and Till von Wachter. 2016. Table 2 From "The
 Effects of Unemployment Insurance Benefits: New Evidence and
 Interpretation.” Annual Review of Economics, 8(1):547–581
 <https://doi.org/10.1146/annurev-economics-080614-115758>
