@@ -22,8 +22,6 @@ Please send feedback and questions to
   - [Memory and Runtime Requirements](#memory-and-runtime-requirements)
 - [Description of Programs/Code](#description-of-programscode)
   - [Directory Structure](#directory-structure)
-  - [License for Code](#license-for-code)
-- [Instructions to Replicators](#instructions-to-replicators)
     - [1. JPMCI Scripts](#1-jpmci-scripts)
         - [Build](#build)
         - [Analysis](#analysis)
@@ -35,7 +33,6 @@ Please send feedback and questions to
         - [Notes](#notes)
         - [Input Tables for Build](#input-tables-for-build)
     - [2. Benchmarking Scripts](#2-benchmarking-scripts)
-        - [Replications notes on figure A-1](#replications-notes-on-figure-a-1)
     - [3. Model Code Details](#3-model-code-details)
         - [Driver Script](#driver-script)
         - [Setup Script](#setup-script)
@@ -43,12 +40,15 @@ Please send feedback and questions to
         - [Robustness Scripts](#robustness-scripts)
         - [Functions Written for this Project and Called by Routines Above](#functions-written-for-this-project-and-called-by-routines-above)
         - [Other Functions](#other-functions)
+      - [License for Code](#license-for-code)
+- [Instructions to Replicators](#instructions-to-replicators)
+    - [Replication notes on figure A-1](#replication-notes-on-figure-a-1)
 - [List of Tables and Programs](#list-of-tables-and-programs)
 - [References](#references)
 
 ## Overview
 
-This code package allows researchers to partially replicate the analysis from the paper "Spending and Job Finding Impacts of Expanded Unemployment Benefits: Evidence from Administrative Micro Data." The package includes MATLAB scripts for model simulation, R scripts for benchmarking against public data, and python pseudo-code to illustrate the analysis contained within JPMorgan Chase Institute's secure computing environment (these scrips will not run). Details about the pseudo-code are provided in `pandemic_ui_public/pseudocode.md`
+This code package allows researchers to partially replicate the analysis from the paper "Spending and Job Finding Impacts of Expanded Unemployment Benefits: Evidence from Administrative Micro Data." The package includes MATLAB scripts for model simulation, R scripts for benchmarking against public data, and python pseudo-code to illustrate the analysis contained within JPMorgan Chase Institute's secure computing environment (these scrips will not run). Details about the pseudo-code are provided in `pandemic_ui_public/pseudocode.md` and the html and pdf versions of this document.
 
 The paper was produced by running the JPMCI scripts first, followed by the benchmarking scripts, and finally the model scripts. This replication package covers various stages of data processing, model calibration, simulation, and result generation to reproduce much of the findings presented in the paper. Details about what figures can and cannot be produced are provided in `pandemic_ui_public/figure_table_mapping.xlsx`.
 
@@ -189,25 +189,6 @@ estimates or memory requirements.
 1.  `analysis/release/joint_spend_search_model/paper_figures` - Model
     outputs
 2.  `analysis/release/ui_benchmarking` - Benchmarking outputs
-
-### License for Code
-
-The code is licensed under a MIT license. See
-`/pandemic_ui_public/LICENSE` for details.
-
-## Instructions to Replicators
-
-To replicate the results:
-
-1.  The JPMCI scripts would be executed using `ui_driver.sh` first.
-    (Note: these scripts require confidential data not included in the
-    public repository so they will not run.)
-2.  Run the benchmarking scripts using the R script `driver.R`. You will
-    need to adjust the file paths in the script to match your local
-    directory structure.
-3.  Execute the model scripts by running `shell.m` in MATLAB. Ensure all
-    references to paths in program prelim.m include `rootdir` using the
-    full file function.
 
 ### 1. JPMCI scripts
 
@@ -491,43 +472,6 @@ A-1: `hexmap_jpmci_sample.png` - Figure A-2:
 `diagnostic_levels_norm.png`; `state_hetero_inc_scatter.png`;
 `weekly_benefits_median_2019_mthly.png`.
 
-#### Replications notes on figure A-1:
-Figure A-1 is a hexmap visualization of the types of JPMCI customer information available by state. It has different environment requirements for reproduction than the rest of the benchmarking plots. It depents on broom 1.0.0, which is incompatible with tidyverse 2.0.0, a package that is required for all other benhcmarking figures. It also uses a retired package called rgeos, which is no longer available on CRAN as of October 2023. Becuase of these unique envoronment needs, A-1 is not able to be replicated using the same environemnt as the rest of the benchmarking figures. 
-
-These were the steps taken in the last attempt to replicate this figure:
-1. Download GEOS in terminal.
-    ```
-    brew install geos
-    ```
-2. Download rgeos package in R.
-    ```
-    remotes::install_version("rgeos", version = "0.6-3")
-    ```
-3. Load an earlier version of broom and tidyverse. 
-    ```
-    devtools::install_version('broom', '1.0.0')
-    devtools::install_version('tidyverse', '1.3.2')
-    ```
-4. Use appropriate libraries.
-    ```
-    library(broom)
-    library(tidyverse)
-    library(rgeos)
-    library(geojsonio)
-    ``` 
-
-NOTES: 
-The hexaplot may require these earlier package versions.  Parts of the R benchmarking scrips were written in with these package versions:
-    -   yaml version 2.3.7
-    -   testthat version 3.1.9
-    -   scales version 1.2.1
-    -   ggrepel version 0.9.3
-    -   geojsonio version 0.11.1
-    -   broom version 1.0.0
-    -   lubridate version 1.9.2
-
-It may also require an earlier version of R. The latest version of R available at the beginning of the benchmarking script construction was R 3.6.3. 
-
 ### 3. Model code details
 
 All in `analysis/source/joint_spend_search_model/`.
@@ -637,6 +581,56 @@ locally.
 -   `cab.m` - Close a subset of figures.
 -   `hex2rgb.m` - Convert hexadecimal color code to RGB values.
 -   `table2latex_numbers_only.m` - Convert MATLAB table to tex Table.
+
+### License for Code
+
+The code is licensed under a MIT license. See
+`/pandemic_ui_public/LICENSE` for details.
+
+## Instructions to Replicators
+
+**Order in which scripts are run:**
+
+1.  The JPMCI scripts are executed first using `ui_driver.sh`. _(Note: these scripts require confidential data not included in the public repository so they will not run)._
+2.  The benchmarking scripts are run second using the R script `driver.R`. _(Note: You will need to adjust the file paths in the script to match your local directory structure)._
+3.  Execute the model scripts by running `shell.m` in MATLAB. _(Note: Ensure all references to paths in program `prelim.m` include `rootdir` using the full file function)._
+
+#### Replication notes on figure A-1:
+Figure A-1 is a hexmap visualization of the types of JPMCI customer information available by state. It has different environment requirements for reproduction than the rest of the benchmarking plots. It depents on broom 1.0.0, which is incompatible with tidyverse 2.0.0, a package that is required for all other benhcmarking figures. It also uses a retired package called rgeos, which is no longer available on CRAN as of October 2023. Becuase of these unique envoronment needs, A-1 is not able to be replicated using the same environemnt as the rest of the benchmarking figures. 
+
+These were the steps taken in the last attempt to replicate this figure:
+1. Download GEOS in terminal.
+    ```
+    brew install geos
+    ```
+2. Download rgeos package in R.
+    ```
+    remotes::install_version("rgeos", version = "0.6-3")
+    ```
+3. Load an earlier version of broom and tidyverse. 
+    ```
+    devtools::install_version('broom', '1.0.0')
+    devtools::install_version('tidyverse', '1.3.2')
+    ```
+4. Use appropriate libraries.
+    ```
+    library(broom)
+    library(tidyverse)
+    library(rgeos)
+    library(geojsonio)
+    ``` 
+
+NOTES: 
+The hexaplot may require these earlier package versions.  Parts of the R benchmarking scrips were written in with these package versions:
+    -   yaml version 2.3.7
+    -   testthat version 3.1.9
+    -   scales version 1.2.1
+    -   ggrepel version 0.9.3
+    -   geojsonio version 0.11.1
+    -   broom version 1.0.0
+    -   lubridate version 1.9.2
+
+It may also require an earlier version of R. The latest version of R available at the beginning of the benchmarking script construction was R 3.6.3. 
 
 ## List of tables and programs
 
