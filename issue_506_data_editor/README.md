@@ -1,8 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
 
 # Partial Replication Kit for "Spending and Job Finding Impacts of Expanded Unemployment Benefits: Evidence from Administrative Micro Data"
 
@@ -63,14 +58,13 @@ Benefits: Evidence from Administrative Micro Data." The package includes
 MATLAB scripts for model simulation, R scripts for benchmarking against
 public data, and additional scripts used within JPMorgan Chase
 Institute's secure computing environment. The publicly available code
-requires Stata, Matlab, and R. Only hte confidential data and code (only
-available on JRCM servers) requires Python. The deposit contains 1 do
-files, 45 r files, 44 m files, 2 sh files, of which one is a main/master
-file (for matlab code). The replication process involves running the
-JPMCI scripts first, followed by the benchmarking scripts, and finally
+requires Stata, Matlab, and R. The confidential data and code (only
+available on JPMCI servers) requires Python. Pseudocode is provided, but these 
+scripts will not reproduce the figures from the paper. The replication process involves running the JPMCI scripts first, followed by the benchmarking scripts, and finally
 the model scripts. The package covers various stages of data processing,
-model calibration, simulation, and result generation to reproduce the
-findings presented in the paper.
+model calibration, simulation, and result generation to reproduce much of the
+findings presented in the paper. Details about what figures can and cannot 
+be produced are provided in `pandemic_ui_public/figure_table_mapping.xlsx`.
 
 ## Data Availability and Provenance Statements
 
@@ -102,6 +96,7 @@ secure computing facilities access to these files. Below, we describe
 the key tables needed to replicate the analysis
 
 ### Details on each Data Source
+This table describes the raw data used in the analysis and their corresponding directories. 
 
 | Data.Name                            | Data.Files                                                                            | Location                                        | Provided | Citations                                                                                                         |
 |---------------|-------------------------|---------------|-------|---------------|
@@ -112,6 +107,7 @@ the key tables needed to replicate the analysis
 | JPMorgan Chase Institute Data Assets | n/a                                                                                   | n/a                                             | FALSE    | (JPMorgan Chase Institute 2018-2021)                                                                              |
 
 ### Public Data Table
+This table explains all the files in the `/pandemic_ui_public/analysis/input/public_data` directory in more detail, excluding the `us_states_hexagrid.geojson`, which is used for the hexmap in figure A-1. 
 
 | Data file                             | Source                                              | Notes                                                                                                                                                                   |
 |---------------------|------------------------|------------------------------------------------|
@@ -134,22 +130,22 @@ the key tables needed to replicate the analysis
 
 ### Software Requirements
 
+These are the software configurations in which the code was last run. 
 -   Stata (code was last run with version 17)
 -   Python (only for JPMCI scripts, which will not run)
 -   Matlab (code was run with Matlab Release 2021b)
--   R 3.6.3
+-   R 4.3.0
     -   RColorBrewer version 1.1-3
-    -   yaml version 2.3.7
-    -   testthat version 3.1.9
-    -   scales version 1.2.1
+    -   yaml version 2.3.9
+    -   testthat version 3.2.1.1
+    -   scales version 1.3.0
     -   readxl version 1.4.2
-    -   ggrepel version 0.9.3
-    -   geojsonio version 0.11.1
-    -   broom version 1.0.0
-    -   lubridate version 1.9.2
+    -   ggrepel version 0.9.5
+    -   geojsonio version 0.11.3
+    -   broom version 1.0.6 (note: the hexmap requires broom version earlier than 1.0.3)
+    -   lubridate version 1.9.3
     -   tidyverse version 2.0.0
-    -   rgeos version 0.6-3 (note--this package was depricated in 2023
-        and is not available in CRAN)
+    -   rgeos version 0.6-3 (note--this package was depricated in 2023 and is not available in CRAN. It also requires downloading dependency `geos` separately)
 
 ### Memory and Runtime Requirements
 
@@ -180,8 +176,8 @@ parameters takes around an hour or two on the same computer but this
 does not need to be done to replicate results since the results of this
 parameter search are saved in the replication code.
 
-The JPMCI code is not included and should not be considered for runtime
-estimates or memory requirements.
+Data for the python scripts are not included and should not be considered for runtime
+estimates or memory requirements. 
 
 ## Description of programs/code
 
@@ -507,7 +503,44 @@ produce plots benchmarking JPMCI numbers to public data. It produces
 four figures which are in `analysis/release/ui_benchmarking`: - Figure
 A-1: `hexmap_jpmci_sample.png` - Figure A-2:
 `diagnostic_levels_norm.png`; `state_hetero_inc_scatter.png`;
-`weekly_benefits_median_2019_mthly.png`
+`weekly_benefits_median_2019_mthly.png`.
+
+##### Replications notes on figure A-1:
+Figure A-1 is a hexmap visualization of the types of JPMCI customer information available by state. It has different environment requirements for reproduction than the rest of the benchmarking plots. It depents on broom 1.0.0, which is incompatible with tidyverse 2.0.0, a package that is required for all other benhcmarking figures. It also uses a retired package called rgeos, which is no longer available on CRAN as of October 2023. Becuase of these unique envoronment needs, A-1 is not able to be replicated using the same environemnt as the rest of the benchmarking figures. 
+
+These were the steps taken in the last attempt to replicate this figure:
+1. Download GEOS in terminal.
+    ```
+    brew install geos
+    ```
+2. Download rgeos package in R.
+    ```
+    remotes::install_version("rgeos", version = "0.6-3")
+    ```
+3. Load an earlier version of broom and tidyverse. 
+    ```
+    devtools::install_version('broom', '1.0.0')
+    devtools::install_version('broom', '1.3.2')
+    ```
+4. Use appropriate libraries.
+    ```
+    library(broom)
+    library(tidyverse)
+    library(rgeos)
+    library(geojsonio)
+    ``` 
+
+NOTES: 
+The hexaplot may require these earlier package versions.  Parts of the R benchmarking scrips were written in with these package versions:
+    -   yaml version 2.3.7
+    -   testthat version 3.1.9
+    -   scales version 1.2.1
+    -   ggrepel version 0.9.3
+    -   geojsonio version 0.11.1
+    -   broom version 1.0.0
+    -   lubridate version 1.9.2
+
+It may also require an earlier version of R. 
 
 #### 3. Model code details
 
@@ -515,15 +548,7 @@ All in `analysis/source/joint_spend_search_model/`.
 
 ##### Driver Script
 
-The driver script `shell.m` runs the code. The shell file comments also
-describes exactly which subroutines produce each model figure and table
-from the paper. \* The code producing most main text results is in lines
-14-50 and only takes a few minutes to run. \* `solve_best_fit_params.m`
-is much more time consuming than the rest of the script but we provide
-intermediate files so this step can be skipped if so desired. \*
-Similarly, the `stimulus_check_size` related code and robustness are
-also more time consuming and can be skipped if not specifically
-interested in those results.
+The driver script `shell.m` runs the code. The shell file comments also describes exactly which subroutines produce each model figure and table from the paper. The code producing most main text results is in lines 14-50 and only takes a few minutes to run. `solve_best_fit_params.m` is much more time consuming than the rest of the script but we provide intermediate files so this step can be skipped if so desired. Similarly, the `stimulus_check_size` related code and robustness are also more time consuming and can be skipped if not specifically interested in those results.
 
 ##### Setup Script
 
@@ -637,61 +662,10 @@ The provided code reproduces:
     justified below.
 
 Figures that are sourced by a file in the /pgm folder will not be
-reproduced, as they require restricted data. You can also view this
-information in `pandemic_ui_public/figure_table_mapping.xlsx`.
-
-| Item         | Title/Description                                                           | Output File                         | Code File                                                          | Code Line        | Reproducible |
-|----------|----------------------|----------|----------|----------|-----------|
-| Figure 1     | Spending, Saving, and Account balances                                      | spend_panel_betas_two_panel         | pgm/spend_plots.R                                                  | 120-134          | No           |
-| Figure 2     | Impact of Delays in Unemployment Benefits                                   | rep_rate_figs                       | pgm/rep_rate_figs.R                                                | 236-278          | No           |
-| Table 1      | Marginal Propensity to Consume out of UI                                    | spend_panel_betas_two_panel         | pgm/spend_plots.R                                                  | 123-134          | No           |
-| Figure A-1   | Spending by Pre Job-Loss Liquidity                                          | liquidity_buffer                    | pgm/spend_by_liquidity_buffer.R                                    | 20-30            | No           |
-| Table 2      | Marginal Propensity to Consume out of Job Loss                              | spend_panel_betas_two_panel         | pgm/spend_plots.R                                                  | 281-300          | No           |
-| Figure 3     | Exit Rate from Unemployment Rate                                            | timeseries_pexp                     | pgm/timeseries_plots.R                                             | 291-300          | No           |
-| Figure 4     | Distribution of Job Displacement Benefits                                   | timeseries_debit                    | pgm/timeseries_plots.R                                             | 273-291          | No           |
-| Figure A-2   | Effect of Expanded Benefits: Event time: exit_new_relative_trunc            | rep_rate_figs                       | pgm/rep_rate_figs.R                                                | 234-278          | No           |
-| Figure 5     | Impact of Delays in Unemployment Benefits                                   | rep_rate_figs                       | pgm/rep_rate_figs.R                                                | 310-326; 226-232 | No           |
-| Figure 6     | Effect of Expanded Benefits: Event time: exit_new_relative                  | rep_rate_figs                       | pgm/rep_rate_figs.R                                                | 325-400          | No           |
-| Figure 7     | Effect of Expanded Benefits: Bins scatter: new_job                          | rep_rate_figs                       | pgm/rep_rate_figs.R                                                | 15-200           | No           |
-| Figure 8     | Spending by Liquidity Buffer                                                | liquidity_buffer                    | pgm/spend_by_liquidity_buffer.R                                    | 27-55            | No           |
-| Figure A-3   | Pandemic Elasticity Estimates from elasticity_conversion                    | spend_plots                         | pgm/spend_plots.R                                                  | 20-25            | No           |
-| Figure 9     | Job-Finding and Spending Responses to Expanded UI                           | spend_and_search_expiration         | analysis/source/joint_spend_search_model/inf_horizon_net_resul     | 2089-2126        | Yes          |
-| Figure A-4   | Job-Finding and Spending Responses                                          | spend_and_search_expiration         | analysis/source/joint_spend_search_model/inf_horizon_net_resul     | 2085-2089        | Yes          |
-| Figure 10    | Aggregate Implications: Employment stock_diff_full_period_eff               | aggsupplystock                      | analysis/source/joint_spend_search_model/inf_horizon_net_resul     | 2229-1239        | Yes          |
-| Figure A-5   | Aggregate Implications: spending full_period_eff                            | aggsupplyfull                       | analysis/source/joint_spend_search_model/inf_horizon_net_resul     | 1229-1304        | Yes          |
-| Figure 11    | Proxies for the Low Unemployment Rate: Avg Duration Elasticities            | spend_liquidity_buffers             | analysis/source/joint_spend_search_model/pandemic_hazard_vs_liquid | 185-197          | Yes          |
-| Figure 12    | Spending Responses by Liquidity: fix_assets_heterogeneity                   | heterogeneity                       | analysis/source/joint_spend_search_model/inf_horizon_net_resul     | 1821-1903        | Yes          |
-| Figure A-6   | Spending Response to UE: SV_UI_stimulus_check                               | UE_spend                            | analysis/source/joint_spend_search_model/inf_horizon_net_resul     | 842-879          | Yes          |
-| Figure 13    | States Included in JPMC sample: hamgma_jpml_sample                          | hamgma_jpml                         | analysis/source/diagnostic_benchmarking_plots.R                    | 314-339          | Yes          |
-| Figure A-7a  | UI Claims in JPMC versus DOL: UI: diagnostic_levels_norm                    | ui_norm                             | analysis/source/diagnostic_benchmarking_plots.R                    | 339-413          | Yes          |
-| Figure A-7b  | UI Claims in JPMC versus DOL: UI: state_headers                             | ui_state_headers                    | analysis/source/diagnostic_benchmarking_plots.R                    | 385-579          | Yes          |
-| Figure 14    | UI benefits and means                                                       | ui_means                            | ui_mkts_change.R                                                   | 159-170          | No           |
-| Figure A-8   | Spending, Saving, and Balances over time: diagnostic_panel                  | diagnostic_panel                    | pgm/spend_plots.R                                                  | 158-170          | No           |
-| Figure 15    | Spending of Unemployed Versus Income of UI                                  | spend_ts_means                      | pgm/spend_ts_means.R                                               | 336-159          | No           |
-| Figure A-9   | Spending of Unemployed Versus Duration of UI                                | spend_dur_ts                        | pgm/spend_ts_means.R                                               | 340-157          | No           |
-| Figure A-10  | Impact of Expiration of the \$600 PEUC: expiration_diff_ui_spendtotal       | ui_spendtotal_norm                  | pgm/spend_plots.R                                                  | 381-397          | No           |
-| Figure A-11  | Impact of Expiration of the \$300 PEUC: spendtotal_norm                     | expiration_diff_ui_spendtotal_norm  | pgm/spend_plots.R                                                  | 381-473          | No           |
-| Figure A-12  | Impact of Expiration of the \$300 PEUC: spendtotal_norm                     | spend_plots                         | pgm/spend_plots.R                                                  | 411-448          | No           |
-| Figure A-13  | Impact of Expiration of the \$300 PEUC: expiration_diff_inc_spendtotal_norm | expiration_diff_inc_spendtotal_norm | pgm/spend_plots.R                                                  | 344-477          | No           |
-| Figure A-14  | Exit Rate at Expiration of PEUC                                             | timeseries_plots                    | pgm/timeseries_plots.R                                             | 244-262          | No           |
-| Figure A-15  | Exit Rate by Replacement Rate: earnings_cv_newjob_means                     | timeseries_plots                    | pgm/timeseries_plots.R                                             | 217-259          | No           |
-| Figure A-16  | Exit Rate by Replacement Rate: earnings_cv_mean_job_means                   | timeseries_plots                    | pgm/timeseries_plots.R                                             | 317-357          | No           |
-| Figure A-17a | Exit Rate by Replacement Rate: time exit_new_relative_trunc                 | timeseries_plots                    | pgm/timeseries_plots.R                                             | 238-278          | No           |
-| Figure A-17b | Exit Rate by Replacement Rate: time exit_all                                | timeseries_plots                    | pgm/rep_rate_figs.R                                                | 217-357          | No           |
-| Figure A-17c | Exit Rate by Replacement Rate: time exp_all                                 | timeseries_plots                    | pgm/rep_rate_figs.R                                                | 217-357          | No           |
-| Figure A-17d | Exit Rate by Replacement Rate: time exit_cc                                 | rep_rate_figs                       | pgm/rep_rate_figs.R                                                | 217-357          | No           |
-| Figure A-17e | Exit Rate by Replacement Rate: time onet_all                                | timeseries_plots                    | pgm/rep_rate_figs.R                                                | 217-357          | No           |
-| Figure A-17f | Exit Rate by Replacement Rate: time exit_eggregation                        | timeseries_plots                    | pgm/rep_rate_figs.R                                                | 217-357          | No           |
-| Figure A-18  | Spending in Model that Accounts for Expansion: spend_and_search_onset       | timeseries_plots                    | pgm/rep_rate_figs.R                                                | 234-278          | No           |
-| Figure A-19  | Job-Finding and Spending Responses                                          | spend_and_search_onset              | analysis/source/joint_spend_search_model/inf_horizon_net_resul     | 2157-187         | Yes          |
-| Figure A-20  | Model vs. Data: Response of Expectations                                    | expectations_response               | analysis/source/joint_spend_search_model/inf_horizon_net_resul     | 1221-1663        | Yes          |
-| Figure A-21  | Patterns of Unemployment Insurance and Recall                               | UI_recall                           | pgm/rep_rate_figs.R                                                | no               |              |
-
+reproduced, as they require restricted data. You can view information about what scripts produce what files in `pandemic_ui_public/figure_table_mapping.xlsx`.
 ## References
 
-JPMorgan Chase Institute. 2018 - 2021. “JPMorgan Chase Institute
-De-Identified Data Assets.” <https://www.jpmorganchase.com/institute>
-(accessed July 16, 2024).
+JPMorgan Chase Institute. 2018 - 2021. JPMorgan Chase Institute De-Identified Data Assets. JPMorgan Chase Institute, New York, NY. https://www.jpmorganchase.com/institute (accessed July 16, 2024).
 
 Schmieder, Johannes F., and Till von Wachter. 2016. Table 2 From "The
 Effects of Unemployment Insurance Benefits: New Evidence and

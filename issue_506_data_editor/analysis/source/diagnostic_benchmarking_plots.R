@@ -441,23 +441,6 @@ compare_wkly_benefit %>%
 ggsave(str_c(out_path_benchmarking, "weekly_benefits_median_2019_mthly.png"),
        width = 8, height = 4.5, units = "in")
 
-
-# ============================================================================ #
-# 
-# -- need R 3.6.3 to run this last bit
-#
-# ============================================================================ #
-
-# CHAGE file path to the location of R 3.6.3
-if (file.exists("/usr/local/lib/R-3.6.3/bin/R")) {
-  Sys.setenv(RSTUDIO_WHICH_R="/usr/local/lib/R-3.6.3/bin/R")
-}
-
-# Check R version
-if (getRversion() != "3.6.3") {
-  stop("This script requires R 3.6.3. Please switch to R 3.6.3 and try again.")
-}
-
 #### Hexmap - in sample ####
 spdf <- geojson_read("analysis/input/public_data/us_states_hexgrid.geojson",
                      what = "sp")
@@ -535,4 +518,3 @@ ggplot() +
 
 ggsave(filename = str_c(out_path_benchmarking, "hexmap_jpmci_sample.png"),
        width = 8, height = 4.5, units = "in")
-
