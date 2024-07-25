@@ -28,9 +28,9 @@ test_that(
   {
     expect_equal(versions["RColorBrewer"] %>% unname(), "1.1-3")
     expect_equal(versions["yaml"] %>% unname(), "2.3.9")
-    expect_equal(versions["testthat"] %>% unname(), "3.1.9")
+    expect_equal(versions["testthat"] %>% unname(), "3.2.1.1")
     expect_equal(versions["scales"] %>% unname(), "1.3.0")
-    expect_equal(versions["readxl"] %>% unname(), "1.4.2")
+    expect_equal(versions["readxl"] %>% unname(), "1.4.3")
     expect_equal(versions["ggrepel"] %>% unname(), "0.9.5")
     expect_equal(versions["geojsonio"] %>% unname(), "0.11.3")
     expect_equal(versions["broom"] %>% unname(), "1.0.6")
