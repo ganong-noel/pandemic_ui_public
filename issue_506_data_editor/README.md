@@ -38,8 +38,9 @@ Please send feedback and questions to
         - [Build Script](#build-script)
         - [Jobfind Analysis](#jobfind-analysis)
         - [Spend Analysis](#spend-analysis)
-(#description-of-script-pgmrdriverscriptr)
+        - [Description of Scripts](#description-of-script-pgmrdriverscriptr)
     - [2. Benchmarking Scripts](#2-benchmarking-scripts)
+        - [Replications notes on figure A-1](#replications-notes-on-figure-a-1)
     - [3. Model Code Details](#3-model-code-details)
       - [Driver Script](#driver-script)
       - [Setup Script](#setup-script)
@@ -520,7 +521,7 @@ These were the steps taken in the last attempt to replicate this figure:
 3. Load an earlier version of broom and tidyverse. 
     ```
     devtools::install_version('broom', '1.0.0')
-    devtools::install_version('broom', '1.3.2')
+    devtools::install_version('tidyverse', '1.3.2')
     ```
 4. Use appropriate libraries.
     ```
@@ -540,7 +541,7 @@ The hexaplot may require these earlier package versions.  Parts of the R benchma
     -   broom version 1.0.0
     -   lubridate version 1.9.2
 
-It may also require an earlier version of R. 
+It may also require an earlier version of R. The latest version of R available at the beginning of the benchmarking script construction was R 3.6.3. 
 
 #### 3. Model code details
 

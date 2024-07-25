@@ -418,13 +418,17 @@ Joseph Vavra</p>
 <li><a href="#setting-up-functions">Setting up Functions</a></li>
 <li><a href="#build-script">Build Script</a></li>
 <li><a href="#jobfind-analysis">Jobfind Analysis</a></li>
-<li><a href="#spend-analysis">Spend Analysis</a>
-(#description-of-script-pgmrdriverscriptr)</li>
+<li><a href="#spend-analysis">Spend Analysis</a></li>
+<li><a href="#description-of-script-pgmrdriverscriptr">Description of Scripts</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#2-benchmarking-scripts">2. Benchmarking Scripts</a></li>
+<li><a href="#2-benchmarking-scripts">2. Benchmarking Scripts</a>
+<ul>
+<li><a href="#replications-notes-on-figure-a-1">Replications notes on figure A-1</a></li>
+</ul>
+</li>
 <li><a href="#3-model-code-details">3. Model Code Details</a>
 <ul>
 <li><a href="#driver-script">Driver Script</a></li>
@@ -449,14 +453,13 @@ Benefits: Evidence from Administrative Micro Data.&quot; The package includes
 MATLAB scripts for model simulation, R scripts for benchmarking against
 public data, and additional scripts used within JPMorgan Chase
 Institute's secure computing environment. The publicly available code
-requires Stata, Matlab, and R. Only hte confidential data and code (only
-available on JRCM servers) requires Python. The deposit contains 1 do
-files, 45 r files, 44 m files, 2 sh files, of which one is a main/master
-file (for matlab code). The replication process involves running the
-JPMCI scripts first, followed by the benchmarking scripts, and finally
+requires Stata, Matlab, and R. The confidential data and code (only
+available on JPMCI servers) requires Python. Pseudocode is provided, but these
+scripts will not reproduce the figures from the paper. The replication process involves running the JPMCI scripts first, followed by the benchmarking scripts, and finally
 the model scripts. The package covers various stages of data processing,
-model calibration, simulation, and result generation to reproduce the
-findings presented in the paper.</p>
+model calibration, simulation, and result generation to reproduce much of the
+findings presented in the paper. Details about what figures can and cannot
+be produced are provided in <code>pandemic_ui_public/figure_table_mapping.xlsx</code>.</p>
 <h2 id="data-availability-and-provenance-statements">Data Availability and Provenance Statements</h2>
 <h3 id="statement-about-rights">Statement about Rights</h3>
 <p>I certify that the authors of the manuscript have legitimate access to
@@ -481,6 +484,7 @@ researchers with appropriate approval to conduct research on JPMCI's
 secure computing facilities access to these files. Below, we describe
 the key tables needed to replicate the analysis</p>
 <h3 id="details-on-each-data-source">Details on each Data Source</h3>
+<p>This table describes the raw data used in the analysis and their corresponding directories.</p>
 <table>
 <thead>
 <tr>
@@ -530,6 +534,7 @@ the key tables needed to replicate the analysis</p>
 </tbody>
 </table>
 <h3 id="public-data-table">Public Data Table</h3>
+<p>This table explains all the files in the <code>/pandemic_ui_public/analysis/input/public_data</code> directory in more detail, excluding the <code>us_states_hexagrid.geojson</code>, which is used for the hexmap in figure A-1.</p>
 <table>
 <thead>
 <tr>
@@ -613,24 +618,24 @@ the key tables needed to replicate the analysis</p>
 </table>
 <h2 id="computational-requirements">Computational requirements</h2>
 <h3 id="software-requirements">Software Requirements</h3>
+<p>These are the software configurations in which the code was last run.</p>
 <ul>
 <li>Stata (code was last run with version 17)</li>
 <li>Python (only for JPMCI scripts, which will not run)</li>
 <li>Matlab (code was run with Matlab Release 2021b)</li>
-<li>R 3.6.3
+<li>R 4.3.0
 <ul>
 <li>RColorBrewer version 1.1-3</li>
-<li>yaml version 2.3.7</li>
-<li>testthat version 3.1.9</li>
-<li>scales version 1.2.1</li>
+<li>yaml version 2.3.9</li>
+<li>testthat version 3.2.1.1</li>
+<li>scales version 1.3.0</li>
 <li>readxl version 1.4.2</li>
-<li>ggrepel version 0.9.3</li>
-<li>geojsonio version 0.11.1</li>
-<li>broom version 1.0.0</li>
-<li>lubridate version 1.9.2</li>
+<li>ggrepel version 0.9.5</li>
+<li>geojsonio version 0.11.3</li>
+<li>broom version 1.0.6 (note: the hexmap requires broom version earlier than 1.0.3)</li>
+<li>lubridate version 1.9.3</li>
 <li>tidyverse version 2.0.0</li>
-<li>rgeos version 0.6-3 (note--this package was depricated in 2023
-and is not available in CRAN)</li>
+<li>rgeos version 0.6-3 (note--this package was depricated in 2023 and is not available in CRAN. It also requires downloading dependency <code>geos</code> separately)</li>
 </ul>
 </li>
 </ul>
@@ -658,7 +663,7 @@ on a standard laptop or desktop computer. Solving for the best fit
 parameters takes around an hour or two on the same computer but this
 does not need to be done to replicate results since the results of this
 parameter search are saved in the replication code.</p>
-<p>The JPMCI code is not included and should not be considered for runtime
+<p>Data for the python scripts are not included and should not be considered for runtime
 estimates or memory requirements.</p>
 <h2 id="description-of-programscode">Description of programs/code</h2>
 <h3 id="directory-structure">Directory Structure</h3>
@@ -1033,19 +1038,42 @@ produce plots benchmarking JPMCI numbers to public data. It produces
 four figures which are in <code>analysis/release/ui_benchmarking</code>: - Figure
 A-1: <code>hexmap_jpmci_sample.png</code> - Figure A-2:
 <code>diagnostic_levels_norm.png</code>; <code>state_hetero_inc_scatter.png</code>;
-<code>weekly_benefits_median_2019_mthly.png</code></p>
+<code>weekly_benefits_median_2019_mthly.png</code>.</p>
+<h5 id="replications-notes-on-figure-a-1">Replications notes on figure A-1:</h5>
+<p>Figure A-1 is a hexmap visualization of the types of JPMCI customer information available by state. It has different environment requirements for reproduction than the rest of the benchmarking plots. It depents on broom 1.0.0, which is incompatible with tidyverse 2.0.0, a package that is required for all other benhcmarking figures. It also uses a retired package called rgeos, which is no longer available on CRAN as of October 2023. Becuase of these unique envoronment needs, A-1 is not able to be replicated using the same environemnt as the rest of the benchmarking figures.</p>
+<p>These were the steps taken in the last attempt to replicate this figure:</p>
+<ol>
+<li>Download GEOS in terminal.<pre class="hljs"><code><div>brew install geos
+</div></code></pre>
+</li>
+<li>Download rgeos package in R.<pre class="hljs"><code><div>remotes::install_version(&quot;rgeos&quot;, version = &quot;0.6-3&quot;)
+</div></code></pre>
+</li>
+<li>Load an earlier version of broom and tidyverse.<pre class="hljs"><code><div>devtools::install_version('broom', '1.0.0')
+devtools::install_version('tidyverse', '1.3.2')
+</div></code></pre>
+</li>
+<li>Use appropriate libraries.<pre class="hljs"><code><div>library(broom)
+library(tidyverse)
+library(rgeos)
+library(geojsonio)
+</div></code></pre>
+</li>
+</ol>
+<p>NOTES:
+The hexaplot may require these earlier package versions.  Parts of the R benchmarking scrips were written in with these package versions:
+-   yaml version 2.3.7
+-   testthat version 3.1.9
+-   scales version 1.2.1
+-   ggrepel version 0.9.3
+-   geojsonio version 0.11.1
+-   broom version 1.0.0
+-   lubridate version 1.9.2</p>
+<p>It may also require an earlier version of R. The latest version of R available at the beginning of the benchmarking script construction was R 3.6.3.</p>
 <h4 id="3-model-code-details">3. Model code details</h4>
 <p>All in <code>analysis/source/joint_spend_search_model/</code>.</p>
 <h5 id="driver-script">Driver Script</h5>
-<p>The driver script <code>shell.m</code> runs the code. The shell file comments also
-describes exactly which subroutines produce each model figure and table
-from the paper. * The code producing most main text results is in lines
-14-50 and only takes a few minutes to run. * <code>solve_best_fit_params.m</code>
-is much more time consuming than the rest of the script but we provide
-intermediate files so this step can be skipped if so desired. *
-Similarly, the <code>stimulus_check_size</code> related code and robustness are
-also more time consuming and can be skipped if not specifically
-interested in those results.</p>
+<p>The driver script <code>shell.m</code> runs the code. The shell file comments also describes exactly which subroutines produce each model figure and table from the paper. The code producing most main text results is in lines 14-50 and only takes a few minutes to run. <code>solve_best_fit_params.m</code> is much more time consuming than the rest of the script but we provide intermediate files so this step can be skipped if so desired. Similarly, the <code>stimulus_check_size</code> related code and robustness are also more time consuming and can be skipped if not specifically interested in those results.</p>
 <h5 id="setup-script">Setup Script</h5>
 <p>The script <code>prelim.m</code> defines data inputs to the model (paths point to
 <code>analysis/input/disclose/</code> and <code>analysis/input/public_data/</code>), sets
@@ -1157,379 +1185,10 @@ optimization in <code>solve_best_fit_params.m</code>.</li>
 justified below.</li>
 </ul>
 <p>Figures that are sourced by a file in the /pgm folder will not be
-reproduced, as they require restricted data. You can also view this
-information in <code>pandemic_ui_public/figure_table_mapping.xlsx</code>.</p>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Title/Description</th>
-<th>Output File</th>
-<th>Code File</th>
-<th>Code Line</th>
-<th>Reproducible</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Figure 1</td>
-<td>Spending, Saving, and Account balances</td>
-<td>spend_panel_betas_two_panel</td>
-<td>pgm/spend_plots.R</td>
-<td>120-134</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure 2</td>
-<td>Impact of Delays in Unemployment Benefits</td>
-<td>rep_rate_figs</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>236-278</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Table 1</td>
-<td>Marginal Propensity to Consume out of UI</td>
-<td>spend_panel_betas_two_panel</td>
-<td>pgm/spend_plots.R</td>
-<td>123-134</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-1</td>
-<td>Spending by Pre Job-Loss Liquidity</td>
-<td>liquidity_buffer</td>
-<td>pgm/spend_by_liquidity_buffer.R</td>
-<td>20-30</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Table 2</td>
-<td>Marginal Propensity to Consume out of Job Loss</td>
-<td>spend_panel_betas_two_panel</td>
-<td>pgm/spend_plots.R</td>
-<td>281-300</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure 3</td>
-<td>Exit Rate from Unemployment Rate</td>
-<td>timeseries_pexp</td>
-<td>pgm/timeseries_plots.R</td>
-<td>291-300</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure 4</td>
-<td>Distribution of Job Displacement Benefits</td>
-<td>timeseries_debit</td>
-<td>pgm/timeseries_plots.R</td>
-<td>273-291</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-2</td>
-<td>Effect of Expanded Benefits: Event time: exit_new_relative_trunc</td>
-<td>rep_rate_figs</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>234-278</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure 5</td>
-<td>Impact of Delays in Unemployment Benefits</td>
-<td>rep_rate_figs</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>310-326; 226-232</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure 6</td>
-<td>Effect of Expanded Benefits: Event time: exit_new_relative</td>
-<td>rep_rate_figs</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>325-400</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure 7</td>
-<td>Effect of Expanded Benefits: Bins scatter: new_job</td>
-<td>rep_rate_figs</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>15-200</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure 8</td>
-<td>Spending by Liquidity Buffer</td>
-<td>liquidity_buffer</td>
-<td>pgm/spend_by_liquidity_buffer.R</td>
-<td>27-55</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-3</td>
-<td>Pandemic Elasticity Estimates from elasticity_conversion</td>
-<td>spend_plots</td>
-<td>pgm/spend_plots.R</td>
-<td>20-25</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure 9</td>
-<td>Job-Finding and Spending Responses to Expanded UI</td>
-<td>spend_and_search_expiration</td>
-<td>analysis/source/joint_spend_search_model/inf_horizon_net_resul</td>
-<td>2089-2126</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure A-4</td>
-<td>Job-Finding and Spending Responses</td>
-<td>spend_and_search_expiration</td>
-<td>analysis/source/joint_spend_search_model/inf_horizon_net_resul</td>
-<td>2085-2089</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure 10</td>
-<td>Aggregate Implications: Employment stock_diff_full_period_eff</td>
-<td>aggsupplystock</td>
-<td>analysis/source/joint_spend_search_model/inf_horizon_net_resul</td>
-<td>2229-1239</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure A-5</td>
-<td>Aggregate Implications: spending full_period_eff</td>
-<td>aggsupplyfull</td>
-<td>analysis/source/joint_spend_search_model/inf_horizon_net_resul</td>
-<td>1229-1304</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure 11</td>
-<td>Proxies for the Low Unemployment Rate: Avg Duration Elasticities</td>
-<td>spend_liquidity_buffers</td>
-<td>analysis/source/joint_spend_search_model/pandemic_hazard_vs_liquid</td>
-<td>185-197</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure 12</td>
-<td>Spending Responses by Liquidity: fix_assets_heterogeneity</td>
-<td>heterogeneity</td>
-<td>analysis/source/joint_spend_search_model/inf_horizon_net_resul</td>
-<td>1821-1903</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure A-6</td>
-<td>Spending Response to UE: SV_UI_stimulus_check</td>
-<td>UE_spend</td>
-<td>analysis/source/joint_spend_search_model/inf_horizon_net_resul</td>
-<td>842-879</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure 13</td>
-<td>States Included in JPMC sample: hamgma_jpml_sample</td>
-<td>hamgma_jpml</td>
-<td>analysis/source/diagnostic_benchmarking_plots.R</td>
-<td>314-339</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure A-7a</td>
-<td>UI Claims in JPMC versus DOL: UI: diagnostic_levels_norm</td>
-<td>ui_norm</td>
-<td>analysis/source/diagnostic_benchmarking_plots.R</td>
-<td>339-413</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure A-7b</td>
-<td>UI Claims in JPMC versus DOL: UI: state_headers</td>
-<td>ui_state_headers</td>
-<td>analysis/source/diagnostic_benchmarking_plots.R</td>
-<td>385-579</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure 14</td>
-<td>UI benefits and means</td>
-<td>ui_means</td>
-<td>ui_mkts_change.R</td>
-<td>159-170</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-8</td>
-<td>Spending, Saving, and Balances over time: diagnostic_panel</td>
-<td>diagnostic_panel</td>
-<td>pgm/spend_plots.R</td>
-<td>158-170</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure 15</td>
-<td>Spending of Unemployed Versus Income of UI</td>
-<td>spend_ts_means</td>
-<td>pgm/spend_ts_means.R</td>
-<td>336-159</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-9</td>
-<td>Spending of Unemployed Versus Duration of UI</td>
-<td>spend_dur_ts</td>
-<td>pgm/spend_ts_means.R</td>
-<td>340-157</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-10</td>
-<td>Impact of Expiration of the $600 PEUC: expiration_diff_ui_spendtotal</td>
-<td>ui_spendtotal_norm</td>
-<td>pgm/spend_plots.R</td>
-<td>381-397</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-11</td>
-<td>Impact of Expiration of the $300 PEUC: spendtotal_norm</td>
-<td>expiration_diff_ui_spendtotal_norm</td>
-<td>pgm/spend_plots.R</td>
-<td>381-473</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-12</td>
-<td>Impact of Expiration of the $300 PEUC: spendtotal_norm</td>
-<td>spend_plots</td>
-<td>pgm/spend_plots.R</td>
-<td>411-448</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-13</td>
-<td>Impact of Expiration of the $300 PEUC: expiration_diff_inc_spendtotal_norm</td>
-<td>expiration_diff_inc_spendtotal_norm</td>
-<td>pgm/spend_plots.R</td>
-<td>344-477</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-14</td>
-<td>Exit Rate at Expiration of PEUC</td>
-<td>timeseries_plots</td>
-<td>pgm/timeseries_plots.R</td>
-<td>244-262</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-15</td>
-<td>Exit Rate by Replacement Rate: earnings_cv_newjob_means</td>
-<td>timeseries_plots</td>
-<td>pgm/timeseries_plots.R</td>
-<td>217-259</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-16</td>
-<td>Exit Rate by Replacement Rate: earnings_cv_mean_job_means</td>
-<td>timeseries_plots</td>
-<td>pgm/timeseries_plots.R</td>
-<td>317-357</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-17a</td>
-<td>Exit Rate by Replacement Rate: time exit_new_relative_trunc</td>
-<td>timeseries_plots</td>
-<td>pgm/timeseries_plots.R</td>
-<td>238-278</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-17b</td>
-<td>Exit Rate by Replacement Rate: time exit_all</td>
-<td>timeseries_plots</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>217-357</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-17c</td>
-<td>Exit Rate by Replacement Rate: time exp_all</td>
-<td>timeseries_plots</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>217-357</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-17d</td>
-<td>Exit Rate by Replacement Rate: time exit_cc</td>
-<td>rep_rate_figs</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>217-357</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-17e</td>
-<td>Exit Rate by Replacement Rate: time onet_all</td>
-<td>timeseries_plots</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>217-357</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-17f</td>
-<td>Exit Rate by Replacement Rate: time exit_eggregation</td>
-<td>timeseries_plots</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>217-357</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-18</td>
-<td>Spending in Model that Accounts for Expansion: spend_and_search_onset</td>
-<td>timeseries_plots</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>234-278</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Figure A-19</td>
-<td>Job-Finding and Spending Responses</td>
-<td>spend_and_search_onset</td>
-<td>analysis/source/joint_spend_search_model/inf_horizon_net_resul</td>
-<td>2157-187</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure A-20</td>
-<td>Model vs. Data: Response of Expectations</td>
-<td>expectations_response</td>
-<td>analysis/source/joint_spend_search_model/inf_horizon_net_resul</td>
-<td>1221-1663</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Figure A-21</td>
-<td>Patterns of Unemployment Insurance and Recall</td>
-<td>UI_recall</td>
-<td>pgm/rep_rate_figs.R</td>
-<td>no</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+reproduced, as they require restricted data. You can view information about what scripts produce what files in <code>pandemic_ui_public/figure_table_mapping.xlsx</code>.</p>
 <h2 id="references">References</h2>
-<p>JPMorgan Chase Institute. 2018 - 2021. “JPMorgan Chase Institute
-De-Identified Data Assets.” <a href="https://www.jpmorganchase.com/institute">https://www.jpmorganchase.com/institute</a>
-(accessed July 16, 2024).</p>
-<p>Schmieder, Johannes F., and Till von Wachter. 2016. “Table 2 From: The
+<p>JPMorgan Chase Institute. 2018 - 2021. JPMorgan Chase Institute De-Identified Data Assets. JPMorgan Chase Institute, New York, NY. https://www.jpmorganchase.com/institute (accessed July 16, 2024).</p>
+<p>Schmieder, Johannes F., and Till von Wachter. 2016. Table 2 From &quot;The
 Effects of Unemployment Insurance Benefits: New Evidence and
 Interpretation.” Annual Review of Economics, 8(1):547–581
 <a href="https://doi.org/10.1146/annurev-economics-080614-115758">https://doi.org/10.1146/annurev-economics-080614-115758</a></p>
