@@ -666,37 +666,23 @@ Figures that are sourced by a file in the /pgm folder will not be
 reproduced, as they require restricted data. You can view information about what scripts produce what files in `pandemic_ui_public/figure_table_mapping.xlsx`.
 ## References
 
-JPMorgan Chase Institute. 2018 - 2021. JPMorgan Chase Institute De-Identified Data Assets. JPMorgan Chase Institute, New York, NY. https://www.jpmorganchase.com/institute (accessed July 16, 2024).
+**JPMorgan Chase Institute.** 2018 - 2021. _JPMorgan Chase Institute De-Identified Data Assets._ JPMorgan Chase Institute, New York, NY. https://www.jpmorganchase.com/institute (accessed July 16, 2024).
 
-Schmieder, Johannes F., and Till von Wachter. 2016. Table 2 From "The
-Effects of Unemployment Insurance Benefits: New Evidence and
-Interpretation.” Annual Review of Economics, 8(1):547–581
-<https://doi.org/10.1146/annurev-economics-080614-115758>
+**Schmieder, Johannes F., and Till von Wachter.** 2016. _Table 2 From "TheEffects of Unemployment Insurance Benefits: New Evidence and Interpretation.”_ Annual Review of Economics, 8(1):547–581.
+<https://doi.org/10.1146/annurev-economics-080614-115758>.
 
-U.S. Bureau of Economic Analysis. 2016-2021. "Personal Consumption
-Expenditures [PCE]." Retrieved from FRED, Federal Reserve Bank of St.
-Louis. <https://fred.stlouisfed.org/series/PCE> (accessed July 18th
-2024).
+**U.S. Bureau of Economic Analysis.** 2016-2021. _Personal Consumption Expenditures [PCE]._ Retrieved from FRED, Federal Reserve Bank of St.Louis. <https://fred.stlouisfed.org/series/PCE> (accessed July 18, 2024).
 
-U.S. Bureau of Labor Statistics. 2016-2021. "All Employees, Total
-Nonfarm [PAYEMS]." Retrieved from FRED, Federal Reserve Bank of St.
-Louis. <https://fred.stlouisfed.org/series/PAYEMS> (accessed July 18
-2024).
+**U.S. Bureau of Labor Statistics.** 2016-2021. _All Employees, Total
+Nonfarm [PAYEMS]._ Retrieved from FRED, Federal Reserve Bank of St. Louis. <https://fred.stlouisfed.org/series/PAYEMS> (accessed July 18, 2024).
 
-Employment and Training Administration. 2019 - 2020a. “Characteristics
-of the Insured Unemployed.” United States Department of Labor.
-<https://oui.doleta.gov/unemploy/DataDownloads.asp> (accessed July 19,
-2022).
+**Employment and Training Administration.** 2019 - 2020a. _Characteristics
+of the Insured Unemployed._ United States Department of Labor. 
+<https://oui.doleta.gov/unemploy/DataDownloads.asp> (accessed July 19, 2022).
 
-———. 2019 - 2020b. “Claims and Payment Activities.” United States
-Department of Labor.https://oui.doleta.gov/unemploy/DataDownloads.asp
-(accessed July 19, 2022).
+**Employment and Training Administration.** 2019 - 2020b. _Claims and Payment Activities._ United States Department of Labor. https://oui.doleta.gov/unemploy/DataDownloads.asp (accessed July 19, 2022).
 
-———. 2019 - 2020c. “Weekly Claims and Extended Benefits Trigger Data.”
-United States Department of Labor.
-<https://oui.doleta.gov/unemploy/DataDownloads.asp> (accessed July 19,
-2022).
+**Employment and Training Administration.** 2019 - 2020c. _Weekly Claims and Extended Benefits Trigger Data._ United States Department of Labor.
+<https://oui.doleta.gov/unemploy/DataDownloads.asp> (accessed July 19, 2022).
 
-———. 2016–2021d. "Unemployment Insurance Weekly Claims Data." U.S.
-Department of Labor. <https://oui.doleta.gov/unemploy/claims.asp>
-(accessed July 19, 2024).
+**Employment and Training Administration.** 2016–2021d. _Unemployment Insurance Weekly Claims Data._ United States Department of Labor. <https://oui.doleta.gov/unemploy/claims.asp> (accessed July 19, 2024).
