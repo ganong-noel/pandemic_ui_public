@@ -20,52 +20,37 @@ Please send feedback and questions to
 - [Computational Requirements](#computational-requirements)
   - [Software Requirements](#software-requirements)
   - [Memory and Runtime Requirements](#memory-and-runtime-requirements)
-    - [Summary](#summary)
-    - [Details](#details)
 - [Description of Programs/Code](#description-of-programscode)
   - [Directory Structure](#directory-structure)
-    - [Inputs](#inputs)
-    - [Code](#code)
-    - [Outputs (Exhibits)](#outputs-exhibits)
   - [License for Code](#license-for-code)
 - [Instructions to Replicators](#instructions-to-replicators)
-  - [Details](#details)
     - [1. JPMCI Scripts](#1-jpmci-scripts)
-      - [Build](#build)
-      - [Analysis](#analysis)
+        - [Build](#build)
+        - [Analysis](#analysis)
         - [Sample Set Up](#sample-set-up)
         - [Setting up Functions](#setting-up-functions)
         - [Build Script](#build-script)
         - [Jobfind Analysis](#jobfind-analysis)
         - [Spend Analysis](#spend-analysis)
-        - [Description of Scripts](#description-of-script-pgmrdriverscriptr)
+        - [Notes](#notes)
+        - [Input Tables for Build](#input-tables-for-build)
     - [2. Benchmarking Scripts](#2-benchmarking-scripts)
         - [Replications notes on figure A-1](#replications-notes-on-figure-a-1)
     - [3. Model Code Details](#3-model-code-details)
-      - [Driver Script](#driver-script)
-      - [Setup Script](#setup-script)
-      - [Model Scripts](#model-scripts)
-      - [Robustness Scripts](#robustness-scripts)
-      - [Functions Written for this Project and Called by Routines Above](#functions-written-for-this-project-and-called-by-routines-above)
-      - [Other Functions](#other-functions)
+        - [Driver Script](#driver-script)
+        - [Setup Script](#setup-script)
+        - [Model Scripts](#model-scripts)
+        - [Robustness Scripts](#robustness-scripts)
+        - [Functions Written for this Project and Called by Routines Above](#functions-written-for-this-project-and-called-by-routines-above)
+        - [Other Functions](#other-functions)
 - [List of Tables and Programs](#list-of-tables-and-programs)
 - [References](#references)
 
 ## Overview
 
-This code package allows researchers to replicate the analysis from the
-paper "Spending and Job Finding Impacts of Expanded Unemployment
-Benefits: Evidence from Administrative Micro Data." The package includes
-MATLAB scripts for model simulation, R scripts for benchmarking against
-public data, and additional scripts used within JPMorgan Chase
-Institute's secure computing environment. The publicly available code
-requires Stata, Matlab, and R. The confidential data and code (only
-available on JPMCI servers) requires Python. Pseudocode is provided, but these 
-scripts will not reproduce the figures from the paper. The replication process involves running the JPMCI scripts first, followed by the benchmarking scripts, and finally
-the model scripts. The package covers various stages of data processing,
-model calibration, simulation, and result generation to reproduce much of the
-findings presented in the paper. Details about what figures can and cannot 
-be produced are provided in `pandemic_ui_public/figure_table_mapping.xlsx`.
+This code package allows researchers to partially replicate the analysis from the paper "Spending and Job Finding Impacts of Expanded Unemployment Benefits: Evidence from Administrative Micro Data." The package includes MATLAB scripts for model simulation, R scripts for benchmarking against public data, and python pseudo-code to illustrate the analysis contained within JPMorgan Chase Institute's secure computing environment (these scrips will not run). Details about the pseudo-code are provided in `pandemic_ui_public/pseudocode.md`
+
+The paper was produced by running the JPMCI scripts first, followed by the benchmarking scripts, and finally the model scripts. This replication package covers various stages of data processing, model calibration, simulation, and result generation to reproduce much of the findings presented in the paper. Details about what figures can and cannot be produced are provided in `pandemic_ui_public/figure_table_mapping.xlsx`.
 
 ## Data Availability and Provenance Statements
 
@@ -224,20 +209,15 @@ To replicate the results:
     references to paths in program prelim.m include `rootdir` using the
     full file function.
 
-### Details
+### 1. JPMCI scripts
 
-#### 1. JPMCI scripts
+*This section describes the entire internal JPMCI repository used for this project. The files in the public repository submitted to the American Economics Association includes only the analysis `.R` scripts. The `.py` scripts and their driver script `ui_driver.sh` are not included.* 
 
-*Note: This section describes the entire internal JPMCI repository used
-for this project. The files in the public repository submitted to the
-American Economics Association includes only the analysis `.R` scripts.
-The `.py` scripts and their driver script `ui_driver.sh` are not
-included.*
-
-[JPMC open source
+* For details on the python pseudo-code provided, please see `pandemic_ui_public/pseudocode.md`. 
+* For details on JPMCI data structure beyond this analysis, please see [JPMC open source
 repo](https://github.com/jpmorganchase/pandemic-ui-chase)
 
-##### Build
+#### Build
 
 -   `ui_driver.sh`: This driver script produces the entire build.
     Command-line options in `ui_driver.sh` are passed on to the main
@@ -262,7 +242,7 @@ repo](https://github.com/jpmorganchase/pandemic-ui-chase)
 -   `pgm/funcs/inflow_outflow_helper_funcs.py`: This script defines the
     helper functions called by `pgm/daily_inflow_outflow_ui_recip.py`.
 
-##### Analysis
+#### Analysis
 
 The main driver script is:
 
@@ -275,12 +255,12 @@ Non-Chase inputs:
     claims by NAICS 2-digit industry. File path:
     `xxx/gnlab/ui_covid/scratch/2021-08-19claimant_industry.csv`
 
-##### Description of Script `pgm/R_driver_script.R`:
+#### Description of Script `pgm/R_driver_script.R`:
 
 The driver script, `pgm/R_driver_script.R`, run the following scripts in
 the following order:
 
-###### Sample Set up
+##### Sample Set up
 
 -   To run the analysis on a 1% sample, set the vector `small_samp` to
     *TRUE*. Otherwise, the default is *FALSE* which runs the scripts on
@@ -290,7 +270,7 @@ the following order:
     `create_new_1pct_sample` to *TRUE*, which runs this script. It reads
     in the new full sample builds, and saves new 1% sample builds.
 
-###### Setting up Functions:
+##### Setting up Functions:
 
 -   `pgm/funcs/ui_functions.R`: a number of functions that are common
     across many later files. Functions include:
@@ -328,7 +308,7 @@ the following order:
     set the vector `warnings` to *TRUE*. This is used extensively while
     running R batch submission scripts.
 
-###### Build Script:
+##### Build Script:
 
 Before you run these scripts, there are two set up vectors that will
 determine how the driver script is run. If you would like to re-run the
@@ -362,7 +342,7 @@ relevant rds files and `pgm/jobfind_build_2_of_2.R` reads the files
 straight in. To run everything from `pgm/jobfind_build_2_of_2.R`, set
 `re_run_step1 <- FALSE` at the start.*
 
-###### Jobfind Analysis:
+##### Jobfind Analysis:
 
 -   Prep scripts to create controls and dataframes ready for analysis:
     -   `pgm/control_prep.R`: this creates controls such as industry
@@ -415,7 +395,7 @@ straight in. To run everything from `pgm/jobfind_build_2_of_2.R`, set
     (`[date]_ui_jobfind_for_export.xls`) which also includes any other
     data frame needed on the outside.
 
-###### Spend Analysis
+##### Spend Analysis
 
 -   `pgm/spend_build.R`: build data needed for the analysis of spending
     around UI.
@@ -449,6 +429,9 @@ straight in. To run everything from `pgm/jobfind_build_2_of_2.R`, set
 -   `pgm/spend_summary_stats.R`: Calculate some summary stats on
     spending and the spend samples
 
+
+#### Notes
+
 *Note: In the repo, there is a folder `r_batch_submission_scripts` with
 the same R scripts as in `pgm/` to run as a bash job on the edgenode,
 instead of on Rstudio.*
@@ -459,12 +442,14 @@ customer-month level that is used in
 `pgm/daily_inflow_outflow_ui_recip.py` to filter the customer list to
 primary customers.\`
 
-**Important note on data structure of `cust_demo`** There are 4
+**Important note on data structure of `cust_demo`:** 
+There are 4
 ‘cust_types’:
 `202021_ui_recipient, 2019_ui_recipient, nonui_2020, nonui_2019`. A
 `2019_ui_recipient` got UI in 2019, but they may also get UI in 2020.
 
-**Input tables for Build** - List of customers with 2018 and 2019 JPMC
+#### Input tables for Build 
+List of customers with 2018 and 2019 JPMC
 activity as well as customer metadata -
 `institute_consumer.mwl_cust_covid_filters`: filtered customer list with
 2018 and 2019 labor inflows -
@@ -495,7 +480,7 @@ other income, several measures of spending, and checking account
 assets - file with demographics such as age, gender, states of
 residence, and Economic Impact Payment amount
 
-#### 2. Benchmarking scripts
+### 2. Benchmarking scripts
 
 The paper has a few plots which compare JPMCI data to public data. The R
 script `driver.R` in `analysis/source/` runs the script
@@ -506,7 +491,7 @@ A-1: `hexmap_jpmci_sample.png` - Figure A-2:
 `diagnostic_levels_norm.png`; `state_hetero_inc_scatter.png`;
 `weekly_benefits_median_2019_mthly.png`.
 
-##### Replications notes on figure A-1:
+#### Replications notes on figure A-1:
 Figure A-1 is a hexmap visualization of the types of JPMCI customer information available by state. It has different environment requirements for reproduction than the rest of the benchmarking plots. It depents on broom 1.0.0, which is incompatible with tidyverse 2.0.0, a package that is required for all other benhcmarking figures. It also uses a retired package called rgeos, which is no longer available on CRAN as of October 2023. Becuase of these unique envoronment needs, A-1 is not able to be replicated using the same environemnt as the rest of the benchmarking figures. 
 
 These were the steps taken in the last attempt to replicate this figure:
@@ -543,15 +528,15 @@ The hexaplot may require these earlier package versions.  Parts of the R benchma
 
 It may also require an earlier version of R. The latest version of R available at the beginning of the benchmarking script construction was R 3.6.3. 
 
-#### 3. Model code details
+### 3. Model code details
 
 All in `analysis/source/joint_spend_search_model/`.
 
-##### Driver Script
+#### Driver Script
 
 The driver script `shell.m` runs the code. The shell file comments also describes exactly which subroutines produce each model figure and table from the paper. The code producing most main text results is in lines 14-50 and only takes a few minutes to run. `solve_best_fit_params.m` is much more time consuming than the rest of the script but we provide intermediate files so this step can be skipped if so desired. Similarly, the `stimulus_check_size` related code and robustness are also more time consuming and can be skipped if not specifically interested in those results.
 
-##### Setup Script
+#### Setup Script
 
 The script `prelim.m` defines data inputs to the model (paths point to
 `analysis/input/disclose/` and `analysis/input/public_data/`), sets
@@ -568,7 +553,7 @@ using the `fullfile` function. The code was written so that it should
 require no manual directory changes for the typical user executing
 locally.
 
-##### Model Scripts
+#### Model Scripts
 
 -   `solve_best_fit_params.m` - Calibrate the search parameters of
     different expectations assumptions and MPC targets and save them in
@@ -615,7 +600,7 @@ locally.
     results but splitting separately by high and low liquidity
     households constructed in various ways
 
-##### Robustness Scripts
+#### Robustness Scripts
 
 -   `inf_horizon_het_results_timeaggregation_target500MPC.m`,
     `inf_horizon_het_results_timeaggregation.m` - Code for constructing
@@ -630,7 +615,7 @@ locally.
     mentioned in Appendix C.2 (not included in shell since there are no
     specific numbers reported/saved from this code)
 
-##### Functions Written for this Project and Called by Routines Above
+#### Functions Written for this Project and Called by Routines Above
 
 -   `average_duration.m` - This computes the average duration of
     unemployment given an exit rate
@@ -645,7 +630,7 @@ locally.
 -   `week_to_month_exit.m` - Converts weekly exit rates in data to
     monthly exit rates used in model
 
-##### Other Functions
+#### Other Functions
 
 -   `fminsearchbnd.m` - Bounded optimization function. Used for
     optimization in `solve_best_fit_params.m`.
