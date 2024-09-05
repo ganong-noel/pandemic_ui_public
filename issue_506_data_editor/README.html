@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="partial-replication-kit-for-%22spending-and-job-finding-impacts-of-expanded-unemployment-benefits-evidence-from-administrative-micro-data%22">Partial Replication Kit for &quot;Spending and Job Finding Impacts of Expanded Unemployment Benefits: Evidence from Administrative Micro Data&quot;</h1>
+<p>By Peter Ganong, Fiona Greig, Pascal Noel, Daniel M. Sullivan, and
+Joseph Vavra</p>
+<p>Please send feedback and questions to
+<a href="mailto:ganong@uchicago.edu">ganong@uchicago.edu</a>.</p>
+<p><a href="https://doi.org/10.1257/aer.20220973">https://doi.org/10.1257/aer.20220973</a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#data-availability-and-provenance-statements">Data Availability and Provenance Statements</a>
+<ul>
+<li><a href="#statement-about-rights">Statement about Rights</a></li>
+<li><a href="#summary-of-availability">Summary of Availability</a></li>
+<li><a href="#details-on-each-data-source">Details on each Data Source</a></li>
+<li><a href="#public-data-table">Public Data Table</a></li>
+</ul>
+</li>
+<li><a href="#computational-requirements">Computational Requirements</a>
+<ul>
+<li><a href="#software-requirements">Software Requirements</a></li>
+<li><a href="#memory-and-runtime-requirements">Memory and Runtime Requirements</a>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#description-of-programscode">Description of Programs/Code</a>
+<ul>
+<li><a href="#directory-structure">Directory Structure</a>
+<ul>
+<li><a href="#inputs">Inputs</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#outputs-exhibits">Outputs (Exhibits)</a></li>
+</ul>
+</li>
+<li><a href="#license-for-code">License for Code</a></li>
+</ul>
+</li>
+<li><a href="#instructions-to-replicators">Instructions to Replicators</a>
+<ul>
+<li><a href="#details">Details</a>
+<ul>
+<li><a href="#1-jpmci-scripts">1. JPMCI Scripts</a>
+<ul>
+<li><a href="#build">Build</a></li>
+<li><a href="#analysis">Analysis</a>
+<ul>
+<li><a href="#sample-set-up">Sample Set Up</a></li>
+<li><a href="#setting-up-functions">Setting up Functions</a></li>
+<li><a href="#build-script">Build Script</a></li>
+<li><a href="#jobfind-analysis">Jobfind Analysis</a></li>
+<li><a href="#spend-analysis">Spend Analysis</a></li>
+<li><a href="#description-of-script-pgmrdriverscriptr">Description of Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#2-benchmarking-scripts">2. Benchmarking Scripts</a>
+<ul>
+<li><a href="#replications-notes-on-figure-a-1">Replications notes on figure A-1</a></li>
+</ul>
+</li>
+<li><a href="#3-model-code-details">3. Model Code Details</a>
+<ul>
+<li><a href="#driver-script">Driver Script</a></li>
+<li><a href="#setup-script">Setup Script</a></li>
+<li><a href="#model-scripts">Model Scripts</a></li>
+<li><a href="#robustness-scripts">Robustness Scripts</a></li>
+<li><a href="#functions-written-for-this-project-and-called-by-routines-above">Functions Written for this Project and Called by Routines Above</a></li>
+<li><a href="#other-functions">Other Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#list-of-tables-and-programs">List of Tables and Programs</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>This code package allows researchers to replicate the analysis from the
+paper &quot;Spending and Job Finding Impacts of Expanded Unemployment
+Benefits: Evidence from Administrative Micro Data.&quot; The package includes
+MATLAB scripts for model simulation, R scripts for benchmarking against
+public data, and additional scripts used within JPMorgan Chase
+Institute's secure computing environment. The publicly available code
+requires Stata, Matlab, and R. The confidential data and code (only
+available on JPMCI servers) requires Python. Pseudocode is provided, but these
+scripts will not reproduce the figures from the paper. The replication process involves running the JPMCI scripts first, followed by the benchmarking scripts, and finally
+the model scripts. The package covers various stages of data processing,
+model calibration, simulation, and result generation to reproduce much of the
+findings presented in the paper. Details about what figures can and cannot
+be produced are provided in <code>pandemic_ui_public/figure_table_mapping.xlsx</code>.</p>
+<h2 id="data-availability-and-provenance-statements">Data Availability and Provenance Statements</h2>
+<h3 id="statement-about-rights">Statement about Rights</h3>
+<p>I certify that the authors of the manuscript have legitimate access to
+and permission to use the data used in this manuscript.</p>
+<p>I certify that the authors of the manuscript have permission to
+redistribute/publish the data contained within this replication package.</p>
+<h3 id="summary-of-availability">Summary of Availability</h3>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">All data </label><strong>are</strong> publicly available.</li>
+<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">Some data </label><strong>cannot be made</strong> publicly available.</li>
+<li><input type="checkbox" id="checkbox2"><label for="checkbox2"></label><strong>No data can be made</strong> publicly available.</li>
+</ul>
+<p><strong>Data Availability Statement</strong></p>
+<p>Some of the data used for this paper were prepared in JPMorgan Chase
+Insitute's (JPMCI) secure computing facilities. Due to JPMCI's rules on
+access and confidentiality, the programming code and analysis files
+cannot be made available publicly. The analysis files and programming
+code created by the authors will be available within JPMCI's secure
+computing facilities until 2028, and can be requested by researchers
+with approved projects (email <code>institute@jpmchase.com</code>). We grant any
+researchers with appropriate approval to conduct research on JPMCI's
+secure computing facilities access to these files. Below, we describe
+the key tables needed to replicate the analysis</p>
+<h3 id="details-on-each-data-source">Details on each Data Source</h3>
+<p>This table describes the raw data used in the analysis and their corresponding directories.</p>
+<table>
+<thead>
+<tr>
+<th>Data.Name</th>
+<th>Data.Files</th>
+<th>Location</th>
+<th>Provided</th>
+<th>Citations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Department of Labor (DOL)</td>
+<td>ar539.csv; ar5159.csv; ae5159.csv; ap5159.csv; ap902.csv; weekly_pandemic_claims.xlsx</td>
+<td>/pandemic_ui_public/analysis/input/public_data</td>
+<td>TRUE</td>
+<td>(Employment and Training Administration 2019 - 2020a); (--- 2019 - 2020b); (--- 2019 - 2020c); (--- 2019 – 2020d)</td>
+</tr>
+<tr>
+<td>Federal Reserve Economic Data (FRED)</td>
+<td>PAYEMS.xls; PCE.xls</td>
+<td>/pandemic_ui_public/analysis/input/public_data/</td>
+<td>TRUE</td>
+<td>(U.S. Bureau of Labor Statistics 2016-2021); (U.S. Bureau of Economic Analysis 2016-2021)</td>
+</tr>
+<tr>
+<td>Bureau of Labor Statistics (BLS)</td>
+<td>bls_payroll_emp_nonfarm_no_adj.xlsx</td>
+<td>/pandemic_ui_public/analysis/input/public_data/</td>
+<td>TRUE</td>
+<td>(Bureau of Labor Statistics 2019 - 2021)</td>
+</tr>
+<tr>
+<td>Schmieder and Von Wachter 2016</td>
+<td>literature_elasticities.csv</td>
+<td>/pandemic_ui_public/analysis/input/public_data/</td>
+<td>TRUE</td>
+<td>(Schmieder and Von Wachter 2016)</td>
+</tr>
+<tr>
+<td>JPMorgan Chase Institute Data Assets</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>FALSE</td>
+<td>(JPMorgan Chase Institute 2018-2021)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="public-data-table">Public Data Table</h3>
+<p>This table explains all the files in the <code>/pandemic_ui_public/analysis/input/public_data</code> directory in more detail, excluding the <code>us_states_hexagrid.geojson</code>, which is used for the hexmap in figure A-1.</p>
+<table>
+<thead>
+<tr>
+<th>Data file</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>weekly_pandemic_claims.xlsx</code></td>
+<td>(Employment and Training Administration 2019–2020d)</td>
+<td>Unemployment Insurance Weekly Claims Data <a href="https://oui.doleta.gov/unemploy/claims.asp">https://oui.doleta.gov/unemploy/claims.asp</a></td>
+</tr>
+<tr>
+<td><code>ae5159.csv</code></td>
+<td>(Employment and Training Administration 2019–2020b)</td>
+<td>ETA 5159 (Extended benefits) <a href="https://oui.doleta.gov/unemploy/DataDownloads.asp">https://oui.doleta.gov/unemploy/DataDownloads.asp</a></td>
+</tr>
+<tr>
+<td><code>ap902.csv</code></td>
+<td>(Employment and Training Administration 2019–2020a)</td>
+<td>ETA 902P <a href="https://oui.doleta.gov/unemploy/DataDownloads.asp">https://oui.doleta.gov/unemploy/DataDownloads.asp</a></td>
+</tr>
+<tr>
+<td><code>ap5159.csv</code></td>
+<td>(Employment and Training Administration 2019–2020b)</td>
+<td>ETA 5159 (PEUC) <a href="https://oui.doleta.gov/unemploy/DataDownloads.asp">https://oui.doleta.gov/unemploy/DataDownloads.asp</a></td>
+</tr>
+<tr>
+<td><code>ar539.csv</code></td>
+<td>(Employment and Training Administration 2019–2020c)</td>
+<td>ETA 539 <a href="https://oui.doleta.gov/unemploy/DataDownloads.asp">https://oui.doleta.gov/unemploy/DataDownloads.asp</a></td>
+</tr>
+<tr>
+<td><code>ar5159.csv</code></td>
+<td>(Employment and Training Administration 2019–2020b)</td>
+<td>ETA 5159 (Regular program) <a href="https://oui.doleta.gov/unemploy/DataDownloads.asp">https://oui.doleta.gov/unemploy/DataDownloads.asp</a></td>
+</tr>
+<tr>
+<td><code>bls_payroll_emp_nonfarm_no_adj.xlsx</code></td>
+<td>(U.S. Bureau of Labor Statistics 2019–2021)</td>
+<td>select &quot;Multi Screen&quot; under &quot;Employment, Hours, and Earnings - National&quot; in section &quot;Employment&quot; of the following link <a href="https://www.bls.gov/data/home.htm">https://www.bls.gov/data/home.htm</a></td>
+</tr>
+<tr>
+<td><code>decompose_pua.csv</code></td>
+<td>-</td>
+<td>Produced by <code>decompose_pua.do</code></td>
+</tr>
+<tr>
+<td><code>elig_ui_reg_pua.csv</code></td>
+<td>(ETA 2019–2020b); (ETA 2019–2020d)</td>
+<td>Adds up the number of 'regular' UI payments (ETA 5159) and PUA payments (ETA 902P)</td>
+</tr>
+<tr>
+<td><code>literature_elasticities.csv</code></td>
+<td>(Schmieder and Von Wachter 2016)</td>
+<td>Table 2 from this paper. Set of elasticities from previous literature.</td>
+</tr>
+<tr>
+<td><code>monthly_exit_rates.dta</code></td>
+<td>-</td>
+<td>Intermediate dataset saved by <code>decompose_pua.do</code></td>
+</tr>
+<tr>
+<td><code>PAYEMS.xls</code></td>
+<td>(U.S. Bureau of Labor Statistics 2016–2021)</td>
+<td>From <a href="https://fred.stlouisfed.org/series/payems">https://fred.stlouisfed.org/series/payems</a></td>
+</tr>
+<tr>
+<td><code>PCE.xls</code></td>
+<td>(U.S. Bureau of Economic Analysis 2016–2021)</td>
+<td>From <a href="https://fred.stlouisfed.org/series/PCE">https://fred.stlouisfed.org/series/PCE</a></td>
+</tr>
+<tr>
+<td><code>ui_receipt_benchmarks.xlsx</code></td>
+<td>(Employment and Training Administration 2019–2020b)</td>
+<td>Sheets <code>month_final_payments</code> and <code>month_initial_claims</code> are from ETA 5159, and sheet <code>week_continued_claims</code> is from Employment and Training Administration 2019–2020d</td>
+</tr>
+</tbody>
+</table>
+<h2 id="computational-requirements">Computational requirements</h2>
+<h3 id="software-requirements">Software Requirements</h3>
+<p>These are the software configurations in which the code was last run.</p>
+<ul>
+<li>Stata (code was last run with version 17)</li>
+<li>Python (only for JPMCI scripts, which will not run)</li>
+<li>Matlab (code was run with Matlab Release 2021b)</li>
+<li>R 4.3.0
+<ul>
+<li>RColorBrewer version 1.1-3</li>
+<li>yaml version 2.3.9</li>
+<li>testthat version 3.2.1.1</li>
+<li>scales version 1.3.0</li>
+<li>readxl version 1.4.2</li>
+<li>ggrepel version 0.9.5</li>
+<li>geojsonio version 0.11.3</li>
+<li>broom version 1.0.6 (note: the hexmap requires broom version earlier than 1.0.3)</li>
+<li>lubridate version 1.9.3</li>
+<li>tidyverse version 2.0.0</li>
+<li>rgeos version 0.6-3 (note--this package was depricated in 2023 and is not available in CRAN. It also requires downloading dependency <code>geos</code> separately)</li>
+</ul>
+</li>
+</ul>
+<h3 id="memory-and-runtime-requirements">Memory and Runtime Requirements</h3>
+<h4 id="summary">Summary</h4>
+<p>Approximate time needed to reproduce the analyses on a standard 2024
+desktop machine:</p>
+<ul>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">&lt;10 minutes</label></li>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">10-60 minutes</label></li>
+<li><input type="checkbox" id="checkbox5" checked="true"><label for="checkbox5">1-2 hours</label></li>
+<li><input type="checkbox" id="checkbox6"><label for="checkbox6">2-8 hours</label></li>
+<li><input type="checkbox" id="checkbox7"><label for="checkbox7">8-24 hours</label></li>
+<li><input type="checkbox" id="checkbox8"><label for="checkbox8">1-3 days</label></li>
+<li><input type="checkbox" id="checkbox9"><label for="checkbox9">3-14 days</label></li>
+<li><input type="checkbox" id="checkbox10"><label for="checkbox10">&gt; 14 days</label></li>
+<li><input type="checkbox" id="checkbox11"><label for="checkbox11">Not feasible to run on a desktop machine, as described below.</label></li>
+</ul>
+<h4 id="details">Details</h4>
+<p>The code was last run on a <strong>3.5 GHz Dual-Core Intel Core i7 with MacOS
+version 13.6.6 (22G630)</strong>.</p>
+<p>The matlab code is not particularly computationally intensive.
+Everything but the best fit parameters can be run in less than an hour
+on a standard laptop or desktop computer. Solving for the best fit
+parameters takes around an hour or two on the same computer but this
+does not need to be done to replicate results since the results of this
+parameter search are saved in the replication code.</p>
+<p>Data for the python scripts are not included and should not be considered for runtime
+estimates or memory requirements.</p>
+<h2 id="description-of-programscode">Description of programs/code</h2>
+<h3 id="directory-structure">Directory Structure</h3>
+<h4 id="inputs">Inputs</h4>
+<ol>
+<li><code>analysis/input/disclose/</code> - Model inputs and targets from JPMorgan
+Chase Institute (JPMCI) data.</li>
+<li><code>analysis/input/public_data/</code> - Model inputs and targets from
+publicly available data. See below for description of the datasets
+and their sources.</li>
+</ol>
+<h4 id="code">Code</h4>
+<ol>
+<li><code>pgm/</code> - JPMC code (does not run)</li>
+<li><code>analysis/source/</code> - Benchmarking code</li>
+<li><code>analysis/source/joint_spend_search_model/</code> - Model code (including
+subdirectory <code>robustness/</code>)</li>
+</ol>
+<h4 id="outputs-exhibits">Outputs (Exhibits)</h4>
+<ol>
+<li><code>analysis/release/joint_spend_search_model/paper_figures</code> - Model
+outputs</li>
+<li><code>analysis/release/ui_benchmarking</code> - Benchmarking outputs</li>
+</ol>
+<h3 id="license-for-code">License for Code</h3>
+<p>The code is licensed under a MIT license. See
+<code>/pandemic_ui_public/LICENSE</code> for details.</p>
+<h2 id="instructions-to-replicators">Instructions to Replicators</h2>
+<p>To replicate the results:</p>
+<ol>
+<li>The JPMCI scripts would be executed using <code>ui_driver.sh</code> first.
+(Note: these scripts require confidential data not included in the
+public repository so they will not run.)</li>
+<li>Run the benchmarking scripts using the R script <code>driver.R</code>. You will
+need to adjust the file paths in the script to match your local
+directory structure.</li>
+<li>Execute the model scripts by running <code>shell.m</code> in MATLAB. Ensure all
+references to paths in program prelim.m include <code>rootdir</code> using the
+full file function.</li>
+</ol>
+<h3 id="details">Details</h3>
+<h4 id="1-jpmci-scripts">1. JPMCI scripts</h4>
+<p><em>Note: This section describes the entire internal JPMCI repository used
+for this project. The files in the public repository submitted to the
+American Economics Association includes only the analysis <code>.R</code> scripts.
+The <code>.py</code> scripts and their driver script <code>ui_driver.sh</code> are not
+included.</em></p>
+<p><a href="https://github.com/jpmorganchase/pandemic-ui-chase">JPMC open source
+repo</a></p>
+<h5 id="build">Build</h5>
+<ul>
+<li><code>ui_driver.sh</code>: This driver script produces the entire build.
+Command-line options in <code>ui_driver.sh</code> are passed on to the main
+python script <code>pgm/daily_inflow_outflow_ui_recip.py</code> to specify the
+parts of the build and the time period for which the build should be
+executed.</li>
+<li><code>pgm/daily_inflow_outflow_ui_recip.py</code>: This is the main python
+script and the only script called by <code>ui_driver.sh</code>. The output is a
+set of <code>hdfs</code> tables, which are also saved as <code>.rds</code> tables for
+analysis:
+<ul>
+<li><code>demog</code>: tables with customer-by-month info on balances,
+demographics, and flows,</li>
+<li><code>eips</code>:
+<ul>
+<li><code>eips_list</code>: tables of customer-level EIP transactions for
+UI customers, where EIP here refers exclusively to the April
+2020 EIP round,</li>
+<li><code>eip_rounds_list</code>: tables of customer-level EIP transactions
+for UI customers with all 3 rounds of EIPs,</li>
+</ul>
+</li>
+<li><code>weekly_cp</code>: customer-by-week-by-counterparty tables of labor
+and UI inflows,</li>
+<li><code>weekly_flows</code>: customer-by-week flows tables.</li>
+</ul>
+</li>
+<li><code>pgm/funcs/inflow_outflow_helper_funcs.py</code>: This script defines the
+helper functions called by <code>pgm/daily_inflow_outflow_ui_recip.py</code>.</li>
+</ul>
+<h5 id="analysis">Analysis</h5>
+<p>The main driver script is:</p>
+<ul>
+<li><code>pgm/R_driver_script.R</code>: produces a large number of plots, tables
+and statistics which appear in the July 2023 draft.</li>
+</ul>
+<p>Non-Chase inputs:</p>
+<ul>
+<li>DOL ETA Form 203: state-month level count of unemployment insurance
+claims by NAICS 2-digit industry. File path:
+<code>xxx/gnlab/ui_covid/scratch/2021-08-19claimant_industry.csv</code></li>
+</ul>
+<h5 id="description-of-script-pgmrdriverscriptr">Description of Script <code>pgm/R_driver_script.R</code>:</h5>
+<p>The driver script, <code>pgm/R_driver_script.R</code>, run the following scripts in
+the following order:</p>
+<h6 id="sample-set-up">Sample Set up</h6>
+<ul>
+<li>To run the analysis on a 1% sample, set the vector <code>small_samp</code> to
+<em>TRUE</em>. Otherwise, the default is <em>FALSE</em> which runs the scripts on
+the full sample.</li>
+<li><code>pgm/data_readin_1pct.R</code>: If there are new builds made, and there is
+need to make a new 1% sample, then, set the vector
+<code>create_new_1pct_sample</code> to <em>TRUE</em>, which runs this script. It reads
+in the new full sample builds, and saves new 1% sample builds.</li>
+</ul>
+<h6 id="setting-up-functions">Setting up Functions:</h6>
+<ul>
+<li><code>pgm/funcs/ui_functions.R</code>: a number of functions that are common
+across many later files. Functions include:
+<ul>
+<li><code>gg_walk_save</code>: writes a ggplot object to PDF, and produces a
+CSV of the underlying data</li>
+<li><code>gg_point_line</code>: creates a line plot in ggplot, with a dot at
+each point on the line.</li>
+<li><code>diff_in_diff</code>: computes a difference-in-difference estimator,
+measured as the ratio of (change in treatment group)/(change in
+control group). The numerator and denominator of the ratio are
+themselves fractions corresponding to the year-on-year change in
+the treatment and control groups, respectively.</li>
+<li><code>yoy_change</code>: computes year-on-year change (or any ratio)
+estimator.</li>
+<li><code>fte_theme</code>: theme to construct plots with standardized
+aesthetic elements</li>
+<li><code>get_median_benefits</code>: Takes a customer week dataframe and
+returns the median benefits of the customer within a timeframe
+given by dates for start and end</li>
+<li><code>grouped_exit_rates</code>: produce exit rates by time or duration
+(including by recall status) for those who we observe a
+separation</li>
+<li><code>estimate</code>: find difference between average job-finding rate in
+two weeks prior to policy change to the first four weeks after
+the policy change.</li>
+<li><code>weekly_summary</code>: produces a weekly summary dataframe</li>
+</ul>
+</li>
+<li><code>pgm/funcs/prelim.R</code>: makes function, <code>winsor</code>, to winsorize data</li>
+<li><code>pgm/funcs/xtile_ten.R</code>: makes a function, <code>xtile_ten</code>, that finds
+values at a specific percentile (but usually median) within JPMCI
+data while meeting data aggregation standards by taking the average
+of the ten values around the entered percentile.</li>
+<li><code>pgm/funcs/test_that_modified.R</code>: this is a modification to the
+<code>test_that</code> functions used in scripts, where instead of returning an
+error, as is usual, if this is run it gives a warning. To use this,
+set the vector <code>warnings</code> to <em>TRUE</em>. This is used extensively while
+running R batch submission scripts.</li>
+</ul>
+<h6 id="build-script">Build Script:</h6>
+<p>Before you run these scripts, there are two set up vectors that will
+determine how the driver script is run. If you would like to re-run the
+build scripts, then set the vector <code>re_run_build_scripts</code> to <em>TRUE</em>.
+Further, if you would like to run the disaggregated version of the
+build, which splits consumption into its constituent categories, then
+set the vector <code>run_categories</code> to <em>TRUE</em>.</p>
+<ul>
+<li><code>pgm/ui_eip_data_read_in.R</code>: imports weekly counterparty files from
+<code>/data/jpmci/teams/gnlab/ui_covid</code>. This script reads in and lightly
+cleans RDS files from the PySpark build.</li>
+<li><code>pgm/ui_eip_data_build.R</code>: cleans up the imported data so that it is
+in a form useful for analysis</li>
+<li><code>pgm/jobfind_build_1_of_2.R</code> and <code>pgm/jobfind_build_2_of_2.R</code>:
+builds the following dataframes:
+<ul>
+<li><code>df_labor_cust_week</code> which is a dataframe at the
+customer-by-week level. Shows whether the customer has exited
+labor or exited UI to a new job or to recall.</li>
+<li><code>df_ui_cust_week_add_spells</code> which feeds into <code>df_ui_cust_week</code>,
+which is created in <code>jobfind_build_2_of_2</code></li>
+<li><code>df_ui_cust_week_alt_horizon_basic</code> which feeds into
+<code>df_ui_cust_week_alt_horizon</code> (used as an end product for a plot
+in <code>timeseries_plots.R</code>), and compares various lengths of job
+seperation.</li>
+</ul>
+</li>
+<li><code>pgm/jobfind_build_2_of_2.R</code>: uses a number of sample screens to
+further clean up the dfs from previous build scripts.</li>
+</ul>
+<p><em>NOTE: can skip the first three files and run straight from
+<code>pgm/jobfind_build_2_of_2.R</code> since the prior three builds and saves the
+relevant rds files and <code>pgm/jobfind_build_2_of_2.R</code> reads the files
+straight in. To run everything from <code>pgm/jobfind_build_2_of_2.R</code>, set
+<code>re_run_step1 &lt;- FALSE</code> at the start.</em></p>
+<h6 id="jobfind-analysis">Jobfind Analysis:</h6>
+<ul>
+<li>Prep scripts to create controls and dataframes ready for analysis:
+<ul>
+<li><code>pgm/control_prep.R</code>: this creates controls such as industry
+(based on organization that paid your last paycheck before
+separation), age (spell-level), gender.</li>
+<li><code>pgm/rep_rate_prep.R</code>: calculates the median benefits and %
+benefit change in two time periods: “expiration” (expiration of
+$600 FPUC at the end of August) and “onset” (onset of $300 at
+the start of January 2021).</li>
+</ul>
+</li>
+<li>Output scripts produce timeseries plots, DID plots, regression
+tables, etc.
+<ul>
+<li><code>pgm/timeseries_plots.R</code>: make timeseries plots of exit rates
+for jobfind analysis using tmp_for_hazard_plot_expanded
+<ul>
+<li>Outputs: Figures 4, 5, A13ab, A14, A15, A16, A21</li>
+</ul>
+</li>
+<li><code>pgm/summer_expiration.R</code>: makes timeseries plots for summer
+expirations, including exit rates and binscatters.
+<ul>
+<li>Outputs: Figures A24ab, A25, Table A15</li>
+</ul>
+</li>
+<li><code>pgm/rep_rate_tables.R</code>
+<ul>
+<li>Outputs: Tables 3, A2, A11b, A12, A13b, A14</li>
+</ul>
+</li>
+<li><code>pgm/marginal_effects_hazard_calc.R</code>: calculates inputs for
+hazard elasticity calculations done outside the firewall.</li>
+<li><code>pgm/rep_rate_figs.R</code>: This script produces plots for event
+study by above/below median rep rate as well as binscatter
+plots.
+<ul>
+<li>Outputs: Figures 6ab, 7ab, A17abcdef</li>
+</ul>
+</li>
+<li><code>pgm/weekly_coef_figs.R</code>: This runs regressions with weekly
+coefficients to new job for binary (above vs below median) and
+weekly DID, then plots the coefficients.
+<ul>
+<li>Outputs: Figures A23ab</li>
+</ul>
+</li>
+<li><code>pgm/ui_universe_read_in_plot.R</code>: Analyzes all UI recipients for
+comparison to those who meet the primacy screen (this is run
+after running all the analysis of the primacy screen)
+<ul>
+<li>Outputs: Figure A2a</li>
+</ul>
+</li>
+<li><code>pgm/jobfind_tables.R</code>: make tables for job-finding analysis</li>
+</ul>
+</li>
+<li>Robustness checks on controls, e.g. benchmarking our industry mix
+and interacting our ‘main’ regression with liquidity:
+<ul>
+<li><code>pgm/industry_mix_change.R</code>: assess the quality of the industry
+variable tagging in JPMCI by comparing to an external benchmark
+(Department of Labor ETA form 203) which gives data on UI claims
+by industry
+<ul>
+<li>Outputs: Figure A3</li>
+</ul>
+</li>
+<li><code>pgm/jobfind_liquidity.R</code>: This runs regressions interacting
+with liquidity variable, which is measured as pre-period balance
+<ul>
+<li>Outputs: Tables A4, A5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>pgm/save_time_series_for_model.R</code>: produces model outputs that Joe
+Vavra uses on the outside</li>
+<li><code>pgm/jobfind_stats_export_jan22.R</code>: creates stats for text for
+export, minimum aggregation standards tables, other model input that
+is used on the outside, and a workbook
+(<code>[date]_ui_jobfind_for_export.xls</code>) which also includes any other
+data frame needed on the outside.</li>
+</ul>
+<h6 id="spend-analysis">Spend Analysis</h6>
+<ul>
+<li><code>pgm/spend_build.R</code>: build data needed for the analysis of spending
+around UI.</li>
+<li><code>pgm/spend_plots.R</code>: create plots of spending for various event
+studies/ID strategies around UI.
+<ul>
+<li>Outputs: Figures 1, 2, 9ab, A4, A5, A6, A7, A8, A9, A10</li>
+</ul>
+</li>
+<li><code>pgm/spend_summer_weekly.R</code>: produce summer expiration spend plots.
+<ul>
+<li>Outputs: Figures A11, A12</li>
+</ul>
+</li>
+<li><code>pgm/mpc_robustness.R</code>: MPC calculations
+<ul>
+<li>Outputs: Tables 1, A10, A11a</li>
+</ul>
+</li>
+<li><code>pgm/mpc_cats.R</code>: MPC calculations with disaggregated categories
+sample
+<ul>
+<li>Outputs: Tables A7, A8</li>
+</ul>
+</li>
+<li><code>pgm/mpcs_more_controls.R</code>: MPC calculations with controls
+<ul>
+<li>Outputs: Table A9</li>
+</ul>
+</li>
+<li><code>pgm/spend_by_liquidity_buffer.R</code>: Spending by pre-pandemic
+liquidity group
+<ul>
+<li>Outputs: Figure 3, Table 2</li>
+</ul>
+</li>
+<li><code>pgm/table2_V2.R</code>: Create another version of table 2</li>
+<li><code>pgm/spend_by_ever_recall.R</code>: Spending of recalled vs non-recalled
+workers
+<ul>
+<li>Outputs: Figure A22</li>
+</ul>
+</li>
+<li><code>pgm/liquidity_distribution.R</code>: compute some statistics to summarise
+the magnitude of the reversal of liquidity between unemployed and
+employed households during the pandemic.</li>
+<li><code>pgm/liquidity_changes.R</code>: Produce liquidity change outputs for
+different treatment samples
+<ul>
+<li>Outputs: Table A6\</li>
+</ul>
+</li>
+<li><code>pgm/low_prepand_liq.R</code>: Low pre-pandemic liquidity group
+characteristics</li>
+<li><code>pgm/spend_summary_stats.R</code>: Calculate some summary stats on
+spending and the spend samples</li>
+</ul>
+<p><em>Note: In the repo, there is a folder <code>r_batch_submission_scripts</code> with
+the same R scripts as in <code>pgm/</code> to run as a bash job on the edgenode,
+instead of on Rstudio.</em></p>
+<p>Prior to running the driver script, the pre-processing script
+<code>pgm/cust_labor_filter_table.py</code> creates a count of transactions at the
+customer-month level that is used in
+<code>pgm/daily_inflow_outflow_ui_recip.py</code> to filter the customer list to
+primary customers.`</p>
+<p><strong>Important note on data structure of <code>cust_demo</code></strong> There are 4
+‘cust_types’:
+<code>202021_ui_recipient, 2019_ui_recipient, nonui_2020, nonui_2019</code>. A
+<code>2019_ui_recipient</code> got UI in 2019, but they may also get UI in 2020.</p>
+<p><strong>Input tables for Build</strong> - List of customers with 2018 and 2019 JPMC
+activity as well as customer metadata -
+<code>institute_consumer.mwl_cust_covid_filters</code>: filtered customer list with
+2018 and 2019 labor inflows -
+<code>institute_retail_curated.jpmci_customer_profile</code>: customer profile
+table - <code>institute_consumer.eip_cohort_info</code>: customer with EIP
+transaction details -
+<code>institute_consumer.mwl_daily_income_rollup_for_covid_inc_updated</code>:
+daily inflows table -
+<code>institute_consumer.outflows_rollup_by_day_granular</code>: daily outflows
+table - <code>institute_retail_curated.jpmci_deposit_account</code>: deposit
+accounts table -
+<code>institute_retail_curated.jpmci_customer_account_relationship</code>:
+customer-account relationship table -
+<code>institute_retail_curated.jpmci_deposit_transaction</code>: : deposit
+transaction table (transaction-level) -
+<code>institute_retail_curated.jpmci_transaction_counterparty_lookup</code>:
+firm-id crosswalk for deposit transaction table -
+<code>institute_consumer.ui_nonui_cust_list</code>: list of UI and non-UI
+customers - <code>institute_consumer.industry_classification_w4_sa</code>: cleaned
+at_counterparty values (including industries) -
+<code>institute_consumer.mwl_ui_cp_raw_lookup_mar2021</code>: table with UI
+counterparties matched up with their respective state</p>
+<p>These input tables are used to create three tables which are then used
+in analysis: - weekly file with receipt of UI benefits and labor income
+including surrogate id for employer - monthly file with UI benefits,
+other income, several measures of spending, and checking account
+assets - file with demographics such as age, gender, states of
+residence, and Economic Impact Payment amount</p>
+<h4 id="2-benchmarking-scripts">2. Benchmarking scripts</h4>
+<p>The paper has a few plots which compare JPMCI data to public data. The R
+script <code>driver.R</code> in <code>analysis/source/</code> runs the script
+<code>diagnostic_benchmarking_plots.R</code>, also in <code>analysis/source/</code>, to
+produce plots benchmarking JPMCI numbers to public data. It produces
+four figures which are in <code>analysis/release/ui_benchmarking</code>: - Figure
+A-1: <code>hexmap_jpmci_sample.png</code> - Figure A-2:
+<code>diagnostic_levels_norm.png</code>; <code>state_hetero_inc_scatter.png</code>;
+<code>weekly_benefits_median_2019_mthly.png</code>.</p>
+<h5 id="replications-notes-on-figure-a-1">Replications notes on figure A-1:</h5>
+<p>Figure A-1 is a hexmap visualization of the types of JPMCI customer information available by state. It has different environment requirements for reproduction than the rest of the benchmarking plots. It depents on broom 1.0.0, which is incompatible with tidyverse 2.0.0, a package that is required for all other benhcmarking figures. It also uses a retired package called rgeos, which is no longer available on CRAN as of October 2023. Becuase of these unique envoronment needs, A-1 is not able to be replicated using the same environemnt as the rest of the benchmarking figures.</p>
+<p>These were the steps taken in the last attempt to replicate this figure:</p>
+<ol>
+<li>Download GEOS in terminal.<pre class="hljs"><code><div>brew install geos
+</div></code></pre>
+</li>
+<li>Download rgeos package in R.<pre class="hljs"><code><div>remotes::install_version(&quot;rgeos&quot;, version = &quot;0.6-3&quot;)
+</div></code></pre>
+</li>
+<li>Load an earlier version of broom and tidyverse.<pre class="hljs"><code><div>devtools::install_version('broom', '1.0.0')
+devtools::install_version('tidyverse', '1.3.2')
+</div></code></pre>
+</li>
+<li>Use appropriate libraries.<pre class="hljs"><code><div>library(broom)
+library(tidyverse)
+library(rgeos)
+library(geojsonio)
+</div></code></pre>
+</li>
+</ol>
+<p>NOTES:
+The hexaplot may require these earlier package versions.  Parts of the R benchmarking scrips were written in with these package versions:
+-   yaml version 2.3.7
+-   testthat version 3.1.9
+-   scales version 1.2.1
+-   ggrepel version 0.9.3
+-   geojsonio version 0.11.1
+-   broom version 1.0.0
+-   lubridate version 1.9.2</p>
+<p>It may also require an earlier version of R. The latest version of R available at the beginning of the benchmarking script construction was R 3.6.3.</p>
+<h4 id="3-model-code-details">3. Model code details</h4>
+<p>All in <code>analysis/source/joint_spend_search_model/</code>.</p>
+<h5 id="driver-script">Driver Script</h5>
+<p>The driver script <code>shell.m</code> runs the code. The shell file comments also describes exactly which subroutines produce each model figure and table from the paper. The code producing most main text results is in lines 14-50 and only takes a few minutes to run. <code>solve_best_fit_params.m</code> is much more time consuming than the rest of the script but we provide intermediate files so this step can be skipped if so desired. Similarly, the <code>stimulus_check_size</code> related code and robustness are also more time consuming and can be skipped if not specifically interested in those results.</p>
+<h5 id="setup-script">Setup Script</h5>
+<p>The script <code>prelim.m</code> defines data inputs to the model (paths point to
+<code>analysis/input/disclose/</code> and <code>analysis/input/public_data/</code>), sets
+parameters, and specifies plotting options.</p>
+<p><em>Note about input paths</em>: The Matlab code's relative paths are defined
+assuming that the current working directory when executing the code is
+<code>analysis/source/joint_spend_search_model</code>. For users executing the code
+locally in the Matlab GUI, this should be the default behavior. If the
+code is run from a different working directory, which may be the default
+when not using the Matlab GUI, users will likely need to instead define
+a root path and then pre-pend this to the relative file path references
+using the <code>fullfile</code> function. The code was written so that it should
+require no manual directory changes for the typical user executing
+locally.</p>
+<h5 id="model-scripts">Model Scripts</h5>
+<ul>
+<li><code>solve_best_fit_params.m</code> - Calibrate the search parameters of
+different expectations assumptions and MPC targets and save them in
+various intermediate .mat files like
+<code>bestfit_target_waiting_MPC.mat</code>. This file takes several hours to
+run, but we provide the .mat files, so shell.m can be run without
+this time consuming step by commenting out this
+solve_best_fit_params line. This code relies on functions
+<code>pre_pandemic_fit_het_inf_horizon.m</code>,
+<code>sse_fit_het_inf_horizon_full.m</code>, <code>sse_fit_het_inf_horizon.m</code>, and
+<code>sse_fit_het_inf_horizon_onset.m</code> which solve a prepandemic
+calibration and the pandemic model for expiration and onset.</li>
+<li><code>inf_horizon_het_results.m</code>, <code>inf_horizon_het_results_onset.m</code> -
+Given search parameters calibrated above, this solves and simulates
+the main model for expiration and onset, respectively.
+<ul>
+<li>Plots in these scripts include results from other calibrations:
+<code>prepandemic_results_target500MPC.m</code>,
+<code>inf_horizon_het_results_target500MPC.m</code>,
+<code>inf_horizon_het_results_nodiscountfactorshock.m</code>,
+<code>prepandemic_results_onset_target500MPC.m</code>,
+<code>inf_horizon_het_results_onset_target500MPC</code>.</li>
+</ul>
+</li>
+<li><code>inf_horizon_het_results_stimulus_check_size.m</code>,
+<code>inf_horizon_het_results_stimulus_check_size_onetenth.m</code>,
+<code>inf_horizon_het_counterfactuals.m</code> - This code constructs the
+spending responses for stimulus checks vs. severance of various
+sizes. It is somewhat time consuming since not written very
+efficiently (about an hour), and results are only used for Figure
+13, so could be skipped if not interested in these counterfactuals.</li>
+<li><code>liquidity_effects_prepandemic.m</code> - Computes baseline effects of
+liquidity on job search to compare to Card, Chetty, Weber 2006</li>
+<li><code>make_table_agg_effects.m</code>, <code>make_table_mpc_for_paper.m</code>,
+<code>make_table_supplement_effects.m</code>,
+<code>make_table_alt_job_find_specs.m</code> - Format model outputs for the
+paper.</li>
+<li><code>plot_duration_elasticities.m</code> - Plot literature estimates of
+duration elasticities.</li>
+<li><code>pandemic_hazard_vs_duration_elasticity_constanteffects_v2.m</code> -
+Decomposes role of different channels in low elasticity (paper
+figure 11)</li>
+<li><code>liquidity_effects_on_mpcs.m</code> - some statistics related to liquidity
+changes that are briefly mentioned, otherwise this file is mostly
+deprecated</li>
+<li><code>inf_horizon_het_results_by_liquidity.m</code> - This redoes the main
+results but splitting separately by high and low liquidity
+households constructed in various ways</li>
+</ul>
+<h5 id="robustness-scripts">Robustness Scripts</h5>
+<ul>
+<li><code>inf_horizon_het_results_timeaggregation_target500MPC.m</code>,
+<code>inf_horizon_het_results_timeaggregation.m</code> - Code for constructing
+Figure A-18</li>
+<li>Subdirectory <code>/robustness/beta_delta_revision_v2/</code> - Running the
+shell file in this folder creates robustness figure A-28. Note that
+the shell file provides the intermediate files and comments out the
+running of the model for a large set of parameters, which was run on
+a cluster with an array job. If you want to re-run this many hour
+grid search, see <code>grid_search.sh</code> and <code>grid_search_append.sh</code></li>
+<li><code>test_homogeneity.m</code> - Homogeneity results which are briefly
+mentioned in Appendix C.2 (not included in shell since there are no
+specific numbers reported/saved from this code)</li>
+</ul>
+<h5 id="functions-written-for-this-project-and-called-by-routines-above">Functions Written for this Project and Called by Routines Above</h5>
+<ul>
+<li><code>average_duration.m</code> - This computes the average duration of
+unemployment given an exit rate</li>
+<li><code>elasticity_distortions_and_aggregates.m</code> - This computes duration
+elasticities as well as measures of aggregate distortions in
+response to the supplements in the pandemic</li>
+<li><code>search_elasticity_implications.m</code> - This computes a duration
+elasticity to a small change in benefits (i.e. a normal benefit
+elasticity)</li>
+<li><code>share_remaining_survival.m</code> - Computes share of unemployed
+remaining over time given exit hazard</li>
+<li><code>week_to_month_exit.m</code> - Converts weekly exit rates in data to
+monthly exit rates used in model</li>
+</ul>
+<h5 id="other-functions">Other Functions</h5>
+<ul>
+<li><code>fminsearchbnd.m</code> - Bounded optimization function. Used for
+optimization in <code>solve_best_fit_params.m</code>.</li>
+<li><code>cab.m</code> - Close a subset of figures.</li>
+<li><code>hex2rgb.m</code> - Convert hexadecimal color code to RGB values.</li>
+<li><code>table2latex_numbers_only.m</code> - Convert MATLAB table to tex Table.</li>
+</ul>
+<h2 id="list-of-tables-and-programs">List of tables and programs</h2>
+<p>The provided code reproduces:</p>
+<ul>
+<li><input type="checkbox" id="checkbox12"><label for="checkbox12">All numbers provided in text in the paper</label></li>
+<li><input type="checkbox" id="checkbox13"><label for="checkbox13">All tables and figures in the paper</label></li>
+<li><input type="checkbox" id="checkbox14" checked="true"><label for="checkbox14">Selected tables and figures in the paper, as explained and</label>
+justified below.</li>
+</ul>
+<p>Figures that are sourced by a file in the /pgm folder will not be
+reproduced, as they require restricted data. You can view information about what scripts produce what files in <code>pandemic_ui_public/figure_table_mapping.xlsx</code>.</p>
+<h2 id="references">References</h2>
+<p><strong>JPMorgan Chase Institute.</strong> 2018 - 2021. <em>JPMorgan Chase Institute De-Identified Data Assets.</em> JPMorgan Chase Institute, New York, NY. https://www.jpmorganchase.com/institute (accessed July 16, 2024).</p>
+<p><strong>Schmieder, Johannes F., and Till von Wachter.</strong> 2016. <em>Table 2 From &quot;TheEffects of Unemployment Insurance Benefits: New Evidence and Interpretation.”</em> Annual Review of Economics, 8(1):547–581.
+<a href="https://doi.org/10.1146/annurev-economics-080614-115758">https://doi.org/10.1146/annurev-economics-080614-115758</a>.</p>
+<p><strong>U.S. Bureau of Economic Analysis.</strong> 2016-2021. <em>Personal Consumption Expenditures [PCE].</em> Retrieved from FRED, Federal Reserve Bank of St.Louis. <a href="https://fred.stlouisfed.org/series/PCE">https://fred.stlouisfed.org/series/PCE</a> (accessed July 18, 2024).</p>
+<p><strong>U.S. Bureau of Labor Statistics.</strong> 2016-2021. <em>All Employees, Total
+Nonfarm [PAYEMS].</em> Retrieved from FRED, Federal Reserve Bank of St. Louis. <a href="https://fred.stlouisfed.org/series/PAYEMS">https://fred.stlouisfed.org/series/PAYEMS</a> (accessed July 18, 2024).</p>
+<p><strong>Employment and Training Administration.</strong> 2019 - 2020a. <em>Characteristics
+of the Insured Unemployed.</em> United States Department of Labor.
+<a href="https://oui.doleta.gov/unemploy/DataDownloads.asp">https://oui.doleta.gov/unemploy/DataDownloads.asp</a> (accessed July 19, 2022).</p>
+<p><strong>Employment and Training Administration.</strong> 2019 - 2020b. <em>Claims and Payment Activities.</em> United States Department of Labor. https://oui.doleta.gov/unemploy/DataDownloads.asp (accessed July 19, 2022).</p>
+<p><strong>Employment and Training Administration.</strong> 2019 - 2020c. <em>Weekly Claims and Extended Benefits Trigger Data.</em> United States Department of Labor.
+<a href="https://oui.doleta.gov/unemploy/DataDownloads.asp">https://oui.doleta.gov/unemploy/DataDownloads.asp</a> (accessed July 19, 2022).</p>
+<p><strong>Employment and Training Administration.</strong> 2016–2021d. <em>Unemployment Insurance Weekly Claims Data.</em> United States Department of Labor. <a href="https://oui.doleta.gov/unemploy/claims.asp">https://oui.doleta.gov/unemploy/claims.asp</a> (accessed July 19, 2024).</p>
+
+</body>
+</html>
